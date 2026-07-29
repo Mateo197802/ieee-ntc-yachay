@@ -198,7 +198,7 @@ const navLinks = [
   .header-inner {
     height: 74px;
     display: grid;
-    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-columns: 390px minmax(0, 1fr);
     align-items: center;
     gap: clamp(24px, 2vw, 48px);
   }
@@ -207,24 +207,25 @@ const navLinks = [
   .brand-panel {
     position: relative;
     display: block;
-    flex: 0 0 360px;
-    width: 360px;
+    flex: 0 0 390px;
+    width: 390px;
     height: 68px;
     text-decoration: none;
   }
 
   .brand-panel__surface {
     position: absolute;
-    inset: 0 15px 0 0;
+    inset: 0 16px 0 0;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     overflow: hidden;
-    padding: 8px 58px 8px 20px;
+    padding: 8px 64px 8px 28px;
     background: #ffffff;
     clip-path: polygon(
       0 0,
       100% 0,
-      calc(100% - 28px) 100%,
+      calc(100% - 30px) 100%,
       0 100%
     );
   }
@@ -233,7 +234,7 @@ const navLinks = [
     position: absolute;
     top: 0;
     right: 0;
-    width: 34px;
+    width: 36px;
     height: 68px;
     background: #0587bd;
     clip-path: polygon(
@@ -246,7 +247,7 @@ const navLinks = [
 
   .brand-panel__logo {
     display: block;
-    width: 275px;
+    width: 255px;
     max-width: 100%;
     height: 50px;
     object-fit: contain;
