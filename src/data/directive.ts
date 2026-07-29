@@ -1,89 +1,130 @@
 export interface DirectiveMember {
-  id: string;
+  slug: string;
   name: string;
+  displayName: string;
   role: string;
-  bio: string;
-  email: string;
-  linkedin?: string;
-  photo: string;
-  term: string;
-  category: 'Executive Board' | 'Coordinators' | 'Advisors';
+  order: number;
+  summary: string;
+  biography: string[];
+  interests: string[];
+  image: string | null;
+  imageAlt: string;
+  linkedin: string;
+  email?: string;
+  term?: string;
 }
 
 export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
   {
-    id: 'chair',
-    name: 'Mateo (Chair)',
-    role: 'Student Branch Chapter Chair',
-    bio: 'Leading the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University, driving nanotechnology initiatives, research collaboration, and student development.',
-    email: 'mateo.ntc@yachaytech.edu.ec',
-    linkedin: 'https://linkedin.com/in/mateo-ntc-yachay',
-    photo: '/assets/images/campus_stairs_group.jpg',
-    term: '2025 - 2026',
-    category: 'Executive Board'
+    slug: 'solange-criollo',
+    name: 'Solange Criollo',
+    displayName: 'Solange Criollo',
+    role: 'Chair',
+    order: 1,
+    summary: 'Biomedical Science student focused on nanobiotechnology, nanomedicine, and biomaterials for healthcare applications. As founding Chair, she led the creation of IEEE NTC Yachay Tech and promotes research, scientific outreach, student development, and nanotechnology initiatives across the university and IEEE Region 9.',
+    biography: [
+      'Solange is a Biomedical Science student at Yachay Tech University with interests in nanobiotechnology, nanomedicine, and biomaterials for healthcare applications. Her research experience includes antimicrobial hydrogels and the green synthesis of nanoparticles.',
+      'She began her IEEE journey in 2024 through WIE Yachay Tech, where she later served as Treasurer and contributed to leadership and scientific outreach activities. In 2025, she served as Vice President of the IEEE Yachay Tech Student Branch, organizing academic, integration, and science communication initiatives.',
+      'She currently serves as founding Chair of IEEE NTC Yachay Tech, whose creation she led as the first Nanotechnology Council chapter in Ecuador. She also contributes to the IEEE Region 9 SAC Awards and Recognition Subcommittee.'
+    ],
+    interests: ['Nanobiotechnology', 'Nanomedicine', 'Biomaterials', 'Antimicrobial Hydrogels', 'Scientific Outreach'],
+    image: null,
+    imageAlt: 'Solange Criollo - IEEE NTC Yachay Tech Chair',
+    linkedin: 'https://www.linkedin.com/in/solange-criollo-321b73163/',
+    term: '2026 - Present'
   },
   {
-    id: 'vice-chair',
-    name: 'Solange (Vice-Chair)',
-    role: 'Vice-Chair & Academic Lead',
-    bio: 'Coordinating academic workshops, LANANO conference mentorship programs, and strategic academic partnerships across Region 9.',
-    email: 'solange.ntc@yachaytech.edu.ec',
-    linkedin: 'https://linkedin.com/in/solange-ntc-yachay',
-    photo: '/assets/images/ieee_temscon_awards.jpg',
-    term: '2025 - 2026',
-    category: 'Executive Board'
+    slug: 'isaac-mateo-gavilanes',
+    name: 'Isaac Mateo Gavilanes Chávez',
+    displayName: 'Mateo Gavilanes',
+    role: 'Vice Chair',
+    order: 2,
+    summary: 'Biomedical Engineering student working at the intersection of clinical data science, systems architecture, and medical Artificial Intelligence. As Vice Chair, he supports the chapter’s technical strategy through projects in PRISMA automation, scientometrics, Edge AI, biomedical systems, and immersive nanotechnology education.',
+    biography: [
+      'Isaac Mateo Gavilanes Chávez is a Biomedical Engineering student at Yachay Tech University working at the intersection of clinical data science, systems architecture, and medical Artificial Intelligence.',
+      'His work includes statistical validation, scientific data infrastructure, automated PRISMA and scientometric pipelines, mission-critical ECG systems, Edge AI, deterministic clinical reasoning, and biomedical data architectures.',
+      'As Vice Chair of IEEE NTC Yachay Tech, he contributes to the technical and strategic development of the chapter. He has also developed MuseumMaster, a C#/Unity framework for immersive virtual-reality simulations of nanotechnology laboratories.',
+      'His professional objective is to decentralize the development of advanced clinical and scientific technologies and demonstrate that high-level AI, backend infrastructure, and biomedical innovation can be led from Ecuador.'
+    ],
+    interests: ['Clinical AI', 'PRISMA Automation', 'Edge AI', 'Biomedical Systems Architecture', 'Virtual Reality Nanosimulation'],
+    image: null,
+    imageAlt: 'Isaac Mateo Gavilanes Chávez - IEEE NTC Yachay Tech Vice Chair',
+    linkedin: 'https://www.linkedin.com/in/isaac-mateo-g-55aa7a318/?locale=es',
+    term: '2026 - Present'
   },
   {
-    id: 'treasurer',
-    name: 'Ethan (Treasurer & Logistics)',
-    role: 'Treasurer & Logistics Coordinator',
-    bio: 'Managing chapter financial resources, Activity Grants, workshop logistics, and virtual reality equipment requisitions.',
-    email: 'ethan.ntc@yachaytech.edu.ec',
-    linkedin: 'https://linkedin.com/in/ethan-ntc-yachay',
-    photo: '/assets/images/hospital_san_vicente.jpg',
-    term: '2025 - 2026',
-    category: 'Executive Board'
+    slug: 'ethan-guevara',
+    name: 'Ethan Aaron Guevara López',
+    displayName: 'Ethan Guevara',
+    role: 'Secretary',
+    order: 3,
+    summary: 'Biomedicine student interested in molecular biology, tissue engineering, and advanced medical instrumentation. As Secretary, he supports institutional documentation, chapter governance, meeting coordination, and organizational continuity while contributing to biomedical Edge AI research.',
+    biography: [
+      'Ethan Aaron Guevara López is a Biomedicine student at Yachay Tech University with interests in molecular biology, tissue engineering, and advanced medical instrumentation.',
+      'He contributes to the development of a mission-critical ECG platform, focusing on Edge AI architectures that integrate neural networks with Bayesian Deep Learning to quantify diagnostic uncertainty and support offline clinical operation.',
+      'His technical work is complemented by social and innovation initiatives, including GelGrowth, a biotechnological project based on biocompatible hydrogels. He is a founding member and Secretary of IEEE NTC Yachay Tech and has also served as a Teaching Assistant in Human Physiology.'
+    ],
+    interests: ['Molecular Biology', 'Tissue Engineering', 'Medical Instrumentation', 'Biocompatible Hydrogels', 'Edge AI'],
+    image: null,
+    imageAlt: 'Ethan Aaron Guevara López - IEEE NTC Yachay Tech Secretary',
+    linkedin: 'https://www.linkedin.com/in/ethan-guevara-40b232346/',
+    term: '2026 - Present'
   },
   {
-    id: 'secretary',
-    name: 'Fernanda (Secretary & Design Lead)',
-    role: 'Secretary & Creative Director',
-    bio: 'Overseeing graphic communications, certification frameworks, event announcements, and institutional document archives.',
-    email: 'fernanda.ntc@yachaytech.edu.ec',
-    linkedin: 'https://linkedin.com/in/fernanda-ntc-yachay',
-    photo: '/assets/images/visita_escuela.jpg',
-    term: '2025 - 2026',
-    category: 'Executive Board'
+    slug: 'emily-perez',
+    name: 'Emily Pérez',
+    displayName: 'Emily Pérez',
+    role: 'Treasurer',
+    order: 4,
+    summary: 'Biomedical Engineering student interested in the application of physics to medicine, clinical environments, and nanomedicine. As Treasurer, she contributes to resource management, financial planning, and the sustainable execution of chapter activities.',
+    biography: [
+      'Emily Pérez is a Biomedical Engineering student at Yachay Tech University with a focused interest in the application of physics to medicine and clinical environments.',
+      'She serves as Treasurer of both IEEE NTC Yachay Tech and the Yachay Tech Biomedicine Club, contributing to resource management and the financial sustainability of academic and community activities.',
+      'Her research interests include the green synthesis of silver nanoparticles using plant extracts for potential antimicrobial applications in diabetic wounds, as well as biomarker-based academic research on hypothyroidism.',
+      'Her academic profile is characterized by analytical thinking, proactivity, and a commitment to nanomedicine and community development.'
+    ],
+    interests: ['Medical Physics', 'Green Synthesis', 'Nanomedicine', 'Antimicrobial Nanoparticles', 'Financial Planning'],
+    image: null,
+    imageAlt: 'Emily Pérez - IEEE NTC Yachay Tech Treasurer',
+    linkedin: 'https://www.linkedin.com/in/emily-poleth-a2148828a/',
+    term: '2026 - Present'
   },
   {
-    id: 'outreach-lead',
-    name: 'Kennedy (Outreach & Media Lead)',
-    role: 'Community Outreach & LinkedIn Manager',
-    bio: 'Directing community science outreach, Nano News publications, and advisor communication channels.',
-    email: 'kennedy.ntc@yachaytech.edu.ec',
-    linkedin: 'https://linkedin.com/in/kennedy-ntc-yachay',
-    photo: '/assets/images/ieee_temscon_latam_2026.jpg',
-    term: '2025 - 2026',
-    category: 'Coordinators'
+    slug: 'fernanda-landazuri',
+    name: 'Fernanda Landázuri',
+    displayName: 'Fernanda Landázuri',
+    role: 'Webmaster',
+    order: 5,
+    summary: 'Geology student with a multidisciplinary focus on quantum physics, nanotechnology, sustainability, and scientific communication. As Webmaster, she supports the chapter’s digital presence, visual communication, public engagement, and connection with broader academic communities.',
+    biography: [
+      'Fernanda Landázuri is a Geology student at Yachay Tech University with a multidisciplinary research focus encompassing quantum physics and nanotechnology.',
+      'As Webmaster of IEEE NTC Yachay Tech, she connects scientific work developed at the university with global academic communities through digital communication and public engagement.',
+      'Her experience includes public relations, commercialization, marketing, visual communication, and creative industries. She also leads Cacao Viva, a circular-economy initiative dedicated to transforming cacao waste into nutritious, high-value products.',
+      'Her profile combines scientific communication, sustainability, entrepreneurship, and strategic outreach.'
+    ],
+    interests: ['Quantum Physics', 'Nanotechnology', 'Scientific Communication', 'Sustainability', 'Digital Outreach'],
+    image: null,
+    imageAlt: 'Fernanda Landázuri - IEEE NTC Yachay Tech Webmaster',
+    linkedin: 'https://www.linkedin.com/in/melanie-fernanda-landazuri-qui%C3%B1onez-3ba71b305/',
+    term: '2026 - Present'
   },
   {
-    id: 'research-lead',
-    name: 'Andrew (Research & Publications Lead)',
-    role: 'Research & LANANO Training Lead',
-    bio: 'Guiding research paper proposals, literature extraction teams, and IEEE conference submission workflows.',
-    email: 'andrew.ntc@yachaytech.edu.ec',
-    photo: '/assets/images/campus_stairs_group.jpg',
-    term: '2025 - 2026',
-    category: 'Coordinators'
-  },
-  {
-    id: 'advisor-1',
-    name: 'Information pending confirmation',
-    role: 'Faculty Advisor',
-    bio: 'Academic advisor guiding scientific rigor and departmental support at Yachay Tech University.',
-    email: 'advisor.ntc@yachaytech.edu.ec',
-    photo: '/assets/images/campus_stairs_group.jpg',
-    term: '2025 - 2026',
-    category: 'Advisors'
+    slug: 'kennedy-rodriguez',
+    name: 'Kennedy Rodríguez',
+    displayName: 'Kennedy Rodríguez',
+    role: 'Webmaster',
+    order: 6,
+    summary: 'Biomedical Engineering student focused on the convergence of medical hardware and Artificial Intelligence. As Webmaster, he supports the chapter’s digital infrastructure and communication while developing interests in advanced electronics and Machine Learning for automated clinical diagnosis.',
+    biography: [
+      'Kennedy Rodríguez is a Biomedical Engineering student at Yachay Tech University whose work focuses on the convergence of medical hardware and Artificial Intelligence.',
+      'His principal interests include advanced electronic systems and Machine Learning models for the precise and automated diagnosis of clinical anomalies.',
+      'He approaches engineering as a technological translator, transforming complex biomedical datasets into tangible hardware and software solutions with direct potential impact on healthcare.',
+      'As Webmaster of IEEE NTC Yachay Tech, he contributes to the chapter’s digital infrastructure, technical communication, and online presence.'
+    ],
+    interests: ['Medical Hardware', 'Artificial Intelligence', 'Advanced Electronics', 'Clinical ML Diagnosis', 'Digital Infrastructure'],
+    image: null,
+    imageAlt: 'Kennedy Rodríguez - IEEE NTC Yachay Tech Webmaster',
+    linkedin: 'https://www.linkedin.com/in/yehudhah-kennedy-rodriguez-moran-27910b3b6/',
+    term: '2026 - Present'
   }
 ];

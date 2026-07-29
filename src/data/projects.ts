@@ -15,6 +15,19 @@ export interface ProjectItem {
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
+    id: 'logic-lock',
+    slug: 'logic-lock',
+    title: 'Logic Lock — PRISMA Review Automation Tool',
+    category: 'Research',
+    status: 'Active',
+    summary: 'A research workflow automation tool designed to support and organize PRISMA-based systematic reviews.',
+    description: 'A research workflow automation tool designed to support and organize PRISMA-based systematic reviews, reducing repetitive manual work and improving process traceability and reproducibility.',
+    technologies: ['Python', 'PRISMA Framework', 'Workflow Automation', 'Scientometrics'],
+    team: ['Mateo (Lead)', 'Chapter Research Group'],
+    image: '/assets/images/flyer_2.png',
+    outcomes: 'Automated screening tool supporting systematic literature reviews.'
+  },
+  {
     id: 'lanano-paper-training-initiative',
     slug: 'lanano-paper-training-initiative',
     title: 'LANANO Scientific Research & Mentorship Track',
@@ -23,7 +36,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     summary: 'Mentorship pipeline preparing student research teams for international IEEE LANANO conference submissions.',
     description: 'A structured multi-week mentorship framework matching undergraduate researchers with faculty mentors across research axes including Nanoelectronics, Quantum Technology, Nanomedicine, and Machine Learning in Nanoscience.',
     technologies: ['Green Synthesis', 'Machine Learning', 'Molecular Dynamics', 'UV-Vis Spectrophotometry'],
-    team: ['Andrew (Lead)', 'Mateo', 'Solange', 'Dr. Faculty Advisors'],
+    team: ['Solange (Lead)', 'Mateo', 'Ethan', 'Faculty Advisors'],
     image: '/assets/images/ieee_temscon_awards.jpg',
     outcomes: 'Draft proposals submitted for peer review across 4 research tracks.'
   },

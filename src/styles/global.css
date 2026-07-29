@@ -101,20 +101,31 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
 }
 
-/* Layout Utilities */
+/* Unified Global Site Container Grid */
+.site-container,
 .container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  width: min(calc(100% - 64px), 1680px);
+  margin-inline: auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1599px) and (min-width: 1280px) {
+  .site-container,
   .container {
-    padding-left: 0.85rem;
-    padding-right: 0.85rem;
+    width: min(calc(100% - 48px), 1440px);
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .site-container,
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 767px) {
+  .site-container,
+  .container {
+    width: calc(100% - 32px);
   }
   .highlight-cyan {
     font-size: clamp(0.7rem, 4vw, 0.95rem) !important;

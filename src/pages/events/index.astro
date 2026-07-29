@@ -16,21 +16,25 @@ function getHref(path: string) {
   title="Events & Activities | IEEE Nanotechnology Council Yachay Tech"
   description="Explore upcoming workshops, past outreach events, webinars, and technical conferences hosted by IEEE Nanotechnology Council Yachay Tech."
 >
-  <section class="inner-banner">
-    <div class="container">
+  <!-- Hero Inner Banner -->
+  <section class="events-hero">
+    <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Home</a> &gt; <span>Events</span>
+        <a href={getHref('/')}>Home</a> &gt; <span>Activities</span>
       </div>
-      <h1 class="banner-title font-heading">EVENTS & ACTIVITIES</h1>
-      <p class="banner-subtitle">Workshops, technical conferences, webinars, and community STEM outreach activities.</p>
+      <span class="hero-eyebrow">ACTIVITIES & COMMUNITY</span>
+      <h1 class="hero-title font-heading">EVENTS & ACTIVITIES</h1>
+      <p class="hero-subtitle">
+        Explore upcoming programs, workshops, conferences, outreach initiatives, and highlights from our chapter.
+      </p>
     </div>
   </section>
 
-  <!-- Navigation Anchors Bar -->
+  <!-- Sticky Internal Navigation Bar -->
   <section class="subnav-bar">
-    <div class="container">
+    <div class="site-container">
       <div class="subnav-links">
-        <a href="#upcoming" class="subnav-btn">Upcoming Events ({upcomingEvents.length})</a>
+        <a href="#upcoming" class="subnav-btn active">Upcoming Event ({upcomingEvents.length})</a>
         <a href="#past" class="subnav-btn">Past Events ({pastEvents.length})</a>
         <a href="#calendar" class="subnav-btn">Academic Calendar</a>
       </div>
@@ -39,45 +43,47 @@ function getHref(path: string) {
 
   <!-- Upcoming Events Section -->
   <section class="events-section" id="upcoming">
-    <div class="container">
+    <div class="site-container">
       <div class="section-header">
         <span class="section-eyebrow">AGENDA & WEBINARS</span>
-        <h2 class="section-title">UPCOMING EVENTS</h2>
+        <h2 class="section-title">UPCOMING EVENT</h2>
       </div>
 
-      <div class="events-grid">
+      <div class="upcoming-single-wrapper">
         {upcomingEvents.map((event) => (
-          <article class="event-detailed-card" id={event.slug}>
-            <div class="event-image-side">
-              <img src={getHref(event.image)} alt={event.title} width="400" height="260" loading="lazy" class="card-img" />
+          <article class="upcoming-featured-card" id={event.slug}>
+            <div class="upcoming-image-side">
+              <img src={getHref(event.image)} alt={event.imageAlt} width="520" height="320" loading="eager" class="featured-img" />
               <span class="type-pill">{event.type}</span>
             </div>
 
-            <div class="event-content-side">
-              <div class="event-meta-bar">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+            <div class="upcoming-content-side">
+              <div class="meta-bar">
+                <span class="meta-date">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
                   {event.date} • {event.time}
                 </span>
                 <span class="modality-tag">{event.modality}</span>
               </div>
 
-              <h3 class="card-title">{event.title}</h3>
-              <p class="card-summary">{event.description}</p>
+              <h3 class="upcoming-title">{event.title}</h3>
+              <p class="upcoming-description">{event.description}</p>
 
-              <div class="event-location-info">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <div class="location-info">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 <span>{event.location}</span>
               </div>
 
-              <div class="card-action-bar">
-                {event.registrationUrl ? (
+              <div class="upcoming-action-bar">
+                {event.registrationStatus === 'open' && event.registrationUrl ? (
                   <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     REGISTER NOW
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
                 ) : (
-                  <span class="btn btn-secondary disabled-btn">Registration Pending</span>
+                  <button class="btn btn-secondary disabled-status-btn" disabled>
+                    REGISTRATION OPENING SOON
+                  </button>
                 )}
               </div>
             </div>
@@ -87,43 +93,48 @@ function getHref(path: string) {
     </div>
   </section>
 
-  <!-- Past Events Section -->
+  <!-- Past Events Compact 3-Column Grid Section -->
   <section class="events-section bg-alt" id="past">
-    <div class="container">
+    <div class="site-container">
       <div class="section-header">
         <span class="section-eyebrow">ARCHIVE & HISTORY</span>
         <h2 class="section-title">PAST EVENTS & OUTREACH</h2>
       </div>
 
-      <div class="events-grid">
+      <div class="past-events-grid">
         {pastEvents.map((event) => (
-          <article class="event-detailed-card" id={event.slug}>
-            <div class="event-image-side">
-              <img src={getHref(event.image)} alt={event.title} width="400" height="260" loading="lazy" class="card-img" />
+          <article class="event-grid-card" id={event.slug}>
+            <div class="card-image-box">
+              <img src={getHref(event.image)} alt={event.imageAlt} width="400" height="225" loading="lazy" class="grid-img" />
               <span class="type-pill past">{event.type}</span>
+              <span class="status-completed-badge">COMPLETED</span>
             </div>
 
-            <div class="event-content-side">
-              <div class="event-meta-bar">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
-                  {event.date}
-                </span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="meta-date-text">{event.date}</span>
                 <span class="modality-tag past">{event.modality}</span>
               </div>
 
-              <h3 class="card-title">{event.title}</h3>
-              <p class="card-summary">{event.description}</p>
+              <h3 class="card-grid-title">{event.title}</h3>
+              <p class="card-grid-desc">{event.description}</p>
 
-              <div class="event-location-info">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <div class="grid-location">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 <span>{event.location}</span>
               </div>
 
-              <div class="card-action-bar">
-                <a href={getHref('/gallery/')} class="btn btn-outline-dark">
-                  VIEW GALLERY PHOTOS
-                </a>
+              <div class="card-actions-row">
+                {event.externalUrl ? (
+                  <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark card-btn">
+                    VIEW PROGRAM
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+                  </a>
+                ) : (
+                  <a href={getHref('/gallery/')} class="btn btn-outline-dark card-btn">
+                    VIEW GALLERY PHOTOS
+                  </a>
+                )}
               </div>
             </div>
           </article>
@@ -132,22 +143,27 @@ function getHref(path: string) {
     </div>
   </section>
 
-  <!-- Calendar Integration Section -->
+  <!-- Compact Academic Calendar Block -->
   <section class="events-section" id="calendar">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-eyebrow">ACADEMIC SCHEDULE</span>
-        <h2 class="section-title">CHAPTER CALENDAR 2026</h2>
-        <p class="section-desc">Sync our Google Calendar to stay updated with workshop dates and submission deadlines.</p>
-      </div>
+    <div class="site-container">
+      <div class="calendar-compact-card">
+        <div class="calendar-info-side">
+          <span class="section-eyebrow">ACADEMIC SCHEDULE</span>
+          <h2 class="calendar-title font-heading">CHAPTER CALENDAR 2026</h2>
+          <p class="calendar-desc">
+            Stay informed about upcoming chapter activities, workshops, scientific conferences, and academic deadlines.
+          </p>
+        </div>
 
-      <div class="calendar-box">
-        <div class="calendar-placeholder">
-          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <h3>Official IEEE NTC Google Calendar Integration</h3>
-          <p>Subscribe to automatically add chapter activities to your calendar application.</p>
-          <a href="https://calendar.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            SUBSCRIBE TO GOOGLE CALENDAR
+        <div class="calendar-action-side">
+          <div class="next-event-preview">
+            <span class="preview-label">NEXT CONFIRMED EVENT</span>
+            <strong class="preview-title">IEEE NTC Region 9 Student Virtual Summit</strong>
+            <span class="preview-date">October 15, 2026 • Online</span>
+          </div>
+
+          <a href="#upcoming" class="btn btn-primary calendar-cta">
+            VIEW UPCOMING EVENT
           </a>
         </div>
       </div>
@@ -156,17 +172,18 @@ function getHref(path: string) {
 </Layout>
 
 <style>
-  .inner-banner {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+  /* Compact Events Hero Banner */
+  .events-hero {
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
-    padding: 3rem 0 3.5rem;
+    padding: 2.8rem 0 3.2rem;
     border-bottom: 3px solid var(--color-cyan);
   }
 
   .breadcrumb {
     font-size: 0.85rem;
     color: var(--color-cyan);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .breadcrumb a {
@@ -174,66 +191,83 @@ function getHref(path: string) {
     text-decoration: none;
   }
 
-  .banner-title {
-    font-size: 2.5rem;
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-cyan);
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     color: var(--color-white);
   }
 
-  .banner-subtitle {
+  .hero-subtitle {
     font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.85);
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    max-width: 680px;
   }
 
+  /* Subnav Sticky Anchor Bar */
   .subnav-bar {
-    background-color: var(--color-white);
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border-light);
-    padding: 1rem 0;
+    padding: 0.85rem 0;
     position: sticky;
-    top: var(--header-height);
+    top: 74px;
     z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .subnav-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .subnav-btn {
-    padding: 0.5rem 1.25rem;
+    padding: 0.45rem 1.1rem;
     border-radius: 20px;
     background-color: var(--color-bg-light);
     color: var(--color-navy);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.2s ease;
   }
 
-  .subnav-btn:hover {
+  .subnav-btn:hover,
+  .subnav-btn.active {
     background-color: var(--color-cyan);
-    color: var(--color-white);
+    color: #ffffff;
   }
 
+  /* Sections */
   .events-section {
-    padding: 4rem 0;
-    background-color: var(--color-white);
+    padding: 3.5rem 0;
+    background-color: #ffffff;
   }
 
   .events-section.bg-alt {
     background-color: var(--color-bg-light);
   }
 
-  .events-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .section-header {
+    margin-bottom: 2rem;
   }
 
-  .event-detailed-card {
+  /* Sole Upcoming Event Horizontal Featured Card */
+  .upcoming-single-wrapper {
+    max-width: 1100px;
+  }
+
+  .upcoming-featured-card {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    background-color: var(--color-white);
+    grid-template-columns: 420px 1fr;
+    background-color: #ffffff;
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-subtle);
@@ -241,18 +275,18 @@ function getHref(path: string) {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .event-detailed-card:hover {
+  .upcoming-featured-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
   }
 
-  .event-image-side {
+  .upcoming-image-side {
     position: relative;
     height: 100%;
-    min-height: 240px;
+    min-height: 260px;
   }
 
-  .card-img {
+  .featured-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -263,36 +297,37 @@ function getHref(path: string) {
     top: 1rem;
     left: 1rem;
     background-color: var(--color-cyan);
-    color: var(--color-white);
-    font-size: 0.75rem;
+    color: #ffffff;
+    font-size: 0.72rem;
     font-weight: 700;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .type-pill.past {
     background-color: var(--color-slate);
   }
 
-  .event-content-side {
-    padding: 2rem;
+  .upcoming-content-side {
+    padding: 2.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
 
-  .event-meta-bar {
+  .meta-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .meta-item {
+  .meta-date {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 700;
     color: var(--color-cyan);
   }
@@ -301,23 +336,29 @@ function getHref(path: string) {
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-navy);
-    background-color: rgba(5, 135, 189, 0.15);
+    background-color: rgba(5, 135, 189, 0.12);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
   }
 
-  .card-title {
-    font-size: 1.35rem;
+  .modality-tag.past {
+    background-color: rgba(70, 93, 100, 0.12);
+    color: var(--color-slate);
+  }
+
+  .upcoming-title {
+    font-size: 1.4rem;
     color: var(--color-navy);
+    line-height: 1.25;
   }
 
-  .card-summary {
-    font-size: 0.9rem;
+  .upcoming-description {
+    font-size: 0.92rem;
     color: var(--color-text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
-  .event-location-info {
+  .location-info {
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -326,45 +367,251 @@ function getHref(path: string) {
     font-weight: 500;
   }
 
-  .card-action-bar {
+  .upcoming-action-bar {
     margin-top: auto;
     padding-top: 1rem;
   }
 
-  .calendar-box {
-    background-color: var(--color-bg-light);
-    border: 2px dashed var(--color-cyan);
-    border-radius: var(--border-radius-md);
-    padding: 3.5rem 2rem;
-    text-align: center;
+  .disabled-status-btn {
+    background-color: rgba(31, 62, 101, 0.1);
+    color: var(--color-navy);
+    border-color: rgba(31, 62, 101, 0.2);
+    cursor: not-allowed;
+    opacity: 0.85;
   }
 
-  .calendar-placeholder {
-    max-width: 500px;
-    margin: 0 auto;
+  /* Past Events 3-Column Compact Grid Architecture */
+  .past-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .event-grid-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    background-color: #ffffff;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .event-grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .status-completed-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(16, 42, 71, 0.85);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .card-meta {
+    display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+
+  .meta-date-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+  }
+
+  .card-grid-title {
+    font-size: 1.15rem;
     color: var(--color-navy);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
   }
 
-  .calendar-placeholder h3 {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-  }
-
-  .calendar-placeholder p {
-    font-size: 0.9rem;
+  .card-grid-desc {
+    font-size: 0.88rem;
     color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  @media (max-width: 900px) {
-    .event-detailed-card {
+  .grid-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--color-slate);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .card-actions-row {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .card-btn {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.55rem 0.85rem;
+  }
+
+  /* Compact Academic Calendar Card */
+  .calendar-compact-card {
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 100%);
+    color: #ffffff;
+    border-radius: var(--border-radius-md);
+    padding: 2.25rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-cyan);
+  }
+
+  .calendar-title {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .calendar-desc {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 580px;
+  }
+
+  .calendar-action-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .next-event-preview {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(5, 135, 189, 0.3);
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-align: right;
+  }
+
+  .preview-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    letter-spacing: 1px;
+  }
+
+  .preview-title {
+    font-size: 0.92rem;
+    color: #ffffff;
+  }
+
+  .preview-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .calendar-cta {
+    font-size: 0.82rem;
+    padding: 0.65rem 1.25rem;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1100px) and (min-width: 768px) {
+    .past-events-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .upcoming-featured-card {
       grid-template-columns: 1fr;
     }
-    .event-image-side {
-      height: 200px;
+
+    .calendar-compact-card {
+      grid-template-columns: 1fr;
+    }
+
+    .calendar-action-side {
+      align-items: flex-start;
+    }
+
+    .next-event-preview {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .past-events-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .upcoming-featured-card {
+      grid-template-columns: 1fr;
+    }
+
+    .calendar-compact-card {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+
+    .calendar-action-side {
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .next-event-preview {
+      text-align: left;
+      width: 100%;
+    }
+
+    .calendar-cta {
+      width: 100%;
     }
   }
 </style>
