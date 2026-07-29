@@ -5,6 +5,7 @@ interface Props {
 
 const { currentPath = '/' } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const headerLogo = `${baseUrl}/assets/logos/ieee-ntc-official-trimmed.png`;
 
 function getHref(path: string) {
   if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
@@ -43,15 +44,17 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="site-container header-inner">
-    <!-- Geometric White Logo Panel -->
-    <a class="brand-panel" href={getHref('/')} aria-label="IEEE Nanotechnology Council Home">
+    <!-- Geometric White Logo Panel using Official NTC Logo -->
+    <a class="brand-panel" href={getHref('/')} aria-label="IEEE Nanotechnology Council Yachay Tech Home">
       <span class="brand-panel__surface">
         <img
           class="brand-panel__logo"
-          src={getHref('/assets/logos/ieee_nano_logo.svg')}
-          alt="IEEE Nanotechnology Council Yachay Tech Student Branch"
-          width="280"
-          height="44"
+          src={headerLogo}
+          alt="IEEE Nanotechnology Council"
+          width="420"
+          height="110"
+          loading="eager"
+          decoding="async"
         />
       </span>
       <span class="brand-panel__accent" aria-hidden="true"></span>
@@ -118,7 +121,7 @@ const navLinks = [
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
     <div class="mobile-drawer-header">
-      <img src={getHref('/assets/logos/ieee_nano_logo.svg')} alt="IEEE NTC Logo" width="240" height="42" />
+      <img src={headerLogo} alt="IEEE NTC Logo" width="240" height="60" />
       <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close navigation menu">
         &times;
       </button>
@@ -186,58 +189,53 @@ const navLinks = [
   .header-inner {
     height: 74px;
     display: grid;
-    grid-template-columns: 310px minmax(0, 1fr);
+    grid-template-columns: 320px minmax(0, 1fr);
     align-items: center;
-    gap: clamp(34px, 3vw, 62px);
+    gap: clamp(28px, 2.5vw, 56px);
   }
 
   /* Geometric White Logo Panel & Accent */
   .brand-panel {
     position: relative;
+    width: 320px;
+    height: 62px;
+    flex: 0 0 320px;
     display: block;
-    width: 310px;
-    height: 60px;
-    min-width: 310px;
     text-decoration: none;
   }
 
   .brand-panel__surface {
     position: absolute;
-    inset: 0 13px 0 0;
+    inset: 0 14px 0 0;
     display: flex;
     align-items: center;
     background: #ffffff;
-    padding: 6px 36px 6px 14px;
+    padding: 7px 48px 7px 16px;
     clip-path: polygon(
       0 0,
       100% 0,
-      calc(100% - 24px) 100%,
-      0 100%
-    );
-  }
-
-  .brand-panel__accent {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 28px;
-    height: 60px;
-    background: #0587bd;
-    clip-path: polygon(
-      45% 0,
-      100% 0,
-      55% 100%,
+      calc(100% - 25px) 100%,
       0 100%
     );
   }
 
   .brand-panel__logo {
     display: block;
-    width: auto;
-    height: 44px;
-    max-width: 250px;
+    width: 245px;
+    max-width: 100%;
+    height: 48px;
     object-fit: contain;
     object-position: left center;
+  }
+
+  .brand-panel__accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 62px;
+    background: #0587bd;
+    clip-path: polygon(45% 0, 100% 0, 55% 100%, 0 100%);
   }
 
   /* Primary Desktop Navigation */
@@ -463,7 +461,7 @@ const navLinks = [
     text-decoration: none;
   }
 
-  /* Responsive Breakpoint: 1140px */
+  /* Responsive Breakpoint: 1140px & Mobile */
   @media (max-width: 1140px) {
     .desktop-navigation {
       display: none;
@@ -478,8 +476,14 @@ const navLinks = [
     }
 
     .brand-panel {
-      width: clamp(240px, 45vw, 290px);
-      min-width: 240px;
+      width: 235px;
+      height: 56px;
+      flex-basis: 235px;
+    }
+
+    .brand-panel__logo {
+      width: 180px;
+      height: 41px;
     }
   }
 </style>
@@ -510,22 +514,6 @@ const navLinks = [
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeMobileMenu();
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        dropdownMenu?.classList.remove('show');
-      }
-    });
-
-    const dropdownBtn = document.getElementById('events-dropdown-btn');
-    const dropdownWrapper = dropdownBtn?.closest('.has-dropdown');
-
-    dropdownBtn?.addEventListener('focus', () => {
-      dropdownBtn.setAttribute('aria-expanded', 'true');
-    });
-
-    dropdownWrapper?.addEventListener('focusout', (e) => {
-      const relatedTarget = (e as FocusEvent).relatedTarget as HTMLElement;
-      if (!dropdownWrapper.contains(relatedTarget)) {
-        dropdownBtn?.setAttribute('aria-expanded', 'false');
       }
     });
   });
