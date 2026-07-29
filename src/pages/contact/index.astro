@@ -1,5 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { siteConfig } from '@/config/site';
+
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 function getHref(path: string) {
   if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
@@ -12,7 +14,7 @@ function getHref(path: string) {
   description="Get in touch with IEEE Nanotechnology Council Yachay Tech Student Branch. Send us a message, inquire about membership, or join our research tracks."
 >
   <section class="inner-banner">
-    <div class="container">
+    <div class="site-container">
       <div class="breadcrumb">
         <a href={getHref('/')}>Home</a> &gt; <span>Contact</span>
       </div>
@@ -22,7 +24,7 @@ function getHref(path: string) {
   </section>
 
   <section class="contact-section">
-    <div class="container">
+    <div class="site-container">
       <div class="contact-grid">
         <!-- Contact Form Column -->
         <div class="contact-form-card">
@@ -74,7 +76,7 @@ function getHref(path: string) {
 
             <button type="submit" class="btn btn-primary btn-block">
               SEND MESSAGE
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
 
             <!-- Success Alert Banner -->
@@ -92,31 +94,41 @@ function getHref(path: string) {
             <ul class="info-list">
               <li>
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
                 <div>
-                  <strong>Yachay Tech University Campus</strong>
-                  <p>Hacienda San José, San Miguel de Urcuquí<br>Imbabura, Ecuador</p>
+                  <strong>{siteConfig.location.institution} Campus</strong>
+                  <p>Hacienda San José, {siteConfig.location.city}<br>Imbabura, {siteConfig.location.country}</p>
                 </div>
               </li>
 
               <li>
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
                 <div>
                   <strong>Official Email</strong>
-                  <p><a href="mailto:ieee.ntc.yt@ieee.org">ieee.ntc.yt@ieee.org</a></p>
+                  <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
                 </div>
               </li>
 
               <li>
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <p><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">IEEE NTC Yachay Tech</a></p>
+                </div>
+              </li>
+
+              <li>
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
                 </div>
                 <div>
                   <strong>Instagram</strong>
-                  <p><a href="https://instagram.com/ieee.ntc.yt" target="_blank" rel="noopener noreferrer">@ieee.ntc.yt</a></p>
+                  <p><a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer">@ntc.yachaytech</a></p>
                 </div>
               </li>
             </ul>
@@ -146,7 +158,7 @@ function getHref(path: string) {
 
 <style>
   .inner-banner {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
     padding: 3rem 0 3.5rem;
     border-bottom: 3px solid var(--color-cyan);
@@ -164,7 +176,7 @@ function getHref(path: string) {
   }
 
   .banner-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     color: var(--color-white);
   }
 

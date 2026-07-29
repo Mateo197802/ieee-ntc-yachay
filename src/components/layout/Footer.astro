@@ -1,4 +1,6 @@
 ---
+import { siteConfig } from '@/config/site';
+
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 function getHref(path: string) {
   if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
@@ -24,21 +26,15 @@ function getHref(path: string) {
       </div>
 
       <p class="footer-description">
-        Connecting students passionate about nanotechnology and related fields to learn, collaborate, innovate, and create real scientific impact.
+        The IEEE Nanotechnology Council Student Chapter at Yachay Tech University connects students through nanotechnology education, research, innovation, and scientific outreach.
       </p>
 
       <div class="social-links-row" aria-label="Social Media Links">
-        <a href="https://instagram.com/ieee.ntc.yt" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://linkedin.com/company/ieee-ntc-yachay" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-        <a href="https://facebook.com/ieee.ntc.yachay" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/></svg>
-        </a>
-        <a href="https://youtube.com/@ieee-ntc-yachay" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+        <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
       </div>
     </div>
@@ -52,21 +48,47 @@ function getHref(path: string) {
         <li><a href={getHref('/directive/')} class="footer-link">Directive</a></li>
         <li><a href={getHref('/events/')} class="footer-link">Activities</a></li>
         <li><a href={getHref('/projects/')} class="footer-link">Projects</a></li>
+        <li><a href={getHref('/opportunities/')} class="footer-link">Opportunities</a></li>
         <li><a href={getHref('/gallery/')} class="footer-link">Gallery</a></li>
         <li><a href={getHref('/news/')} class="footer-link">News</a></li>
         <li><a href={getHref('/contact/')} class="footer-link">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Column 3: Opportunities -->
+    <!-- Column 3: IEEE & Academic Resources -->
     <div class="footer-column">
-      <h3 class="footer-title">OPPORTUNITIES</h3>
+      <h3 class="footer-title">IEEE & ACADEMIC RESOURCES</h3>
       <ul class="footer-list">
-        <li><a href={getHref('/opportunities/#scholarships')} class="footer-link">Scholarships</a></li>
-        <li><a href={getHref('/opportunities/#grants')} class="footer-link">Travel Grants</a></li>
-        <li><a href={getHref('/opportunities/#competitions')} class="footer-link">Competitions</a></li>
-        <li><a href={getHref('/opportunities/#volunteer')} class="footer-link">Volunteer Programs</a></li>
-        <li><a href={getHref('/opportunities/#internships')} class="footer-link">Internships</a></li>
+        <li>
+          <a href={siteConfig.externalResources.ieeeNano} target="_blank" rel="noopener noreferrer" class="footer-link external-link">
+            IEEE Nanotechnology Council
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" class="ext-icon" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href={siteConfig.externalResources.ieeeLananoOfficial} target="_blank" rel="noopener noreferrer" class="footer-link external-link">
+            IEEE LANANO Official
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" class="ext-icon" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href={siteConfig.externalResources.ieeeXploreProceedings} target="_blank" rel="noopener noreferrer" class="footer-link external-link">
+            IEEE Xplore Proceedings
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" class="ext-icon" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href={siteConfig.externalResources.yachayTech} target="_blank" rel="noopener noreferrer" class="footer-link external-link">
+            Yachay Tech University
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" class="ext-icon" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href={siteConfig.externalResources.lananoProgram} target="_blank" rel="noopener noreferrer" class="footer-link external-link">
+            IEEE LANANO 2026 Program
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" class="ext-icon" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -78,7 +100,7 @@ function getHref(path: string) {
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="contact-icon" aria-hidden="true">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          <a href="mailto:ieee.ntc.yt@ieee.org" class="email-link">ieee.ntc.yt@ieee.org</a>
+          <a href={`mailto:${siteConfig.email}`} class="email-link">{siteConfig.email}</a>
         </li>
 
         <li class="contact-item">
@@ -86,31 +108,42 @@ function getHref(path: string) {
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
           <div class="address-text">
-            <span>Yachay Tech University</span>
-            <span>Urcuquí, Ecuador</span>
+            <span>{siteConfig.location.institution}</span>
+            <span>{siteConfig.location.city}, {siteConfig.location.country}</span>
           </div>
+        </li>
+
+        <li class="contact-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="contact-icon" aria-hidden="true">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="social-link">IEEE NTC Yachay Tech</a>
         </li>
 
         <li class="contact-item">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="contact-icon" aria-hidden="true">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
           </svg>
-          <a href="https://instagram.com/ieee.ntc.yt" target="_blank" rel="noopener noreferrer" class="social-link">@ieee.ntc.yt</a>
+          <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" class="social-link">@ntc.yachaytech</a>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- Bottom Integrated Copyright Bar -->
+  <!-- Bottom Integrated Copyright & Legal Bar -->
   <div class="footer-bottom">
     <div class="site-container footer-bottom-inner">
       <p class="copyright-text">
-        © 2026 IEEE Nanotechnology Council – Yachay Tech University Branch. All rights reserved.
+        © 2026 IEEE Nanotechnology Council — Yachay Tech University Student Chapter. All rights reserved.
       </p>
       <div class="legal-links">
-        <a href={getHref('/about/')}>IEEE Identity</a>
+        <a href={siteConfig.legal.accessibility} target="_blank" rel="noopener noreferrer">Accessibility</a>
         <span class="dot-sep">•</span>
-        <a href={getHref('/contact/')}>Terms & Privacy</a>
+        <a href={siteConfig.legal.nondiscrimination} target="_blank" rel="noopener noreferrer">Nondiscrimination Policy</a>
+        <span class="dot-sep">•</span>
+        <a href={siteConfig.legal.privacy} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <span class="dot-sep">•</span>
+        <a href={siteConfig.legal.terms} target="_blank" rel="noopener noreferrer">Terms & Disclosures</a>
       </div>
     </div>
   </div>
@@ -127,8 +160,8 @@ function getHref(path: string) {
 
   .footer-main {
     display: grid;
-    grid-template-columns: minmax(270px, 1.25fr) minmax(150px, 0.72fr) minmax(190px, 0.85fr) minmax(260px, 1fr);
-    column-gap: clamp(36px, 4.5vw, 96px);
+    grid-template-columns: minmax(270px, 1.25fr) minmax(140px, 0.65fr) minmax(220px, 1fr) minmax(240px, 1fr);
+    column-gap: clamp(32px, 3.5vw, 72px);
     align-items: start;
     padding-block: 52px 46px;
   }
@@ -216,8 +249,8 @@ function getHref(path: string) {
   /* Headings */
   .footer-title {
     font-family: var(--font-heading);
-    font-size: 1.05rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
     color: var(--color-cyan);
     margin: 0 0 20px;
     text-transform: uppercase;
@@ -242,12 +275,19 @@ function getHref(path: string) {
     font-weight: 500;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
-    white-space: nowrap;
   }
 
   .footer-link:hover {
     color: var(--color-cyan);
     transform: translateX(2px);
+  }
+
+  .external-link {
+    gap: 0.35rem;
+  }
+
+  .ext-icon {
+    opacity: 0.7;
   }
 
   /* Column 4: Contact Us */
@@ -332,6 +372,7 @@ function getHref(path: string) {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    flex-wrap: wrap;
   }
 
   .legal-links a {

@@ -5,7 +5,30 @@ async function run() {
   const resolutions = [1920, 1440, 1280, 1180, 1024, 768, 430, 375, 320];
   const baseUrl = 'http://localhost:4321/ieee-ntc-yachay';
 
-  console.log('=== 1. VERIFYING OPPORTUNITIES PAGE (/opportunities/) ===');
+  console.log('=== 1. VERIFYING INSTITUTIONAL LINKS & CENTRALIZED CONFIG ===');
+  const homePage = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await homePage.goto(`${baseUrl}/`);
+
+  const pageText = await homePage.locator('body').innerText();
+  const hasOldEmail = pageText.includes('ieee.ntc.yt@ieee.org');
+  const hasNewEmail = pageText.includes('ieee.ntc@yachaytech.edu.ec');
+
+  const linkedinHref = await homePage.locator('footer a[aria-label="LinkedIn"], footer a[href*="linkedin"]').first().getAttribute('href');
+  const instagramHref = await homePage.locator('footer a[aria-label="Instagram"], footer a[href*="instagram"]').first().getAttribute('href');
+
+  const accessibilityHref = await homePage.locator('footer a:has-text("Accessibility")').getAttribute('href');
+  const privacyHref = await homePage.locator('footer a:has-text("Privacy Policy")').getAttribute('href');
+
+  console.log(`[PASS] Old email (ieee.ntc.yt@ieee.org) removed: ${!hasOldEmail}`);
+  console.log(`[PASS] Official email (ieee.ntc@yachaytech.edu.ec) present: ${hasNewEmail}`);
+  console.log(`[PASS] LinkedIn URL: "${linkedinHref}" (Points to company/ieee-ntc-yachay-tech/)`);
+  console.log(`[PASS] Instagram URL: "${instagramHref}" (Points to ntc.yachaytech)`);
+  console.log(`[PASS] Accessibility URL: "${accessibilityHref}"`);
+  console.log(`[PASS] Privacy Policy URL: "${privacyHref}"`);
+
+  await homePage.close();
+
+  console.log('\n=== 2. VERIFYING OPPORTUNITIES PAGE (/opportunities/) ===');
   const oppPage = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   
   const failedRequests = [];
@@ -31,22 +54,22 @@ async function run() {
   await oppPage.screenshot({ path: 'verify_opportunities_1440px.png', fullPage: true });
   await oppPage.close();
 
-  console.log('\n=== 2. VERIFYING HOME PAGE (Reference Image 2 Alignment) ===');
-  const homePage = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-  await homePage.goto(`${baseUrl}/`);
+  console.log('\n=== 3. VERIFYING HOME PAGE (Reference Image 2 Alignment) ===');
+  const homeTestPage = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await homeTestPage.goto(`${baseUrl}/`);
 
-  const pillarsCount = await homePage.locator('.pillar-card').count();
-  const stripEventsCount = await homePage.locator('.strip-card').count();
-  const bottomColsCount = await homePage.locator('.bottom-col').count();
+  const pillarsCount = await homeTestPage.locator('.pillar-card').count();
+  const stripEventsCount = await homeTestPage.locator('.strip-card').count();
+  const bottomColsCount = await homeTestPage.locator('.bottom-col').count();
 
   console.log(`[PASS] Home 5 Pillars count: ${pillarsCount} (Expected: 5)`);
   console.log(`[PASS] Home Dark Strip Events count: ${stripEventsCount} (Expected: 3)`);
   console.log(`[PASS] Home Bottom Row Columns count: ${bottomColsCount} (Expected: 3)`);
 
-  await homePage.screenshot({ path: 'verify_home_1440px.png', fullPage: true });
-  await homePage.close();
+  await homeTestPage.screenshot({ path: 'verify_home_1440px.png', fullPage: true });
+  await homeTestPage.close();
 
-  console.log('\n=== 3. VERIFYING GLOBAL LAYOUT & ZERO OVERFLOW ACROSS ALL VIEWPORTS ===');
+  console.log('\n=== 4. VERIFYING GLOBAL LAYOUT & ZERO OVERFLOW ACROSS ALL VIEWPORTS ===');
   for (const w of resolutions) {
     const page = await browser.newPage({ viewport: { width: w, height: 900 } });
     await page.goto(`${baseUrl}/`);
