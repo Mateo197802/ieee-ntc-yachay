@@ -203,24 +203,28 @@ const navLinks = [
     gap: clamp(24px, 2vw, 48px);
   }
 
-  /* Geometric White Logo Panel & Accent */
+  /* Geometric White Logo Panel & Accent Expanding Flush to Top Corner */
   .brand-panel {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
     flex: 0 0 390px;
     width: 390px;
-    height: 68px;
+    height: 74px;
     text-decoration: none;
   }
 
   .brand-panel__surface {
     position: absolute;
-    inset: 0 16px 0 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 16px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    padding: 8px 64px 8px 28px;
+    padding: 8px 64px 8px 24px;
     background: #ffffff;
     clip-path: polygon(
       0 0,
@@ -233,9 +237,10 @@ const navLinks = [
   .brand-panel__accent {
     position: absolute;
     top: 0;
+    bottom: 0;
     right: 0;
     width: 36px;
-    height: 68px;
+    height: 74px;
     background: #0587bd;
     clip-path: polygon(
       45% 0,
@@ -249,7 +254,7 @@ const navLinks = [
     display: block;
     width: 255px;
     max-width: 100%;
-    height: 50px;
+    height: 52px;
     object-fit: contain;
     object-position: left center;
   }
