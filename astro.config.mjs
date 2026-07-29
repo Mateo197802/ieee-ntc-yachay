@@ -43,8 +43,9 @@ ${pages.map(p => `  <url>
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://Mateo197802.github.io',
-  base: process.env.NODE_ENV === 'production' ? '/ieee-ntc-yachay' : '/',
+  site: 'https://mateo197802.github.io',
+  base: '/ieee-ntc-yachay',
+  trailingSlash: 'always',
   integrations: [customSitemapIntegration()],
   output: 'static',
   build: {

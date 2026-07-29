@@ -28,7 +28,7 @@ const navLinks = [
     dropdownItems: [
       { name: 'Upcoming Events', path: '/events/#upcoming' },
       { name: 'Past Events', path: '/events/#past' },
-      { name: 'Academic Calendar', path: '/events/#calendar' }
+      { name: 'Calendar View', path: '/events/#calendar' }
     ]
   },
   { name: 'Projects', path: '/projects/' },
@@ -43,22 +43,22 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="site-container header-inner">
-    <!-- Option 2: Geometric White Logo Panel with Diagonal End -->
-    <div class="brand-panel-wrapper">
-      <a href={getHref('/')} class="brand-panel" aria-label="IEEE Nanotechnology Council Yachay Tech Home">
-        <img 
-          src={getHref('/assets/logos/ieee_nano_logo.svg')} 
-          alt="IEEE Nanotechnology Council Yachay Tech Student Branch Official Logo" 
-          width="280" 
-          height="54" 
-          class="header-logo-img" 
+    <!-- Geometric White Logo Panel -->
+    <a class="brand-panel" href={getHref('/')} aria-label="IEEE Nanotechnology Council Home">
+      <span class="brand-panel__surface">
+        <img
+          class="brand-panel__logo"
+          src={getHref('/assets/logos/ieee_nano_logo.svg')}
+          alt="IEEE Nanotechnology Council Yachay Tech Student Branch"
+          width="280"
+          height="44"
         />
-      </a>
-      <div class="brand-panel-cyan-accent" aria-hidden="true"></div>
-    </div>
+      </span>
+      <span class="brand-panel__accent" aria-hidden="true"></span>
+    </a>
 
     <!-- Desktop Navigation Grid -->
-    <nav class="desktop-nav" aria-label="Main Navigation">
+    <nav class="desktop-navigation" aria-label="Primary navigation">
       <ul class="nav-list">
         {navLinks.map((link) => (
           <li class={`nav-item ${link.hasDropdown ? 'has-dropdown' : ''}`}>
@@ -66,7 +66,8 @@ const navLinks = [
               <div class="dropdown-wrapper">
                 <a 
                   href={getHref(link.path)} 
-                  class={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                  class="nav-link"
+                  aria-current={isActive(link.path) ? 'page' : undefined}
                   aria-expanded="false"
                   aria-haspopup="true"
                   id="events-dropdown-btn"
@@ -89,7 +90,7 @@ const navLinks = [
             ) : (
               <a 
                 href={getHref(link.path)} 
-                class={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                class="nav-link"
                 aria-current={isActive(link.path) ? 'page' : undefined}
               >
                 {link.name}
@@ -100,9 +101,9 @@ const navLinks = [
       </ul>
     </nav>
 
-    <!-- Mobile Hamburger Toggle -->
+    <!-- Mobile Menu Toggle Button -->
     <button 
-      class="mobile-toggle" 
+      class="mobile-menu-toggle" 
       id="mobile-toggle-btn" 
       aria-label="Toggle navigation menu"
       aria-expanded="false"
@@ -117,7 +118,7 @@ const navLinks = [
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
     <div class="mobile-drawer-header">
-      <img src={getHref('/assets/logos/ieee_nano_logo.svg')} alt="IEEE NTC Logo" width="240" height="46" />
+      <img src={getHref('/assets/logos/ieee_nano_logo.svg')} alt="IEEE NTC Logo" width="240" height="42" />
       <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close navigation menu">
         &times;
       </button>
@@ -127,7 +128,7 @@ const navLinks = [
       <ul class="mobile-nav-list">
         {navLinks.map((link) => (
           <li class="mobile-nav-item">
-            <a href={getHref(link.path)} class={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}>
+            <a href={getHref(link.path)} class="mobile-nav-link">
               {link.name}
             </a>
             {link.hasDropdown && (
@@ -150,104 +151,110 @@ const navLinks = [
 
 <style>
   .site-header {
+    height: 74px;
+    min-height: 74px;
+    background: #061b31;
+    border-bottom: 1px solid #0587bd;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #071C34;
-    border-bottom: 1px solid var(--color-cyan);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-    height: 74px;
+    width: 100%;
     display: flex;
     align-items: center;
-    width: 100%;
   }
 
   .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 1rem;
-    background: var(--color-cyan);
-    color: var(--color-white);
-    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #071c34;
+    border: 2px solid #0587bd;
+    transform: translateY(-160%);
+    transition: transform 160ms ease;
     font-weight: 700;
-    z-index: 2000;
-    transition: top 0.2s ease;
-    border-radius: 0 0 4px 4px;
+    text-decoration: none;
+    border-radius: 4px;
   }
 
   .skip-link:focus {
-    top: 0;
+    transform: translateY(0);
   }
 
   .header-inner {
+    height: 74px;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: 310px minmax(0, 1fr);
     align-items: center;
-    gap: clamp(24px, 2.5vw, 56px);
-    width: min(calc(100% - 64px), 1680px);
-    margin-inline: auto;
+    gap: clamp(34px, 3vw, 62px);
   }
 
-  /* Logo Panel Wrapper with Diagonal End and Cyan Accent */
-  .brand-panel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
+  /* Geometric White Logo Panel & Accent */
   .brand-panel {
     position: relative;
-    width: clamp(280px, 21vw, 320px);
-    height: 56px;
-    background-color: #ffffff;
+    display: block;
+    width: 310px;
+    height: 60px;
+    min-width: 310px;
+    text-decoration: none;
+  }
+
+  .brand-panel__surface {
+    position: absolute;
+    inset: 0 13px 0 0;
     display: flex;
     align-items: center;
-    padding: 6px 36px 6px 16px;
-    clip-path: polygon(0 0, 94% 0, 86% 100%, 0 100%);
-    text-decoration: none;
-    z-index: 2;
-    transition: opacity 0.2s ease;
+    background: #ffffff;
+    padding: 6px 36px 6px 14px;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      calc(100% - 24px) 100%,
+      0 100%
+    );
   }
 
-  .brand-panel:hover {
-    opacity: 0.96;
-  }
-
-  .brand-panel-cyan-accent {
+  .brand-panel__accent {
     position: absolute;
     top: 0;
-    left: 0;
-    width: clamp(290px, 21.8vw, 332px);
-    height: 56px;
-    background-color: var(--color-cyan);
-    clip-path: polygon(0 0, 96% 0, 88% 100%, 0 100%);
-    z-index: 1;
+    right: 0;
+    width: 28px;
+    height: 60px;
+    background: #0587bd;
+    clip-path: polygon(
+      45% 0,
+      100% 0,
+      55% 100%,
+      0 100%
+    );
   }
 
-  .header-logo-img {
-    height: 44px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+  .brand-panel__logo {
     display: block;
+    width: auto;
+    height: 44px;
+    max-width: 250px;
+    object-fit: contain;
+    object-position: left center;
   }
 
-  /* Desktop Navigation Links */
-  .desktop-nav {
+  /* Primary Desktop Navigation */
+  .desktop-navigation {
+    min-width: 0;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    width: 100%;
   }
 
   .nav-list {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp(14px, 1.5vw, 30px);
-    list-style: none;
-    padding: 0;
+    gap: clamp(16px, 1.6vw, 32px);
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .nav-item {
@@ -256,43 +263,44 @@ const navLinks = [
   }
 
   .nav-link {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-family: 'Open Sans', var(--font-body);
-    font-size: 0.78rem;
+    min-height: 44px;
+    color: #ffffff;
+    font-family: "Open Sans", var(--font-body);
+    font-size: 0.76rem;
     font-weight: 700;
+    line-height: 1;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    position: relative;
-    padding: 0.5rem 0.2rem;
     transition: color 0.2s ease;
   }
 
   .nav-link:hover,
   .nav-link:focus-visible {
-    color: var(--color-cyan);
+    color: #0587bd;
   }
 
-  .nav-link.active {
-    color: var(--color-cyan);
+  .nav-link[aria-current="page"] {
+    color: #0587bd;
   }
 
-  .nav-link.active::after {
-    content: '';
+  .nav-link[aria-current="page"]::after {
+    content: "";
     position: absolute;
-    bottom: -6px;
     left: 0;
     right: 0;
+    bottom: 4px;
     height: 2px;
-    background-color: var(--color-cyan);
+    background: #0587bd;
     border-radius: 1px;
   }
 
-  /* Dropdown Styles */
+  /* Dropdown Menu */
   .has-dropdown {
     position: relative;
   }
@@ -315,7 +323,7 @@ const navLinks = [
     top: 100%;
     right: 0;
     min-width: 210px;
-    background-color: #071C34;
+    background-color: #061b31;
     border: 1px solid rgba(5, 135, 189, 0.35);
     border-radius: 6px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -333,7 +341,7 @@ const navLinks = [
   .dropdown-menu.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
 
   .dropdown-item {
@@ -348,12 +356,12 @@ const navLinks = [
 
   .dropdown-item:hover,
   .dropdown-item:focus {
-    background-color: var(--color-cyan);
+    background-color: #0587bd;
     color: #ffffff;
   }
 
   /* Mobile Toggle & Drawer */
-  .mobile-toggle {
+  .mobile-menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -370,7 +378,7 @@ const navLinks = [
   .hamburger-bar {
     width: 100%;
     height: 3px;
-    background-color: var(--color-white);
+    background-color: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
@@ -379,10 +387,10 @@ const navLinks = [
     position: fixed;
     top: 0;
     right: 0;
-    width: 310px;
+    width: 300px;
     max-width: 85vw;
     height: 100vh;
-    background-color: #071C34;
+    background-color: #061b31;
     box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
     z-index: 2000;
     display: flex;
@@ -406,7 +414,7 @@ const navLinks = [
   .mobile-close-btn {
     background: transparent;
     border: none;
-    color: var(--color-white);
+    color: #ffffff;
     font-size: 2.2rem;
     line-height: 1;
     cursor: pointer;
@@ -427,7 +435,7 @@ const navLinks = [
   }
 
   .mobile-nav-link {
-    color: var(--color-white);
+    color: #ffffff;
     font-size: 1.05rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -436,9 +444,8 @@ const navLinks = [
     transition: color 0.2s ease;
   }
 
-  .mobile-nav-link.active,
   .mobile-nav-link:hover {
-    color: var(--color-cyan);
+    color: #0587bd;
   }
 
   .mobile-subnav-list {
@@ -456,17 +463,23 @@ const navLinks = [
     text-decoration: none;
   }
 
-  .mobile-subnav-link:hover {
-    color: var(--color-cyan);
-  }
-
-  /* Responsive Breakpoint: 1120px to prevent nav item overlap */
-  @media (max-width: 1120px) {
-    .desktop-nav {
+  /* Responsive Breakpoint: 1140px */
+  @media (max-width: 1140px) {
+    .desktop-navigation {
       display: none;
     }
-    .mobile-toggle {
+
+    .mobile-menu-toggle {
       display: flex;
+    }
+
+    .header-inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .brand-panel {
+      width: clamp(240px, 45vw, 290px);
+      min-width: 240px;
     }
   }
 </style>
