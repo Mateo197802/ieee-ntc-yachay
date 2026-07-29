@@ -272,11 +272,15 @@ function getHref(path: string) {
   }
 
   @media (max-width: 640px) {
+    .carousel-control {
+      display: none;
+    }
     .event-card-item {
       flex: 0 0 100%;
+      min-width: 220px;
     }
     .carousel-dark-card {
-      padding: 1.25rem 1rem;
+      padding: 1.25rem 0.85rem;
     }
   }
 </style>

@@ -129,15 +129,20 @@ function getHref(path: string) {
   }
 
   .hero-title {
-    font-size: 2.75rem;
-    line-height: 1.1;
+    font-size: clamp(1.25rem, 5.5vw, 2.75rem);
+    line-height: 1.15;
     color: var(--color-white);
     letter-spacing: 0.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .highlight-cyan {
     color: var(--color-cyan);
     display: block;
+    font-size: clamp(1.1rem, 4.8vw, 2.75rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
     text-shadow: 0 0 20px rgba(5, 135, 189, 0.4);
   }
 
@@ -213,7 +218,10 @@ function getHref(path: string) {
       grid-template-columns: 1fr;
     }
     .hero-title {
-      font-size: 2.25rem;
+      font-size: clamp(1.4rem, 4vw, 2.25rem);
+    }
+    .highlight-cyan {
+      font-size: clamp(1.2rem, 3.5vw, 2.25rem);
     }
     .hero-img {
       height: 360px;
@@ -222,7 +230,16 @@ function getHref(path: string) {
 
   @media (max-width: 480px) {
     .hero-title {
-      font-size: 1.85rem;
+      font-size: clamp(1rem, 4.5vw, 1.25rem);
+      letter-spacing: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .highlight-cyan {
+      font-size: clamp(0.85rem, 3.8vw, 1rem);
+      letter-spacing: -0.5px;
+      word-break: break-all;
+      display: inline-block;
     }
     .hero-actions {
       flex-direction: column;
