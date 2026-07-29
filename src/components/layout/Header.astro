@@ -5,7 +5,7 @@ interface Props {
 
 const { currentPath = '/' } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-const headerLogo = `${baseUrl}/assets/logos/ieee-ntc-official-trimmed.png`;
+const ntcLogo = `${baseUrl}/assets/logos/ieee-ntc-official-trimmed.png`;
 
 function getHref(path: string) {
   if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
@@ -44,23 +44,32 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="site-container header-inner">
-    <!-- Geometric White Logo Panel using Official NTC Logo -->
-    <a class="brand-panel" href={getHref('/')} aria-label="IEEE Nanotechnology Council Yachay Tech Home">
+    <!-- Geometric White Logo Panel using Extracted Official NTC Logo -->
+    <a
+      class="brand-panel"
+      href={getHref('/')}
+      aria-label="IEEE Nanotechnology Council Yachay Tech Home"
+    >
       <span class="brand-panel__surface">
         <img
           class="brand-panel__logo"
-          src={headerLogo}
+          src={ntcLogo}
           alt="IEEE Nanotechnology Council"
           width="420"
-          height="110"
+          height="112"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
       </span>
-      <span class="brand-panel__accent" aria-hidden="true"></span>
+
+      <span
+        class="brand-panel__accent"
+        aria-hidden="true"
+      ></span>
     </a>
 
-    <!-- Desktop Navigation Grid -->
+    <!-- Primary Navigation Bar -->
     <nav class="desktop-navigation" aria-label="Primary navigation">
       <ul class="nav-list">
         {navLinks.map((link) => (
@@ -121,7 +130,7 @@ const navLinks = [
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
     <div class="mobile-drawer-header">
-      <img src={headerLogo} alt="IEEE NTC Logo" width="240" height="60" />
+      <img src={ntcLogo} alt="IEEE NTC Logo" width="240" height="60" />
       <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close navigation menu">
         &times;
       </button>
@@ -189,56 +198,62 @@ const navLinks = [
   .header-inner {
     height: 74px;
     display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-columns: 360px minmax(0, 1fr);
     align-items: center;
-    gap: clamp(28px, 2.5vw, 56px);
+    gap: clamp(24px, 2vw, 48px);
   }
 
   /* Geometric White Logo Panel & Accent */
   .brand-panel {
     position: relative;
-    width: 320px;
-    height: 62px;
-    flex: 0 0 320px;
     display: block;
+    flex: 0 0 360px;
+    width: 360px;
+    height: 68px;
     text-decoration: none;
   }
 
   .brand-panel__surface {
     position: absolute;
-    inset: 0 14px 0 0;
+    inset: 0 15px 0 0;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    padding: 8px 58px 8px 20px;
     background: #ffffff;
-    padding: 7px 48px 7px 16px;
     clip-path: polygon(
       0 0,
       100% 0,
-      calc(100% - 25px) 100%,
+      calc(100% - 28px) 100%,
       0 100%
     );
-  }
-
-  .brand-panel__logo {
-    display: block;
-    width: 245px;
-    max-width: 100%;
-    height: 48px;
-    object-fit: contain;
-    object-position: left center;
   }
 
   .brand-panel__accent {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px;
-    height: 62px;
+    width: 34px;
+    height: 68px;
     background: #0587bd;
-    clip-path: polygon(45% 0, 100% 0, 55% 100%, 0 100%);
+    clip-path: polygon(
+      45% 0,
+      100% 0,
+      55% 100%,
+      0 100%
+    );
   }
 
-  /* Primary Desktop Navigation */
+  .brand-panel__logo {
+    display: block;
+    width: 275px;
+    max-width: 100%;
+    height: 50px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  /* Desktop Navigation */
   .desktop-navigation {
     min-width: 0;
     display: flex;
@@ -249,7 +264,7 @@ const navLinks = [
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: clamp(16px, 1.6vw, 32px);
+    gap: clamp(14px, 1.4vw, 28px);
     margin: 0;
     padding: 0;
     list-style: none;
