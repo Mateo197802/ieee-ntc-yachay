@@ -1,0 +1,269 @@
+---
+import { NEWS_DATA } from '@/data/news';
+import { GALLERY_DATA } from '@/data/gallery';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+
+const latestNews = NEWS_DATA.slice(0, 2);
+const galleryThumbnails = GALLERY_DATA.slice(0, 4);
+
+const pillars = [
+  {
+    name: 'RESEARCH',
+    desc: 'Promoting research in nanotechnology.',
+    icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0-14 0"></path><path d="M9 14v-4"></path><path d="M9 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>`
+  },
+  {
+    name: 'OUTREACH',
+    desc: 'Bringing science to schools and communities.',
+    icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`
+  },
+  {
+    name: 'INNOVATION',
+    desc: 'Developing ideas for a better future.',
+    icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.6 2.84 1.5 3.5.76.76 1.23 1.52 1.41 2.5"></path></svg>`
+  },
+  {
+    name: 'SERVICE',
+    desc: 'Creating positive impact through service.',
+    icon: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`
+  }
+];
+---
+
+<section class="bottom-grid-section" aria-label="Projects News and Gallery Overview">
+  <div class="container">
+    <div class="bottom-grid">
+      <!-- Column 1: Projects & Initiatives -->
+      <div class="grid-card">
+        <div class="card-header">
+          <h2 class="card-title font-heading">PROJECTS & INITIATIVES</h2>
+          <a href={getHref('/projects/')} class="card-link">
+            VIEW ALL PROJECTS
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="pillars-grid">
+          {pillars.map((p) => (
+            <div class="pillar-item">
+              <div class="pillar-icon" set:html={p.icon} />
+              <h3 class="pillar-name">{p.name}</h3>
+              <p class="pillar-desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Column 2: Latest News -->
+      <div class="grid-card">
+        <div class="card-header">
+          <h2 class="card-title font-heading">LATEST NEWS</h2>
+          <a href={getHref('/news/')} class="card-link">
+            VIEW ALL NEWS
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="news-list">
+          {latestNews.map((news) => (
+            <a href={getHref('/news/')} class="news-item">
+              <img src={getHref(news.image)} alt={news.title} width="80" height="60" class="news-thumb" />
+              <div class="news-content">
+                <span class="news-date">{news.date}</span>
+                <h3 class="news-item-title">{news.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Column 3: Gallery Highlights -->
+      <div class="grid-card">
+        <div class="card-header">
+          <h2 class="card-title font-heading">GALLERY HIGHLIGHTS</h2>
+          <a href={getHref('/gallery/')} class="card-link">
+            VIEW ALL PHOTOS
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="gallery-thumbs-grid">
+          {galleryThumbnails.map((photo) => (
+            <a href={getHref('/gallery/')} class="thumb-link" title={photo.title}>
+              <img src={getHref(photo.image)} alt={photo.title} width="120" height="90" loading="lazy" class="gallery-thumb-img" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bottom-grid-section {
+    padding: 3rem 0;
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.75rem;
+  }
+
+  .grid-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.85rem;
+    border-bottom: 2px solid var(--color-cyan);
+    margin-bottom: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    color: var(--color-navy);
+    letter-spacing: 0.5px;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .card-link:hover {
+    color: var(--color-navy);
+  }
+
+  /* Pillars Layout */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .pillar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .pillar-icon {
+    color: var(--color-cyan);
+    margin-bottom: 0.4rem;
+  }
+
+  .pillar-name {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-navy);
+  }
+
+  .pillar-desc {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1.3;
+  }
+
+  /* News List Layout */
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .news-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.2s ease;
+  }
+
+  .news-item:hover {
+    background-color: var(--color-bg-light);
+  }
+
+  .news-thumb {
+    width: 76px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
+  }
+
+  .news-date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .news-item-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.3;
+  }
+
+  /* Gallery Thumbs Layout */
+  .gallery-thumbs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .thumb-link {
+    display: block;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    height: 90px;
+  }
+
+  .gallery-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thumb-link:hover .gallery-thumb-img {
+    transform: scale(1.06);
+  }
+
+  @media (max-width: 1024px) {
+    .bottom-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

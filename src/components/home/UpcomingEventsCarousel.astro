@@ -1,0 +1,298 @@
+---
+import { EVENTS_DATA } from '@/data/events';
+const upcomingEvents = EVENTS_DATA.filter((e) => e.category === 'Upcoming');
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+---
+
+<section class="events-carousel-section" aria-label="Upcoming Events Showcase">
+  <div class="container">
+    <div class="carousel-dark-card">
+      <!-- Carousel Header -->
+      <div class="carousel-header">
+        <div class="header-left">
+          <span class="dot-indicator"></span>
+          <h2 class="carousel-title font-heading">UPCOMING EVENTS</h2>
+        </div>
+        <a href={getHref('/events/')} class="view-all-link">
+          VIEW ALL EVENTS
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Carousel Cards & Controls -->
+      <div class="carousel-viewport-wrapper">
+        <button class="carousel-control prev" id="carousel-prev-btn" aria-label="Previous event">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+
+        <div class="carousel-track" id="carousel-track">
+          {upcomingEvents.map((event) => (
+            <div class="event-card-item">
+              <div class="event-card-inner">
+                <div class="event-img-box">
+                  <img src={getHref(event.image)} alt={event.title} width="320" height="180" loading="lazy" class="event-img" />
+                  <span class="event-badge">{event.type}</span>
+                </div>
+                <div class="event-info-box">
+                  <div class="event-meta">
+                    <span class="meta-date">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                      {event.date}
+                    </span>
+                  </div>
+                  <h3 class="event-card-title">{event.title}</h3>
+                  <p class="event-location">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    {event.location}
+                  </p>
+                  <a href={getHref(`/events/#${event.slug}`)} class="event-details-btn">
+                    VIEW DETAILS
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button class="carousel-control next" id="carousel-next-btn" aria-label="Next event">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-carousel-section {
+    padding: 3rem 0;
+    background-color: var(--color-bg-light);
+  }
+
+  .carousel-dark-card {
+    background-color: var(--color-navy);
+    border-radius: var(--border-radius-md);
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--color-cyan);
+    color: var(--color-white);
+  }
+
+  .carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 1.5rem;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .dot-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--color-cyan);
+  }
+
+  .carousel-title {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    letter-spacing: 1px;
+  }
+
+  .view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-cyan);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .view-all-link:hover {
+    color: var(--color-white);
+  }
+
+  .carousel-viewport-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0;
+    width: 100%;
+    scrollbar-width: none;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .event-card-item {
+    flex: 0 0 calc(33.333% - 0.85rem);
+    scroll-snap-align: start;
+    min-width: 280px;
+  }
+
+  .event-card-inner {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.2s ease;
+  }
+
+  .event-card-inner:hover {
+    transform: translateY(-4px);
+  }
+
+  .event-img-box {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+  }
+
+  .event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--color-navy);
+    color: var(--color-cyan);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .event-info-box {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.5rem;
+  }
+
+  .meta-date {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+  }
+
+  .event-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.3;
+  }
+
+  .event-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .event-details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-institutional-blue);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .event-details-btn:hover {
+    color: var(--color-cyan);
+  }
+
+  .carousel-control {
+    background-color: var(--color-cyan);
+    color: var(--color-white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .carousel-control:hover {
+    background-color: var(--color-hover-cyan);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1024px) {
+    .event-card-item {
+      flex: 0 0 calc(50% - 0.65rem);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .event-card-item {
+      flex: 0 0 100%;
+    }
+    .carousel-dark-card {
+      padding: 1.25rem 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev-btn');
+    const nextBtn = document.getElementById('carousel-next-btn');
+
+    prevBtn?.addEventListener('click', () => {
+      track?.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      track?.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+  });
+</script>

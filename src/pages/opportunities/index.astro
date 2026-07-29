@@ -1,0 +1,204 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { OPPORTUNITIES_DATA } from '@/data/opportunities';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+---
+
+<Layout 
+  title="Opportunities | IEEE Nanotechnology Council Yachay Tech"
+  description="Explore IEEE NTC Activity Grants, LANANO Travel Awards, volunteering calls, student competitions, and research scholarships."
+>
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href={getHref('/')}>Home</a> &gt; <span>Opportunities</span>
+      </div>
+      <h1 class="banner-title font-heading">OPPORTUNITIES</h1>
+      <p class="banner-subtitle">Scholarships, Activity Grants, Travel Awards, Volunteering Calls & IEEE Programs.</p>
+    </div>
+  </section>
+
+  <section class="opps-section">
+    <div class="container">
+      <div class="opps-grid">
+        {OPPORTUNITIES_DATA.map((opp) => (
+          <div class="opp-card" id={opp.id}>
+            <div class="opp-header">
+              <span class="opp-cat">{opp.category}</span>
+              <span class={`opp-status ${opp.status.toLowerCase()}`}>{opp.status}</span>
+            </div>
+
+            <div class="opp-body">
+              <h2 class="opp-title">{opp.title}</h2>
+              <p class="opp-institution">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                {opp.institution}
+              </p>
+              <p class="opp-summary">{opp.description}</p>
+
+              <div class="opp-meta-row">
+                <span class="meta-deadline">
+                  <strong>Deadline:</strong> {opp.deadline}
+                </span>
+                <span class="meta-modality">{opp.modality}</span>
+              </div>
+
+              <div class="opp-footer">
+                <a href={opp.officialUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  APPLY / DETAILS
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .inner-banner {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    color: var(--color-white);
+    padding: 3rem 0 3.5rem;
+    border-bottom: 3px solid var(--color-cyan);
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    color: var(--color-white);
+  }
+
+  .banner-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.5rem;
+  }
+
+  .opps-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+  }
+
+  .opps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .opp-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
+    border-top: 4px solid var(--color-cyan);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .opp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem 0.5rem;
+  }
+
+  .opp-cat {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .opp-status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+
+  .opp-status.open {
+    background-color: #D1FAE5;
+    color: #065F46;
+  }
+
+  .opp-status.upcoming {
+    background-color: #FEF3C7;
+    color: #92400E;
+  }
+
+  .opp-body {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.65rem;
+  }
+
+  .opp-title {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+  }
+
+  .opp-institution {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--color-slate);
+    font-weight: 600;
+  }
+
+  .opp-summary {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .opp-meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-navy);
+    background-color: var(--color-bg-light);
+    padding: 0.6rem 0.85rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .opp-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 900px) {
+    .opps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

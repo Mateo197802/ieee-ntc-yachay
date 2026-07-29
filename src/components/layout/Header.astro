@@ -1,0 +1,473 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+
+function isActive(path: string) {
+  const normalizedCurrent = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+  if (path === '/' && (normalizedCurrent === '/' || normalizedCurrent === `${baseUrl}/`)) return true;
+  return path !== '/' && normalizedCurrent.includes(path);
+}
+
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about/' },
+  { name: 'Directive', path: '/directive/' },
+  { 
+    name: 'Events', 
+    path: '/events/', 
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'Upcoming Events', path: '/events/#upcoming' },
+      { name: 'Past Events', path: '/events/#past' },
+      { name: 'Calendar View', path: '/events/#calendar' }
+    ]
+  },
+  { name: 'Projects', path: '/projects/' },
+  { name: 'Opportunities', path: '/opportunities/' },
+  { name: 'Gallery', path: '/gallery/' },
+  { name: 'News', path: '/news/' },
+  { name: 'Contact', path: '/contact/' }
+];
+---
+
+<header class="site-header" id="main-header">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="container header-container">
+    <!-- Institutional Logo Badge -->
+    <a href={getHref('/')} class="header-logo-link" aria-label="IEEE Nanotechnology Council Yachay Tech Home">
+      <img src={getHref('/assets/logos/ieee_nano_logo.svg')} alt="IEEE Nanotechnology Council - Yachay Tech University Student Branch Logo" width="360" height="68" class="header-logo-img" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        {navLinks.map((link) => (
+          <li class={`nav-item ${link.hasDropdown ? 'has-dropdown' : ''}`}>
+            {link.hasDropdown ? (
+              <div class="dropdown-wrapper">
+                <a 
+                  href={getHref(link.path)} 
+                  class={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  id="events-dropdown-btn"
+                >
+                  {link.name}
+                  <svg class="dropdown-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                    <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="events-dropdown-btn" role="menu">
+                  {link.dropdownItems?.map((item) => (
+                    <li role="none">
+                      <a href={getHref(item.path)} class="dropdown-item" role="menuitem">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <a 
+                href={getHref(link.path)} 
+                class={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                aria-current={isActive(link.path) ? 'page' : undefined}
+              >
+                {link.name}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button 
+      class="mobile-toggle" 
+      id="mobile-toggle-btn" 
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav-drawer"
+    >
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <img src={getHref('/assets/logos/ieee_nano_logo.svg')} alt="IEEE NTC Logo" width="260" height="50" />
+      <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close navigation menu">
+        &times;
+      </button>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        {navLinks.map((link) => (
+          <li class="mobile-nav-item">
+            <a href={getHref(link.path)} class={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}>
+              {link.name}
+            </a>
+            {link.hasDropdown && (
+              <ul class="mobile-subnav-list">
+                {link.dropdownItems?.map((item) => (
+                  <li>
+                    <a href={getHref(item.path)} class="mobile-subnav-link">
+                      • {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Header Layout */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-navy);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    border-bottom: 2px solid var(--color-cyan);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--color-cyan);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    z-index: 2000;
+    transition: top 0.2s ease;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .header-logo-link:hover {
+    opacity: 0.95;
+  }
+
+  .header-logo-img {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.85rem;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--color-cyan);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link.active {
+    color: var(--color-cyan);
+    font-weight: 700;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0.85rem;
+    right: 0.85rem;
+    height: 3px;
+    background-color: var(--color-cyan);
+    border-radius: 2px;
+  }
+
+  /* Dropdown Styles */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .dropdown-wrapper {
+    position: relative;
+  }
+
+  .dropdown-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .has-dropdown:hover .dropdown-icon,
+  .has-dropdown:focus-within .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: var(--color-navy);
+    border: 1px solid rgba(5, 135, 189, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 1100;
+  }
+
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu,
+  .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(4px);
+  }
+
+  .dropdown-item {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: var(--color-cyan);
+    color: var(--color-white);
+  }
+
+  /* Mobile Toggle & Drawer */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1050;
+  }
+
+  .hamburger-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+    background-color: var(--color-navy);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-drawer.open {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mobile-nav-link {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+
+    transition: color 0.2s ease;
+  }
+
+  .mobile-nav-link.active,
+  .mobile-nav-link:hover {
+    color: var(--color-cyan);
+  }
+
+  .mobile-subnav-list {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-subnav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .mobile-subnav-link:hover {
+    color: var(--color-cyan);
+  }
+
+  /* Responsive Breakpoint */
+  @media (max-width: 1080px) {
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Accessible Keyboard & Touch Dropdown Logic + Mobile Drawer
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('mobile-toggle-btn');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    const mobileClose = document.getElementById('mobile-close-btn');
+
+    function openMobileMenu() {
+      mobileDrawer?.classList.add('open');
+      mobileDrawer?.setAttribute('aria-hidden', 'false');
+      mobileBtn?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileDrawer?.classList.remove('open');
+      mobileDrawer?.setAttribute('aria-hidden', 'true');
+      mobileBtn?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    mobileBtn?.addEventListener('click', openMobileMenu);
+    mobileClose?.addEventListener('click', closeMobileMenu);
+
+    // Escape Key to Close Menus
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        dropdownMenu?.classList.remove('show');
+      }
+    });
+
+    // Keyboard Tab Navigation for Dropdown
+    const dropdownBtn = document.getElementById('events-dropdown-btn');
+    const dropdownWrapper = dropdownBtn?.closest('.has-dropdown');
+
+    dropdownBtn?.addEventListener('focus', () => {
+      dropdownBtn.setAttribute('aria-expanded', 'true');
+    });
+
+    dropdownWrapper?.addEventListener('focusout', (e) => {
+      const relatedTarget = (e as FocusEvent).relatedTarget as HTMLElement;
+      if (!dropdownWrapper.contains(relatedTarget)) {
+        dropdownBtn?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>

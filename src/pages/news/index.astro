@@ -1,0 +1,199 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { NEWS_DATA } from '@/data/news';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+---
+
+<Layout 
+  title="News & Publications | IEEE Nanotechnology Council Yachay Tech"
+  description="Stay updated with the latest news, conference announcements, TEMSCON LATAM participation, and STEM outreach updates from IEEE NTC Yachay Tech."
+>
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href={getHref('/')}>Home</a> &gt; <span>News</span>
+      </div>
+      <h1 class="banner-title font-heading">NEWS & ANNOUNCEMENTS</h1>
+      <p class="banner-subtitle">Official announcements, conference highlights, and chapter publications.</p>
+    </div>
+  </section>
+
+  <section class="news-section">
+    <div class="container">
+      <div class="news-grid">
+        {NEWS_DATA.map((article) => (
+          <article class="news-card">
+            <div class="news-img-box">
+              <img src={getHref(article.image)} alt={article.title} width="400" height="240" loading="lazy" class="article-img" />
+              <span class="category-tag">{article.category}</span>
+            </div>
+
+            <div class="news-card-body">
+              <div class="news-meta">
+                <span class="meta-date">{article.date}</span>
+                <span class="meta-author">• By {article.author}</span>
+              </div>
+
+              <h2 class="article-title">{article.title}</h2>
+              <p class="article-summary">{article.summary}</p>
+              <p class="article-content-preview">{article.content}</p>
+
+              <div class="article-tags">
+                {article.tags.map((tag) => (
+                  <span class="tag-pill">#{tag}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .inner-banner {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    color: var(--color-white);
+    padding: 3rem 0 3.5rem;
+    border-bottom: 3px solid var(--color-cyan);
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    color: var(--color-white);
+  }
+
+  .banner-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.5rem;
+  }
+
+  .news-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+  }
+
+  .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .news-card {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .news-img-box {
+    position: relative;
+    height: 100%;
+    min-height: 240px;
+  }
+
+  .article-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--color-cyan);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .news-card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .news-meta {
+    font-size: 0.8rem;
+    color: var(--color-cyan);
+    font-weight: 700;
+  }
+
+  .article-title {
+    font-size: 1.35rem;
+    color: var(--color-navy);
+    line-height: 1.3;
+  }
+
+  .article-summary {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .article-content-preview {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .tag-pill {
+    background-color: var(--color-bg-light);
+    color: var(--color-slate);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .news-card {
+      grid-template-columns: 1fr;
+    }
+    .news-img-box {
+      height: 220px;
+    }
+  }
+</style>

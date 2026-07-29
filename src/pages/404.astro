@@ -1,0 +1,43 @@
+---
+import Layout from '@/layouts/Layout.astro';
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+---
+
+<Layout title="404 - Page Not Found | IEEE NTC Yachay Tech">
+  <section class="not-found-section">
+    <div class="container text-center">
+      <h1 class="error-code font-heading">404</h1>
+      <h2 class="error-title">Page Not Found</h2>
+      <p class="error-desc">The page you are looking for might have been removed or is temporarily unavailable.</p>
+      <a href={getHref('/')} class="btn btn-primary">
+        RETURN TO HOMEPAGE
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found-section {
+    padding: 6rem 0;
+    background-color: var(--color-white);
+  }
+  .error-code {
+    font-size: 6rem;
+    color: var(--color-cyan);
+    line-height: 1;
+  }
+  .error-title {
+    font-size: 2rem;
+    color: var(--color-navy);
+    margin: 1rem 0;
+  }
+  .error-desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+</style>

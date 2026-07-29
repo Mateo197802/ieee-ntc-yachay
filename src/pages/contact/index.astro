@@ -1,0 +1,388 @@
+---
+import Layout from '@/layouts/Layout.astro';
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+function getHref(path: string) {
+  if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
+  return `${baseUrl}${path}`;
+}
+---
+
+<Layout 
+  title="Contact Us | IEEE Nanotechnology Council Yachay Tech"
+  description="Get in touch with IEEE Nanotechnology Council Yachay Tech Student Branch. Send us a message, inquire about membership, or join our research tracks."
+>
+  <section class="inner-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href={getHref('/')}>Home</a> &gt; <span>Contact</span>
+      </div>
+      <h1 class="banner-title font-heading">CONTACT US</h1>
+      <p class="banner-subtitle">Have questions about IEEE NTC membership, workshops, or research collaborations? We're here to help.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form Column -->
+        <div class="contact-form-card">
+          <h2 class="form-title font-heading">SEND US A MESSAGE</h2>
+          <p class="form-desc">Fill out the form below and our executive board will respond within 24-48 hours.</p>
+
+          <form id="contact-form" action="https://formspree.io/f/demo" method="POST" class="contact-form" novalidate>
+            <!-- Honeypot Bot Field -->
+            <div class="sr-only" aria-hidden="true">
+              <label for="bot-field">Do not fill this out if you are human:</label>
+              <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="name" required placeholder="e.g. Maria Gabriela Perez" class="form-control" />
+              <span class="error-msg" id="error-name">Please enter your full name.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Institutional or Personal Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="e.g. maria.perez@yachaytech.edu.ec" class="form-control" />
+              <span class="error-msg" id="error-email">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject <span class="required">*</span></label>
+              <select id="subject" name="subject" required class="form-control">
+                <option value="">Select a topic...</option>
+                <option value="membership">IEEE NTC Membership Inquiry</option>
+                <option value="lanano">LANANO Research Mentorship Track</option>
+                <option value="workshop">Workshop & Event Registration</option>
+                <option value="outreach">School STEM Outreach Collaboration</option>
+                <option value="general">General Question / Support</option>
+              </select>
+              <span class="error-msg" id="error-subject">Please select a topic.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Type your inquiry or message details..." class="form-control"></textarea>
+              <span class="error-msg" id="error-message">Please enter your message.</span>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="privacyConsent" name="privacyConsent" required />
+              <label for="privacyConsent">I agree to allow IEEE NTC Yachay Tech to process my contact details to reply to my request.</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              SEND MESSAGE
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+
+            <!-- Success Alert Banner -->
+            <div class="form-status success" id="form-status-success" style="display: none;" role="alert">
+              <strong>Message Sent Successfully!</strong> Thank you for contacting IEEE NTC Yachay Tech. We will reply to your email shortly.
+            </div>
+          </form>
+        </div>
+
+        <!-- Location & Contact Info Column -->
+        <div class="contact-info-column">
+          <div class="info-card">
+            <h2 class="card-title font-heading">HEADQUARTERS & LOCATION</h2>
+            
+            <ul class="info-list">
+              <li>
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div>
+                  <strong>Yachay Tech University Campus</strong>
+                  <p>Hacienda San José, San Miguel de Urcuquí<br>Imbabura, Ecuador</p>
+                </div>
+              </li>
+
+              <li>
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div>
+                  <strong>Official Email</strong>
+                  <p><a href="mailto:ieee.ntc.yt@ieee.org">ieee.ntc.yt@ieee.org</a></p>
+                </div>
+              </li>
+
+              <li>
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+                <div>
+                  <strong>Instagram</strong>
+                  <p><a href="https://instagram.com/ieee.ntc.yt" target="_blank" rel="noopener noreferrer">@ieee.ntc.yt</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Interactive Google Maps Frame -->
+          <div class="map-card">
+            <h3 class="map-heading">YACHAY TECH CAMPUS MAP</h3>
+            <div class="map-embed-wrapper">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.056122606558!2d-78.1884067!3d0.4285871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a39281dd61d0d%3A0xa19fbc7c014798e6!2sUniversidad%20Yachay%20Tech!5e0!3m2!1sen!2sec!4v1700000000000!5m2!1sen!2sec" 
+                width="100%" 
+                height="220" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Yachay Tech University Google Map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .inner-banner {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    color: var(--color-white);
+    padding: 3rem 0 3.5rem;
+    border-bottom: 3px solid var(--color-cyan);
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    color: var(--color-white);
+  }
+
+  .banner-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.5rem;
+  }
+
+  .contact-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 2.5rem;
+  }
+
+  .contact-form-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    color: var(--color-navy);
+  }
+
+  .form-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .required {
+    color: #DC2626;
+  }
+
+  .form-control {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .form-control:focus {
+    border-color: var(--color-cyan);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(5, 135, 189, 0.2);
+  }
+
+  .checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .checkbox-group input {
+    margin-top: 3px;
+  }
+
+  .checkbox-group label {
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  .error-msg {
+    font-size: 0.75rem;
+    color: #DC2626;
+    display: none;
+  }
+
+  .btn-block {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .form-status.success {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #D1FAE5;
+    border: 1px solid #10B981;
+    color: #065F46;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+  }
+
+  /* Contact Info Column */
+  .contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .info-card, .map-card {
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-md);
+    padding: 1.75rem;
+    border: 1px solid var(--color-border-light);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 1.25rem;
+  }
+
+  .info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .info-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-navy);
+    color: var(--color-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-list strong {
+    font-size: 0.9rem;
+    color: var(--color-navy);
+    display: block;
+  }
+
+  .info-list p, .info-list a {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  .info-list a:hover {
+    color: var(--color-cyan);
+  }
+
+  .map-heading {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--color-navy);
+    margin-bottom: 0.85rem;
+  }
+
+  .map-embed-wrapper {
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--color-border-light);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successBanner = document.getElementById('form-status-success');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Check honeypot
+      const botVal = (document.getElementById('bot-field') as HTMLInputElement)?.value;
+      if (botVal) return;
+
+      const name = (document.getElementById('fullName') as HTMLInputElement)?.value;
+      const email = (document.getElementById('email') as HTMLInputElement)?.value;
+      const subject = (document.getElementById('subject') as HTMLSelectElement)?.value;
+      const message = (document.getElementById('message') as HTMLTextAreaElement)?.value;
+      const consent = (document.getElementById('privacyConsent') as HTMLInputElement)?.checked;
+
+      if (name && email && subject && message && consent) {
+        if (successBanner) successBanner.style.display = 'block';
+        form.reset();
+      }
+    });
+  });
+</script>

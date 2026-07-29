@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette strictly following specifications */
+  --color-navy: #1F3E65;
+  --color-deep-blue: #264061;
+  --color-institutional-blue: #04608E;
+  --color-cyan: #0587BD;
+  --color-slate: #465D64;
+  --color-white: #FFFFFF;
+
+  /* Auxiliary Tones */
+  --color-bg-light: #F4F7FA;
+  --color-bg-alt: #EBF1F6;
+  --color-border-light: #D5E1EA;
+  --color-text-dark: #122236;
+  --color-text-muted: #465D64;
+  --color-hover-blue: #034A6E;
+  --color-hover-cyan: #046FA1;
+  --color-card-bg: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Anton', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Open Sans', system-ui, sans-serif;
+
+  /* Spacing & Layout */
+  --container-max: 1280px;
+  --header-height: 76px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 12px rgba(31, 62, 101, 0.08);
+  --shadow-hover: 0 8px 24px rgba(31, 62, 101, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-navy);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, #34B0E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-cyan);
+  color: var(--color-white);
+  border-color: var(--color-cyan);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hover-cyan);
+  border-color: var(--color-hover-cyan);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Section Header Styles */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-navy);
+  text-transform: uppercase;
+}
+
+.section-title-dark {
+  color: var(--color-white);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

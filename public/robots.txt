@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Mateo197802.github.io/ieee-ntc-yachay/sitemap-index.xml
