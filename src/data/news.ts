@@ -3,55 +3,66 @@ export interface NewsArticle {
   slug: string;
   title: string;
   date: string;
-  author: string;
-  category: 'Chapter News' | 'Conference' | 'Research' | 'Outreach';
+  category: 'Institucional' | 'Investigación' | 'Eventos' | 'Vinculación';
   summary: string;
   content: string;
   image: string;
-  tags: string[];
+  imageAlt: string;
+  author: string;
+  readTime: string;
 }
 
 export const NEWS_DATA: NewsArticle[] = [
   {
-    id: 'ieee-ntc-temscon-latam-2026',
-    slug: 'ieee-ntc-temscon-latam-2026',
-    title: 'IEEE NTC Yachay Tech Executive Board Participates in TEMSCON LATAM 2026',
-    date: 'May 15, 2026',
-    author: 'Kennedy (Media Lead)',
-    category: 'Conference',
-    summary: 'Our chapter was proudly represented at the largest technology and engineering management conference in LATAM, held in Mitad del Mundo.',
-    content: `Members of the IEEE Nanotechnology Council Yachay Tech Student Branch participated in IEEE TEMSCON LATAM 2026 in Mitad del Mundo, Quito. The delegation engaged with international IEEE leaders, presented student innovation models, and established collaborative channels with other Latin American university chapters.
-
-During the event, executive board members highlighted Yachay Tech's growing nanotechnology research footprint and discussed joint initiatives for the upcoming IEEE LANANO conference.`,
+    id: 'news-temscon-latam-2026',
+    slug: 'ieee-ntc-participates-in-temscon-latam-2026',
+    title: 'IEEE NTC Yachay Tech participa en TEMSCON LATAM 2026',
+    date: '15 de Mayo de 2026',
+    category: 'Eventos',
+    summary: 'La directiva del capítulo representó a Yachay Tech en la conferencia cumbre de gestión de tecnología e innovación de IEEE Región 9.',
+    content: 'La directiva fundadora del Capítulo Estudiantil IEEE Nanotechnology Council de Yachay Tech University participó activamente en IEEE TEMSCON LATAM 2026, celebrada en la Mitad del Mundo, Quito. El evento reunió a líderes de ingeniería, investigadores y directivos de la Región 9 para discutir el futuro de la gestión tecnológica, la transferencia de conocimiento y el impacto de los capítulos estudiantiles en el ecosistema científico latinoamericano.',
     image: '/assets/events/ieee_temscon_latam.jpg',
-    tags: ['TEMSCON', 'IEEE Region 9', 'Leadership', 'Networking']
+    imageAlt: 'Delegación de IEEE NTC en IEEE TEMSCON LATAM 2026',
+    author: 'Directiva IEEE NTC',
+    readTime: '3 min de lectura'
   },
   {
-    id: 'visit-to-victor-manuel-guzman',
-    slug: 'visit-to-victor-manuel-guzman',
-    title: 'Inspiring High School Students at Unidad Educativa Víctor Manuel Guzmán',
-    date: 'May 05, 2026',
-    author: 'Fernanda (Outreach Team)',
-    category: 'Outreach',
-    summary: 'Our outreach team brought interactive science experiments, nanoscale physics demonstrations, and career guidance to high school students in Ibarra.',
-    content: `The IEEE NTC Yachay Tech STEM outreach team conducted an interactive workshop at Unidad Educativa Víctor Manuel Guzmán. High school students participated in hands-on demonstrations showcasing hydrophobic nanocoatings, ferrofluid magnetic responses, and quantum dot optical phenomena.
-
-The initiative aims to democratize science education and inspire young students to pursue higher education degrees in nanotechnology and engineering fields.`,
+    id: 'news-visita-victor-manuel-guzman',
+    slug: 'stem-outreach-visita-victor-manuel-guzman',
+    title: 'Exitosa jornada de vinculación STEM en la U.E. Víctor Manuel Guzmán',
+    date: '05 de Mayo de 2026',
+    category: 'Vinculación',
+    summary: 'Más de 150 estudiantes de secundaria experimentaron con demostraciones prácticas de nanotecnología y visores de Realidad Virtual.',
+    content: 'El equipo de vinculación social y divulgación científica de IEEE NTC Yachay Tech llevó a cabo una enriquecedora jornada en la Unidad Educativa Víctor Manuel Guzmán en Ibarra. Con módulos de materiales superhidrofóbicos, fluidos magnéticos y la plataforma inmersiva de Realidad Virtual con visores Meta Quest 3, se fomentó la vocación científica en carreras de nanotecnología e ingeniería.',
     image: '/assets/events/visita_victor_manuel_guzman.jpg',
-    tags: ['Outreach', 'STEM', 'Community', 'Ibarra']
+    imageAlt: 'Voluntarios de IEEE NTC en la U.E. Víctor Manuel Guzmán',
+    author: 'Comité de Divulgación',
+    readTime: '4 min de lectura'
   },
   {
-    id: 'pediatric-hospital-day-of-the-child',
-    slug: 'pediatric-hospital-day-of-the-child',
-    title: "Immersive Children's Day: Technology and Smiles at Hospital San Vicente de Paúl",
-    date: 'June 01, 2026',
-    author: 'Ethan (Logistics Lead)',
-    category: 'Outreach',
-    summary: 'IEEE NTC Yachay Tech deployed Meta Quest 3 VR technology to bring emotional relief and immersive STEM learning to 25 hospitalized children in intensive care.',
-    content: `On International Children's Day, the IEEE Nanotechnology Council (NTC) Student Branch Chapter of Yachay Tech University, in strategic partnership with the Biomedical Engineering Club, conducted "Immersive Children's Day: Technology and Smiles" at Hospital San Vicente de Paúl in Ibarra.
-
-The humanitarian initiative integrated Virtual Reality (Meta Quest 3) headsets to transport 25 pediatric patients recovering from severe trauma in the ICU into simulated nanotechnology laboratories, marine environments, and space explorations. Volunteers dressed in clown costumes provided one-on-one personalized ergonomic support to relieve neck strain for bedridden children, while strictly enforcing hospital-approved biosafety protocols with 70% isopropyl alcohol sanitization. The initiative successfully reduced clinical stress and inspired curiosity in nanoscale science.`,
+    id: 'news-dia-del-nino-hospital',
+    slug: 'dia-del-nino-inmersivo-hospital-san-vicente',
+    title: 'Día del Niño Inmersivo: Tecnología y Sonrisas en el Hospital San Vicente de Paúl',
+    date: '01 de Junio de 2026',
+    category: 'Vinculación',
+    summary: 'Voluntariado humanitario que llevó Realidad Virtual y apoyo emocional a 25 pacientes de la UCI Pediátrica en Ibarra.',
+    content: 'En conmemoración del Día del Niño, voluntarios de IEEE NTC Yachay Tech organizaron una jornada humanitaria en el Hospital San Vicente de Paúl en Ibarra. Implementando rigurosos protocolos clínicos de bioseguridad, 25 niños internados disfrutaron de entornos inmersivos y actividades lúdicas con disfraces, combinando la innovación tecnológica con la empatía social.',
     image: '/assets/events/dia_del_nino_hospital.jpg',
-    tags: ['Humanitarian Engineering', 'Virtual Reality', 'Hospital San Vicente', 'Pediatric Care', 'STEM']
+    imageAlt: 'Jornada del Día del Niño en el Hospital San Vicente de Paúl',
+    author: 'Voluntariado IEEE NTC',
+    readTime: '3 min de lectura'
+  },
+  {
+    id: 'news-posesion-directiva',
+    slug: 'posesion-oficial-directiva-fundadora-ieee-ntc',
+    title: 'Posesión Oficial de la Directiva Fundadora de IEEE NTC Yachay Tech',
+    date: '20 de Febrero de 2026',
+    category: 'Institucional',
+    summary: 'Se conformó oficialmente el primer Capítulo Estudiantil del IEEE Nanotechnology Council en la historia del Ecuador.',
+    content: 'En un acto solemne celebrado en el auditorio de Yachay Tech University, se posesionó la directiva fundadora presidida por Shirley Solange Criollo Coello e Isaac Mateo Gavilanes Chávez como Vicepresidente. El capítulo inicia con una visión clara: consolidar la investigación en nanotecnología y posicionar a la juventud ecuatoriana en escenarios científicos mundiales.',
+    image: '/assets/gallery/posesion_directivos_1.jpg',
+    imageAlt: 'Posesión de la directiva fundadora IEEE NTC',
+    author: 'Secretaría General',
+    readTime: '3 min de lectura'
   }
 ];

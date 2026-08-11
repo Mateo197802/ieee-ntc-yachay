@@ -10,16 +10,16 @@ function getHref(path: string) {
 ---
 
 <Layout 
-  title="Contact Us | IEEE Nanotechnology Council Yachay Tech"
-  description="Get in touch with IEEE Nanotechnology Council Yachay Tech Student Branch. Send us a message, inquire about membership, or join our research tracks."
+  title="Contacto | IEEE Nanotechnology Council Yachay Tech"
+  description="Ponte en contacto con el Capítulo Estudiantil IEEE Nanotechnology Council en Yachay Tech University. Escríbenos, consulta sobre membresías o únete a nuestros semilleros."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Home</a> &gt; <span>Contact</span>
+        <a href={getHref('/')}>Inicio</a> &gt; <span>Contacto</span>
       </div>
-      <h1 class="banner-title font-heading">CONTACT US</h1>
-      <p class="banner-subtitle">Have questions about IEEE NTC membership, workshops, or research collaborations? We're here to help.</p>
+      <h1 class="banner-title font-heading">CONTÁCTANOS</h1>
+      <p class="banner-subtitle">¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición.</p>
     </div>
   </section>
 
@@ -28,60 +28,60 @@ function getHref(path: string) {
       <div class="contact-grid">
         <!-- Contact Form Column -->
         <div class="contact-form-card">
-          <h2 class="form-title font-heading">SEND US A MESSAGE</h2>
-          <p class="form-desc">Fill out the form below and our executive board will respond within 24-48 hours.</p>
+          <h2 class="form-title font-heading">ENVÍANOS UN MENSAJE</h2>
+          <p class="form-desc">Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas.</p>
 
           <form id="contact-form" action="https://formspree.io/f/demo" method="POST" class="contact-form" novalidate>
             <!-- Honeypot Bot Field -->
             <div class="sr-only" aria-hidden="true">
-              <label for="bot-field">Do not fill this out if you are human:</label>
+              <label for="bot-field">No llenar este campo si eres humano:</label>
               <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form-group">
-              <label for="fullName">Full Name <span class="required">*</span></label>
-              <input type="text" id="fullName" name="name" required placeholder="e.g. Maria Gabriela Perez" class="form-control" />
-              <span class="error-msg" id="error-name">Please enter your full name.</span>
+              <label for="fullName">Nombre Completo <span class="required">*</span></label>
+              <input type="text" id="fullName" name="name" required placeholder="Ej. María Gabriela Pérez" class="form-control" />
+              <span class="error-msg" id="error-name">Por favor ingresa tu nombre completo.</span>
             </div>
 
             <div class="form-group">
-              <label for="email">Institutional or Personal Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="e.g. maria.perez@yachaytech.edu.ec" class="form-control" />
-              <span class="error-msg" id="error-email">Please enter a valid email address.</span>
+              <label for="email">Correo Institucional o Personal <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="Ej. maria.perez@yachaytech.edu.ec" class="form-control" />
+              <span class="error-msg" id="error-email">Por favor ingresa un correo electrónico válido.</span>
             </div>
 
             <div class="form-group">
-              <label for="subject">Subject <span class="required">*</span></label>
+              <label for="subject">Asunto <span class="required">*</span></label>
               <select id="subject" name="subject" required class="form-control">
-                <option value="">Select a topic...</option>
-                <option value="membership">IEEE NTC Membership Inquiry</option>
-                <option value="lanano">LANANO Research Mentorship Track</option>
-                <option value="workshop">Workshop & Event Registration</option>
-                <option value="outreach">School STEM Outreach Collaboration</option>
-                <option value="general">General Question / Support</option>
+                <option value="">Selecciona un tema...</option>
+                <option value="membership">Información y Membresía IEEE NTC</option>
+                <option value="lanano">Semillero de Investigación LANANO 2026</option>
+                <option value="workshop">Inscripción a Talleres y Conferencias</option>
+                <option value="outreach">Vinculación y Visitas a Colegios STEM</option>
+                <option value="general">Consulta General / Soporte</option>
               </select>
-              <span class="error-msg" id="error-subject">Please select a topic.</span>
+              <span class="error-msg" id="error-subject">Por favor selecciona un asunto.</span>
             </div>
 
             <div class="form-group">
-              <label for="message">Message <span class="required">*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Type your inquiry or message details..." class="form-control"></textarea>
-              <span class="error-msg" id="error-message">Please enter your message.</span>
+              <label for="message">Mensaje <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Escribe los detalles de tu consulta..." class="form-control"></textarea>
+              <span class="error-msg" id="error-message">Por favor escribe tu mensaje.</span>
             </div>
 
             <div class="form-group checkbox-group">
               <input type="checkbox" id="privacyConsent" name="privacyConsent" required />
-              <label for="privacyConsent">I agree to allow IEEE NTC Yachay Tech to process my contact details to reply to my request.</label>
+              <label for="privacyConsent">Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud.</label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">
-              SEND MESSAGE
+              ENVIAR MENSAJE
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
 
             <!-- Success Alert Banner -->
             <div class="form-status success" id="form-status-success" style="display: none;" role="alert">
-              <strong>Message Sent Successfully!</strong> Thank you for contacting IEEE NTC Yachay Tech. We will reply to your email shortly.
+              <strong>¡Mensaje Enviado con Éxito!</strong> Gracias por comunicarte con IEEE NTC Yachay Tech. Te responderemos a la brevedad.
             </div>
           </form>
         </div>
@@ -89,7 +89,7 @@ function getHref(path: string) {
         <!-- Location & Contact Info Column -->
         <div class="contact-info-column">
           <div class="info-card">
-            <h2 class="card-title font-heading">HEADQUARTERS & LOCATION</h2>
+            <h2 class="card-title font-heading">SEDE INSTITUCIONAL Y UBICACIÓN</h2>
             
             <ul class="info-list">
               <li>
@@ -97,7 +97,7 @@ function getHref(path: string) {
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
                 <div>
-                  <strong>{siteConfig.location.institution} Campus</strong>
+                  <strong>Campus {siteConfig.location.institution}</strong>
                   <p>Hacienda San José, {siteConfig.location.city}<br>Imbabura, {siteConfig.location.country}</p>
                 </div>
               </li>
@@ -107,7 +107,7 @@ function getHref(path: string) {
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
                 <div>
-                  <strong>Official Email</strong>
+                  <strong>Correo Oficial</strong>
                   <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
                 </div>
               </li>
@@ -124,7 +124,7 @@ function getHref(path: string) {
 
               <li>
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </div>
                 <div>
                   <strong>Instagram</strong>
@@ -136,7 +136,7 @@ function getHref(path: string) {
 
           <!-- Interactive Google Maps Frame -->
           <div class="map-card">
-            <h3 class="map-heading">YACHAY TECH CAMPUS MAP</h3>
+            <h3 class="map-heading">MAPA DEL CAMPUS YACHAY TECH</h3>
             <div class="map-embed-wrapper">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.056122606558!2d-78.1884067!3d0.4285871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a39281dd61d0d%3A0xa19fbc7c014798e6!2sUniversidad%20Yachay%20Tech!5e0!3m2!1sen!2sec!4v1700000000000!5m2!1sen!2sec" 
@@ -146,7 +146,7 @@ function getHref(path: string) {
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Yachay Tech University Google Map"
+                title="Mapa de ubicación de Yachay Tech University"
               ></iframe>
             </div>
           </div>
@@ -187,8 +187,8 @@ function getHref(path: string) {
   }
 
   .contact-section {
-    padding: 4rem 0;
-    background-color: var(--color-white);
+    padding: 4.5rem 0;
+    background-color: var(--color-bg-light);
   }
 
   .contact-grid {
@@ -200,7 +200,7 @@ function getHref(path: string) {
   .contact-form-card {
     background-color: var(--color-white);
     border-radius: var(--border-radius-md);
-    padding: 2.25rem;
+    padding: 2.5rem;
     box-shadow: var(--shadow-subtle);
     border: 1px solid var(--color-border-light);
   }
@@ -300,10 +300,11 @@ function getHref(path: string) {
   }
 
   .info-card, .map-card {
-    background-color: var(--color-bg-light);
+    background-color: var(--color-white);
     border-radius: var(--border-radius-md);
-    padding: 1.75rem;
+    padding: 2rem;
     border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-subtle);
   }
 
   .card-title {

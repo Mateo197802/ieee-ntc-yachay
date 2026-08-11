@@ -7,14 +7,14 @@ function getHref(path: string) {
 }
 ---
 
-<Layout title="404 - Page Not Found | IEEE NTC Yachay Tech">
+<Layout title="404 - Página No Encontrada | IEEE NTC Yachay Tech">
   <section class="not-found-section">
-    <div class="container text-center">
+    <div class="site-container text-center">
       <h1 class="error-code font-heading">404</h1>
-      <h2 class="error-title">Page Not Found</h2>
-      <p class="error-desc">The page you are looking for might have been removed or is temporarily unavailable.</p>
+      <h2 class="error-title">PÁGINA NO ENCONTRADA</h2>
+      <p class="error-desc">La página que estás buscando no existe o ha sido trasladada a otra dirección.</p>
       <a href={getHref('/')} class="btn btn-primary">
-        RETURN TO HOMEPAGE
+        VOLVER AL INICIO
       </a>
     </div>
   </section>
@@ -39,5 +39,8 @@ function getHref(path: string) {
     font-size: 1rem;
     color: var(--color-text-muted);
     margin-bottom: 2rem;
+  }
+  .text-center {
+    text-align: center;
   }
 </style>

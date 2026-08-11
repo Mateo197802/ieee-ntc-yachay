@@ -2,81 +2,83 @@ export interface ProjectItem {
   id: string;
   slug: string;
   title: string;
-  category: 'Research' | 'Outreach' | 'Innovation' | 'Service';
-  status: 'Active' | 'Completed' | 'Under Review';
+  category: 'Investigación' | 'Vinculación' | 'Innovación' | 'Servicio';
+  status: 'Activo' | 'Completado' | 'Planificación';
   summary: string;
   description: string;
   technologies: string[];
   team: string[];
   image: string;
+  paperUrl?: string;
+  codeUrl?: string;
   outcomes?: string;
-  link?: string;
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'logic-lock',
     slug: 'logic-lock',
-    title: 'Logic Lock — PRISMA Review Automation Tool',
-    category: 'Research',
-    status: 'Active',
-    summary: 'A research workflow automation tool designed to support and organize PRISMA-based systematic reviews.',
-    description: 'A research workflow automation tool designed to support and organize PRISMA-based systematic reviews, reducing repetitive manual work and improving process traceability and reproducibility.',
-    technologies: ['Python', 'PRISMA Framework', 'Workflow Automation', 'Scientometrics'],
-    team: ['Mateo (Lead)', 'Chapter Research Group'],
+    title: 'Logic Lock: Pipeline PRISMA Automatizado con IA',
+    category: 'Investigación',
+    status: 'Activo',
+    summary: 'Herramienta de software con Inteligencia Artificial para acelerar, filtrar y reproducir revisiones sistemáticas de literatura científica.',
+    description: 'Framework automatizado de IA diseñado para optimizar el protocolo de revisiones sistemáticas PRISMA. Integra orquestación de LLMs, deduplicación algorítmica y análisis cienciométrico para erradicar alucinaciones en la minería de literatura clínica y nanotecnológica.',
+    technologies: ['Python', 'Large Language Models', 'Orquestación de APIs', 'Protocolo PRISMA', 'Cienciometría'],
+    team: ['Mateo Gavilanes (Líder Técnico)', 'Ethan Guevara'],
     image: '/assets/events/logic_lock_post.png',
-    outcomes: 'Automated screening tool supporting systematic literature reviews.'
+    outcomes: 'Pipeline funcional en fase piloto para semilleros de investigación y revisiones sistemáticas.'
   },
   {
     id: 'lanano-paper-training-initiative',
     slug: 'lanano-paper-training-initiative',
-    title: 'LANANO Scientific Research & Mentorship Track',
-    category: 'Research',
-    status: 'Active',
-    summary: 'Mentorship pipeline preparing student research teams for international IEEE LANANO conference submissions.',
-    description: 'A structured multi-week mentorship framework matching undergraduate researchers with faculty mentors across research axes including Nanoelectronics, Quantum Technology, Nanomedicine, and Machine Learning in Nanoscience.',
-    technologies: ['Green Synthesis', 'Machine Learning', 'Molecular Dynamics', 'UV-Vis Spectrophotometry'],
-    team: ['Solange (Lead)', 'Mateo', 'Ethan', 'Faculty Advisors'],
+    title: 'Semillero de Redacción Científica IEEE LANANO 2026',
+    category: 'Investigación',
+    status: 'Activo',
+    summary: 'Programa de mentoría técnica para la redacción de artículos de investigación de 4–6 páginas para su publicación en IEEE Xplore.',
+    description: 'Iniciativa colaborativa de capacitación en redacción científica para conectar a estudiantes con investigadores experimentados. Los participantes aprenden diseño experimental, análisis de datos, formato LaTeX IEEE y estructuración de manuscritos científicos.',
+    technologies: ['LaTeX', 'IEEE Xplore Templates', 'Zotero', 'Análisis Estadístico'],
+    team: ['Solange Criollo (Coordinadora)', 'Mateo Gavilanes', 'Ethan Guevara'],
     image: '/assets/events/lanano_paper_training.png',
-    outcomes: 'Draft proposals submitted for peer review across 4 research tracks.'
+    paperUrl: 'https://mateo197802.github.io/IEEE-LANANO-2026/',
+    outcomes: 'Propuestas de artículos sometidas a revisión por pares en 4 líneas de investigación.'
   },
   {
     id: 'stem-outreach-schools',
     slug: 'stem-outreach-schools',
-    title: 'NanoSchool STEM Outreach Program',
-    category: 'Outreach',
-    status: 'Active',
-    summary: 'High school outreach bringing interactive nanotechnology demonstrations to regional public schools in Imbabura.',
-    description: 'Hands-on educational modules designed to spark curiosity for nanoscience, material science, and engineering careers among high school students through interactive experiments.',
-    technologies: ['Interactive Demos', 'Hydrophobic Materials', 'Ferrofluids', 'STEM Kits'],
-    team: ['Kennedy (Lead)', 'Fernanda', 'Ethan'],
+    title: 'Programa de Divulgación STEM en Colegios',
+    category: 'Vinculación',
+    status: 'Completado',
+    summary: 'Programa de divulgación científica con módulos interactivos de nanotecnología en colegios públicos de Imbabura.',
+    description: 'Módulos educativos experimentales diseñados para despertar la vocación científica en nanociencia, ciencia de materiales e ingeniería entre estudiantes de secundaria mediante demostraciones prácticas.',
+    technologies: ['Demostraciones Interactivas', 'Materiales Superhidrofóbicos', 'Ferrofluidos', 'Kits STEM'],
+    team: ['Kennedy Rodríguez (Líder)', 'Fernanda Landázuri', 'Ethan Guevara'],
     image: '/assets/events/visita_victor_manuel_guzman.jpg',
-    outcomes: 'Over 150 high school students reached in Ibarra and surrounding communities.'
+    outcomes: 'Más de 150 estudiantes de bachillerato alcanzados en Ibarra y cantones aledaños.'
   },
   {
     id: 'hospital-paediatric-service',
     slug: 'hospital-paediatric-service',
-    title: "Immersive Children's Day: Technology and Smiles",
-    category: 'Service',
-    status: 'Completed',
-    summary: 'Humanitarian VR intervention bringing simulated nanotechnology laboratories and therapeutic relief to pediatric patients in hospital ICU.',
-    description: 'A clinical and technological outreach initiative designed to alleviate acute stress, procedural pain, and hospitalization anxiety for 25 pediatric patients at Hospital San Vicente de Paúl. Employing four Meta Quest 3 VR headsets with custom biosafety sanitization and one-on-one ergonomic assistance, the project enabled bedridden children to explore simulated nanotechnology laboratories, marine environments, and deep space.',
-    technologies: ['Meta Quest 3 VR', 'Clinical Biosafety Protocols', 'Humanitarian Engineering', 'Attention-Modulation VR'],
-    team: ['Solange (Lead)', 'Emily', 'Kennedy', 'Mateo', 'Ethan', 'Fernanda', 'Biomedical Engineering Club'],
+    title: "Día del Niño Inmersivo: Tecnología y Sonrisas",
+    category: 'Servicio',
+    status: 'Completado',
+    summary: 'Intervención humanitaria en el Hospital San Vicente de Paúl usando visores Meta Quest 3 y protocolos de bioseguridad.',
+    description: 'Proyecto de servicio y voluntariado humanitario que llevó simulaciones virtuales educativas y momentos de alegría a 25 niños internados en las áreas pediátricas y UCI del Hospital San Vicente de Paúl en Ibarra.',
+    technologies: ['Meta Quest 3 VR', 'Protocolos de Bioseguridad', 'Simulaciones Médicas', 'Voluntariado Humanitario'],
+    team: ['Solange Criollo (Líder)', 'Mateo Gavilanes', 'Ethan Guevara', 'Emily Pérez', 'Fernanda Landázuri', 'Kennedy Rodríguez'],
     image: '/assets/events/dia_del_nino_hospital.jpg',
-    outcomes: 'Delivered safe, highly engaging VR immersion to 25 hospitalized children, establishing a replicable humanitarian blueprint for IEEE units.'
+    outcomes: '25 pacientes pediátricos beneficiados con experiencias inmersivas adaptadas y seguras.'
   },
   {
     id: 'vr-nano-museum',
     slug: 'vr-nano-museum',
-    title: 'Virtual Reality Nanotechnology Educational Museum',
-    category: 'Innovation',
-    status: 'Active',
-    summary: 'Immersive VR simulation platform allowing interactive exploration of molecular structures and nanoscale phenomena.',
-    description: 'Interactive Virtual Reality environment built in Unreal Engine allowing users to manipulate carbon nanotubes, graphene sheets, and bio-nanoparticles in 3D space.',
-    technologies: ['Unreal Engine', 'VR Headsets', '3D Nanomaterial Modeling'],
-    team: ['Mateo (Lead)', 'Ethan', 'VR Development Group'],
+    title: 'Museo Virtual de Nanotecnología (MuseumMaster VR)',
+    category: 'Innovación',
+    status: 'Activo',
+    summary: 'Framework interactivo en Realidad Virtual desarrollado en C#/Unity para la visualización inmersiva de nanoestructuras moleculares.',
+    description: 'Entorno inmersivo en 3D que permite a los usuarios interactuar con modelos a escala atómica de nanotubos de carbono, fullerenos y nanopartículas magnéticas, revolucionando la enseñanza de la nanotecnología.',
+    technologies: ['Unity 3D', 'C#', 'Meta XR SDK', 'Modelado Molecular', 'OpenXR'],
+    team: ['Mateo Gavilanes (Arquitecto VR)', 'Kennedy Rodríguez'],
     image: '/assets/gallery/actividad_colegio_1.jpg',
-    outcomes: 'Functional VR prototype deployed for chapter workshops and campus exhibitions.'
+    outcomes: 'Framework interactivo presentado en colegios de la región y en proceso de expansión a museos de ciencia.'
   }
 ];

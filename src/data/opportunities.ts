@@ -2,10 +2,10 @@ export interface OpportunityItem {
   id: string;
   title: string;
   institution: string;
-  category: 'Scholarships' | 'Travel Grants' | 'Volunteering' | 'IEEE Programs' | 'Competitions';
+  category: 'Becas' | 'Becas de Viaje' | 'Voluntariado' | 'Programas IEEE' | 'Competencias';
   deadline: string;
-  status: 'Open' | 'Upcoming' | 'Closed';
-  modality: 'Online' | 'In-Person' | 'Global' | 'Hybrid';
+  status: 'Abierta' | 'Próximamente' | 'Cerrada';
+  modality: 'En Línea' | 'Presencial' | 'Global' | 'Híbrido';
   summary: string;
   description: string;
   officialUrl: string;
@@ -14,50 +14,50 @@ export interface OpportunityItem {
 export const OPPORTUNITIES_DATA: OpportunityItem[] = [
   {
     id: 'ntc-chapter-activity-grant-2026',
-    title: 'IEEE NTC Student Chapter Activity Grant 2026',
+    title: 'Fondo de Financiamiento para Actividades IEEE NTC 2026',
     institution: 'IEEE Nanotechnology Council Global',
-    category: 'Travel Grants',
-    deadline: 'August 30, 2026',
-    status: 'Open',
+    category: 'Becas de Viaje',
+    deadline: '30 de Agosto de 2026',
+    status: 'Abierta',
     modality: 'Global',
-    summary: 'Financial sponsorship for outstanding IEEE NTC student chapter activities, research projects, and conference participation.',
-    description: 'IEEE NTC provides grants up to $1,000 USD to active student branch chapters to support technical workshops, outreach programs, and student travel to IEEE NTC flagship conferences.',
+    summary: 'Financiamiento económico para actividades destacadas de capítulos estudiantiles IEEE NTC, proyectos de investigación y participación en conferencias.',
+    description: 'El IEEE NTC otorga subvenciones de hasta $1,000 USD a capítulos estudiantiles activos para financiar talleres técnicos, proyectos de vinculación comunitaria y viajes estudiantiles a conferencias insignia de IEEE.',
     officialUrl: 'https://ieeenano.org/grants-and-awards/'
   },
   {
     id: 'lanano-student-travel-award',
-    title: 'IEEE LANANO Conference Student Travel Award',
-    institution: 'IEEE Region 9 & NTC LATAM',
-    category: 'Travel Grants',
-    deadline: 'September 15, 2026',
-    status: 'Upcoming',
-    modality: 'In-Person',
-    summary: 'Travel grants for primary student authors presenting research papers at the IEEE Latin American Conference on Nanotechnology.',
-    description: 'Competitive travel awards covering registration fees and accommodation for students with accepted research papers at LANANO 2026.',
-    officialUrl: 'https://ieee-lanano.org/'
+    title: 'Beca de Viaje Estudiantil IEEE LANANO 2026',
+    institution: 'IEEE Región 9 & NTC LATAM',
+    category: 'Becas de Viaje',
+    deadline: '15 de Septiembre de 2026',
+    status: 'Próximamente',
+    modality: 'Presencial',
+    summary: 'Becas de viaje para autores principales estudiantiles que presenten artículos científicos en la Conferencia Latinoamericana de Nanotecnología.',
+    description: 'Subvenciones competitivas que cubren costos de inscripción y estadía para estudiantes con artículos de investigación aceptados en IEEE LANANO 2026.',
+    officialUrl: 'https://mateo197802.github.io/IEEE-LANANO-2026/'
   },
   {
     id: 'ieee-ntc-distinguished-lecturers',
-    title: 'IEEE NTC Distinguished Lecturer Series Grants',
+    title: 'Conferencias Magistrales IEEE NTC (Distinguished Lecturers)',
     institution: 'IEEE Nanotechnology Council Educational Activities',
-    category: 'IEEE Programs',
-    deadline: 'Rolling Basis',
-    status: 'Open',
-    modality: 'Hybrid',
-    summary: 'Sponsorship for hosting international expert lectures on advanced nanomedicine, nanoelectronics, and quantum materials.',
-    description: 'Student chapters can request support to invite world-renowned nanotechnology experts to deliver virtual or in-person seminars.',
+    category: 'Programas IEEE',
+    deadline: 'Convocatoria Continua',
+    status: 'Abierta',
+    modality: 'Híbrido',
+    summary: 'Auspicio para coordinar conferencias con expertos internacionales en nanomedicina avanzada, nanoelectrónica y materiales cuánticos.',
+    description: 'Los capítulos estudiantiles pueden solicitar financiamiento para invitar a científicos de renombre mundial para dictar seminarios magistrales virtuales o presenciales.',
     officialUrl: 'https://ieeenano.org/educational-activities/distinguished-lecturers/'
   },
   {
     id: 'chapter-volunteer-recruitment',
-    title: 'IEEE NTC Chapter Executive Committee Volunteering',
+    title: 'Convocatoria de Voluntariado en Comités de Trabajo IEEE NTC',
     institution: 'IEEE NTC Yachay Tech',
-    category: 'Volunteering',
-    deadline: 'September 01, 2026',
-    status: 'Open',
-    modality: 'In-Person',
-    summary: 'Join our active operational committees in research mentoring, social media, event logistics, and graphics design.',
-    description: 'Gain leadership skills, IEEE certificates, and networking opportunities by volunteering as committee coordinator or event staff.',
+    category: 'Voluntariado',
+    deadline: '01 de Septiembre de 2026',
+    status: 'Abierta',
+    modality: 'Presencial',
+    summary: 'Únete a nuestros comités operativos de mentoría científica, redes sociales, logística de eventos, divulgación y diseño digital.',
+    description: 'Desarrolla habilidades de liderazgo, obtén certificados oficiales de IEEE y amplía tu red de contactos colaborando como coordinador o staff de eventos.',
     officialUrl: 'https://forms.gle/demo-volunteer'
   }
 ];

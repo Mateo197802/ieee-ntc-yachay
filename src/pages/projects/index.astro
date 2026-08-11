@@ -10,27 +10,27 @@ function getHref(path: string) {
 ---
 
 <Layout 
-  title="Projects & Initiatives | IEEE Nanotechnology Council Yachay Tech"
-  description="Explore research paper pipelines, STEM school outreach programs, VR laboratory simulations, and social service initiatives."
+  title="Proyectos e Iniciativas | IEEE Nanotechnology Council Yachay Tech"
+  description="Explora nuestros semilleros de investigación científica, programas de divulgación STEM, simulaciones en Realidad Virtual e iniciativas de servicio social."
 >
   <section class="inner-banner">
-    <div class="container">
+    <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Home</a> &gt; <span>Projects</span>
+        <a href={getHref('/')}>Inicio</a> &gt; <span>Proyectos</span>
       </div>
-      <h1 class="banner-title font-heading">PROJECTS & INITIATIVES</h1>
-      <p class="banner-subtitle">Interdisciplinary research, educational outreach, VR innovation, and community service.</p>
+      <h1 class="banner-title font-heading">PROYECTOS E INICIATIVAS</h1>
+      <p class="banner-subtitle">Investigación interdisciplinaria, divulgación educativa, innovación en Realidad Virtual y servicio a la comunidad.</p>
     </div>
   </section>
 
   <section class="projects-section">
-    <div class="container">
+    <div class="site-container">
       <div class="projects-grid">
         {PROJECTS_DATA.map((project) => (
           <div class="project-card">
             <div class="project-img-box">
               <img src={getHref(project.image)} alt={project.title} width="400" height="240" loading="lazy" class="project-img" />
-              <span class={`status-badge ${project.status.toLowerCase().replace(' ', '-')}`}>{project.status}</span>
+              <span class={`status-badge ${project.status.toLowerCase()}`}>{project.status}</span>
               <span class="category-pill">{project.category}</span>
             </div>
 
@@ -39,7 +39,7 @@ function getHref(path: string) {
               <p class="project-desc">{project.description}</p>
 
               <div class="project-tech-stack">
-                <span class="stack-label">Technologies / Focus:</span>
+                <span class="stack-label">Tecnologías / Enfoque:</span>
                 <div class="tags-row">
                   {project.technologies.map((tech) => (
                     <span class="tech-tag">{tech}</span>
@@ -49,13 +49,22 @@ function getHref(path: string) {
 
               {project.outcomes && (
                 <div class="outcomes-box">
-                  <strong>Results / Impact:</strong> {project.outcomes}
+                  <strong>Resultados / Impacto:</strong> {project.outcomes}
                 </div>
               )}
 
               <div class="project-team-row">
-                <strong>Team:</strong> {project.team.join(', ')}
+                <strong>Equipo:</strong> {project.team.join(', ')}
               </div>
+
+              {project.paperUrl && (
+                <div class="project-action-row">
+                  <a href={project.paperUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark project-cta">
+                    VER PROGRAMA / CONFERENCIA
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -66,7 +75,7 @@ function getHref(path: string) {
 
 <style>
   .inner-banner {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
     padding: 3rem 0 3.5rem;
     border-bottom: 3px solid var(--color-cyan);
@@ -84,7 +93,7 @@ function getHref(path: string) {
   }
 
   .banner-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     color: var(--color-white);
   }
 
@@ -95,14 +104,14 @@ function getHref(path: string) {
   }
 
   .projects-section {
-    padding: 4rem 0;
-    background-color: var(--color-white);
+    padding: 4.5rem 0;
+    background-color: var(--color-bg-light);
   }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .project-card {
@@ -139,52 +148,67 @@ function getHref(path: string) {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.65rem;
     border-radius: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
   }
 
-  .status-badge.active {
-    background-color: #059669;
-    color: #FFFFFF;
+  .status-badge.activo {
+    background-color: #10B981;
+    color: var(--color-white);
   }
 
-  .status-badge.completed {
-    background-color: var(--color-navy);
-    color: var(--color-cyan);
+  .status-badge.completado {
+    background-color: #122844;
+    color: var(--color-white);
+  }
+
+  .status-badge.planificación {
+    background-color: #6B7280;
+    color: var(--color-white);
   }
 
   .category-pill {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: rgba(31, 62, 101, 0.85);
-    color: var(--color-white);
-    font-size: 0.75rem;
+    background: rgba(7, 28, 52, 0.85);
+    color: var(--color-cyan);
+    border: 1px solid var(--color-cyan);
+    font-size: 0.72rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.65rem;
     border-radius: 20px;
+    z-index: 2;
   }
 
   .project-body {
-    padding: 1.75rem;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    gap: 0.85rem;
+    flex: 1;
   }
 
   .project-title {
     font-size: 1.25rem;
     color: var(--color-navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
   }
 
   .project-desc {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-tech-stack {
+    margin-bottom: 1rem;
   }
 
   .stack-label {
@@ -202,29 +226,42 @@ function getHref(path: string) {
   }
 
   .tech-tag {
-    background-color: var(--color-bg-light);
-    color: var(--color-slate);
     font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
+    background-color: var(--color-bg-alt);
+    color: var(--color-navy);
+    padding: 0.25rem 0.6rem;
     border-radius: 4px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .outcomes-box {
     background-color: rgba(5, 135, 189, 0.08);
     border-left: 3px solid var(--color-cyan);
     padding: 0.75rem 1rem;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
     font-size: 0.85rem;
     color: var(--color-navy);
-    border-radius: 0 4px 4px 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
   .project-team-row {
     font-size: 0.82rem;
     color: var(--color-text-muted);
     margin-top: auto;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border-light);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .project-action-row {
+    margin-top: 1rem;
+  }
+
+  .project-cta {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
   }
 
   @media (max-width: 900px) {

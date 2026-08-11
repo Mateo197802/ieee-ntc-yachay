@@ -10,44 +10,39 @@ function getHref(path: string) {
 ---
 
 <Layout 
-  title="News & Publications | IEEE Nanotechnology Council Yachay Tech"
-  description="Stay updated with the latest news, conference announcements, TEMSCON LATAM participation, and STEM outreach updates from IEEE NTC Yachay Tech."
+  title="Noticias y Comunicados | IEEE Nanotechnology Council Yachay Tech"
+  description="Mantente informado con las últimas noticias, convocatorias, coberturas de eventos y publicaciones oficiales de IEEE NTC Yachay Tech."
 >
   <section class="inner-banner">
-    <div class="container">
+    <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Home</a> &gt; <span>News</span>
+        <a href={getHref('/')}>Inicio</a> &gt; <span>Noticias</span>
       </div>
-      <h1 class="banner-title font-heading">NEWS & ANNOUNCEMENTS</h1>
-      <p class="banner-subtitle">Official announcements, conference highlights, and chapter publications.</p>
+      <h1 class="banner-title font-heading">NOTICIAS Y COMUNICADOS</h1>
+      <p class="banner-subtitle">Comunicados oficiales, coberturas de eventos, logros de investigación y vinculación científica.</p>
     </div>
   </section>
 
   <section class="news-section">
-    <div class="container">
+    <div class="site-container">
       <div class="news-grid">
         {NEWS_DATA.map((article) => (
           <article class="news-card">
             <div class="news-img-box">
-              <img src={getHref(article.image)} alt={article.title} width="400" height="240" loading="lazy" class="article-img" />
+              <img src={getHref(article.image)} alt={article.imageAlt} width="400" height="260" loading="lazy" class="article-img" />
               <span class="category-tag">{article.category}</span>
             </div>
 
             <div class="news-card-body">
               <div class="news-meta">
                 <span class="meta-date">{article.date}</span>
-                <span class="meta-author">• By {article.author}</span>
+                <span class="meta-author">• Por {article.author}</span>
+                <span class="meta-read">• {article.readTime}</span>
               </div>
 
               <h2 class="article-title">{article.title}</h2>
               <p class="article-summary">{article.summary}</p>
               <p class="article-content-preview">{article.content}</p>
-
-              <div class="article-tags">
-                {article.tags.map((tag) => (
-                  <span class="tag-pill">#{tag}</span>
-                ))}
-              </div>
             </div>
           </article>
         ))}
@@ -58,7 +53,7 @@ function getHref(path: string) {
 
 <style>
   .inner-banner {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
     padding: 3rem 0 3.5rem;
     border-bottom: 3px solid var(--color-cyan);
@@ -76,7 +71,7 @@ function getHref(path: string) {
   }
 
   .banner-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     color: var(--color-white);
   }
 
@@ -87,8 +82,8 @@ function getHref(path: string) {
   }
 
   .news-section {
-    padding: 4rem 0;
-    background-color: var(--color-white);
+    padding: 4.5rem 0;
+    background-color: var(--color-bg-light);
   }
 
   .news-grid {
@@ -109,7 +104,7 @@ function getHref(path: string) {
   }
 
   .news-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
   }
 
@@ -117,6 +112,7 @@ function getHref(path: string) {
     position: relative;
     height: 100%;
     min-height: 240px;
+    background-color: var(--color-navy);
   }
 
   .article-img {
@@ -131,15 +127,17 @@ function getHref(path: string) {
     left: 1rem;
     background-color: var(--color-cyan);
     color: var(--color-white);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
   }
 
   .news-card-body {
-    padding: 2rem;
+    padding: 2.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
@@ -149,6 +147,20 @@ function getHref(path: string) {
     font-size: 0.8rem;
     color: var(--color-cyan);
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .meta-author {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .meta-read {
+    color: var(--color-text-muted);
+    font-weight: 500;
   }
 
   .article-title {
@@ -161,31 +173,13 @@ function getHref(path: string) {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-navy);
+    line-height: 1.45;
   }
 
   .article-content-preview {
     font-size: 0.9rem;
     color: var(--color-text-muted);
     line-height: 1.6;
-  }
-
-  .article-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto;
-    padding-top: 1rem;
-
-    border-top: 1px solid var(--color-border-light);
-  }
-
-  .tag-pill {
-    background-color: var(--color-bg-light);
-    color: var(--color-slate);
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
   }
 
   @media (max-width: 900px) {
