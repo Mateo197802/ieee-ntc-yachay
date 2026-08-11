@@ -129,9 +129,15 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
       <div class="strip-events-grid">
         {upcomingStripEvents.map((evt) => (
           <article class="strip-card">
-            <div class="strip-card-img-box">
-              <img src={getHref(evt.image)} alt={evt.imageAlt} width="160" height="90" loading="lazy" class="strip-img" />
-            </div>
+            {evt.image ? (
+              <div class="strip-card-img-box">
+                <img src={getHref(evt.image)} alt={evt.imageAlt} width="160" height="90" loading="lazy" class="strip-img" />
+              </div>
+            ) : (
+              <div class="strip-card-img-box strip-card-icon-box">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="#0587bd" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              </div>
+            )}
             <div class="strip-card-content">
               <span class="strip-date">{evt.date}</span>
               <h3 class="strip-card-title">{evt.title}</h3>
@@ -481,6 +487,14 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     border-radius: 8px;
     overflow: hidden;
     background-color: #0c233c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .strip-card-icon-box {
+    background: linear-gradient(135deg, #071c34 0%, #15325b 100%);
+    border: 1px solid rgba(5, 135, 189, 0.4);
   }
 
   .strip-img {

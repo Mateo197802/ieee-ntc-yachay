@@ -52,19 +52,30 @@ function getHref(path: string) {
 
       <div class="upcoming-single-wrapper">
         {upcomingEvents.map((event) => (
-          <article class="upcoming-featured-card" id={event.slug}>
-            <div class="upcoming-image-side">
-              <img src={getHref(event.image)} alt={event.imageAlt} width="520" height="320" loading="eager" class="featured-img" />
-              <div class="upcoming-badges-group">
-                <span class="upcoming-live-badge">
-                  <span class="pulse-dot"></span>
-                  PRÓXIMO EVENTO
-                </span>
-                <span class="type-pill">{event.type}</span>
+          <article class={`upcoming-featured-card ${!event.image ? 'no-image-card' : ''}`} id={event.slug}>
+            {event.image && (
+              <div class="upcoming-image-side">
+                <img src={getHref(event.image)} alt={event.imageAlt} width="520" height="320" loading="eager" class="featured-img" />
+                <div class="upcoming-badges-group">
+                  <span class="upcoming-live-badge">
+                    <span class="pulse-dot"></span>
+                    PRÓXIMO EVENTO
+                  </span>
+                  <span class="type-pill">{event.type}</span>
+                </div>
               </div>
-            </div>
+            )}
 
             <div class="upcoming-content-side">
+              {!event.image && (
+                <div class="upcoming-badges-top">
+                  <span class="upcoming-live-badge">
+                    <span class="pulse-dot"></span>
+                    PRÓXIMO EVENTO
+                  </span>
+                  <span class="type-pill">{event.type}</span>
+                </div>
+              )}
               <div class="meta-bar">
                 <span class="meta-date">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
@@ -322,6 +333,50 @@ function getHref(path: string) {
     overflow: hidden;
     box-shadow: var(--shadow-hover);
     border: 1px solid var(--color-border-light);
+  }
+
+  .upcoming-featured-card.no-image-card {
+    display: block;
+    background: linear-gradient(135deg, #071C34 0%, #0c2545 60%, #15325b 100%);
+    border: 2px solid #0587bd;
+    box-shadow: 0 12px 36px rgba(5, 135, 189, 0.25);
+  }
+
+  .upcoming-featured-card.no-image-card .upcoming-content-side {
+    padding: 3rem 3.5rem;
+    color: #ffffff;
+  }
+
+  .upcoming-featured-card.no-image-card .upcoming-title {
+    color: #ffffff;
+    font-size: 1.85rem;
+    margin: 0.75rem 0 1rem;
+    line-height: 1.25;
+  }
+
+  .upcoming-featured-card.no-image-card .upcoming-description {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 960px;
+    margin-bottom: 1.5rem;
+  }
+
+  .upcoming-featured-card.no-image-card .meta-date {
+    color: var(--color-cyan);
+    font-size: 0.95rem;
+  }
+
+  .upcoming-featured-card.no-image-card .location-info {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .upcoming-badges-top {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .upcoming-image-side {

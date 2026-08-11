@@ -37,9 +37,9 @@ export const EVENTS_DATA: EventItem[] = [
     modality: 'En Línea',
     summary: 'Cumbre regional virtual de capítulos estudiantiles del IEEE Nanotechnology Council en América Latina.',
     description: 'Encuentro regional que reúne a los capítulos estudiantiles del IEEE Nanotechnology Council de la Región 9 (América Latina y el Caribe). Incluye conferencias magistrales con investigadores internacionales, paneles de desarrollo profesional, presentaciones de pósters científicos y sesiones de networking.',
-    image: '/assets/events/ieee_temscon_latam.jpg',
+    image: '',
     imageAlt: 'IEEE NTC Region 9 Student Virtual Summit 2026',
-    imageVerified: true,
+    imageVerified: false,
     featured: true
   },
 
