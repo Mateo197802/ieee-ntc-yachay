@@ -20,7 +20,15 @@ function isActive(path: string) {
 
 const navLinks = [
   { name: 'Inicio', path: '/' },
-  { name: 'Sobre Nosotros', path: '/about/' },
+  { 
+    name: 'Nosotros', 
+    path: '/about/', 
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'Sobre Nosotros', path: '/about/' },
+      { name: 'Directiva Fundadora', path: '/directive/' }
+    ]
+  },
   { 
     name: 'Actividades', 
     path: '/events/', 
@@ -33,9 +41,15 @@ const navLinks = [
   },
   { name: 'Proyectos', path: '/projects/' },
   { name: 'Oportunidades', path: '/opportunities/' },
-  { name: 'Galería', path: '/gallery/' },
-  { name: 'Noticias', path: '/news/' },
-  { name: 'Directiva', path: '/directive/' },
+  { 
+    name: 'Medios', 
+    path: '/gallery/', 
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'Galería de Fotos', path: '/gallery/' },
+      { name: 'Noticias y Prensa', path: '/news/' }
+    ]
+  },
   { name: 'Contacto', path: '/contact/' }
 ];
 ---
@@ -44,17 +58,17 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <div class="site-container header-inner">
-    <!-- Geometric White Logo Panel with Perfectly Parallel Slant & Cyan Accent -->
+    <!-- Geometric White Logo Panel with Exact Parallel Slant & Cyan Accent -->
     <a
       class="brand-panel"
       href={getHref('/')}
       aria-label="IEEE Nanotechnology Council Yachay Tech Inicio"
     >
-      <svg class="brand-panel__bg" viewBox="0 0 880 74" preserveAspectRatio="none" aria-hidden="true">
-        <!-- White surface from 0 up to 830px at top, slanting 30px to 800px at bottom -->
-        <polygon points="0,0 830,0 800,74 0,74" fill="#ffffff" />
-        <!-- Cyan accent stripe with exact 5px gap (835-847 at top, 805-817 at bottom) -->
-        <polygon points="835,0 847,0 817,74 805,74" fill="#0587bd" />
+      <svg class="brand-panel__bg" viewBox="0 0 760 74" preserveAspectRatio="none" aria-hidden="true">
+        <!-- White surface from 0 up to 700px at top, slanting 30px to 670px at bottom -->
+        <polygon points="0,0 700,0 670,74 0,74" fill="#ffffff" />
+        <!-- Cyan accent stripe with exact 6px gap (706-718 at top, 676-688 at bottom) -->
+        <polygon points="706,0 718,0 688,74 676,74" fill="#0587bd" />
       </svg>
 
       <span class="brand-panel__logo-wrapper">
@@ -71,7 +85,7 @@ const navLinks = [
       </span>
     </a>
 
-    <!-- Primary Navigation Bar -->
+    <!-- Primary Navigation Bar (Clean, Spaced & Uncluttered) -->
     <nav class="desktop-navigation" aria-label="Navegación principal">
       <ul class="nav-list">
         {navLinks.map((link) => (
@@ -84,14 +98,14 @@ const navLinks = [
                   aria-current={isActive(link.path) ? 'page' : undefined}
                   aria-expanded="false"
                   aria-haspopup="true"
-                  id="events-dropdown-btn"
+                  id={`dropdown-${link.name.toLowerCase()}`}
                 >
-                  {link.name}
-                  <svg class="dropdown-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                  <span>{link.name}</span>
+                  <svg class="dropdown-icon" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
                     <path d="M7 10l5 5 5-5z" fill="currentColor"/>
                   </svg>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="events-dropdown-btn" role="menu">
+                <ul class="dropdown-menu" aria-labelledby={`dropdown-${link.name.toLowerCase()}`} role="menu">
                   {link.dropdownItems?.map((item) => (
                     <li role="none">
                       <a href={getHref(item.path)} class="dropdown-item" role="menuitem">
@@ -107,7 +121,7 @@ const navLinks = [
                 class="nav-link"
                 aria-current={isActive(link.path) ? 'page' : undefined}
               >
-                {link.name}
+                <span>{link.name}</span>
               </a>
             )}
           </li>
@@ -195,7 +209,7 @@ const navLinks = [
   }
 
   .skip-link {
-    position: fixed;
+    position: absolute;
     top: 12px;
     left: 12px;
     z-index: 9999;
@@ -216,10 +230,11 @@ const navLinks = [
 
   .header-inner {
     height: 74px;
-    display: grid;
-    grid-template-columns: 390px minmax(0, 1fr);
+    display: flex;
     align-items: center;
-    gap: clamp(24px, 2vw, 48px);
+    justify-content: space-between;
+    gap: clamp(16px, 2.5vw, 40px);
+    width: 100%;
   }
 
   /* Geometric White Logo Panel with Exact Parallel Slant & Cyan Accent */
@@ -227,8 +242,8 @@ const navLinks = [
     position: relative;
     display: flex;
     align-items: center;
-    flex: 0 0 380px;
-    width: 380px;
+    flex: 0 0 310px;
+    width: 310px;
     height: 74px;
     text-decoration: none;
     overflow: visible;
@@ -237,8 +252,8 @@ const navLinks = [
   .brand-panel__bg {
     position: absolute;
     top: 0;
-    left: -500px;
-    width: 880px;
+    left: -450px;
+    width: 760px;
     height: 74px;
     pointer-events: none;
     z-index: 1;
@@ -251,14 +266,14 @@ const navLinks = [
     display: flex;
     align-items: center;
     height: 74px;
-    padding-left: 12px;
+    padding-left: 10px;
   }
 
   .brand-panel__logo {
     display: block;
-    width: 250px;
+    width: 215px;
     max-width: 100%;
-    height: 50px;
+    height: 48px;
     object-fit: contain;
     object-position: left center;
   }
@@ -268,8 +283,8 @@ const navLinks = [
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
-    gap: 16px;
+    flex: 1;
+    gap: clamp(12px, 1.8vw, 24px);
   }
 
   /* Language Switcher Pill Widget */
@@ -332,7 +347,7 @@ const navLinks = [
   .nav-list {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 1.1vw, 20px);
+    gap: clamp(6px, 1.2vw, 18px);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -345,14 +360,15 @@ const navLinks = [
   .nav-link {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 8px 6px;
+    gap: 5px;
+    padding: 8px 10px;
     color: #ffffff;
-    font-size: 0.88rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
     transition: color 150ms ease;
     border-bottom: 2px solid transparent;
   }
@@ -369,21 +385,22 @@ const navLinks = [
 
   .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     left: 0;
-    min-width: 200px;
+    min-width: 210px;
     background-color: #061b31;
-    border: 1px solid #0587bd;
-    border-radius: 4px;
+    border: 1px solid rgba(5, 135, 189, 0.5);
+    border-radius: 8px;
     padding: 8px 0;
     list-style: none;
-    margin: 4px 0 0 0;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+    transform: translateY(6px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
     z-index: 1100;
+    backdrop-filter: blur(8px);
   }
 
   .dropdown-wrapper:hover .dropdown-menu,
@@ -395,12 +412,13 @@ const navLinks = [
 
   .dropdown-item {
     display: block;
-    padding: 8px 16px;
+    padding: 9px 18px;
     color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 500;
     text-decoration: none;
-    transition: background 150ms ease, color 150ms ease;
+    font-size: 0.84rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 150ms ease, color 150ms ease;
   }
 
   .dropdown-item:hover {
@@ -408,43 +426,52 @@ const navLinks = [
     color: #0587bd;
   }
 
-  /* Mobile Toggle & Drawer */
+  .dropdown-icon {
+    transition: transform 150ms ease;
+  }
+
+  .dropdown-wrapper:hover .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Mobile Menu Toggle */
   .mobile-menu-toggle {
     display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 32px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
+    padding: 0;
+    z-index: 10;
   }
 
   .hamburger-bar {
-    width: 24px;
-    height: 2px;
+    width: 100%;
+    height: 3px;
     background-color: #ffffff;
     border-radius: 2px;
+    transition: all 150ms ease;
   }
 
+  /* Mobile Drawer */
   .mobile-drawer {
     position: fixed;
     top: 0;
     right: -100%;
     width: 300px;
-    max-width: 85vw;
     height: 100vh;
     background-color: #061b31;
-    border-left: 2px solid #0587bd;
     z-index: 2000;
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     transition: right 300ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
   }
 
   .mobile-drawer.is-open {
@@ -463,7 +490,7 @@ const navLinks = [
     background: #ffffff;
     padding: 4px 8px;
     border-radius: 4px;
-    height: 40px;
+    height: 38px;
     width: auto;
   }
 
@@ -488,7 +515,7 @@ const navLinks = [
   .mobile-nav-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 600;
     display: block;
     padding: 6px 0;
@@ -506,10 +533,10 @@ const navLinks = [
   .mobile-subnav-link {
     color: #0587bd;
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     .desktop-navigation {
       display: none;
     }
@@ -517,25 +544,17 @@ const navLinks = [
     .mobile-menu-toggle {
       display: flex;
     }
-
-    .header-inner {
-      grid-template-columns: 1fr auto;
-    }
   }
 
   @media (max-width: 480px) {
     .brand-panel {
-      width: 280px;
-      flex: 0 0 280px;
-    }
-
-    .brand-panel__surface {
-      padding: 6px 40px 6px 316px;
+      width: 250px;
+      flex: 0 0 250px;
     }
 
     .brand-panel__logo {
-      width: 200px;
-      height: 42px;
+      width: 175px;
+      height: 38px;
     }
   }
 </style>

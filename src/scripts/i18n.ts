@@ -3,15 +3,20 @@
 const ES_TO_EN_MAP: Record<string, string> = {
   // Navigation
   'Inicio': 'Home',
+  'Nosotros': 'About',
   'Sobre Nosotros': 'About Us',
+  'Directiva Fundadora': 'Founding Board',
   'Actividades': 'Activities',
   'Próximos Eventos': 'Upcoming Events',
   'Eventos Pasados': 'Past Events',
   'Calendario': 'Calendar',
   'Proyectos': 'Projects',
   'Oportunidades': 'Opportunities',
+  'Medios': 'Media',
   'Galería': 'Gallery',
+  'Galería de Fotos': 'Photo Gallery',
   'Noticias': 'News',
+  'Noticias y Prensa': 'News & Press',
   'Directiva': 'Directive',
   'Contacto': 'Contact',
 
