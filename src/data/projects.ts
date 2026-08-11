@@ -76,7 +76,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'Interactive Virtual Reality environment built in Unreal Engine allowing users to manipulate carbon nanotubes, graphene sheets, and bio-nanoparticles in 3D space.',
     technologies: ['Unreal Engine', 'VR Headsets', '3D Nanomaterial Modeling'],
     team: ['Mateo (Lead)', 'Ethan', 'VR Development Group'],
-    image: '/assets/gallery/foto_con_bandera.jpg',
+    image: '/assets/gallery/actividad_colegio_1.jpg',
     outcomes: 'Functional VR prototype deployed for chapter workshops and campus exhibitions.'
   }
 ];

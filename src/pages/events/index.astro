@@ -54,7 +54,13 @@ function getHref(path: string) {
           <article class="upcoming-featured-card" id={event.slug}>
             <div class="upcoming-image-side">
               <img src={getHref(event.image)} alt={event.imageAlt} width="520" height="320" loading="eager" class="featured-img" />
-              <span class="type-pill">{event.type}</span>
+              <div class="upcoming-badges-group">
+                <span class="upcoming-live-badge">
+                  <span class="pulse-dot"></span>
+                  UPCOMING EVENT
+                </span>
+                <span class="type-pill">{event.type}</span>
+              </div>
             </div>
 
             <div class="upcoming-content-side">
@@ -292,18 +298,60 @@ function getHref(path: string) {
     object-fit: cover;
   }
 
-  .type-pill {
+  .upcoming-badges-group {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
+
+  .upcoming-live-badge {
+    background-color: #059669;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  .type-pill {
     background-color: var(--color-cyan);
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-image-box .type-pill {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
   }
 
   .type-pill.past {
