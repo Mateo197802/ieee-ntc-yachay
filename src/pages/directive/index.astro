@@ -25,11 +25,11 @@ function getInitials(name: string) {
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Inicio</a> &gt; <span>Directiva</span>
+        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Directiva" data-i18n-en="Directive">Directiva</span>
       </div>
-      <span class="banner-eyebrow">LIDERAZGO ESTUDIANTIL</span>
-      <h1 class="banner-title font-heading">JUNTA DIRECTIVA FUNDADORA</h1>
-      <p class="banner-subtitle">
+      <span class="banner-eyebrow" data-i18n-es="LIDERAZGO ESTUDIANTIL" data-i18n-en="STUDENT LEADERSHIP">LIDERAZGO ESTUDIANTIL</span>
+      <h1 class="banner-title font-heading" data-i18n-es="JUNTA DIRECTIVA FUNDADORA" data-i18n-en="FOUNDING EXECUTIVE BOARD">JUNTA DIRECTIVA FUNDADORA</h1>
+      <p class="banner-subtitle" data-i18n-es="Conoce a los estudiantes que lideran IEEE NTC Yachay Tech a través de la investigación, el desarrollo académico, la divulgación científica, la comunicación digital y la innovación con impacto social." data-i18n-en="Meet the students leading IEEE NTC Yachay Tech through research, academic development, scientific outreach, digital communication, and social impact innovation.">
         Conoce a los estudiantes que lideran IEEE NTC Yachay Tech a través de la investigación, el desarrollo académico, la divulgación científica, la comunicación digital y la innovación con impacto social.
       </p>
     </div>
@@ -59,20 +59,20 @@ function getInitials(name: string) {
                   <span class="avatar-tag">IEEE NTC YACHAY TECH</span>
                 </div>
               )}
-              <span class="term-pill">DIRECTIVA FUNDADORA</span>
+              <span class="term-pill" data-i18n-es="DIRECTIVA FUNDADORA" data-i18n-en="FOUNDING BOARD">DIRECTIVA FUNDADORA</span>
             </div>
 
             <!-- Profile Info Content -->
             <div class="directive-content">
               <h2 class="member-name">{member.name}</h2>
-              <p class="member-role">{member.role}</p>
-              <p class="member-program">{member.academicProgram}</p>
+              <p class="member-role" data-i18n-es={member.role} data-i18n-en={member.roleEn}>{member.role}</p>
+              <p class="member-program" data-i18n-es={member.academicProgram} data-i18n-en={member.academicProgramEn}>{member.academicProgram}</p>
               
-              <p class="member-summary">{member.bio.split('\n\n')[0]}</p>
+              <p class="member-summary" data-i18n-es={member.bio.split('\n\n')[0]} data-i18n-en={member.bioEn.split('\n\n')[0]}>{member.bio.split('\n\n')[0]}</p>
 
               <div class="member-interests">
-                {member.focusAreas.slice(0, 3).map((tag) => (
-                  <span class="interest-tag">{tag}</span>
+                {member.focusAreas.map((tag, idx) => (
+                  <span class="interest-tag" data-i18n-es={tag} data-i18n-en={member.focusAreasEn[idx] || tag}>{tag}</span>
                 ))}
               </div>
 
@@ -82,6 +82,8 @@ function getInitials(name: string) {
                   class="btn btn-primary profile-modal-btn" 
                   data-member={JSON.stringify(member)}
                   aria-label={`Ver perfil completo de ${member.name}`}
+                  data-i18n-es="VER PERFIL COMPLETO"
+                  data-i18n-en="VIEW FULL PROFILE"
                 >
                   VER PERFIL COMPLETO
                 </button>
@@ -154,46 +156,43 @@ function getInitials(name: string) {
     font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.85);
     margin-top: 0.5rem;
-    max-width: 720px;
+    max-width: 780px;
   }
 
   .directive-section {
-    padding: 4rem 0 5rem;
+    padding: 4.5rem 0;
     background-color: var(--color-bg-light);
   }
 
-  /* 3x2 Grid Desktop Architecture */
+  /* 3x2 Grid */
   .directive-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
-    align-items: stretch;
+    gap: 30px;
   }
 
   .directive-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-subtle);
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-width: 0;
-    background-color: #ffffff;
-    border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-subtle);
-    border: 1px solid var(--color-border-light);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
   .directive-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--color-cyan);
   }
 
-  /* Avatar Box */
   .directive-avatar-container {
     position: relative;
     width: 100%;
-    height: 380px;
-    background-color: #122844;
+    height: 300px;
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0c233c 100%);
     overflow: hidden;
   }
 
@@ -201,12 +200,12 @@ function getInitials(name: string) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
-    transition: transform 0.4s ease;
+    object-position: center 15%;
+    transition: transform 0.35s ease;
   }
 
   .directive-card:hover .directive-img {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
 
   .avatar-placeholder {
@@ -216,92 +215,77 @@ function getInitials(name: string) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #102642 0%, #1A385C 100%);
     position: relative;
-  }
-
-  .nano-pattern-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(var(--color-cyan) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.15;
+    background: linear-gradient(135deg, #0a2240 0%, #051424 100%);
   }
 
   .avatar-initials {
-    font-family: var(--font-heading);
-    font-size: 3.2rem;
+    font-size: 3.5rem;
+    font-weight: 800;
     color: var(--color-cyan);
     letter-spacing: 2px;
-    z-index: 2;
-    text-shadow: 0 0 16px rgba(5, 135, 189, 0.4);
   }
 
   .avatar-tag {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
-    margin-top: 0.25rem;
-    z-index: 2;
+    margin-top: 0.5rem;
   }
 
   .term-pill {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(31, 62, 101, 0.85);
+    background: rgba(7, 28, 52, 0.85);
     backdrop-filter: blur(4px);
     color: var(--color-cyan);
     border: 1px solid var(--color-cyan);
     font-size: 0.7rem;
     font-weight: 700;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    z-index: 3;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    z-index: 2;
   }
 
-  /* Card Content */
   .directive-content {
+    padding: 1.75rem;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    padding: 24px;
+    flex: 1;
   }
 
   .member-name {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-navy);
-    margin-bottom: 0.25rem;
     line-height: 1.25;
+    margin-bottom: 0.25rem;
   }
 
   .member-role {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: var(--color-cyan);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
 
   .member-program {
-    font-size: 0.78rem;
-    color: var(--color-text-dark);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   .member-summary {
     font-size: 0.88rem;
     color: var(--color-text-muted);
     line-height: 1.55;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -310,72 +294,75 @@ function getInitials(name: string) {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
   }
 
   .interest-tag {
     font-size: 0.72rem;
-    font-weight: 600;
-    background-color: var(--color-bg-alt);
+    background-color: rgba(5, 135, 189, 0.1);
     color: var(--color-navy);
-    padding: 0.2rem 0.55rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
     border-radius: 4px;
+    border: 1px solid rgba(5, 135, 189, 0.2);
   }
 
   .directive-actions {
-    margin-top: auto;
-    padding-top: 1rem;
     display: flex;
-    align-items: center;
     gap: 0.75rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-light);
   }
 
-  .profile-modal-btn {
+  .directive-actions .btn {
     flex: 1;
+    justify-content: center;
     font-size: 0.82rem;
-    padding: 0.6rem 1rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .linkedin-btn {
-    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    background-color: rgba(31, 62, 101, 0.08);
+    background-color: var(--color-bg-light);
     color: var(--color-navy);
-    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
     transition: all 0.2s ease;
-    text-decoration: none;
     flex-shrink: 0;
   }
 
   .linkedin-btn:hover {
     background-color: var(--color-cyan);
-    color: #ffffff;
+    color: var(--color-white);
+    border-color: var(--color-cyan);
   }
 
-  /* Modal Styling */
+  /* Modal Details */
   .profile-modal {
     border: none;
     border-radius: 12px;
     padding: 0;
-    max-width: 720px;
-    width: 92vw;
+    max-width: 680px;
+    width: 90vw;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     background: #ffffff;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     margin: auto;
   }
 
   .profile-modal::backdrop {
-    background: rgba(7, 28, 52, 0.75);
+    background: rgba(7, 28, 52, 0.7);
     backdrop-filter: blur(4px);
   }
 
   .modal-dialog-content {
     position: relative;
-    padding: 2.5rem;
+    padding: 2.25rem 2rem;
     max-height: 85vh;
     overflow-y: auto;
   }
@@ -419,14 +406,24 @@ function getInitials(name: string) {
         if (!rawData || !modal || !modalBody) return;
 
         const member = JSON.parse(rawData);
-        const bioParagraphs = member.bio ? member.bio.split('\n\n') : [];
+        const isEn = localStorage.getItem('ntc_lang') === 'en';
+
+        const role = isEn ? (member.roleEn || member.role) : member.role;
+        const program = isEn ? (member.academicProgramEn || member.academicProgram) : member.academicProgram;
+        const bio = isEn ? (member.bioEn || member.bio) : member.bio;
+        const focusAreas = isEn ? (member.focusAreasEn || member.focusAreas) : member.focusAreas;
+        const focusTitle = isEn ? 'Research & Focus Areas' : 'Áreas de Enfoque e Investigación';
+        const linkedinText = isEn ? 'CONNECT ON LINKEDIN' : 'CONECTAR EN LINKEDIN';
+        const contactText = isEn ? 'Contact' : 'Contacto';
+
+        const bioParagraphs = bio ? bio.split('\n\n') : [];
 
         modalBody.innerHTML = `
           <div style="display: flex; flex-direction: column; gap: 1.25rem;">
             <div style="border-bottom: 2px solid #0587BD; padding-bottom: 0.75rem;">
-              <span style="font-size: 0.8rem; font-weight: 700; color: #0587BD; text-transform: uppercase;">${member.role} · IEEE NTC YACHAY TECH</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #0587BD; text-transform: uppercase;">${role} · IEEE NTC YACHAY TECH</span>
               <h2 style="font-size: 1.6rem; color: #1F3E65; margin-top: 0.25rem;">${member.name}</h2>
-              <p style="font-size: 0.85rem; color: #465D64; margin-top: 0.25rem; font-weight: 600;">${member.academicProgram}</p>
+              <p style="font-size: 0.85rem; color: #465D64; margin-top: 0.25rem; font-weight: 600;">${program}</p>
             </div>
             
             <div style="font-size: 0.95rem; color: #2D3748; line-height: 1.65; display: flex; flex-direction: column; gap: 0.85rem;">
@@ -434,17 +431,17 @@ function getInitials(name: string) {
             </div>
 
             <div style="margin-top: 0.5rem;">
-              <h4 style="font-size: 0.9rem; color: #1F3E65; margin-bottom: 0.5rem;">Áreas de Enfoque e Investigación</h4>
+              <h4 style="font-size: 0.9rem; color: #1F3E65; margin-bottom: 0.5rem;">${focusTitle}</h4>
               <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                ${member.focusAreas.map((tag: string) => `<span style="font-size: 0.78rem; background: #EBF1F6; color: #1F3E65; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 4px;">${tag}</span>`).join('')}
+                ${focusAreas.map((tag: string) => `<span style="font-size: 0.78rem; background: #EBF1F6; color: #1F3E65; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 4px;">${tag}</span>`).join('')}
               </div>
             </div>
 
             <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #EBF1F6; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.85rem; color: #465D64;">Contacto: <strong>${member.email}</strong></span>
+              <span style="font-size: 0.85rem; color: #465D64;">${contactText}: <strong>${member.email}</strong></span>
               ${member.linkedin ? `
                 <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color: #0587BD; color: #ffffff; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.85rem;">
-                  CONECTAR EN LINKEDIN
+                  ${linkedinText}
                 </a>
               ` : ''}
             </div>

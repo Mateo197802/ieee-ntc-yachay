@@ -19,43 +19,46 @@ function isActive(path: string) {
 }
 
 const navLinks = [
-  { name: 'Inicio', path: '/' },
+  { name: 'Inicio', nameEn: 'Home', path: '/' },
   { 
     name: 'Nosotros', 
+    nameEn: 'About',
     path: '/about/', 
     hasDropdown: true,
     dropdownItems: [
-      { name: 'Sobre Nosotros', path: '/about/' },
-      { name: 'Directiva Fundadora', path: '/directive/' }
+      { name: 'Sobre Nosotros', nameEn: 'About Us', path: '/about/' },
+      { name: 'Directiva Fundadora', nameEn: 'Founding Board', path: '/directive/' }
     ]
   },
   { 
     name: 'Actividades', 
+    nameEn: 'Activities',
     path: '/events/', 
     hasDropdown: true,
     dropdownItems: [
-      { name: 'Próximos Eventos', path: '/events/#upcoming' },
-      { name: 'Eventos Pasados', path: '/events/#past' },
-      { name: 'Calendario', path: '/events/#calendar' }
+      { name: 'Próximos Eventos', nameEn: 'Upcoming Events', path: '/events/#upcoming' },
+      { name: 'Eventos Pasados', nameEn: 'Past Events', path: '/events/#past' },
+      { name: 'Calendario', nameEn: 'Calendar', path: '/events/#calendar' }
     ]
   },
-  { name: 'Proyectos', path: '/projects/' },
-  { name: 'Oportunidades', path: '/opportunities/' },
+  { name: 'Proyectos', nameEn: 'Projects', path: '/projects/' },
+  { name: 'Oportunidades', nameEn: 'Opportunities', path: '/opportunities/' },
   { 
     name: 'Medios', 
+    nameEn: 'Media',
     path: '/gallery/', 
     hasDropdown: true,
     dropdownItems: [
-      { name: 'Galería de Fotos', path: '/gallery/' },
-      { name: 'Noticias y Prensa', path: '/news/' }
+      { name: 'Galería de Fotos', nameEn: 'Photo Gallery', path: '/gallery/' },
+      { name: 'Noticias y Prensa', nameEn: 'News & Press', path: '/news/' }
     ]
   },
-  { name: 'Contacto', path: '/contact/' }
+  { name: 'Contacto', nameEn: 'Contact', path: '/contact/' }
 ];
 ---
 
 <header class="site-header" id="main-header">
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#main-content" class="skip-link" data-i18n-es="Saltar al contenido principal" data-i18n-en="Skip to main content">Saltar al contenido principal</a>
 
   <div class="site-container header-inner">
     <!-- Geometric White Logo Panel with Exact Parallel Slant & Cyan Accent -->
@@ -100,7 +103,7 @@ const navLinks = [
                   aria-haspopup="true"
                   id={`dropdown-${link.name.toLowerCase()}`}
                 >
-                  <span>{link.name}</span>
+                  <span data-i18n-es={link.name} data-i18n-en={link.nameEn}>{link.name}</span>
                   <svg class="dropdown-icon" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
                     <path d="M7 10l5 5 5-5z" fill="currentColor"/>
                   </svg>
@@ -108,7 +111,7 @@ const navLinks = [
                 <ul class="dropdown-menu" aria-labelledby={`dropdown-${link.name.toLowerCase()}`} role="menu">
                   {link.dropdownItems?.map((item) => (
                     <li role="none">
-                      <a href={getHref(item.path)} class="dropdown-item" role="menuitem">
+                      <a href={getHref(item.path)} class="dropdown-item" role="menuitem" data-i18n-es={item.name} data-i18n-en={item.nameEn}>
                         {item.name}
                       </a>
                     </li>
@@ -120,8 +123,10 @@ const navLinks = [
                 href={getHref(link.path)} 
                 class="nav-link"
                 aria-current={isActive(link.path) ? 'page' : undefined}
+                data-i18n-es={link.name}
+                data-i18n-en={link.nameEn}
               >
-                <span>{link.name}</span>
+                {link.name}
               </a>
             )}
           </li>
@@ -173,14 +178,14 @@ const navLinks = [
       <ul class="mobile-nav-list">
         {navLinks.map((link) => (
           <li class="mobile-nav-item">
-            <a href={getHref(link.path)} class="mobile-nav-link">
+            <a href={getHref(link.path)} class="mobile-nav-link" data-i18n-es={link.name} data-i18n-en={link.nameEn}>
               {link.name}
             </a>
             {link.hasDropdown && (
               <ul class="mobile-subnav-list">
                 {link.dropdownItems?.map((item) => (
                   <li>
-                    <a href={getHref(item.path)} class="mobile-subnav-link">
+                    <a href={getHref(item.path)} class="mobile-subnav-link" data-i18n-es={`• ${item.name}`} data-i18n-en={`• ${item.nameEn}`}>
                       • {item.name}
                     </a>
                   </li>

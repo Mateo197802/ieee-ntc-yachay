@@ -16,10 +16,10 @@ function getHref(path: string) {
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Inicio</a> &gt; <span>Contacto</span>
+        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Contacto" data-i18n-en="Contact">Contacto</span>
       </div>
-      <h1 class="banner-title font-heading">CONTÁCTANOS</h1>
-      <p class="banner-subtitle">¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición.</p>
+      <h1 class="banner-title font-heading" data-i18n-es="CONTÁCTANOS" data-i18n-en="CONTACT US">CONTÁCTANOS</h1>
+      <p class="banner-subtitle" data-i18n-es="¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición." data-i18n-en="Have questions about IEEE NTC memberships, laboratory workshops, or research collaborations? We are here to help.">¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición.</p>
     </div>
   </section>
 
@@ -28,8 +28,8 @@ function getHref(path: string) {
       <div class="contact-grid">
         <!-- Contact Form Column -->
         <div class="contact-form-card">
-          <h2 class="form-title font-heading">ENVÍANOS UN MENSAJE</h2>
-          <p class="form-desc">Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas.</p>
+          <h2 class="form-title font-heading" data-i18n-es="ENVÍANOS UN MENSAJE" data-i18n-en="SEND US A MESSAGE">ENVÍANOS UN MENSAJE</h2>
+          <p class="form-desc" data-i18n-es="Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas." data-i18n-en="Fill out the form below and our executive board will get back to you within 24 to 48 hours.">Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas.</p>
 
           <form id="contact-form" action="https://formspree.io/f/demo" method="POST" class="contact-form" novalidate>
             <!-- Honeypot Bot Field -->
@@ -39,48 +39,48 @@ function getHref(path: string) {
             </div>
 
             <div class="form-group">
-              <label for="fullName">Nombre Completo <span class="required">*</span></label>
-              <input type="text" id="fullName" name="name" required placeholder="Ej. María Gabriela Pérez" class="form-control" />
-              <span class="error-msg" id="error-name">Por favor ingresa tu nombre completo.</span>
+              <label for="fullName"><span data-i18n-es="Nombre Completo" data-i18n-en="Full Name">Nombre Completo</span> <span class="required">*</span></label>
+              <input type="text" id="fullName" name="name" required placeholder="Ej. María Gabriela Pérez" data-i18n-placeholder-es="Ej. María Gabriela Pérez" data-i18n-placeholder-en="e.g. Jane Doe" class="form-control" />
+              <span class="error-msg" id="error-name" data-i18n-es="Por favor ingresa tu nombre completo." data-i18n-en="Please enter your full name.">Por favor ingresa tu nombre completo.</span>
             </div>
 
             <div class="form-group">
-              <label for="email">Correo Institucional o Personal <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="Ej. maria.perez@yachaytech.edu.ec" class="form-control" />
-              <span class="error-msg" id="error-email">Por favor ingresa un correo electrónico válido.</span>
+              <label for="email"><span data-i18n-es="Correo Institucional o Personal" data-i18n-en="Institutional or Personal Email">Correo Institucional o Personal</span> <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="Ej. maria.perez@yachaytech.edu.ec" data-i18n-placeholder-es="Ej. maria.perez@yachaytech.edu.ec" data-i18n-placeholder-en="e.g. jane.doe@university.edu" class="form-control" />
+              <span class="error-msg" id="error-email" data-i18n-es="Por favor ingresa un correo electrónico válido." data-i18n-en="Please enter a valid email address.">Por favor ingresa un correo electrónico válido.</span>
             </div>
 
             <div class="form-group">
-              <label for="subject">Asunto <span class="required">*</span></label>
+              <label for="subject"><span data-i18n-es="Asunto" data-i18n-en="Subject">Asunto</span> <span class="required">*</span></label>
               <select id="subject" name="subject" required class="form-control">
-                <option value="">Selecciona un tema...</option>
-                <option value="membership">Información y Membresía IEEE NTC</option>
-                <option value="lanano">Semillero de Investigación LANANO 2026</option>
-                <option value="workshop">Inscripción a Talleres y Conferencias</option>
-                <option value="outreach">Vinculación y Visitas a Colegios STEM</option>
-                <option value="general">Consulta General / Soporte</option>
+                <option value="" data-i18n-es="Selecciona un tema..." data-i18n-en="Select a topic...">Selecciona un tema...</option>
+                <option value="membership" data-i18n-es="Información y Membresía IEEE NTC" data-i18n-en="IEEE NTC Info & Membership">Información y Membresía IEEE NTC</option>
+                <option value="lanano" data-i18n-es="Semillero de Investigación LANANO 2026" data-i18n-en="LANANO 2026 Research Incubator">Semillero de Investigación LANANO 2026</option>
+                <option value="workshop" data-i18n-es="Inscripción a Talleres y Conferencias" data-i18n-en="Workshops & Conferences Registration">Inscripción a Talleres y Conferencias</option>
+                <option value="outreach" data-i18n-es="Vinculación y Visitas a Colegios STEM" data-i18n-en="STEM Outreach & School Visits">Vinculación y Visitas a Colegios STEM</option>
+                <option value="general" data-i18n-es="Consulta General / Soporte" data-i18n-en="General Inquiry / Support">Consulta General / Soporte</option>
               </select>
-              <span class="error-msg" id="error-subject">Por favor selecciona un asunto.</span>
+              <span class="error-msg" id="error-subject" data-i18n-es="Por favor selecciona un asunto." data-i18n-en="Please select a subject.">Por favor selecciona un asunto.</span>
             </div>
 
             <div class="form-group">
-              <label for="message">Mensaje <span class="required">*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Escribe los detalles de tu consulta..." class="form-control"></textarea>
-              <span class="error-msg" id="error-message">Por favor escribe tu mensaje.</span>
+              <label for="message"><span data-i18n-es="Mensaje" data-i18n-en="Message">Mensaje</span> <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Escribe los detalles de tu consulta..." data-i18n-placeholder-es="Escribe los detalles de tu consulta..." data-i18n-placeholder-en="Write the details of your inquiry..." class="form-control"></textarea>
+              <span class="error-msg" id="error-message" data-i18n-es="Por favor escribe tu mensaje." data-i18n-en="Please write your message.">Por favor escribe tu mensaje.</span>
             </div>
 
             <div class="form-group checkbox-group">
               <input type="checkbox" id="privacyConsent" name="privacyConsent" required />
-              <label for="privacyConsent">Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud.</label>
+              <label for="privacyConsent" data-i18n-es="Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud." data-i18n-en="I agree that IEEE NTC Yachay Tech may process my contact details to reply to my request.">Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud.</label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">
-              ENVIAR MENSAJE
+              <span data-i18n-es="ENVIAR MENSAJE" data-i18n-en="SEND MESSAGE">ENVIAR MENSAJE</span>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
 
             <!-- Success Alert Banner -->
-            <div class="form-status success" id="form-status-success" style="display: none;" role="alert">
+            <div class="form-status success" id="form-status-success" style="display: none;" role="alert" data-i18n-html-es="<strong>¡Mensaje Enviado con Éxito!</strong> Gracias por comunicarte con IEEE NTC Yachay Tech. Te responderemos a la brevedad." data-i18n-html-en="<strong>Message Sent Successfully!</strong> Thank you for reaching out to IEEE NTC Yachay Tech. We will reply shortly.">
               <strong>¡Mensaje Enviado con Éxito!</strong> Gracias por comunicarte con IEEE NTC Yachay Tech. Te responderemos a la brevedad.
             </div>
           </form>
@@ -89,7 +89,7 @@ function getHref(path: string) {
         <!-- Location & Contact Info Column -->
         <div class="contact-info-column">
           <div class="info-card">
-            <h2 class="card-title font-heading">SEDE INSTITUCIONAL Y UBICACIÓN</h2>
+            <h2 class="card-title font-heading" data-i18n-es="SEDE INSTITUCIONAL Y UBICACIÓN" data-i18n-en="INSTITUTIONAL HEADQUARTERS">SEDE INSTITUCIONAL Y UBICACIÓN</h2>
             
             <ul class="info-list">
               <li>
@@ -107,7 +107,7 @@ function getHref(path: string) {
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
                 <div>
-                  <strong>Correo Oficial</strong>
+                  <strong data-i18n-es="Correo Oficial" data-i18n-en="Official Email">Correo Oficial</strong>
                   <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
                 </div>
               </li>
@@ -136,7 +136,7 @@ function getHref(path: string) {
 
           <!-- Interactive Google Maps Frame -->
           <div class="map-card">
-            <h3 class="map-heading">MAPA DEL CAMPUS YACHAY TECH</h3>
+            <h3 class="map-heading" data-i18n-es="MAPA DEL CAMPUS YACHAY TECH" data-i18n-en="YACHAY TECH CAMPUS MAP">MAPA DEL CAMPUS YACHAY TECH</h3>
             <div class="map-embed-wrapper">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.056122606558!2d-78.1884067!3d0.4285871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a39281dd61d0d%3A0xa19fbc7c014798e6!2sUniversidad%20Yachay%20Tech!5e0!3m2!1sen!2sec!4v1700000000000!5m2!1sen!2sec" 
@@ -184,6 +184,7 @@ function getHref(path: string) {
     font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.85);
     margin-top: 0.5rem;
+    max-width: 760px;
   }
 
   .contact-section {
@@ -193,8 +194,8 @@ function getHref(path: string) {
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 2.5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
   }
 
   .contact-form-card {
@@ -208,12 +209,14 @@ function getHref(path: string) {
   .form-title {
     font-size: 1.5rem;
     color: var(--color-navy);
+    margin-bottom: 0.5rem;
   }
 
   .form-desc {
-    font-size: 0.9rem;
     color: var(--color-text-muted);
-    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
   }
 
   .contact-form {
@@ -229,95 +232,96 @@ function getHref(path: string) {
   }
 
   .form-group label {
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.88rem;
+    font-weight: 600;
     color: var(--color-navy);
   }
 
   .required {
-    color: #DC2626;
+    color: #ef4444;
   }
 
   .form-control {
+    width: 100%;
     padding: 0.75rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
     border: 1px solid var(--color-border-light);
     border-radius: var(--border-radius-sm);
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .form-control:focus {
-    border-color: var(--color-cyan);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(5, 135, 189, 0.2);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 0 3px rgba(5, 135, 189, 0.15);
   }
 
   .checkbox-group {
     flex-direction: row;
     align-items: flex-start;
-    gap: 0.6rem;
+    gap: 0.75rem;
   }
 
   .checkbox-group input {
-    margin-top: 3px;
+    margin-top: 0.25rem;
   }
 
   .checkbox-group label {
-    font-weight: 400;
     font-size: 0.82rem;
     color: var(--color-text-muted);
+    font-weight: 400;
+    line-height: 1.4;
   }
 
   .error-msg {
-    font-size: 0.75rem;
-    color: #DC2626;
     display: none;
+    color: #ef4444;
+    font-size: 0.78rem;
+    font-weight: 500;
   }
 
-  .btn-block {
-    width: 100%;
-    margin-top: 0.5rem;
+  .form-status {
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   .form-status.success {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #D1FAE5;
-    border: 1px solid #10B981;
-    color: #065F46;
-    border-radius: var(--border-radius-sm);
-    font-size: 0.9rem;
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
   }
 
-  /* Contact Info Column */
+  /* Info Column */
   .contact-info-column {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 2rem;
   }
 
-  .info-card, .map-card {
+  .info-card {
     background-color: var(--color-white);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
-    border: 1px solid var(--color-border-light);
+    padding: 2.25rem;
     box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
   }
 
   .card-title {
     font-size: 1.2rem;
     color: var(--color-navy);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .info-list {
-    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .info-list li {
@@ -327,44 +331,54 @@ function getHref(path: string) {
   }
 
   .info-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--color-navy);
     color: var(--color-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
+    margin-top: 0.2rem;
   }
 
   .info-list strong {
-    font-size: 0.9rem;
-    color: var(--color-navy);
     display: block;
+    font-size: 0.92rem;
+    color: var(--color-navy);
+    margin-bottom: 0.2rem;
   }
 
-  .info-list p, .info-list a {
-    font-size: 0.85rem;
+  .info-list p {
+    font-size: 0.88rem;
     color: var(--color-text-muted);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .info-list a {
+    color: var(--color-cyan);
     text-decoration: none;
+    font-weight: 500;
   }
 
   .info-list a:hover {
-    color: var(--color-cyan);
+    text-decoration: underline;
+  }
+
+  .map-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--color-border-light);
   }
 
   .map-heading {
-    font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--color-navy);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
   }
 
   .map-embed-wrapper {
     border-radius: var(--border-radius-sm);
     overflow: hidden;
-    border: 1px solid var(--color-border-light);
   }
 
   @media (max-width: 900px) {
@@ -373,29 +387,3 @@ function getHref(path: string) {
     }
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const successBanner = document.getElementById('form-status-success');
-
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Check honeypot
-      const botVal = (document.getElementById('bot-field') as HTMLInputElement)?.value;
-      if (botVal) return;
-
-      const name = (document.getElementById('fullName') as HTMLInputElement)?.value;
-      const email = (document.getElementById('email') as HTMLInputElement)?.value;
-      const subject = (document.getElementById('subject') as HTMLSelectElement)?.value;
-      const message = (document.getElementById('message') as HTMLTextAreaElement)?.value;
-      const consent = (document.getElementById('privacyConsent') as HTMLInputElement)?.checked;
-
-      if (name && email && subject && message && consent) {
-        if (successBanner) successBanner.style.display = 'block';
-        form.reset();
-      }
-    });
-  });
-</script>

@@ -21,11 +21,11 @@ function getHref(path: string) {
   <section class="events-hero">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')}>Inicio</a> &gt; <span>Actividades</span>
+        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Actividades" data-i18n-en="Activities">Actividades</span>
       </div>
-      <span class="hero-eyebrow">ACTIVIDADES Y COMUNIDAD</span>
-      <h1 class="hero-title font-heading">ACTIVIDADES Y EVENTOS</h1>
-      <p class="hero-subtitle">
+      <span class="hero-eyebrow" data-i18n-es="ACTIVIDADES Y COMUNIDAD" data-i18n-en="ACTIVITIES & COMMUNITY">ACTIVIDADES Y COMUNIDAD</span>
+      <h1 class="hero-title font-heading" data-i18n-es="ACTIVIDADES Y EVENTOS" data-i18n-en="ACTIVITIES & EVENTS">ACTIVIDADES Y EVENTOS</h1>
+      <p class="hero-subtitle" data-i18n-es="Explora nuestros próximos webinars, talleres prácticos de laboratorio, conferencias internacionales y jornadas de vinculación comunitaria." data-i18n-en="Explore our upcoming webinars, hands-on lab workshops, international conferences, and community outreach sessions.">
         Explora nuestros próximos webinars, talleres prácticos de laboratorio, conferencias internacionales y jornadas de vinculación comunitaria.
       </p>
     </div>
@@ -35,9 +35,9 @@ function getHref(path: string) {
   <section class="subnav-bar">
     <div class="site-container">
       <div class="subnav-links">
-        <a href="#upcoming" class="subnav-btn active">Próximos Eventos ({upcomingEvents.length})</a>
-        <a href="#past" class="subnav-btn">Eventos Pasados ({pastEvents.length})</a>
-        <a href="#calendar" class="subnav-btn">Calendario Académico</a>
+        <a href="#upcoming" class="subnav-btn active" data-i18n-es={`Próximos Eventos (${upcomingEvents.length})`} data-i18n-en={`Upcoming Events (${upcomingEvents.length})`}>Próximos Eventos ({upcomingEvents.length})</a>
+        <a href="#past" class="subnav-btn" data-i18n-es={`Eventos Pasados (${pastEvents.length})`} data-i18n-en={`Past Events (${pastEvents.length})`}>Eventos Pasados ({pastEvents.length})</a>
+        <a href="#calendar" class="subnav-btn" data-i18n-es="Calendario Académico" data-i18n-en="Academic Calendar">Calendario Académico</a>
       </div>
     </div>
   </section>
@@ -46,8 +46,8 @@ function getHref(path: string) {
   <section class="events-section" id="upcoming">
     <div class="site-container">
       <div class="section-header">
-        <span class="section-eyebrow">AGENDA Y WEBINARS</span>
-        <h2 class="section-title">PRÓXIMO EVENTO</h2>
+        <span class="section-eyebrow" data-i18n-es="AGENDA Y WEBINARS" data-i18n-en="AGENDA & WEBINARS">AGENDA Y WEBINARS</span>
+        <h2 class="section-title" data-i18n-es="PRÓXIMO EVENTO" data-i18n-en="UPCOMING EVENT">PRÓXIMO EVENTO</h2>
       </div>
 
       <div class="upcoming-single-wrapper">
@@ -59,9 +59,9 @@ function getHref(path: string) {
                 <div class="upcoming-badges-group">
                   <span class="upcoming-live-badge">
                     <span class="pulse-dot"></span>
-                    PRÓXIMO EVENTO
+                    <span data-i18n-es="PRÓXIMO EVENTO" data-i18n-en="UPCOMING EVENT">PRÓXIMO EVENTO</span>
                   </span>
-                  <span class="type-pill">{event.type}</span>
+                  <span class="type-pill" data-i18n-es={event.type} data-i18n-en={event.typeEn}>{event.type}</span>
                 </div>
               </div>
             )}
@@ -71,35 +71,35 @@ function getHref(path: string) {
                 <div class="upcoming-badges-top">
                   <span class="upcoming-live-badge">
                     <span class="pulse-dot"></span>
-                    PRÓXIMO EVENTO
+                    <span data-i18n-es="PRÓXIMO EVENTO" data-i18n-en="UPCOMING EVENT">PRÓXIMO EVENTO</span>
                   </span>
-                  <span class="type-pill">{event.type}</span>
+                  <span class="type-pill" data-i18n-es={event.type} data-i18n-en={event.typeEn}>{event.type}</span>
                 </div>
               )}
               <div class="meta-bar">
                 <span class="meta-date">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
-                  {event.date} • {event.time}
+                  <span data-i18n-es={`${event.date} • ${event.time}`} data-i18n-en={`${event.dateEn} • ${event.timeEn}`}>{event.date} • {event.time}</span>
                 </span>
-                <span class="modality-tag">{event.modality}</span>
+                <span class="modality-tag" data-i18n-es={event.modality} data-i18n-en={event.modalityEn}>{event.modality}</span>
               </div>
 
-              <h3 class="upcoming-title">{event.title}</h3>
-              <p class="upcoming-description">{event.description}</p>
+              <h3 class="upcoming-title" data-i18n-es={event.title} data-i18n-en={event.titleEn}>{event.title}</h3>
+              <p class="upcoming-description" data-i18n-es={event.description} data-i18n-en={event.descriptionEn}>{event.description}</p>
 
               <div class="location-info">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <span>{event.location}</span>
+                <span data-i18n-es={event.location} data-i18n-en={event.locationEn}>{event.location}</span>
               </div>
 
               <div class="upcoming-action-bar">
                 {event.registrationStatus === 'open' && event.registrationUrl ? (
-                  <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n-es="REGISTRARSE AHORA" data-i18n-en="REGISTER NOW">
                     REGISTRARSE AHORA
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
                 ) : (
-                  <button class="btn btn-secondary disabled-status-btn" disabled>
+                  <button class="btn btn-secondary disabled-status-btn" disabled data-i18n-es="REGISTRO PRÓXIMAMENTE" data-i18n-en="REGISTRATION OPENING SOON">
                     REGISTRO PRÓXIMAMENTE
                   </button>
                 )}
@@ -115,8 +115,8 @@ function getHref(path: string) {
   <section class="events-section bg-alt" id="past">
     <div class="site-container">
       <div class="section-header">
-        <span class="section-eyebrow">HISTORIAL Y ARCHIVO</span>
-        <h2 class="section-title">EVENTOS PASADOS Y VINCULACIÓN</h2>
+        <span class="section-eyebrow" data-i18n-es="HISTORIAL Y ARCHIVO" data-i18n-en="HISTORY & ARCHIVE">HISTORIAL Y ARCHIVO</span>
+        <h2 class="section-title" data-i18n-es="EVENTOS PASADOS Y VINCULACIÓN" data-i18n-en="PAST EVENTS & OUTREACH">EVENTOS PASADOS Y VINCULACIÓN</h2>
       </div>
 
       <div class="past-events-grid">
@@ -126,27 +126,27 @@ function getHref(path: string) {
             <article class="event-grid-card" id={event.slug}>
               <div class="card-image-box">
                 <img src={getHref(event.image)} alt={event.imageAlt} width="400" height="225" loading="lazy" class="grid-img" />
-                <span class="type-pill past">{event.type}</span>
-                <span class="status-completed-badge">COMPLETADO</span>
+                <span class="type-pill past" data-i18n-es={event.type} data-i18n-en={event.typeEn}>{event.type}</span>
+                <span class="status-completed-badge" data-i18n-es="COMPLETADO" data-i18n-en="COMPLETED">COMPLETADO</span>
               </div>
 
               <div class="card-body">
                 <div class="card-meta">
-                  <span class="meta-date-text">{event.date}</span>
-                  <span class="modality-tag past">{event.modality}</span>
+                  <span class="meta-date-text" data-i18n-es={event.date} data-i18n-en={event.dateEn}>{event.date}</span>
+                  <span class="modality-tag past" data-i18n-es={event.modality} data-i18n-en={event.modalityEn}>{event.modality}</span>
                 </div>
 
-                <h3 class="card-grid-title">{event.title}</h3>
-                <p class="card-grid-desc">{event.description}</p>
+                <h3 class="card-grid-title" data-i18n-es={event.title} data-i18n-en={event.titleEn}>{event.title}</h3>
+                <p class="card-grid-desc" data-i18n-es={event.description} data-i18n-en={event.descriptionEn}>{event.description}</p>
 
                 <div class="grid-location">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  <span>{event.location}</span>
+                  <span data-i18n-es={event.location} data-i18n-en={event.locationEn}>{event.location}</span>
                 </div>
 
                 <div class="card-actions-row">
                   {event.externalUrl ? (
-                    <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark card-btn">
+                    <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark card-btn" data-i18n-es="VER PROGRAMA" data-i18n-en="VIEW PROGRAM">
                       VER PROGRAMA
                       <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
                     </a>
@@ -154,11 +154,13 @@ function getHref(path: string) {
                     <button 
                       class="btn btn-outline-dark card-btn open-event-gallery-btn"
                       data-album={JSON.stringify(album)}
+                      data-i18n-es={`VER FOTOS DE GALERÍA (${album.slides.length})`}
+                      data-i18n-en={`VIEW GALLERY PHOTOS (${album.slides.length})`}
                     >
                       VER FOTOS DE GALERÍA ({album.slides.length})
                     </button>
                   ) : (
-                    <a href={getHref('/gallery/')} class="btn btn-outline-dark card-btn">
+                    <a href={getHref('/gallery/')} class="btn btn-outline-dark card-btn" data-i18n-es="VER FOTOS DE GALERÍA" data-i18n-en="VIEW GALLERY PHOTOS">
                       VER FOTOS DE GALERÍA
                     </a>
                   )}
@@ -176,21 +178,21 @@ function getHref(path: string) {
     <div class="site-container">
       <div class="calendar-compact-card">
         <div class="calendar-info-side">
-          <span class="section-eyebrow">CALENDARIO ACADÉMICO</span>
-          <h2 class="calendar-title font-heading">CALENDARIO DEL CAPÍTULO 2026</h2>
-          <p class="calendar-desc">
+          <span class="section-eyebrow" data-i18n-es="CALENDARIO ACADÉMICO" data-i18n-en="ACADEMIC CALENDAR">CALENDARIO ACADÉMICO</span>
+          <h2 class="calendar-title font-heading" data-i18n-es="CALENDARIO DEL CAPÍTULO 2026" data-i18n-en="CHAPTER CALENDAR 2026">CALENDARIO DEL CAPÍTULO 2026</h2>
+          <p class="calendar-desc" data-i18n-es="Mantente informado sobre las próximas actividades, talleres técnicos, conferencias internacionales y fechas de convocatorias del capítulo." data-i18n-en="Stay informed about upcoming activities, technical workshops, international conferences, and chapter application deadlines.">
             Mantente informado sobre las próximas actividades, talleres técnicos, conferencias internacionales y fechas de convocatorias del capítulo.
           </p>
         </div>
 
         <div class="calendar-action-side">
           <div class="next-event-preview">
-            <span class="preview-label">PRÓXIMO EVENTO CONFIRMADO</span>
-            <strong class="preview-title">IEEE NTC Region 9 Student Virtual Summit</strong>
-            <span class="preview-date">15 de Octubre de 2026 • Virtual</span>
+            <span class="preview-label" data-i18n-es="PRÓXIMO EVENTO CONFIRMADO" data-i18n-en="NEXT CONFIRMED EVENT">PRÓXIMO EVENTO CONFIRMADO</span>
+            <strong class="preview-title" data-i18n-es="IEEE NTC Region 9 Student Virtual Summit" data-i18n-en="IEEE NTC Region 9 Student Virtual Summit">IEEE NTC Region 9 Student Virtual Summit</strong>
+            <span class="preview-date" data-i18n-es="15 de Octubre de 2026 • Virtual" data-i18n-en="October 15, 2026 • Virtual">15 de Octubre de 2026 • Virtual</span>
           </div>
 
-          <a href="#upcoming" class="btn btn-primary calendar-cta">
+          <a href="#upcoming" class="btn btn-primary calendar-cta" data-i18n-es="VER PRÓXIMO EVENTO" data-i18n-en="VIEW UPCOMING EVENT">
             VER PRÓXIMO EVENTO
           </a>
         </div>
@@ -232,7 +234,7 @@ function getHref(path: string) {
       </div>
 
       <div class="modal-keyboard-hint">
-        <span>Usa las flechas laterales o las teclas &#8592; / &#8594; para navegar</span>
+        <span data-i18n-es="Usa las flechas laterales o las teclas ← / → para navegar" data-i18n-en="Use lateral arrows or keyboard ← / → to navigate">Usa las flechas laterales o las teclas &#8592; / &#8594; para navegar</span>
       </div>
     </div>
   </dialog>
@@ -435,25 +437,13 @@ function getHref(path: string) {
     font-weight: 700;
     padding: 0.35rem 0.8rem;
     border-radius: 20px;
+    text-transform: uppercase;
   }
 
   .type-pill.past {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    z-index: 2;
-  }
-
-  .status-completed-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #122844;
-    color: #ffffff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.3rem 0.65rem;
-    border-radius: 12px;
     z-index: 2;
   }
 
@@ -472,52 +462,74 @@ function getHref(path: string) {
   }
 
   .meta-date {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     color: var(--color-cyan);
+    font-size: 0.9rem;
     font-weight: 700;
-    font-size: 0.88rem;
   }
 
   .modality-tag {
     font-size: 0.75rem;
-    background-color: rgba(5, 135, 189, 0.1);
+    font-weight: 700;
     color: var(--color-navy);
-    padding: 0.25rem 0.65rem;
+    background-color: rgba(5, 135, 189, 0.12);
+    padding: 0.2rem 0.6rem;
     border-radius: 4px;
-    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .modality-tag.past {
+    background-color: #f0f4f8;
+    color: var(--color-text-muted);
   }
 
   .upcoming-title {
     font-size: 1.5rem;
     color: var(--color-navy);
-    margin-bottom: 0.85rem;
     line-height: 1.3;
+    margin-bottom: 0.75rem;
   }
 
   .upcoming-description {
     font-size: 0.95rem;
     color: var(--color-text-muted);
     line-height: 1.6;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .location-info {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-text-muted);
     margin-bottom: 1.75rem;
   }
 
+  .upcoming-action-bar {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .disabled-status-btn {
+    opacity: 0.85;
+    cursor: not-allowed;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
   /* Past Events Grid */
   .past-events-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
 
   .event-grid-card {
@@ -538,19 +550,44 @@ function getHref(path: string) {
 
   .card-image-box {
     position: relative;
-    width: 100%;
-    height: 220px;
-    background-color: #061b31;
+    height: 190px;
+    background-color: #06192e;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .grid-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .event-grid-card:hover .grid-img {
+    transform: scale(1.03);
+  }
+
+  .status-completed-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    z-index: 2;
   }
 
   .card-body {
-    padding: 22px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -572,8 +609,8 @@ function getHref(path: string) {
   .card-grid-title {
     font-size: 1.15rem;
     color: var(--color-navy);
-    margin-bottom: 0.6rem;
     line-height: 1.35;
+    margin-bottom: 0.5rem;
   }
 
   .card-grid-desc {
@@ -591,103 +628,110 @@ function getHref(path: string) {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--color-text-muted);
     margin-bottom: 1.25rem;
     margin-top: auto;
   }
 
   .card-actions-row {
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: auto;
   }
 
   .card-btn {
     width: 100%;
     justify-content: center;
     font-size: 0.82rem;
-    font-weight: 700;
-    padding: 0.6rem;
+    padding: 0.6rem 1rem;
   }
 
   /* Academic Calendar Block */
   .calendar-compact-card {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    background: linear-gradient(135deg, #071c34 0%, var(--color-navy) 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 100%);
     border-radius: 12px;
     padding: 2.5rem 3rem;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
     gap: 2.5rem;
     align-items: center;
-    border: 2px solid var(--color-cyan);
+    border: 1px solid rgba(5, 135, 189, 0.4);
   }
 
   .calendar-title {
-    color: #ffffff;
     font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    margin: 0.5rem 0 0.75rem;
   }
 
   .calendar-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
   .calendar-action-side {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(5, 135, 189, 0.3);
     border-radius: 8px;
-    border: 1px solid rgba(5, 135, 189, 0.4);
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
+  .next-event-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   .preview-label {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-cyan);
     letter-spacing: 0.5px;
   }
 
   .preview-title {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #ffffff;
-    display: block;
   }
 
   .preview-date {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
-    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
   }
 
-  /* Event Gallery Lightbox Carousel Modal */
+  .calendar-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Lightbox Carousel Modal for Event Galleries */
   .event-modal-dialog {
     border: none;
     border-radius: 16px;
     padding: 0;
-    max-width: 900px;
-    width: 94vw;
+    max-width: 960px;
+    width: 95vw;
     background: #061b31;
     color: #ffffff;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
     margin: auto;
   }
 
   .event-modal-dialog::backdrop {
-    background: rgba(4, 15, 28, 0.85);
-    backdrop-filter: blur(6px);
+    background: rgba(4, 15, 28, 0.88);
+    backdrop-filter: blur(8px);
   }
 
   .event-modal-inner {
     position: relative;
-    padding: 2rem 2.5rem;
+    padding: 1.75rem 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .event-modal-close {
@@ -700,42 +744,62 @@ function getHref(path: string) {
     color: #ffffff;
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 20;
   }
 
   .event-modal-close:hover {
     color: var(--color-cyan);
+    transform: scale(1.1);
+  }
+
+  .modal-header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
   }
 
   .event-modal-category {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-cyan);
     letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .modal-counter-badge {
+    background: rgba(5, 135, 189, 0.2);
+    border: 1px solid var(--color-cyan);
+    color: var(--color-cyan);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 12px;
   }
 
   .event-modal-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: #ffffff;
-    margin-top: 0.2rem;
   }
 
   .event-modal-summary {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: rgba(255, 255, 255, 0.75);
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
   }
 
   .event-carousel-stage {
     position: relative;
     width: 100%;
-    height: 440px;
+    height: 500px;
     background: #020c17;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .carousel-slide-box {
@@ -751,7 +815,7 @@ function getHref(path: string) {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.25s ease;
   }
 
   .carousel-caption-bar {
@@ -759,112 +823,83 @@ function getHref(path: string) {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-    padding: 1.5rem 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(2, 12, 23, 0.92) 0%, rgba(2, 12, 23, 0.6) 70%, transparent 100%);
+    padding: 1.5rem 1.75rem 1rem;
     color: #ffffff;
-  }
-
-  .slide-counter {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-cyan);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.2rem;
   }
 
   .slide-title {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
+    color: #ffffff;
   }
 
   .slide-desc {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   .carousel-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(5, 135, 189, 0.8);
+    background: rgba(5, 135, 189, 0.85);
     color: #ffffff;
-    border: none;
-    width: 44px;
-    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    font-size: 1.4rem;
     cursor: pointer;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   }
 
   .carousel-nav-btn:hover {
-    background: var(--color-cyan);
-    transform: translateY(-50%) scale(1.08);
+    background: #0587bd;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 8px 22px rgba(5, 135, 189, 0.5);
   }
 
-  .prev-btn { left: 1rem; }
-  .next-btn { right: 1rem; }
+  .prev-btn { left: 1.25rem; }
+  .next-btn { right: 1.25rem; }
 
-  .carousel-thumbnails-row {
-    display: flex;
-    gap: 0.75rem;
-    overflow-x: auto;
-    padding: 0.5rem 0;
-  }
-
-  .carousel-thumb-btn {
-    width: 70px;
-    height: 48px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 2px solid transparent;
-    background: #020c17;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-    opacity: 0.6;
-    transition: opacity 0.2s ease, border-color 0.2s ease;
-  }
-
-  .carousel-thumb-btn.is-active, .carousel-thumb-btn:hover {
-    opacity: 1;
-    border-color: var(--color-cyan);
-  }
-
-  .carousel-thumb-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .modal-keyboard-hint {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 1080px) {
     .past-events-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    .upcoming-featured-card {
-      grid-template-columns: 1fr;
-    }
     .calendar-compact-card {
       grid-template-columns: 1fr;
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .past-events-grid {
       grid-template-columns: 1fr;
     }
     .event-carousel-stage {
-      height: 280px;
+      height: 340px;
     }
     .event-modal-inner {
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 1rem;
+    }
+    .carousel-nav-btn {
+      width: 40px;
+      height: 40px;
+    }
+    .upcoming-featured-card.no-image-card .upcoming-content-side {
+      padding: 1.75rem 1.5rem;
     }
   }
 </style>
@@ -891,7 +926,6 @@ function getHref(path: string) {
     const counterEl = document.getElementById('modal-slide-counter');
     const slideTitleEl = document.getElementById('modal-slide-title');
     const slideDescEl = document.getElementById('modal-slide-desc');
-    const thumbsRow = document.getElementById('modal-thumbs-row');
 
     let currentAlbum: any = null;
     let currentIndex = 0;
@@ -900,16 +934,25 @@ function getHref(path: string) {
       if (!currentAlbum || !currentAlbum.slides || currentAlbum.slides.length === 0) return;
       currentIndex = (idx + currentAlbum.slides.length) % currentAlbum.slides.length;
       const slide = currentAlbum.slides[currentIndex];
+      const isEn = localStorage.getItem('ntc_lang') === 'en';
 
       if (slideImg) slideImg.src = resolveUrl(slide.image);
-      if (counterEl) counterEl.textContent = `Foto ${currentIndex + 1} de ${currentAlbum.slides.length}`;
-      if (slideTitleEl) slideTitleEl.textContent = slide.title;
-      if (slideDescEl) slideDescEl.textContent = slide.caption;
 
-      document.querySelectorAll('.carousel-thumb-btn').forEach((tb, i) => {
-        if (i === currentIndex) tb.classList.add('is-active');
-        else tb.classList.remove('is-active');
-      });
+      if (isEn) {
+        if (catEl) catEl.textContent = (currentAlbum.categoryEn || currentAlbum.category).toUpperCase();
+        if (titleEl) titleEl.textContent = currentAlbum.titleEn || currentAlbum.title;
+        if (summaryEl) summaryEl.textContent = currentAlbum.summaryEn || currentAlbum.summary;
+        if (counterEl) counterEl.textContent = `Photo ${currentIndex + 1} of ${currentAlbum.slides.length}`;
+        if (slideTitleEl) slideTitleEl.textContent = slide.titleEn || slide.title;
+        if (slideDescEl) slideDescEl.textContent = slide.captionEn || slide.caption;
+      } else {
+        if (catEl) catEl.textContent = currentAlbum.category.toUpperCase();
+        if (titleEl) titleEl.textContent = currentAlbum.title;
+        if (summaryEl) summaryEl.textContent = currentAlbum.summary;
+        if (counterEl) counterEl.textContent = `Foto ${currentIndex + 1} de ${currentAlbum.slides.length}`;
+        if (slideTitleEl) slideTitleEl.textContent = slide.title;
+        if (slideDescEl) slideDescEl.textContent = slide.caption;
+      }
     }
 
     document.querySelectorAll('.open-event-gallery-btn').forEach((btn) => {
@@ -918,25 +961,6 @@ function getHref(path: string) {
         if (!raw || !modal) return;
         currentAlbum = JSON.parse(raw);
         currentIndex = 0;
-
-        if (catEl) catEl.textContent = currentAlbum.category.toUpperCase();
-        if (titleEl) titleEl.textContent = currentAlbum.title;
-        if (summaryEl) summaryEl.textContent = currentAlbum.summary;
-
-        if (thumbsRow) {
-          thumbsRow.innerHTML = currentAlbum.slides.map((s: any, idx: number) => `
-            <button class="carousel-thumb-btn ${idx === 0 ? 'is-active' : ''}" data-index="${idx}" aria-label="Ir a foto ${idx + 1}">
-              <img src="${resolveUrl(s.image)}" alt="${s.title}" />
-            </button>
-          `).join('');
-
-          thumbsRow.querySelectorAll('.carousel-thumb-btn').forEach((tb) => {
-            tb.addEventListener('click', () => {
-              const i = parseInt(tb.getAttribute('data-index') || '0', 10);
-              renderSlide(i);
-            });
-          });
-        }
 
         renderSlide(0);
         modal.showModal();
