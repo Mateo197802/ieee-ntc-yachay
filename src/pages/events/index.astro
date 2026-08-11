@@ -193,30 +193,35 @@ function getHref(path: string) {
       <button class="event-modal-close" id="event-modal-close-btn" aria-label="Cerrar galería">&times;</button>
       
       <div class="event-modal-header">
-        <span class="event-modal-category" id="modal-album-category">VINCULACIÓN</span>
+        <div class="modal-header-top">
+          <span class="event-modal-category" id="modal-album-category">VINCULACIÓN</span>
+          <span class="modal-counter-badge" id="modal-slide-counter">Foto 1 de 4</span>
+        </div>
         <h2 class="event-modal-title" id="modal-album-title">Título del Evento</h2>
         <p class="event-modal-summary" id="modal-album-summary">Resumen del evento</p>
       </div>
 
-      <!-- Carousel Viewer -->
+      <!-- Carousel Viewer Stage with Prominent Lateral Arrows -->
       <div class="event-carousel-stage">
-        <button class="carousel-nav-btn prev-btn" id="modal-prev-btn" aria-label="Foto anterior">&#10094;</button>
+        <button class="carousel-nav-btn prev-btn" id="modal-prev-btn" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
         
         <div class="carousel-slide-box">
           <img id="modal-slide-img" src="" alt="" class="carousel-main-img" />
           <div class="carousel-caption-bar">
-            <span class="slide-counter" id="modal-slide-counter">Foto 1 de 4</span>
             <h4 class="slide-title" id="modal-slide-title">Título de la foto</h4>
             <p class="slide-desc" id="modal-slide-desc">Descripción de la foto</p>
           </div>
         </div>
 
-        <button class="carousel-nav-btn next-btn" id="modal-next-btn" aria-label="Foto siguiente">&#10095;</button>
+        <button class="carousel-nav-btn next-btn" id="modal-next-btn" aria-label="Foto siguiente">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
       </div>
 
-      <!-- Thumbnails Strip -->
-      <div class="carousel-thumbnails-row" id="modal-thumbs-row">
-        <!-- Injected via JS -->
+      <div class="modal-keyboard-hint">
+        <span>Usa las flechas laterales o las teclas &#8592; / &#8594; para navegar</span>
       </div>
     </div>
   </dialog>

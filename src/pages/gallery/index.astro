@@ -42,7 +42,7 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
         ))}
       </div>
 
-      <!-- Albums Grid -->
+      <!-- Compact 4-Column Responsive Albums Grid with Fully Visible Photos -->
       <div class="gallery-mosaic" id="gallery-mosaic">
         {GALLERY_ALBUMS.map((album) => (
           <div 
@@ -59,20 +59,19 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
                 <img 
                   src={getHref(album.coverImage)} 
                   alt={album.title} 
-                  width="400" 
-                  height="280" 
+                  width="320" 
+                  height="180" 
                   loading="lazy" 
                   class="mosaic-img"
-                  style={`object-position: ${album.coverPosition || 'center center'};`}
                 />
                 <span class="category-tag">{album.category}</span>
                 <span class="photos-count-badge">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
                   {album.slides.length} {album.slides.length === 1 ? 'Foto' : 'Fotos'}
                 </span>
                 <span class="zoom-hover-badge">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                  VER ÁLBUM
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  AMPLIAR
                 </span>
               </div>
               <div class="mosaic-info-box">
@@ -87,36 +86,41 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     </div>
   </section>
 
-  <!-- Interactive Lightbox Carousel Modal -->
+  <!-- Interactive Lightbox Carousel Modal with Pure Arrow Navigation -->
   <dialog id="gallery-carousel-modal" class="gallery-modal-dialog">
     <div class="gallery-modal-inner">
       <button class="gallery-modal-close" id="modal-close-btn" aria-label="Cerrar modal">&times;</button>
       
       <div class="gallery-modal-header">
-        <span class="gallery-modal-category" id="album-category-display">VINCULACIÓN</span>
+        <div class="modal-header-top">
+          <span class="gallery-modal-category" id="album-category-display">VINCULACIÓN</span>
+          <span class="modal-counter-badge" id="carousel-counter">Foto 1 de 4</span>
+        </div>
         <h2 class="gallery-modal-title" id="album-title-display">Título del Álbum</h2>
-        <p class="gallery-modal-desc" id="album-summary-display">Resumen del álbum</p>
       </div>
 
-      <!-- Main Stage -->
+      <!-- Main Stage with Prominent Lateral Arrow Buttons -->
       <div class="gallery-carousel-stage">
-        <button class="carousel-nav-btn prev-btn" id="carousel-prev-btn" aria-label="Foto anterior">&#10094;</button>
+        <button class="carousel-nav-btn prev-btn" id="carousel-prev-btn" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
         
         <div class="carousel-slide-box">
           <img id="carousel-slide-img" src="" alt="" class="carousel-main-img" />
           <div class="carousel-caption-bar">
-            <span class="slide-counter" id="carousel-counter">Foto 1 de 4</span>
             <h4 class="slide-title" id="carousel-slide-title">Título de la fotografía</h4>
             <p class="slide-desc" id="carousel-slide-desc">Descripción de la fotografía</p>
           </div>
         </div>
 
-        <button class="carousel-nav-btn next-btn" id="carousel-next-btn" aria-label="Foto siguiente">&#10095;</button>
+        <button class="carousel-nav-btn next-btn" id="carousel-next-btn" aria-label="Foto siguiente">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
       </div>
 
-      <!-- Thumbnails Strip -->
-      <div class="carousel-thumbnails-row" id="carousel-thumbs-row">
-        <!-- Injected dynamically -->
+      <!-- Subtle keyboard helper text -->
+      <div class="modal-keyboard-hint">
+        <span>Usa las flechas laterales o las teclas &#8592; / &#8594; para navegar</span>
       </div>
     </div>
   </dialog>
@@ -153,25 +157,25 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
   }
 
   .gallery-section {
-    padding: 4.5rem 0;
+    padding: 3.5rem 0 5rem;
     background-color: var(--color-bg-light);
   }
 
   .filter-bar {
     display: flex;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
 
   .filter-btn {
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 25px;
     background-color: var(--color-white);
     color: var(--color-navy);
     border: 1px solid var(--color-border-light);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -185,20 +189,22 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     box-shadow: 0 4px 12px rgba(5, 135, 189, 0.3);
   }
 
-  /* Albums Grid */
+  /* 4-Column Responsive Compact Grid */
   .gallery-mosaic {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
   }
 
   .mosaic-item {
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow-subtle);
     border: 1px solid var(--color-border-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .mosaic-item:hover {
@@ -219,35 +225,42 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     font-family: inherit;
   }
 
+  /* Image box: object-fit contain to see the FULL photo without clipping */
   .mosaic-img-box {
     position: relative;
     width: 100%;
-    height: 240px;
-    background-color: #061b31;
+    height: 180px;
+    background: #06192e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
 
   .mosaic-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
   }
 
   .mosaic-card-btn:hover .mosaic-img {
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
 
   .category-tag {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(7, 28, 52, 0.85);
+    top: 0.65rem;
+    left: 0.65rem;
+    background: rgba(7, 28, 52, 0.88);
+    backdrop-filter: blur(4px);
     color: var(--color-cyan);
     border: 1px solid var(--color-cyan);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    padding: 0.25rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -256,36 +269,36 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
 
   .photos-count-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.65rem;
+    right: 0.65rem;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
     color: #ffffff;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 12px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 10px;
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.3rem;
     z-index: 2;
   }
 
   .zoom-hover-badge {
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 0.65rem;
+    right: 0.65rem;
     background: rgba(5, 135, 189, 0.95);
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    padding: 0.35rem 0.8rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.3rem;
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
     transition: all 0.2s ease;
     z-index: 2;
   }
@@ -296,30 +309,31 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
   }
 
   .mosaic-info-box {
-    padding: 22px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
   .info-date {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-cyan);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
   .info-title {
-    font-size: 1.15rem;
+    font-size: 0.98rem;
     color: var(--color-navy);
-    line-height: 1.35;
-    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
   }
 
   .info-caption {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--color-text-muted);
-    line-height: 1.5;
+    line-height: 1.45;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -331,25 +345,25 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     border: none;
     border-radius: 16px;
     padding: 0;
-    max-width: 920px;
-    width: 94vw;
+    max-width: 960px;
+    width: 95vw;
     background: #061b31;
     color: #ffffff;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
     margin: auto;
   }
 
   .gallery-modal-dialog::backdrop {
-    background: rgba(4, 15, 28, 0.85);
-    backdrop-filter: blur(6px);
+    background: rgba(4, 15, 28, 0.88);
+    backdrop-filter: blur(8px);
   }
 
   .gallery-modal-inner {
     position: relative;
-    padding: 2rem 2.5rem;
+    padding: 1.75rem 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .gallery-modal-close {
@@ -362,42 +376,56 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     color: #ffffff;
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 20;
   }
 
   .gallery-modal-close:hover {
     color: var(--color-cyan);
+    transform: scale(1.1);
+  }
+
+  .modal-header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
   }
 
   .gallery-modal-category {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-cyan);
     letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .modal-counter-badge {
+    background: rgba(5, 135, 189, 0.2);
+    border: 1px solid var(--color-cyan);
+    color: var(--color-cyan);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 12px;
   }
 
   .gallery-modal-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: #ffffff;
-    margin-top: 0.2rem;
-  }
-
-  .gallery-modal-desc {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.75);
-    margin-top: 0.25rem;
   }
 
   .gallery-carousel-stage {
     position: relative;
     width: 100%;
-    height: 460px;
+    height: 500px;
     background: #020c17;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .carousel-slide-box {
@@ -413,6 +441,7 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: opacity 0.25s ease;
   }
 
   .carousel-caption-bar {
@@ -420,106 +449,86 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, transparent 100%);
-    padding: 1.5rem 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(2, 12, 23, 0.92) 0%, rgba(2, 12, 23, 0.6) 70%, transparent 100%);
+    padding: 1.5rem 1.75rem 1rem;
     color: #ffffff;
-  }
-
-  .slide-counter {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-cyan);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.2rem;
   }
 
   .slide-title {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
+    color: #ffffff;
   }
 
   .slide-desc {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
+  /* Large Prominent Floating Lateral Navigation Arrows */
   .carousel-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(5, 135, 189, 0.8);
+    background: rgba(5, 135, 189, 0.85);
     color: #ffffff;
-    border: none;
-    width: 44px;
-    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    font-size: 1.4rem;
     cursor: pointer;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   }
 
   .carousel-nav-btn:hover {
-    background: var(--color-cyan);
-    transform: translateY(-50%) scale(1.08);
+    background: #0587bd;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 8px 22px rgba(5, 135, 189, 0.5);
   }
 
-  .prev-btn { left: 1rem; }
-  .next-btn { right: 1rem; }
+  .prev-btn { left: 1.25rem; }
+  .next-btn { right: 1.25rem; }
 
-  .carousel-thumbnails-row {
-    display: flex;
-    gap: 0.75rem;
-    overflow-x: auto;
-    padding: 0.5rem 0;
-  }
-
-  .carousel-thumb-btn {
-    width: 70px;
-    height: 48px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 2px solid transparent;
-    background: #020c17;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-    opacity: 0.6;
-    transition: opacity 0.2s ease, border-color 0.2s ease;
-  }
-
-  .carousel-thumb-btn.is-active, .carousel-thumb-btn:hover {
-    opacity: 1;
-    border-color: var(--color-cyan);
-  }
-
-  .carousel-thumb-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .modal-keyboard-hint {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 1100px) {
     .gallery-mosaic {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .gallery-mosaic {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
     .gallery-carousel-stage {
-      height: 280px;
+      height: 340px;
     }
     .gallery-modal-inner {
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 1rem;
+    }
+    .carousel-nav-btn {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-mosaic {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -547,7 +556,7 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
         mosaicItems.forEach((item) => {
           const itemCat = item.getAttribute('data-category') || '';
           if (filter === 'todas' || itemCat === filter) {
-            (item as HTMLElement).style.display = 'block';
+            (item as HTMLElement).style.display = 'flex';
           } else {
             (item as HTMLElement).style.display = 'none';
           }
@@ -563,13 +572,11 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
 
     const catEl = document.getElementById('album-category-display');
     const titleEl = document.getElementById('album-title-display');
-    const descEl = document.getElementById('album-summary-display');
 
     const slideImg = document.getElementById('carousel-slide-img') as HTMLImageElement | null;
     const counterEl = document.getElementById('carousel-counter');
     const slideTitleEl = document.getElementById('carousel-slide-title');
     const slideDescEl = document.getElementById('carousel-slide-desc');
-    const thumbsRow = document.getElementById('carousel-thumbs-row');
 
     let currentAlbum: any = null;
     let currentIndex = 0;
@@ -583,11 +590,6 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
       if (counterEl) counterEl.textContent = `Foto ${currentIndex + 1} de ${currentAlbum.slides.length}`;
       if (slideTitleEl) slideTitleEl.textContent = slide.title;
       if (slideDescEl) slideDescEl.textContent = slide.caption;
-
-      document.querySelectorAll('.carousel-thumb-btn').forEach((tb, i) => {
-        if (i === currentIndex) tb.classList.add('is-active');
-        else tb.classList.remove('is-active');
-      });
     }
 
     document.querySelectorAll('.open-album-btn').forEach((btn) => {
@@ -599,22 +601,6 @@ const categories = ['Todas', 'Vinculación', 'Conferencias', 'Talleres', 'Comuni
 
         if (catEl) catEl.textContent = currentAlbum.category.toUpperCase();
         if (titleEl) titleEl.textContent = currentAlbum.title;
-        if (descEl) descEl.textContent = currentAlbum.summary;
-
-        if (thumbsRow) {
-          thumbsRow.innerHTML = currentAlbum.slides.map((s: any, idx: number) => `
-            <button class="carousel-thumb-btn ${idx === 0 ? 'is-active' : ''}" data-index="${idx}" aria-label="Ir a foto ${idx + 1}">
-              <img src="${resolveUrl(s.image)}" alt="${s.title}" />
-            </button>
-          `).join('');
-
-          thumbsRow.querySelectorAll('.carousel-thumb-btn').forEach((tb) => {
-            tb.addEventListener('click', () => {
-              const i = parseInt(tb.getAttribute('data-index') || '0', 10);
-              renderSlide(i);
-            });
-          });
-        }
 
         renderSlide(0);
         modal.showModal();

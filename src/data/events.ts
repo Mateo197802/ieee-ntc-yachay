@@ -24,27 +24,46 @@ export interface EventItem {
 export const EVENTS_DATA: EventItem[] = [
   // PRÓXIMO EVENTO
   {
+    id: 'ieee-ntc-region-9-virtual-summit-2026',
+    slug: 'ieee-ntc-region-9-virtual-summit-2026',
+    title: 'IEEE NTC Region 9 Student Virtual Summit 2026',
+    category: 'Próximos',
+    status: 'upcoming',
+    registrationStatus: 'opening-soon',
+    type: 'Conferencia',
+    date: '15 de Octubre de 2026',
+    time: '09:00 AM (UTC-05:00)',
+    location: 'En línea vía IEEE vTools / Zoom',
+    modality: 'En Línea',
+    summary: 'Cumbre regional virtual de capítulos estudiantiles del IEEE Nanotechnology Council en América Latina.',
+    description: 'Encuentro regional que reúne a los capítulos estudiantiles del IEEE Nanotechnology Council de la Región 9 (América Latina y el Caribe). Incluye conferencias magistrales con investigadores internacionales, paneles de desarrollo profesional, presentaciones de pósters científicos y sesiones de networking.',
+    image: '/assets/events/ieee_temscon_latam.jpg',
+    imageAlt: 'IEEE NTC Region 9 Student Virtual Summit 2026',
+    imageVerified: true,
+    featured: true
+  },
+
+  // EVENTOS PASADOS
+  {
     id: 'nanotalks-dominios-magneticos',
     slug: 'nanotalks-dominios-magneticos',
     title: 'NanoTalks: Dominios Magnéticos y Microscopías para su Observación',
-    category: 'Próximos',
-    status: 'upcoming',
-    registrationStatus: 'open',
+    category: 'Pasados',
+    status: 'completed',
+    registrationStatus: 'closed',
     type: 'Webinar',
     date: '16 de Julio de 2026',
     time: '10:00 AM (UTC-05:00)',
     location: 'En línea vía CEDIA / Zoom (ID: 89441870589)',
     modality: 'En Línea',
     summary: 'Conferencia magistral online con el Dr. José Miguel García-Martín (IMN CSIC, España) sobre física de dominios magnéticos y microscopía avanzada.',
-    description: 'Conferencia magistral online organizada por IEEE Nanotechnology Council Yachay Tech Student Branch y el IEEE NTC Ecuador Chapter. El Dr. José Miguel García-Martín (Instituto de Micro y Nanotecnología - CSIC, España) expone sobre la física de dominios magnéticos, microscopía de fuerza magnética y aplicaciones nanotecnológicas.',
+    description: 'Conferencia magistral online organizada por IEEE Nanotechnology Council Yachay Tech Student Branch y el IEEE NTC Ecuador Chapter. El Dr. José Miguel García-Martín (Instituto de Micro y Nanotecnología - CSIC, España) expuso sobre la física de dominios magnéticos, microscopía de fuerza magnética y aplicaciones nanotecnológicas.',
     image: '/assets/events/nanotalks_dominios_magneticos.png',
     imageAlt: 'Conferencia NanoTalks Dominios Magnéticos y Microscopías para su Observación',
     imageVerified: true,
-    registrationUrl: 'https://cedia.zoom.us/j/89441870589',
-    featured: true
+    externalUrl: 'https://cedia.zoom.us/j/89441870589',
+    featured: false
   },
-
-  // EVENTOS PASADOS
   {
     id: 'lanano-paper-training',
     slug: 'lanano-paper-training',

@@ -44,13 +44,20 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <div class="site-container header-inner">
-    <!-- Geometric White Logo Panel using Extracted Official NTC Logo -->
+    <!-- Geometric White Logo Panel with Perfectly Parallel Slant & Cyan Accent -->
     <a
       class="brand-panel"
       href={getHref('/')}
       aria-label="IEEE Nanotechnology Council Yachay Tech Inicio"
     >
-      <span class="brand-panel__surface">
+      <svg class="brand-panel__bg" viewBox="0 0 880 74" preserveAspectRatio="none" aria-hidden="true">
+        <!-- White surface from 0 up to 830px at top, slanting 30px to 800px at bottom -->
+        <polygon points="0,0 830,0 800,74 0,74" fill="#ffffff" />
+        <!-- Cyan accent stripe with exact 5px gap (835-847 at top, 805-817 at bottom) -->
+        <polygon points="835,0 847,0 817,74 805,74" fill="#0587bd" />
+      </svg>
+
+      <span class="brand-panel__logo-wrapper">
         <img
           class="brand-panel__logo"
           src={ntcLogo}
@@ -62,11 +69,6 @@ const navLinks = [
           decoding="async"
         />
       </span>
-
-      <span
-        class="brand-panel__accent"
-        aria-hidden="true"
-      ></span>
     </a>
 
     <!-- Primary Navigation Bar -->
@@ -111,6 +113,13 @@ const navLinks = [
           </li>
         ))}
       </ul>
+
+      <!-- Language Selector Pill (Desktop) -->
+      <div class="lang-switcher" id="lang-switcher-desktop">
+        <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
+      </div>
     </nav>
 
     <!-- Mobile Menu Toggle Button -->
@@ -134,6 +143,16 @@ const navLinks = [
       <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Cerrar menú de navegación">
         &times;
       </button>
+    </div>
+
+    <!-- Language Selector Pill (Mobile) -->
+    <div class="mobile-lang-box">
+      <span class="mobile-lang-title">Idioma / Language:</span>
+      <div class="lang-switcher" id="lang-switcher-mobile">
+        <button class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
     </div>
 
     <nav class="mobile-nav" aria-label="Navegación Móvil">
@@ -203,58 +222,43 @@ const navLinks = [
     gap: clamp(24px, 2vw, 48px);
   }
 
-  /* Geometric White Logo Panel & Accent Expanding Flush to Top Corner */
+  /* Geometric White Logo Panel with Exact Parallel Slant & Cyan Accent */
   .brand-panel {
     position: relative;
     display: flex;
     align-items: center;
-    flex: 0 0 390px;
-    width: 390px;
+    flex: 0 0 380px;
+    width: 380px;
     height: 74px;
     text-decoration: none;
+    overflow: visible;
   }
 
-  .brand-panel__surface {
+  .brand-panel__bg {
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: -300px;
-    right: 14px;
+    left: -500px;
+    width: 880px;
+    height: 74px;
+    pointer-events: none;
+    z-index: 1;
+    display: block;
+  }
+
+  .brand-panel__logo-wrapper {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
-    padding: 8px 64px 8px 324px;
-    background: #ffffff;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      calc(100% - 30px) 100%,
-      0 100%
-    );
-  }
-
-  .brand-panel__accent {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 44px;
     height: 74px;
-    background: #0587bd;
-    clip-path: polygon(
-      calc(100% - 10px) 0,
-      100% 0,
-      calc(100% - 40px) 100%,
-      calc(100% - 50px) 100%
-    );
+    padding-left: 12px;
   }
 
   .brand-panel__logo {
     display: block;
-    width: 255px;
+    width: 250px;
     max-width: 100%;
-    height: 52px;
+    height: 50px;
     object-fit: contain;
     object-position: left center;
   }
@@ -265,6 +269,64 @@ const navLinks = [
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    gap: 16px;
+  }
+
+  /* Language Switcher Pill Widget */
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(7, 28, 52, 0.85);
+    border: 1px solid rgba(5, 135, 189, 0.45);
+    border-radius: 18px;
+    padding: 3px 6px;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 7px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    line-height: 1.2;
+  }
+
+  .lang-btn:hover {
+    color: #ffffff;
+  }
+
+  .lang-btn.active {
+    background-color: #0587bd;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(5, 135, 189, 0.5);
+  }
+
+  .lang-divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.72rem;
+    user-select: none;
+  }
+
+  .mobile-lang-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(5, 135, 189, 0.2);
+    margin-bottom: 8px;
+  }
+
+  .mobile-lang-title {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
   }
 
   .nav-list {
