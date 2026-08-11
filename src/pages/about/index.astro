@@ -13,7 +13,7 @@ function getHref(path: string) {
 >
   <!-- Inner Page Banner -->
   <section class="inner-banner">
-    <div class="container">
+    <div class="site-container">
       <div class="breadcrumb">
         <a href={getHref('/')}>Home</a> &gt; <span>About Us</span>
       </div>
@@ -24,7 +24,7 @@ function getHref(path: string) {
 
   <!-- About History & Overview Section -->
   <section class="about-content-section">
-    <div class="container">
+    <div class="site-container">
       <div class="about-grid">
         <div class="about-text-block">
           <span class="section-eyebrow">IEEE NTC YACHAY TECH</span>
@@ -35,25 +35,19 @@ function getHref(path: string) {
           <p>
             Established under IEEE Region 9 guidelines, our chapter serves as a bridge between undergraduate students, researchers, faculty advisors, and international scientific networks. We empower our members through hands-on laboratory workshops, research paper mentorship tracks, virtual reality simulations, and STEM outreach in regional schools.
           </p>
-
-          <div class="stats-counter-strip">
-            <div class="counter-box">
-              <span class="counter-num">1st</span>
-              <span class="counter-label">IEEE NTC Student Chapter in Ecuador</span>
-            </div>
-            <div class="counter-box">
-              <span class="counter-num">200+</span>
-              <span class="counter-label">Students & Event Participants</span>
-            </div>
-            <div class="counter-box">
-              <span class="counter-num">10+</span>
-              <span class="counter-label">High Impact Technical Activities</span>
-            </div>
-          </div>
+          <p>
+            Through strategic regional collaboration and interdisciplinary projects, we foster leadership, academic excellence, and high-impact scientific publications within the Ecuadorian and international scientific ecosystem.
+          </p>
         </div>
 
         <div class="about-image-block">
-          <img src={getHref('/assets/gallery/foto_con_bandera.jpg')} alt="IEEE NTC Yachay Tech Chapter Members" width="600" height="420" class="about-hero-img" />
+          <img 
+            src={getHref('/assets/gallery/foto_con_bandera.jpg')} 
+            alt="IEEE NTC Yachay Tech Chapter Members" 
+            width="600" 
+            height="450" 
+            class="about-hero-img" 
+          />
           <div class="img-caption">
             <span>IEEE NTC Yachay Tech Student Branch Chapter Delegation</span>
           </div>
@@ -64,7 +58,7 @@ function getHref(path: string) {
 
   <!-- Mission, Vision & Values Section -->
   <section class="mission-vision-section">
-    <div class="container">
+    <div class="site-container">
       <div class="cards-3-grid">
         <div class="mv-card">
           <div class="mv-icon">
@@ -104,7 +98,7 @@ function getHref(path: string) {
 
   <!-- Benefits of Joining IEEE Section -->
   <section class="benefits-section">
-    <div class="container">
+    <div class="site-container">
       <div class="section-header text-center">
         <span class="section-eyebrow">MEMBERSHIP ADVANTAGES</span>
         <h2 class="section-title">WHY JOIN IEEE & IEEE NTC?</h2>
@@ -138,7 +132,7 @@ function getHref(path: string) {
 
 <style>
   .inner-banner {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
+    background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
     padding: 3rem 0 3.5rem;
     border-bottom: 3px solid var(--color-cyan);
@@ -156,7 +150,7 @@ function getHref(path: string) {
   }
 
   .banner-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     color: var(--color-white);
   }
 
@@ -167,14 +161,14 @@ function getHref(path: string) {
   }
 
   .about-content-section {
-    padding: 4rem 0;
+    padding: 4.5rem 0;
     background-color: var(--color-white);
   }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
     align-items: center;
   }
 
@@ -185,46 +179,33 @@ function getHref(path: string) {
     line-height: 1.65;
   }
 
-  .stats-counter-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border-light);
-  }
-
-  .counter-num {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--color-cyan);
-    display: block;
-    line-height: 1;
-  }
-
-  .counter-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
+  .about-image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .about-hero-img {
     width: 100%;
-    height: auto;
+    height: 420px;
+    object-fit: cover;
+    object-position: center 82%;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-hover);
+    border: 2px solid var(--color-cyan);
   }
 
   .img-caption {
     font-size: 0.8rem;
     color: var(--color-text-muted);
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     font-style: italic;
   }
 
   .mission-vision-section {
-    padding: 4rem 0;
+    padding: 4.5rem 0;
     background-color: var(--color-bg-light);
   }
 
@@ -237,7 +218,7 @@ function getHref(path: string) {
   .mv-card {
     background-color: var(--color-white);
     border-radius: var(--border-radius-md);
-    padding: 2rem;
+    padding: 2.25rem;
     box-shadow: var(--shadow-subtle);
     border-top: 4px solid var(--color-cyan);
   }
@@ -261,7 +242,7 @@ function getHref(path: string) {
   }
 
   .benefits-section {
-    padding: 4rem 0;
+    padding: 4.5rem 0;
     background-color: var(--color-white);
   }
 
@@ -282,7 +263,6 @@ function getHref(path: string) {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--color-cyan);
-
     display: block;
   }
 
@@ -300,6 +280,9 @@ function getHref(path: string) {
   @media (max-width: 1024px) {
     .about-grid {
       grid-template-columns: 1fr;
+    }
+    .about-hero-img {
+      height: 360px;
     }
     .cards-3-grid {
       grid-template-columns: 1fr;
