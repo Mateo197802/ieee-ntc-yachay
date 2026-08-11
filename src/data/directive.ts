@@ -28,7 +28,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'She currently serves as founding Chair of IEEE NTC Yachay Tech, whose creation she led as the first Nanotechnology Council chapter in Ecuador. She also contributes to the IEEE Region 9 SAC Awards and Recognition Subcommittee.'
     ],
     interests: ['Nanobiotechnology', 'Nanomedicine', 'Biomaterials', 'Antimicrobial Hydrogels', 'Scientific Outreach'],
-    image: null,
+    image: '/assets/directive/solange_criollo.jpg',
     imageAlt: 'Solange Criollo - IEEE NTC Yachay Tech Chair',
     linkedin: 'https://www.linkedin.com/in/solange-criollo-321b73163/',
     term: '2026 - Present'
@@ -47,7 +47,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'His professional objective is to decentralize the development of advanced clinical and scientific technologies and demonstrate that high-level AI, backend infrastructure, and biomedical innovation can be led from Ecuador.'
     ],
     interests: ['Clinical AI', 'PRISMA Automation', 'Edge AI', 'Biomedical Systems Architecture', 'Virtual Reality Nanosimulation'],
-    image: null,
+    image: '/assets/directive/mateo_gavilanes.jpg',
     imageAlt: 'Isaac Mateo Gavilanes Chávez - IEEE NTC Yachay Tech Vice Chair',
     linkedin: 'https://www.linkedin.com/in/isaac-mateo-g-55aa7a318/?locale=es',
     term: '2026 - Present'
@@ -65,7 +65,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'His technical work is complemented by social and innovation initiatives, including GelGrowth, a biotechnological project based on biocompatible hydrogels. He is a founding member and Secretary of IEEE NTC Yachay Tech and has also served as a Teaching Assistant in Human Physiology.'
     ],
     interests: ['Molecular Biology', 'Tissue Engineering', 'Medical Instrumentation', 'Biocompatible Hydrogels', 'Edge AI'],
-    image: null,
+    image: '/assets/directive/ethan_guevara.jpg',
     imageAlt: 'Ethan Aaron Guevara López - IEEE NTC Yachay Tech Secretary',
     linkedin: 'https://www.linkedin.com/in/ethan-guevara-40b232346/',
     term: '2026 - Present'
@@ -84,7 +84,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'Her academic profile is characterized by analytical thinking, proactivity, and a commitment to nanomedicine and community development.'
     ],
     interests: ['Medical Physics', 'Green Synthesis', 'Nanomedicine', 'Antimicrobial Nanoparticles', 'Financial Planning'],
-    image: null,
+    image: '/assets/directive/emily_perez.jpg',
     imageAlt: 'Emily Pérez - IEEE NTC Yachay Tech Treasurer',
     linkedin: 'https://www.linkedin.com/in/emily-poleth-a2148828a/',
     term: '2026 - Present'
@@ -103,7 +103,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'Her profile combines scientific communication, sustainability, entrepreneurship, and strategic outreach.'
     ],
     interests: ['Quantum Physics', 'Nanotechnology', 'Scientific Communication', 'Sustainability', 'Digital Outreach'],
-    image: null,
+    image: '/assets/directive/fernanda_landazuri.jpg',
     imageAlt: 'Fernanda Landázuri - IEEE NTC Yachay Tech Webmaster',
     linkedin: 'https://www.linkedin.com/in/melanie-fernanda-landazuri-qui%C3%B1onez-3ba71b305/',
     term: '2026 - Present'
@@ -122,7 +122,7 @@ export const DIRECTIVE_MEMBERS: DirectiveMember[] = [
       'As Webmaster of IEEE NTC Yachay Tech, he contributes to the chapter’s digital infrastructure, technical communication, and online presence.'
     ],
     interests: ['Medical Hardware', 'Artificial Intelligence', 'Advanced Electronics', 'Clinical ML Diagnosis', 'Digital Infrastructure'],
-    image: null,
+    image: '/assets/directive/kennedy_rodriguez.jpg',
     imageAlt: 'Kennedy Rodríguez - IEEE NTC Yachay Tech Webmaster',
     linkedin: 'https://www.linkedin.com/in/yehudhah-kennedy-rodriguez-moran-27910b3b6/',
     term: '2026 - Present'

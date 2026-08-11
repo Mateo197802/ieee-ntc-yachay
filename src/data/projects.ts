@@ -24,7 +24,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'A research workflow automation tool designed to support and organize PRISMA-based systematic reviews, reducing repetitive manual work and improving process traceability and reproducibility.',
     technologies: ['Python', 'PRISMA Framework', 'Workflow Automation', 'Scientometrics'],
     team: ['Mateo (Lead)', 'Chapter Research Group'],
-    image: '/assets/images/flyer_2.png',
+    image: '/assets/events/logic_lock_post.png',
     outcomes: 'Automated screening tool supporting systematic literature reviews.'
   },
   {
@@ -37,7 +37,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'A structured multi-week mentorship framework matching undergraduate researchers with faculty mentors across research axes including Nanoelectronics, Quantum Technology, Nanomedicine, and Machine Learning in Nanoscience.',
     technologies: ['Green Synthesis', 'Machine Learning', 'Molecular Dynamics', 'UV-Vis Spectrophotometry'],
     team: ['Solange (Lead)', 'Mateo', 'Ethan', 'Faculty Advisors'],
-    image: '/assets/images/ieee_temscon_awards.jpg',
+    image: '/assets/events/lanano_paper_training.png',
     outcomes: 'Draft proposals submitted for peer review across 4 research tracks.'
   },
   {
@@ -50,7 +50,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'Hands-on educational modules designed to spark curiosity for nanoscience, material science, and engineering careers among high school students through interactive experiments.',
     technologies: ['Interactive Demos', 'Hydrophobic Materials', 'Ferrofluids', 'STEM Kits'],
     team: ['Kennedy (Lead)', 'Fernanda', 'Ethan'],
-    image: '/assets/images/visita_escuela.jpg',
+    image: '/assets/events/visita_victor_manuel_guzman.jpg',
     outcomes: 'Over 150 high school students reached in Ibarra and surrounding communities.'
   },
   {
@@ -63,7 +63,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'Collaborative initiative with biomedical engineering student clubs providing cheerful, therapeutic science activities and custom educational kits to hospitalized children.',
     technologies: ['Community Service', 'Educational Kits', 'Hospital Classroom'],
     team: ['Ethan (Lead)', 'Chapter Volunteers'],
-    image: '/assets/images/hospital_san_vicente.jpg',
+    image: '/assets/events/dia_del_nino_hospital.jpg',
     outcomes: 'Successfully conducted workshop for 25 pediatric patients.'
   },
   {
@@ -76,7 +76,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'Interactive Virtual Reality environment built in Unreal Engine allowing users to manipulate carbon nanotubes, graphene sheets, and bio-nanoparticles in 3D space.',
     technologies: ['Unreal Engine', 'VR Headsets', '3D Nanomaterial Modeling'],
     team: ['Mateo (Lead)', 'Ethan', 'VR Development Group'],
-    image: '/assets/images/campus_stairs_group.jpg',
+    image: '/assets/gallery/foto_con_bandera.jpg',
     outcomes: 'Functional VR prototype deployed for chapter workshops and campus exhibitions.'
   }
 ];
