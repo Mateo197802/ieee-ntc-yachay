@@ -56,15 +56,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'hospital-paediatric-service',
     slug: 'hospital-paediatric-service',
-    title: 'Hospital San Vicente de Paúl Pediatric Science Initiative',
+    title: "Immersive Children's Day: Technology and Smiles",
     category: 'Service',
     status: 'Completed',
-    summary: 'Community service project delivering educational science workshops to hospitalized children in pediatric care.',
-    description: 'Collaborative initiative with biomedical engineering student clubs providing cheerful, therapeutic science activities and custom educational kits to hospitalized children.',
-    technologies: ['Community Service', 'Educational Kits', 'Hospital Classroom'],
-    team: ['Ethan (Lead)', 'Chapter Volunteers'],
+    summary: 'Humanitarian VR intervention bringing simulated nanotechnology laboratories and therapeutic relief to pediatric patients in hospital ICU.',
+    description: 'A clinical and technological outreach initiative designed to alleviate acute stress, procedural pain, and hospitalization anxiety for 25 pediatric patients at Hospital San Vicente de Paúl. Employing four Meta Quest 3 VR headsets with custom biosafety sanitization and one-on-one ergonomic assistance, the project enabled bedridden children to explore simulated nanotechnology laboratories, marine environments, and deep space.',
+    technologies: ['Meta Quest 3 VR', 'Clinical Biosafety Protocols', 'Humanitarian Engineering', 'Attention-Modulation VR'],
+    team: ['Solange (Lead)', 'Emily', 'Kennedy', 'Mateo', 'Ethan', 'Fernanda', 'Biomedical Engineering Club'],
     image: '/assets/events/dia_del_nino_hospital.jpg',
-    outcomes: 'Successfully conducted workshop for 25 pediatric patients.'
+    outcomes: 'Delivered safe, highly engaging VR immersion to 25 hospitalized children, establishing a replicable humanitarian blueprint for IEEE units.'
   },
   {
     id: 'vr-nano-museum',
