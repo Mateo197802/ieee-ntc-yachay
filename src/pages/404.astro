@@ -11,9 +11,9 @@ function getHref(path: string) {
   <section class="not-found-section">
     <div class="site-container text-center">
       <h1 class="error-code font-heading">404</h1>
-      <h2 class="error-title">PÁGINA NO ENCONTRADA</h2>
-      <p class="error-desc">La página que estás buscando no existe o ha sido trasladada a otra dirección.</p>
-      <a href={getHref('/')} class="btn btn-primary">
+      <h2 class="error-title" data-i18n-es="PÁGINA NO ENCONTRADA" data-i18n-en="PAGE NOT FOUND">PÁGINA NO ENCONTRADA</h2>
+      <p class="error-desc" data-i18n-es="La página que estás buscando no existe o ha sido trasladada a otra dirección." data-i18n-en="The page you are looking for does not exist or has been moved.">La página que estás buscando no existe o ha sido trasladada a otra dirección.</p>
+      <a href={getHref('/')} class="btn btn-primary" data-i18n-es="VOLVER AL INICIO" data-i18n-en="BACK TO HOME">
         VOLVER AL INICIO
       </a>
     </div>
