@@ -155,6 +155,18 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
         position: 'center center'
       },
       {
+        image: '/assets/gallery/posesion_directivos_certificados.jpg',
+        title: 'Official Appointment Credentials & Swearing-in Certificates',
+        caption: 'Executive board officers proudly displaying their official IEEE recognition certificates and appointment credentials.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/posesion_directivos_auditorio.png',
+        title: 'Auditorium Ceremony & Community Swearing-in',
+        caption: 'University auditorium audience, faculty authorities, and students commemorating the solemn inauguration of the chapter.',
+        position: 'center center'
+      },
+      {
         image: '/assets/gallery/posesion_directivos_1.jpg',
         title: 'Opening and Official Chapter Inauguration',
         caption: 'Inaugural ceremony in the university auditorium with faculty authorities and founding members.',
@@ -162,7 +174,7 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
       },
       {
         image: '/assets/gallery/posesion_directivos_2.jpg',
-        title: 'Swearing-in and Official Appointment',
+        title: 'Formal Swearing-in and Credentials Presentation',
         caption: 'Formal presentation of credentials and official appointments for the 2026-2027 term.',
         position: 'center center'
       }
