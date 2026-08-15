@@ -10,16 +10,16 @@ function getHref(path: string) {
 ---
 
 <Layout 
-  title="Contacto | IEEE Nanotechnology Council Yachay Tech"
-  description="Ponte en contacto con el Capítulo Estudiantil IEEE Nanotechnology Council en Yachay Tech University. Escríbenos, consulta sobre membresías o únete a nuestros semilleros."
+  title="Contact | IEEE Nanotechnology Council Yachay Tech"
+  description="Get in touch with the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. Inquire about memberships, workshops, or research collaborations."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Contacto" data-i18n-en="Contact">Contacto</span>
+        <a href={getHref('/')}>Home</a> &gt; <span>Contact</span>
       </div>
-      <h1 class="banner-title font-heading" data-i18n-es="CONTÁCTANOS" data-i18n-en="CONTACT US">CONTÁCTANOS</h1>
-      <p class="banner-subtitle" data-i18n-es="¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición." data-i18n-en="Have questions about IEEE NTC memberships, laboratory workshops, or research collaborations? We are here to help.">¿Tienes preguntas sobre membresías IEEE NTC, talleres de laboratorio o colaboraciones de investigación? Estamos a tu disposición.</p>
+      <h1 class="banner-title font-heading">CONTACT US</h1>
+      <p class="banner-subtitle">Have questions about IEEE NTC memberships, laboratory workshops, or research collaborations? We are here to help.</p>
     </div>
   </section>
 
@@ -28,60 +28,60 @@ function getHref(path: string) {
       <div class="contact-grid">
         <!-- Contact Form Column -->
         <div class="contact-form-card">
-          <h2 class="form-title font-heading" data-i18n-es="ENVÍANOS UN MENSAJE" data-i18n-en="SEND US A MESSAGE">ENVÍANOS UN MENSAJE</h2>
-          <p class="form-desc" data-i18n-es="Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas." data-i18n-en="Fill out the form below and our executive board will get back to you within 24 to 48 hours.">Completa el siguiente formulario y nuestra junta directiva se pondrá en contacto contigo en un plazo de 24 a 48 horas.</p>
+          <h2 class="form-title font-heading">SEND US A MESSAGE</h2>
+          <p class="form-desc">Fill out the form below and our executive board will get back to you within 24 to 48 hours.</p>
 
           <form id="contact-form" action="https://formspree.io/f/demo" method="POST" class="contact-form" novalidate>
             <!-- Honeypot Bot Field -->
             <div class="sr-only" aria-hidden="true">
-              <label for="bot-field">No llenar este campo si eres humano:</label>
+              <label for="bot-field">Do not fill this field if human:</label>
               <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form-group">
-              <label for="fullName"><span data-i18n-es="Nombre Completo" data-i18n-en="Full Name">Nombre Completo</span> <span class="required">*</span></label>
-              <input type="text" id="fullName" name="name" required placeholder="Ej. María Gabriela Pérez" data-i18n-placeholder-es="Ej. María Gabriela Pérez" data-i18n-placeholder-en="e.g. Jane Doe" class="form-control" />
-              <span class="error-msg" id="error-name" data-i18n-es="Por favor ingresa tu nombre completo." data-i18n-en="Please enter your full name.">Por favor ingresa tu nombre completo.</span>
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="name" required placeholder="e.g. Jane Doe" class="form-control" />
+              <span class="error-msg" id="error-name">Please enter your full name.</span>
             </div>
 
             <div class="form-group">
-              <label for="email"><span data-i18n-es="Correo Institucional o Personal" data-i18n-en="Institutional or Personal Email">Correo Institucional o Personal</span> <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="Ej. maria.perez@yachaytech.edu.ec" data-i18n-placeholder-es="Ej. maria.perez@yachaytech.edu.ec" data-i18n-placeholder-en="e.g. jane.doe@university.edu" class="form-control" />
-              <span class="error-msg" id="error-email" data-i18n-es="Por favor ingresa un correo electrónico válido." data-i18n-en="Please enter a valid email address.">Por favor ingresa un correo electrónico válido.</span>
+              <label for="email">Institutional or Personal Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="e.g. jane.doe@university.edu" class="form-control" />
+              <span class="error-msg" id="error-email">Please enter a valid email address.</span>
             </div>
 
             <div class="form-group">
-              <label for="subject"><span data-i18n-es="Asunto" data-i18n-en="Subject">Asunto</span> <span class="required">*</span></label>
+              <label for="subject">Subject <span class="required">*</span></label>
               <select id="subject" name="subject" required class="form-control">
-                <option value="" data-i18n-es="Selecciona un tema..." data-i18n-en="Select a topic...">Selecciona un tema...</option>
-                <option value="membership" data-i18n-es="Información y Membresía IEEE NTC" data-i18n-en="IEEE NTC Info & Membership">Información y Membresía IEEE NTC</option>
-                <option value="lanano" data-i18n-es="Semillero de Investigación LANANO 2026" data-i18n-en="LANANO 2026 Research Incubator">Semillero de Investigación LANANO 2026</option>
-                <option value="workshop" data-i18n-es="Inscripción a Talleres y Conferencias" data-i18n-en="Workshops & Conferences Registration">Inscripción a Talleres y Conferencias</option>
-                <option value="outreach" data-i18n-es="Vinculación y Visitas a Colegios STEM" data-i18n-en="STEM Outreach & School Visits">Vinculación y Visitas a Colegios STEM</option>
-                <option value="general" data-i18n-es="Consulta General / Soporte" data-i18n-en="General Inquiry / Support">Consulta General / Soporte</option>
+                <option value="">Select a topic...</option>
+                <option value="membership">IEEE NTC Info & Membership</option>
+                <option value="lanano">LANANO 2026 Research Incubator</option>
+                <option value="workshop">Workshops & Conferences Registration</option>
+                <option value="outreach">STEM Outreach & School Visits</option>
+                <option value="general">General Inquiry / Support</option>
               </select>
-              <span class="error-msg" id="error-subject" data-i18n-es="Por favor selecciona un asunto." data-i18n-en="Please select a subject.">Por favor selecciona un asunto.</span>
+              <span class="error-msg" id="error-subject">Please select a subject.</span>
             </div>
 
             <div class="form-group">
-              <label for="message"><span data-i18n-es="Mensaje" data-i18n-en="Message">Mensaje</span> <span class="required">*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Escribe los detalles de tu consulta..." data-i18n-placeholder-es="Escribe los detalles de tu consulta..." data-i18n-placeholder-en="Write the details of your inquiry..." class="form-control"></textarea>
-              <span class="error-msg" id="error-message" data-i18n-es="Por favor escribe tu mensaje." data-i18n-en="Please write your message.">Por favor escribe tu mensaje.</span>
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Write the details of your inquiry..." class="form-control"></textarea>
+              <span class="error-msg" id="error-message">Please write your message.</span>
             </div>
 
             <div class="form-group checkbox-group">
               <input type="checkbox" id="privacyConsent" name="privacyConsent" required />
-              <label for="privacyConsent" data-i18n-es="Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud." data-i18n-en="I agree that IEEE NTC Yachay Tech may process my contact details to reply to my request.">Acepto que IEEE NTC Yachay Tech procese mis datos de contacto para responder a mi solicitud.</label>
+              <label for="privacyConsent">I agree that IEEE NTC Yachay Tech may process my contact details to reply to my request.</label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">
-              <span data-i18n-es="ENVIAR MENSAJE" data-i18n-en="SEND MESSAGE">ENVIAR MENSAJE</span>
+              <span>SEND MESSAGE</span>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
 
             <!-- Success Alert Banner -->
-            <div class="form-status success" id="form-status-success" style="display: none;" role="alert" data-i18n-html-es="<strong>¡Mensaje Enviado con Éxito!</strong> Gracias por comunicarte con IEEE NTC Yachay Tech. Te responderemos a la brevedad." data-i18n-html-en="<strong>Message Sent Successfully!</strong> Thank you for reaching out to IEEE NTC Yachay Tech. We will reply shortly.">
-              <strong>¡Mensaje Enviado con Éxito!</strong> Gracias por comunicarte con IEEE NTC Yachay Tech. Te responderemos a la brevedad.
+            <div class="form-status success" id="form-status-success" style="display: none;" role="alert">
+              <strong>Message Sent Successfully!</strong> Thank you for reaching out to IEEE NTC Yachay Tech. We will reply shortly.
             </div>
           </form>
         </div>
@@ -89,7 +89,7 @@ function getHref(path: string) {
         <!-- Location & Contact Info Column -->
         <div class="contact-info-column">
           <div class="info-card">
-            <h2 class="card-title font-heading" data-i18n-es="SEDE INSTITUCIONAL Y UBICACIÓN" data-i18n-en="INSTITUTIONAL HEADQUARTERS">SEDE INSTITUCIONAL Y UBICACIÓN</h2>
+            <h2 class="card-title font-heading">INSTITUTIONAL HEADQUARTERS</h2>
             
             <ul class="info-list">
               <li>
@@ -107,7 +107,7 @@ function getHref(path: string) {
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
                 <div>
-                  <strong data-i18n-es="Correo Oficial" data-i18n-en="Official Email">Correo Oficial</strong>
+                  <strong>Official Email</strong>
                   <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
                 </div>
               </li>
@@ -136,7 +136,7 @@ function getHref(path: string) {
 
           <!-- Interactive Google Maps Frame -->
           <div class="map-card">
-            <h3 class="map-heading" data-i18n-es="MAPA DEL CAMPUS YACHAY TECH" data-i18n-en="YACHAY TECH CAMPUS MAP">MAPA DEL CAMPUS YACHAY TECH</h3>
+            <h3 class="map-heading">YACHAY TECH CAMPUS MAP</h3>
             <div class="map-embed-wrapper">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.056122606558!2d-78.1884067!3d0.4285871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a39281dd61d0d%3A0xa19fbc7c014798e6!2sUniversidad%20Yachay%20Tech!5e0!3m2!1sen!2sec!4v1700000000000!5m2!1sen!2sec" 
@@ -146,7 +146,7 @@ function getHref(path: string) {
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Mapa de ubicación de Yachay Tech University"
+                title="Yachay Tech University Location Map"
               ></iframe>
             </div>
           </div>

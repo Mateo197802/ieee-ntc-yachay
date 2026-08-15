@@ -8,27 +8,22 @@ function getHref(path: string) {
   return `${baseUrl}${path}`;
 }
 
-const categories = [
-  { es: 'Todas', en: 'All' },
-  { es: 'Becas de Viaje', en: 'Travel Grants' },
-  { es: 'Programas IEEE', en: 'IEEE Programs' },
-  { es: 'Voluntariado', en: 'Volunteering' }
-];
+const categories = ['All', 'Travel Grants', 'IEEE Programs', 'Volunteering'];
 ---
 
 <Layout 
-  title="Oportunidades | IEEE Nanotechnology Council Yachay Tech"
-  description="Explora becas de viaje, convocatorias de voluntariado, fondos de investigación y programas de desarrollo profesional de IEEE."
+  title="Opportunities | IEEE Nanotechnology Council Yachay Tech"
+  description="Explore travel grants, committee volunteering calls, research funds, and professional development programs from IEEE."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Oportunidades" data-i18n-en="Opportunities">Oportunidades</span>
+        <a href={getHref('/')}>Home</a> &gt; <span>Opportunities</span>
       </div>
-      <span class="banner-eyebrow" data-i18n-es="DESARROLLO ESTUDIANTIL" data-i18n-en="STUDENT DEVELOPMENT">DESARROLLO ESTUDIANTIL</span>
-      <h1 class="banner-title font-heading" data-i18n-es="OPORTUNIDADES Y CONVOCATORIAS" data-i18n-en="OPPORTUNITIES & CALLS">OPORTUNIDADES Y CONVOCATORIAS</h1>
-      <p class="banner-subtitle" data-i18n-es="Explora becas de viaje, subvenciones para conferencias, voluntariado en comités y programas internacionales de desarrollo académico." data-i18n-en="Explore travel grants, conference sponsorships, committee volunteering, and international academic development programs.">
-        Explora becas de viaje, subvenciones para conferencias, voluntariado en comités y programas internacionales de desarrollo académico.
+      <span class="banner-eyebrow">STUDENT DEVELOPMENT</span>
+      <h1 class="banner-title font-heading">OPPORTUNITIES & CALLS</h1>
+      <p class="banner-subtitle">
+        Explore travel grants, conference sponsorships, committee volunteering, and international academic development programs.
       </p>
     </div>
   </section>
@@ -40,11 +35,9 @@ const categories = [
         {categories.map((cat, idx) => (
           <button 
             class={`filter-pill ${idx === 0 ? 'active' : ''}`}
-            data-category={cat.es}
-            data-i18n-es={cat.es}
-            data-i18n-en={cat.en}
+            data-category={cat}
           >
-            {cat.es}
+            {cat}
           </button>
         ))}
       </div>
@@ -54,28 +47,28 @@ const categories = [
         {OPPORTUNITIES_DATA.map((opp) => (
           <article class="opp-card" data-cat={opp.category} id={opp.id}>
             <div class="opp-header">
-              <span class="opp-cat" data-i18n-es={opp.category} data-i18n-en={opp.categoryEn}>{opp.category}</span>
-              <span class={`opp-status ${opp.status.toLowerCase()}`} data-i18n-es={opp.status} data-i18n-en={opp.statusEn}>{opp.status}</span>
+              <span class="opp-cat">{opp.category}</span>
+              <span class={`opp-status ${opp.status.toLowerCase()}`}>{opp.status}</span>
             </div>
 
             <div class="opp-body">
-              <h2 class="opp-title" data-i18n-es={opp.title} data-i18n-en={opp.titleEn}>{opp.title}</h2>
+              <h2 class="opp-title">{opp.title}</h2>
               <p class="opp-institution">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                <span data-i18n-es={opp.institution} data-i18n-en={opp.institutionEn}>{opp.institution}</span>
+                <span>{opp.institution}</span>
               </p>
-              <p class="opp-summary" data-i18n-es={opp.description} data-i18n-en={opp.descriptionEn}>{opp.description}</p>
+              <p class="opp-summary">{opp.description}</p>
 
               <div class="opp-meta-row">
                 <span class="meta-deadline">
-                  <strong data-i18n-es="Fecha Límite:" data-i18n-en="Deadline:">Fecha Límite:</strong> <span data-i18n-es={opp.deadline} data-i18n-en={opp.deadlineEn}>{opp.deadline}</span>
+                  <strong>Deadline:</strong> <span>{opp.deadline}</span>
                 </span>
-                <span class="meta-modality" data-i18n-es={opp.modality} data-i18n-en={opp.modalityEn}>{opp.modality}</span>
+                <span class="meta-modality">{opp.modality}</span>
               </div>
 
               <div class="opp-footer">
-                <a href={opp.officialUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n-es="POSTULAR / MÁS INFORMACIÓN" data-i18n-en="APPLY / MORE INFO">
-                  POSTULAR / MÁS INFORMACIÓN
+                <a href={opp.officialUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  APPLY / MORE INFO
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
                 </a>
               </div>
@@ -87,11 +80,11 @@ const categories = [
       <!-- Chapter CTA Box -->
       <div class="opportunities-cta-box">
         <div class="cta-info">
-          <h3 data-i18n-es="¿BUSCAS MÁS OPORTUNIDADES PARA ESTUDIANTES IEEE?" data-i18n-en="LOOKING FOR MORE IEEE STUDENT OPPORTUNITIES?">¿BUSCAS MÁS OPORTUNIDADES PARA ESTUDIANTES IEEE?</h3>
-          <p data-i18n-es="Contacta a los directivos del capítulo para recibir asesoría sobre becas de viaje IEEE, postulación de artículos y fondos concursables." data-i18n-en="Contact chapter officers for guidance on IEEE travel grants, paper submissions, and competitive activity funds.">Contacta a los directivos del capítulo para recibir asesoría sobre becas de viaje IEEE, postulación de artículos y fondos concursables.</p>
+          <h3>LOOKING FOR MORE IEEE STUDENT OPPORTUNITIES?</h3>
+          <p>Contact chapter officers for guidance on IEEE travel grants, paper submissions, and competitive activity funds.</p>
         </div>
-        <a href={getHref('/contact/')} class="btn btn-primary" data-i18n-es="CONTACTAR A LA DIRECTIVA" data-i18n-en="CONTACT DIRECTIVE">
-          CONTACTAR A LA DIRECTIVA
+        <a href={getHref('/contact/')} class="btn btn-primary">
+          CONTACT DIRECTIVE
         </a>
       </div>
     </div>
@@ -214,14 +207,19 @@ const categories = [
     font-weight: 700;
   }
 
-  .opp-status.abierta, .opp-status.open {
+  .opp-status.open {
     background-color: rgba(16, 185, 129, 0.2);
     color: #10B981;
   }
 
-  .opp-status.próximamente, .opp-status.upcoming {
+  .opp-status.upcoming {
     background-color: rgba(245, 158, 11, 0.2);
     color: #F59E0B;
+  }
+
+  .opp-status.closed {
+    background-color: rgba(100, 116, 139, 0.2);
+    color: #64748B;
   }
 
   .opp-body {
@@ -331,11 +329,11 @@ const categories = [
         pills.forEach((p) => p.classList.remove('active'));
         pill.classList.add('active');
 
-        const cat = pill.getAttribute('data-category') || 'Todas';
+        const cat = pill.getAttribute('data-category') || 'All';
 
         cards.forEach((card) => {
           const cardCat = card.getAttribute('data-cat') || '';
-          if (cat === 'Todas' || cat === 'All' || cardCat === cat) {
+          if (cat === 'All' || cardCat === cat) {
             (card as HTMLElement).style.display = 'flex';
           } else {
             (card as HTMLElement).style.display = 'none';

@@ -10,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = 'IEEE Nanotechnology Council - Rama Estudiantil Yachay Tech',
-  description = 'Sitio web oficial del Capítulo Estudiantil del IEEE Nanotechnology Council en Yachay Tech University. Conectando a estudiantes apasionados por la nanotecnología para investigar, colaborar e innovar con impacto real.',
+  title = 'IEEE Nanotechnology Council - Yachay Tech Student Branch',
+  description = 'Official website of the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. Connecting students passionate about nanotechnology to research, collaborate, and innovate with real impact.',
   image = '/assets/gallery/foto_con_bandera.jpg'
 } = Astro.props;
 
@@ -22,7 +22,7 @@ const fullImageUrl = new URL(baseUrl + image, Astro.site).href;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,15 +57,5 @@ const fullImageUrl = new URL(baseUrl + image, Astro.site).href;
     </main>
 
     <Footer />
-
-    <script>
-      import { initI18n } from '@/scripts/i18n';
-      initI18n();
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-          initI18n();
-        });
-      }
-    </script>
   </body>
 </html>

@@ -10,16 +10,16 @@ function getHref(path: string) {
 ---
 
 <Layout 
-  title="Proyectos e Iniciativas | IEEE Nanotechnology Council Yachay Tech"
-  description="Explora nuestros semilleros de investigación científica, programas de divulgación STEM, simulaciones en Realidad Virtual e iniciativas de servicio social."
+  title="Projects & Initiatives | IEEE Nanotechnology Council Yachay Tech"
+  description="Explore our scientific research incubators, STEM outreach programs, Virtual Reality molecular simulations, and community service initiatives."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</span>
+        <a href={getHref('/')}>Home</a> &gt; <span>Projects</span>
       </div>
-      <h1 class="banner-title font-heading" data-i18n-es="PROYECTOS E INICIATIVAS" data-i18n-en="PROJECTS & INITIATIVES">PROYECTOS E INICIATIVAS</h1>
-      <p class="banner-subtitle" data-i18n-es="Investigación interdisciplinaria, divulgación educativa, innovación en Realidad Virtual y servicio a la comunidad." data-i18n-en="Interdisciplinary research, educational outreach, Virtual Reality innovation, and community service.">Investigación interdisciplinaria, divulgación educativa, innovación en Realidad Virtual y servicio a la comunidad.</p>
+      <h1 class="banner-title font-heading">PROJECTS & INITIATIVES</h1>
+      <p class="banner-subtitle">Interdisciplinary research, educational outreach, Virtual Reality innovation, and community service.</p>
     </div>
   </section>
 
@@ -30,37 +30,37 @@ function getHref(path: string) {
           <div class="project-card">
             <div class="project-img-box">
               <img src={getHref(project.image)} alt={project.title} width="400" height="240" loading="lazy" class="project-img" />
-              <span class={`status-badge ${project.status.toLowerCase()}`} data-i18n-es={project.status} data-i18n-en={project.statusEn}>{project.status}</span>
-              <span class="category-pill" data-i18n-es={project.category} data-i18n-en={project.categoryEn}>{project.category}</span>
+              <span class={`status-badge ${project.status.toLowerCase()}`}>{project.status}</span>
+              <span class="category-pill">{project.category}</span>
             </div>
 
             <div class="project-body">
-              <h2 class="project-title" data-i18n-es={project.title} data-i18n-en={project.titleEn}>{project.title}</h2>
-              <p class="project-desc" data-i18n-es={project.description} data-i18n-en={project.descriptionEn}>{project.description}</p>
+              <h2 class="project-title">{project.title}</h2>
+              <p class="project-desc">{project.description}</p>
 
               <div class="project-tech-stack">
-                <span class="stack-label" data-i18n-es="Tecnologías / Enfoque:" data-i18n-en="Technologies / Focus:">Tecnologías / Enfoque:</span>
+                <span class="stack-label">Technologies / Focus:</span>
                 <div class="tags-row">
-                  {project.technologies.map((tech, idx) => (
-                    <span class="tech-tag" data-i18n-es={tech} data-i18n-en={project.technologiesEn[idx] || tech}>{tech}</span>
+                  {project.technologies.map((tech) => (
+                    <span class="tech-tag">{tech}</span>
                   ))}
                 </div>
               </div>
 
               {project.outcomes && (
                 <div class="outcomes-box">
-                  <strong data-i18n-es="Resultados / Impacto:" data-i18n-en="Outcomes / Impact:">Resultados / Impacto:</strong> <span data-i18n-es={project.outcomes} data-i18n-en={project.outcomesEn || project.outcomes}>{project.outcomes}</span>
+                  <strong>Outcomes / Impact:</strong> <span>{project.outcomes}</span>
                 </div>
               )}
 
               <div class="project-team-row">
-                <strong data-i18n-es="Equipo:" data-i18n-en="Team:">Equipo:</strong> <span data-i18n-es={project.team.join(', ')} data-i18n-en={project.teamEn.join(', ')}>{project.team.join(', ')}</span>
+                <strong>Team:</strong> <span>{project.team.join(', ')}</span>
               </div>
 
               {project.paperUrl && (
                 <div class="project-action-row">
-                  <a href={project.paperUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark project-cta" data-i18n-es="VER PROGRAMA / CONFERENCIA" data-i18n-en="VIEW PROGRAM / CONFERENCE">
-                    VER PROGRAMA / CONFERENCIA
+                  <a href={project.paperUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark project-cta">
+                    VIEW PROGRAM / CONFERENCE
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
                   </a>
                 </div>
@@ -146,30 +146,28 @@ function getHref(path: string) {
     width: auto;
     height: auto;
     object-fit: contain;
+    display: block;
   }
 
   .status-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    padding: 0.35rem 0.85rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 2;
   }
 
-  .status-badge.activo, .status-badge.active {
-    background-color: #10B981;
-    color: var(--color-white);
+  .status-badge.active {
+    background-color: rgba(16, 185, 129, 0.9);
+    color: #ffffff;
   }
 
-  .status-badge.completado, .status-badge.completed {
-    background-color: var(--color-navy);
-    color: var(--color-cyan);
-    border: 1px solid var(--color-cyan);
+  .status-badge.completed {
+    background-color: rgba(5, 135, 189, 0.9);
+    color: #ffffff;
   }
 
   .category-pill {
@@ -179,11 +177,10 @@ function getHref(path: string) {
     background-color: rgba(7, 28, 52, 0.85);
     color: var(--color-cyan);
     border: 1px solid var(--color-cyan);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.35rem 0.85rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 20px;
-    z-index: 2;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 
   .project-body {
@@ -201,8 +198,8 @@ function getHref(path: string) {
   }
 
   .project-desc {
+    font-size: 0.92rem;
     color: var(--color-text-muted);
-    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
@@ -216,47 +213,63 @@ function getHref(path: string) {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-navy);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .tags-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .tech-tag {
     background-color: var(--color-bg-light);
     color: var(--color-navy);
-    border: 1px solid var(--color-border-light);
-    font-size: 0.8rem;
-    padding: 0.25rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
     border-radius: 4px;
-    font-weight: 500;
+    border: 1px solid var(--color-border-light);
   }
 
   .outcomes-box {
-    background-color: rgba(5, 135, 189, 0.08);
-    border-left: 3px solid var(--color-cyan);
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--border-radius-sm);
     padding: 0.75rem 1rem;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.88rem;
-    color: var(--color-navy);
+    font-size: 0.85rem;
+    color: #166534;
     margin-bottom: 1.25rem;
-    line-height: 1.5;
+    line-height: 1.45;
+  }
+
+  .outcomes-box strong {
+    font-weight: 700;
   }
 
   .project-team-row {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: var(--color-text-dark);
     margin-bottom: 1.5rem;
     margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .project-team-row strong {
+    color: var(--color-navy);
+  }
+
+  .project-action-row {
+    display: flex;
+    justify-content: flex-end;
   }
 
   .project-cta {
-    width: 100%;
-    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.55rem 1rem;
   }
 
   @media (max-width: 900px) {

@@ -8,26 +8,20 @@ function getHref(path: string) {
   return `${baseUrl}${path}`;
 }
 
-const categories = [
-  { es: 'Todas', en: 'All' },
-  { es: 'Vinculación', en: 'Outreach' },
-  { es: 'Conferencias', en: 'Conferences' },
-  { es: 'Talleres', en: 'Workshops' },
-  { es: 'Comunidad', en: 'Community' }
-];
+const categories = ['All', 'Outreach', 'Conferences', 'Workshops', 'Community'];
 ---
 
 <Layout 
-  title="Galería de Fotos | IEEE Nanotechnology Council Yachay Tech"
-  description="Registro visual de las actividades de IEEE NTC Yachay Tech, talleres en colegios, voluntariado en hospitales, conferencias científicas y eventos comunitarios."
+  title="Photo Gallery | IEEE Nanotechnology Council Yachay Tech"
+  description="Visual records of IEEE NTC Yachay Tech activities, high school workshops, hospital volunteering, scientific conferences, and community gatherings."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
-        <a href={getHref('/')} data-i18n-es="Inicio" data-i18n-en="Home">Inicio</a> &gt; <span data-i18n-es="Galería" data-i18n-en="Gallery">Galería</span>
+        <a href={getHref('/')}>Home</a> &gt; <span>Gallery</span>
       </div>
-      <h1 class="banner-title font-heading" data-i18n-es="GALERÍA DE FOTOS" data-i18n-en="PHOTO GALLERY">GALERÍA DE FOTOS</h1>
-      <p class="banner-subtitle" data-i18n-es="Documentando nuestra historia, talleres STEM, servicio comunitario y participación en conferencias científicas." data-i18n-en="Documenting our history, STEM workshops, community service, and participation in scientific conferences.">Documentando nuestra historia, talleres STEM, servicio comunitario y participación en conferencias científicas.</p>
+      <h1 class="banner-title font-heading">PHOTO GALLERY</h1>
+      <p class="banner-subtitle">Documenting our history, STEM workshops, community service, and participation in scientific conferences.</p>
     </div>
   </section>
 
@@ -35,17 +29,15 @@ const categories = [
   <section class="gallery-section">
     <div class="site-container">
       <!-- Filter Buttons Bar -->
-      <div class="filter-bar" role="tablist" aria-label="Categorías de la Galería">
+      <div class="filter-bar" role="tablist" aria-label="Gallery Categories">
         {categories.map((cat, idx) => (
           <button 
             class={`filter-btn ${idx === 0 ? 'active' : ''}`}
-            data-filter={cat.es.toLowerCase()}
-            data-i18n-es={cat.es}
-            data-i18n-en={cat.en}
+            data-filter={cat.toLowerCase()}
             role="tab"
             aria-selected={idx === 0 ? 'true' : 'false'}
           >
-            {cat.es}
+            {cat}
           </button>
         ))}
       </div>
@@ -61,7 +53,7 @@ const categories = [
             <button 
               class="mosaic-card-btn open-album-btn" 
               data-album={JSON.stringify(album)}
-              aria-label={`Ver álbum completo: ${album.title}`}
+              aria-label={`View full album: ${album.title}`}
             >
               <div class="mosaic-img-box">
                 <img 
@@ -72,20 +64,20 @@ const categories = [
                   loading="lazy" 
                   class="mosaic-img"
                 />
-                <span class="category-tag" data-i18n-es={album.category} data-i18n-en={album.categoryEn}>{album.category}</span>
-                <span class="photos-count-badge" data-i18n-es={`${album.slides.length} Fotos`} data-i18n-en={`${album.slides.length} Photos`}>
+                <span class="category-tag">{album.category}</span>
+                <span class="photos-count-badge">
                   <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                  {album.slides.length} Fotos
+                  {album.slides.length} Photos
                 </span>
-                <span class="zoom-hover-badge" data-i18n-es="AMPLIAR" data-i18n-en="EXPAND">
+                <span class="zoom-hover-badge">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                  AMPLIAR
+                  EXPAND
                 </span>
               </div>
               <div class="mosaic-info-box">
-                <span class="info-date" data-i18n-es={album.date} data-i18n-en={album.dateEn}>{album.date}</span>
-                <h3 class="info-title" data-i18n-es={album.title} data-i18n-en={album.titleEn}>{album.title}</h3>
-                <p class="info-caption" data-i18n-es={album.summary} data-i18n-en={album.summaryEn}>{album.summary}</p>
+                <span class="info-date">{album.date}</span>
+                <h3 class="info-title">{album.title}</h3>
+                <p class="info-caption">{album.summary}</p>
               </div>
             </button>
           </div>
@@ -97,38 +89,38 @@ const categories = [
   <!-- Interactive Lightbox Carousel Modal with Pure Arrow Navigation -->
   <dialog id="gallery-carousel-modal" class="gallery-modal-dialog">
     <div class="gallery-modal-inner">
-      <button class="gallery-modal-close" id="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      <button class="gallery-modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
       
       <div class="gallery-modal-header">
         <div class="modal-header-top">
-          <span class="gallery-modal-category" id="album-category-display">VINCULACIÓN</span>
-          <span class="modal-counter-badge" id="carousel-counter">Foto 1 de 4</span>
+          <span class="gallery-modal-category" id="album-category-display">OUTREACH</span>
+          <span class="modal-counter-badge" id="carousel-counter">Photo 1 of 4</span>
         </div>
-        <h2 class="gallery-modal-title" id="album-title-display">Título del Álbum</h2>
+        <h2 class="gallery-modal-title" id="album-title-display">Album Title</h2>
       </div>
 
       <!-- Main Stage with Prominent Lateral Arrow Buttons -->
       <div class="gallery-carousel-stage">
-        <button class="carousel-nav-btn prev-btn" id="carousel-prev-btn" aria-label="Foto anterior">
+        <button class="carousel-nav-btn prev-btn" id="carousel-prev-btn" aria-label="Previous photo">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
         </button>
         
         <div class="carousel-slide-box">
           <img id="carousel-slide-img" src="" alt="" class="carousel-main-img" />
           <div class="carousel-caption-bar">
-            <h4 class="slide-title" id="carousel-slide-title">Título de la fotografía</h4>
-            <p class="slide-desc" id="carousel-slide-desc">Descripción de la fotografía</p>
+            <h4 class="slide-title" id="carousel-slide-title">Photo title</h4>
+            <p class="slide-desc" id="carousel-slide-desc">Photo description</p>
           </div>
         </div>
 
-        <button class="carousel-nav-btn next-btn" id="carousel-next-btn" aria-label="Foto siguiente">
+        <button class="carousel-nav-btn next-btn" id="carousel-next-btn" aria-label="Next photo">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
         </button>
       </div>
 
       <!-- Subtle keyboard helper text -->
       <div class="modal-keyboard-hint">
-        <span data-i18n-es="Usa las flechas laterales o las teclas ← / → para navegar" data-i18n-en="Use lateral arrows or keyboard ← / → to navigate">Usa las flechas laterales o las teclas &#8592; / &#8594; para navegar</span>
+        <span>Use lateral arrows or keyboard ← / → to navigate</span>
       </div>
     </div>
   </dialog>
@@ -162,29 +154,29 @@ const categories = [
     font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.85);
     margin-top: 0.5rem;
+    max-width: 760px;
   }
 
   .gallery-section {
-    padding: 3.5rem 0 5rem;
+    padding: 4rem 0 5rem;
     background-color: var(--color-bg-light);
   }
 
   .filter-bar {
     display: flex;
-    justify-content: center;
-    gap: 0.6rem;
+    gap: 0.75rem;
     margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
 
   .filter-btn {
-    padding: 0.5rem 1.25rem;
-    border-radius: 25px;
+    padding: 0.45rem 1.25rem;
+    border-radius: 20px;
     background-color: var(--color-white);
     color: var(--color-navy);
     border: 1px solid var(--color-border-light);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
   }
@@ -194,76 +186,66 @@ const categories = [
     background-color: var(--color-cyan);
     color: var(--color-white);
     border-color: var(--color-cyan);
-    box-shadow: 0 4px 12px rgba(5, 135, 189, 0.3);
   }
 
-  /* 4-Column Responsive Compact Grid */
   .gallery-mosaic {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
   .mosaic-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow-subtle);
-    border: 1px solid var(--color-border-light);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
-    flex-direction: column;
   }
 
-  .mosaic-item:hover {
+  .mosaic-card-btn {
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .mosaic-card-btn:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
   }
 
-  .mosaic-card-btn {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    padding: 0;
-    text-align: left;
-    cursor: pointer;
-    font-family: inherit;
-  }
-
-  /* Image box: object-fit contain to see the FULL photo without clipping */
   .mosaic-img-box {
     position: relative;
     width: 100%;
-    height: 180px;
-    background: #06192e;
+    height: 190px;
+    background-color: #0c2340;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
 
   .mosaic-img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     transition: transform 0.3s ease;
   }
 
   .mosaic-card-btn:hover .mosaic-img {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
 
   .category-tag {
     position: absolute;
-    top: 0.65rem;
-    left: 0.65rem;
-    background: rgba(7, 28, 52, 0.88);
-    backdrop-filter: blur(4px);
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: rgba(7, 28, 52, 0.85);
     color: var(--color-cyan);
     border: 1px solid var(--color-cyan);
     font-size: 0.68rem;
@@ -277,16 +259,15 @@ const categories = [
 
   .photos-count-badge {
     position: absolute;
-    top: 0.65rem;
-    right: 0.65rem;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    padding: 0.2rem 0.55rem;
-    border-radius: 10px;
-    display: inline-flex;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
     align-items: center;
     gap: 0.3rem;
     z-index: 2;
@@ -294,15 +275,15 @@ const categories = [
 
   .zoom-hover-badge {
     position: absolute;
-    bottom: 0.65rem;
-    right: 0.65rem;
-    background: rgba(5, 135, 189, 0.95);
+    bottom: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--color-cyan);
     color: #ffffff;
     font-size: 0.7rem;
     font-weight: 700;
-    padding: 0.25rem 0.65rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 4px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.3rem;
     opacity: 0;
@@ -317,226 +298,187 @@ const categories = [
   }
 
   .mosaic-info-box {
-    padding: 16px;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
   .info-date {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-cyan);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
+    display: block;
   }
 
   .info-title {
-    font-size: 0.98rem;
+    font-size: 1rem;
     color: var(--color-navy);
-    line-height: 1.3;
-    margin-bottom: 0.4rem;
-    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 0.5rem;
   }
 
   .info-caption {
     font-size: 0.82rem;
     color: var(--color-text-muted);
-    line-height: 1.45;
+    line-height: 1.5;
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  /* Lightbox Carousel Modal */
+  /* Lightbox Modal */
   .gallery-modal-dialog {
     border: none;
-    border-radius: 16px;
+    border-radius: var(--border-radius-md);
     padding: 0;
-    max-width: 960px;
-    width: 95vw;
-    background: #061b31;
-    color: #ffffff;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
-    margin: auto;
+    max-width: 900px;
+    width: 94vw;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    background: transparent;
   }
 
   .gallery-modal-dialog::backdrop {
-    background: rgba(4, 15, 28, 0.88);
-    backdrop-filter: blur(8px);
+    background: rgba(7, 28, 52, 0.85);
+    backdrop-filter: blur(5px);
   }
 
   .gallery-modal-inner {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
     position: relative;
-    padding: 1.75rem 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    border-top: 4px solid var(--color-cyan);
   }
 
   .gallery-modal-close {
     position: absolute;
     top: 1rem;
     right: 1.25rem;
-    background: transparent;
+    background: none;
     border: none;
-    font-size: 2.2rem;
-    color: #ffffff;
+    font-size: 1.85rem;
+    color: var(--color-navy);
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s ease, transform 0.2s ease;
-    z-index: 20;
-  }
-
-  .gallery-modal-close:hover {
-    color: var(--color-cyan);
-    transform: scale(1.1);
   }
 
   .modal-header-top {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .gallery-modal-category {
-    font-size: 0.72rem;
-    font-weight: 700;
     color: var(--color-cyan);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .modal-counter-badge {
-    background: rgba(5, 135, 189, 0.2);
-    border: 1px solid var(--color-cyan);
-    color: var(--color-cyan);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    padding: 0.15rem 0.55rem;
-    border-radius: 12px;
+    letter-spacing: 0.5px;
   }
 
   .gallery-modal-title {
-    font-size: 1.35rem;
-    color: #ffffff;
+    font-size: 1.45rem;
+    color: var(--color-navy);
+    margin: 0.25rem 0 1.25rem;
   }
 
   .gallery-carousel-stage {
     position: relative;
-    width: 100%;
-    height: 500px;
-    background: #020c17;
-    border-radius: 12px;
-    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 1rem;
   }
 
   .carousel-slide-box {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    background-color: #06192e;
+    box-shadow: var(--shadow-hover);
   }
 
   .carousel-main-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 440px;
     object-fit: contain;
-    transition: opacity 0.25s ease;
+    display: block;
+    background-color: #06192e;
   }
 
   .carousel-caption-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(2, 12, 23, 0.92) 0%, rgba(2, 12, 23, 0.6) 70%, transparent 100%);
-    padding: 1.5rem 1.75rem 1rem;
-    color: #ffffff;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 1rem 1.25rem;
   }
 
   .slide-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    color: #ffffff;
+    font-size: 1rem;
+    margin: 0 0 0.25rem;
+    color: var(--color-white);
   }
 
   .slide-desc {
-    font-size: 0.84rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
     line-height: 1.45;
   }
 
-  /* Large Prominent Floating Lateral Navigation Arrows */
   .carousel-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(5, 135, 189, 0.85);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 50px;
-    height: 50px;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border: 1px solid var(--color-cyan);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
   }
 
   .carousel-nav-btn:hover {
-    background: #0587bd;
-    transform: translateY(-50%) scale(1.12);
-    box-shadow: 0 8px 22px rgba(5, 135, 189, 0.5);
+    background-color: var(--color-cyan);
+    transform: scale(1.05);
   }
-
-  .prev-btn { left: 1.25rem; }
-  .next-btn { right: 1.25rem; }
 
   .modal-keyboard-hint {
     text-align: center;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     .gallery-mosaic {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     .gallery-mosaic {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
     }
-    .gallery-carousel-stage {
-      height: 340px;
-    }
-    .gallery-modal-inner {
-      padding: 1.25rem 1rem;
-    }
-    .carousel-nav-btn {
-      width: 40px;
-      height: 40px;
+    .carousel-main-img {
+      height: 320px;
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 540px) {
     .gallery-mosaic {
       grid-template-columns: 1fr;
+    }
+    .carousel-main-img {
+      height: 240px;
+    }
+    .gallery-modal-inner {
+      padding: 1.25rem;
     }
   }
 </style>
@@ -559,11 +501,11 @@ const categories = [
         filterButtons.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const filter = btn.getAttribute('data-filter') || 'todas';
+        const filter = btn.getAttribute('data-filter') || 'all';
 
         mosaicItems.forEach((item) => {
           const itemCat = item.getAttribute('data-category') || '';
-          if (filter === 'todas' || itemCat === filter) {
+          if (filter === 'all' || itemCat === filter) {
             (item as HTMLElement).style.display = 'flex';
           } else {
             (item as HTMLElement).style.display = 'none';
@@ -593,23 +535,13 @@ const categories = [
       if (!currentAlbum || !currentAlbum.slides || currentAlbum.slides.length === 0) return;
       currentIndex = (idx + currentAlbum.slides.length) % currentAlbum.slides.length;
       const slide = currentAlbum.slides[currentIndex];
-      const isEn = localStorage.getItem('ntc_lang') === 'en';
 
       if (slideImg) slideImg.src = resolveUrl(slide.image);
-
-      if (isEn) {
-        if (catEl) catEl.textContent = (currentAlbum.categoryEn || currentAlbum.category).toUpperCase();
-        if (titleEl) titleEl.textContent = currentAlbum.titleEn || currentAlbum.title;
-        if (counterEl) counterEl.textContent = `Photo ${currentIndex + 1} of ${currentAlbum.slides.length}`;
-        if (slideTitleEl) slideTitleEl.textContent = slide.titleEn || slide.title;
-        if (slideDescEl) slideDescEl.textContent = slide.captionEn || slide.caption;
-      } else {
-        if (catEl) catEl.textContent = currentAlbum.category.toUpperCase();
-        if (titleEl) titleEl.textContent = currentAlbum.title;
-        if (counterEl) counterEl.textContent = `Foto ${currentIndex + 1} de ${currentAlbum.slides.length}`;
-        if (slideTitleEl) slideTitleEl.textContent = slide.title;
-        if (slideDescEl) slideDescEl.textContent = slide.caption;
-      }
+      if (catEl) catEl.textContent = currentAlbum.category.toUpperCase();
+      if (titleEl) titleEl.textContent = currentAlbum.title;
+      if (counterEl) counterEl.textContent = `Photo ${currentIndex + 1} of ${currentAlbum.slides.length}`;
+      if (slideTitleEl) slideTitleEl.textContent = slide.title;
+      if (slideDescEl) slideDescEl.textContent = slide.caption;
     }
 
     document.querySelectorAll('.open-album-btn').forEach((btn) => {
