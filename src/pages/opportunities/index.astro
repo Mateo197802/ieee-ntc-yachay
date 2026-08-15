@@ -53,9 +53,17 @@ const categories = ['All', 'Conferences', 'Competitions', 'Training', 'Volunteer
             <div class="opp-header">
               <div class="opp-header-tags">
                 <span class="opp-cat">{opp.category}</span>
-                <span class="opp-modality">{opp.modality}</span>
+                <span class="opp-modality-pill">
+                  <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                  </svg>
+                  <span>{opp.modality}</span>
+                </span>
               </div>
-              <span class={`opp-status ${opp.status.toLowerCase()}`}>{opp.status}</span>
+              <div class={`opp-status-badge status-${opp.status.toLowerCase()}`}>
+                <span class="status-pulse-dot" aria-hidden="true"></span>
+                <span class="status-text">{opp.status}</span>
+              </div>
             </div>
 
             <div class="opp-body">
@@ -322,61 +330,132 @@ const categories = ['All', 'Conferences', 'Competitions', 'Training', 'Volunteer
   }
 
   .opp-header {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-deep-blue) 100%);
-    padding: 1.1rem 1.6rem;
+    background: linear-gradient(135deg, #0d274c 0%, #153866 100%);
+    padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .opp-header-tags {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.65rem;
     align-items: center;
   }
 
   .opp-cat {
-    color: var(--color-cyan);
-    font-size: 0.78rem;
+    color: #00A3E0;
+    font-size: 0.76rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
   }
 
-  .opp-modality {
-    background-color: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-    font-size: 0.7rem;
-    font-weight: 700;
+  .opp-modality-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.68rem;
+    font-weight: 600;
     padding: 0.2rem 0.55rem;
-    border-radius: 4px;
-    text-transform: uppercase;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.3px;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  .opp-status {
-    padding: 0.25rem 0.65rem;
-    border-radius: 4px;
-    font-size: 0.72rem;
+  .opp-card:hover .opp-modality-pill {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Minimalist Dynamic Live Status Badge */
+  .opp-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.68rem;
     font-weight: 800;
+    letter-spacing: 0.75px;
     text-transform: uppercase;
+    position: relative;
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .opp-status.open {
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #10B981;
-    border: 1px solid rgba(16, 185, 129, 0.4);
+  .opp-card:hover .opp-status-badge {
+    transform: translateY(-1px);
   }
 
-  .opp-status.upcoming {
-    background-color: rgba(245, 158, 11, 0.2);
-    color: #F59E0B;
-    border: 1px solid rgba(245, 158, 11, 0.4);
+  /* Status: OPEN */
+  .opp-status-badge.status-open {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.35);
   }
 
-  .opp-status.continuous {
-    background-color: rgba(5, 135, 189, 0.25);
-    color: var(--color-cyan);
-    border: 1px solid var(--color-cyan);
+  .opp-status-badge.status-open .status-pulse-dot {
+    background-color: #34d399;
+    box-shadow: 0 0 8px #34d399;
+  }
+
+  /* Status: UPCOMING */
+  .opp-status-badge.status-upcoming {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.35);
+  }
+
+  .opp-status-badge.status-upcoming .status-pulse-dot {
+    background-color: #fbbf24;
+    box-shadow: 0 0 8px #fbbf24;
+  }
+
+  /* Status: CONTINUOUS */
+  .opp-status-badge.status-continuous {
+    background: rgba(5, 135, 189, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+  }
+
+  .opp-status-badge.status-continuous .status-pulse-dot {
+    background-color: #38bdf8;
+    box-shadow: 0 0 8px #38bdf8;
+  }
+
+  /* Minimalist Animated Pulse Dot */
+  .status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+  }
+
+  .status-pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.6;
+    animation: status-beacon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes status-beacon {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    70%, 100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
   }
 
   .opp-body {
