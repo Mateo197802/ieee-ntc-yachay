@@ -184,6 +184,17 @@ function getHref(path: string) {
                 </div>
 
                 <div class="card-actions-row">
+                  {event.id === 'nanoskills-sputtering-workshop' && (
+                    <button 
+                      type="button" 
+                      class="btn btn-primary card-btn open-nanoskills-btn" 
+                      id="open-nanoskills-btn"
+                      aria-label="View dual-phase theoretical and cleanroom laboratory details for NanoSkills Workshop"
+                    >
+                      VIEW DUAL-PHASE DETAILS
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                    </button>
+                  )}
                   {event.externalUrl ? (
                     <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark card-btn">
                       VIEW PROGRAM / PLATFORM
@@ -236,6 +247,141 @@ function getHref(path: string) {
       </div>
     </div>
   </section>
+
+  <!-- Dual-Phase NanoSkills Modal Dialog -->
+  <dialog id="nanoskills-modal" class="event-modal-dialog nanoskills-modal-dialog">
+    <div class="event-modal-inner nanoskills-modal-inner">
+      <button class="event-modal-close" id="nanoskills-modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div class="event-modal-header">
+        <div class="modal-header-top">
+          <span class="event-modal-category">TECHNICAL SPECIALIZATION & CLEANROOM CERTIFICATION</span>
+          <span class="modal-counter-badge">DUAL-PHASE PROGRAM</span>
+        </div>
+        <h2 class="event-modal-title">NanoSkills: Sputtering & Thin Film Technologies</h2>
+        <p class="event-modal-summary">
+          Comprehensive curriculum structured into Phase 1 (Theoretical Foundation) and Phase 2 (Practical Cleanroom Laboratory), connecting physical vapor deposition fundamentals with direct experimental equipment operation.
+        </p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="nanoskills-tab-nav" role="tablist">
+        <button class="nanoskills-tab-btn active" id="tab-theory-btn" role="tab" aria-selected="true" data-target="nanoskills-theory-panel">
+          <span class="tab-phase-num">PHASE 1</span>
+          <span class="tab-phase-title">Theoretical Foundation (April 18–25, 2026)</span>
+        </button>
+        <button class="nanoskills-tab-btn" id="tab-practical-btn" role="tab" aria-selected="false" data-target="nanoskills-practical-panel">
+          <span class="tab-phase-num">PHASE 2</span>
+          <span class="tab-phase-title">Hands-On Cleanroom Lab (May 18, 2026)</span>
+        </button>
+      </div>
+
+      <!-- Phase 1: Theoretical Content Panel -->
+      <div class="nanoskills-panel active" id="nanoskills-theory-panel" role="tabpanel">
+        <div class="nanoskills-card-grid">
+          <div class="nanoskills-info-card">
+            <div class="phase-badge theory">THEORETICAL MODULES</div>
+            <h3 class="panel-card-title">Sputtering & Plasma Physics Foundation</h3>
+            <p class="panel-card-text">
+              Intensive academic training designed to provide deep understanding of the solid-state physics, thermodynamic mechanisms, and material interactions underlying Physical Vapor Deposition (PVD).
+            </p>
+            <div class="curriculum-list">
+              <div class="curriculum-item">
+                <strong>Physics of Sputtering:</strong> Momentum transfer, ion bombardment kinetics, and collision cascades in glow discharges.
+              </div>
+              <div class="curriculum-item">
+                <strong>Plasma Mechanics:</strong> DC & RF Magnetron plasma confinement, secondary electron emission, and sputtering yields.
+              </div>
+              <div class="curriculum-item">
+                <strong>Vacuum Systems:</strong> High-vacuum pumping sequences (roughing, turbomolecular, and cryogenic pumps) and chamber base pressures.
+              </div>
+              <div class="curriculum-item">
+                <strong>Film Growth & Kinetics:</strong> Adatom mobility, nucleation stages, columnar microstructure evolution (Thornton zone models), and residual stress management.
+              </div>
+            </div>
+          </div>
+
+          <div class="nanoskills-meta-sidebar">
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">DATES & DURATION</span>
+              <strong class="meta-box-value">April 18 – 25, 2026</strong>
+              <span class="meta-box-sub">5 Intensive Academic Lecture Modules</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">VENUE & MODALITY</span>
+              <strong class="meta-box-value">Theoretical Auditorium</strong>
+              <span class="meta-box-sub">Yachay Tech University & Live Stream</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">INSTRUCTORS</span>
+              <strong class="meta-box-value">Physics & Nanotech Faculty</strong>
+              <span class="meta-box-sub">Solid-State Physics & Materials Mentors</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">LEARNING OUTCOME</span>
+              <strong class="meta-box-value">Theoretical Certification</strong>
+              <span class="meta-box-sub">Mastery of deposition physics & vacuum protocols</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: Practical Content Panel -->
+      <div class="nanoskills-panel" id="nanoskills-practical-panel" role="tabpanel">
+        <div class="nanoskills-card-grid">
+          <div class="nanoskills-info-card">
+            <div class="phase-badge practical">HANDS-ON CLEANROOM LAB</div>
+            <h3 class="panel-card-title">Cleanroom Machinery Operation & Material Synthesis</h3>
+            <p class="panel-card-text">
+              Direct experimental session in the Yachay Tech Nanotechnology Cleanroom where student participants directly operated high-vacuum magnetron sputtering equipment under strict biosafety and cleanroom protocols.
+            </p>
+            <div class="curriculum-list">
+              <div class="curriculum-item">
+                <strong>Substrate Cleaning & Prep:</strong> Ultrasonic degreasing, RCA chemical cleaning, and in-situ RF plasma etching.
+              </div>
+              <div class="curriculum-item">
+                <strong>Pump-Down & Vacuum Control:</strong> Operating turbomolecular pumps down to high-vacuum base pressure (&lt; 10⁻⁶ Torr).
+              </div>
+              <div class="curriculum-item">
+                <strong>Deposition Run & Process Tuning:</strong> Regulating high-purity Argon gas flow (SCCM), target power density, and substrate rotation.
+              </div>
+              <div class="curriculum-item">
+                <strong>Characterization & Profilometry:</strong> Post-deposition film thickness validation, optical reflection analysis, and surface morphology inspection.
+              </div>
+            </div>
+          </div>
+
+          <div class="nanoskills-meta-sidebar">
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">DATE & SCHEDULE</span>
+              <strong class="meta-box-value">May 18, 2026</strong>
+              <span class="meta-box-sub">Full-day experimental cleanroom laboratory</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">FACILITY</span>
+              <strong class="meta-box-value">Nanotechnology Cleanroom</strong>
+              <span class="meta-box-sub">Advanced Materials Characterization Lab</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">COHORT SIZE</span>
+              <strong class="meta-box-value">24 Certified Students</strong>
+              <span class="meta-box-sub">Direct equipment hands-on groups</span>
+            </div>
+            <div class="meta-sidebar-box">
+              <span class="meta-box-label">RESEARCH IMPACT</span>
+              <strong class="meta-box-value">Certified Cleanroom Operators</strong>
+              <span class="meta-box-sub">Qualified for ongoing faculty research pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nanoskills-modal-footer">
+        <span class="cert-pill">IEEE NTC OFFICIAL CERTIFICATION COMPLETED</span>
+        <button class="btn btn-secondary" id="nanoskills-close-bottom-btn">CLOSE DETAILS</button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Interactive Carousel Modal for Event Gallery -->
   <dialog id="event-gallery-modal" class="event-modal-dialog">
@@ -648,12 +794,8 @@ function getHref(path: string) {
   .card-grid-desc {
     font-size: 0.88rem;
     color: var(--color-text-muted);
-    line-height: 1.55;
-    margin-bottom: 1rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
 
   .event-mini-details {
@@ -908,6 +1050,239 @@ function getHref(path: string) {
     margin-top: 1rem;
   }
 
+  /* NanoSkills Dual-Phase Modal Styles */
+  .nanoskills-modal-dialog {
+    max-width: 880px;
+    width: 92%;
+  }
+
+  .nanoskills-modal-inner {
+    max-width: 880px;
+  }
+
+  .nanoskills-tab-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .nanoskills-tab-btn {
+    background-color: var(--color-bg-light);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 1rem 1.25rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .nanoskills-tab-btn:hover {
+    border-color: var(--color-cyan);
+    background-color: rgba(5, 135, 189, 0.05);
+  }
+
+  .nanoskills-tab-btn.active {
+    border-color: var(--color-cyan);
+    background-color: #071c34;
+    color: var(--color-white);
+  }
+
+  .nanoskills-tab-btn.active .tab-phase-num {
+    color: var(--color-cyan);
+  }
+
+  .nanoskills-tab-btn.active .tab-phase-title {
+    color: var(--color-white);
+  }
+
+  .tab-phase-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--color-institutional-blue);
+  }
+
+  .tab-phase-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .nanoskills-panel {
+    display: none;
+  }
+
+  .nanoskills-panel.active {
+    display: block;
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  .nanoskills-card-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nanoskills-info-card {
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    border: 1px solid var(--color-border-light);
+  }
+
+  .phase-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-badge.theory {
+    background-color: rgba(4, 96, 142, 0.15);
+    color: var(--color-institutional-blue);
+  }
+
+  .phase-badge.practical {
+    background-color: rgba(5, 135, 189, 0.15);
+    color: var(--color-cyan);
+  }
+
+  .panel-card-title {
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .panel-card-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .curriculum-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .curriculum-item {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--color-text-dark);
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-cyan);
+  }
+
+  .curriculum-item strong {
+    color: var(--color-navy);
+  }
+
+  .nanoskills-meta-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .meta-sidebar-box {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .meta-box-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--color-text-muted);
+  }
+
+  .meta-box-value {
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    font-weight: 700;
+  }
+
+  .meta-box-sub {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .nanoskills-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border-light);
+    margin-top: 1rem;
+  }
+
+  .cert-pill {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-institutional-blue);
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .nanoskills-tab-nav {
+      grid-template-columns: 1fr;
+    }
+    .nanoskills-card-grid {
+      grid-template-columns: 1fr;
+    }
+    .nanoskills-modal-footer {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+    }
+  }
+
+  /* Dark mode overrides for NanoSkills Modal */
+  :global(html[data-theme="dark"]) .nanoskills-tab-btn {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.3);
+    color: #e2e8f0;
+  }
+
+  :global(html[data-theme="dark"]) .nanoskills-tab-btn.active {
+    background-color: #0c2340;
+    border-color: var(--color-cyan);
+  }
+
+  :global(html[data-theme="dark"]) .nanoskills-info-card,
+  :global(html[data-theme="dark"]) .meta-sidebar-box {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .panel-card-title,
+  :global(html[data-theme="dark"]) .meta-box-value,
+  :global(html[data-theme="dark"]) .curriculum-item strong {
+    color: #f1f5f9;
+  }
+
+  :global(html[data-theme="dark"]) .curriculum-item {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .nanoskills-modal-footer {
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
   @media (max-width: 1080px) {
     .past-events-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -945,6 +1320,7 @@ function getHref(path: string) {
       return `${baseUrl.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
     }
 
+    // Gallery Modal Elements
     const modal = document.getElementById('event-gallery-modal') as HTMLDialogElement | null;
     const closeBtn = document.getElementById('event-modal-close-btn');
     const prevBtn = document.getElementById('modal-prev-btn');
@@ -1001,6 +1377,48 @@ function getHref(path: string) {
     closeBtn?.addEventListener('click', () => modal?.close());
     modal?.addEventListener('click', (e) => {
       if (e.target === modal) modal.close();
+    });
+
+    // NanoSkills Dual-Phase Modal Logic
+    const nanoModal = document.getElementById('nanoskills-modal') as HTMLDialogElement | null;
+    const nanoOpenBtn = document.getElementById('open-nanoskills-btn');
+    const nanoCloseBtn = document.getElementById('nanoskills-modal-close-btn');
+    const nanoCloseBottomBtn = document.getElementById('nanoskills-close-bottom-btn');
+    const theoryTabBtn = document.getElementById('tab-theory-btn');
+    const practicalTabBtn = document.getElementById('tab-practical-btn');
+    const theoryPanel = document.getElementById('nanoskills-theory-panel');
+    const practicalPanel = document.getElementById('nanoskills-practical-panel');
+
+    function switchNanoTab(tab: 'theory' | 'practical') {
+      if (tab === 'theory') {
+        theoryTabBtn?.classList.add('active');
+        theoryTabBtn?.setAttribute('aria-selected', 'true');
+        practicalTabBtn?.classList.remove('active');
+        practicalTabBtn?.setAttribute('aria-selected', 'false');
+        theoryPanel?.classList.add('active');
+        practicalPanel?.classList.remove('active');
+      } else {
+        practicalTabBtn?.classList.add('active');
+        practicalTabBtn?.setAttribute('aria-selected', 'true');
+        theoryTabBtn?.classList.remove('active');
+        theoryTabBtn?.setAttribute('aria-selected', 'false');
+        practicalPanel?.classList.add('active');
+        theoryPanel?.classList.remove('active');
+      }
+    }
+
+    nanoOpenBtn?.addEventListener('click', () => {
+      switchNanoTab('theory');
+      nanoModal?.showModal();
+    });
+
+    theoryTabBtn?.addEventListener('click', () => switchNanoTab('theory'));
+    practicalTabBtn?.addEventListener('click', () => switchNanoTab('practical'));
+
+    nanoCloseBtn?.addEventListener('click', () => nanoModal?.close());
+    nanoCloseBottomBtn?.addEventListener('click', () => nanoModal?.close());
+    nanoModal?.addEventListener('click', (e) => {
+      if (e.target === nanoModal) nanoModal.close();
     });
   });
 </script>
