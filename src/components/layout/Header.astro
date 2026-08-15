@@ -5,7 +5,8 @@ interface Props {
 
 const { currentPath = '/' } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-const ntcLogo = `${baseUrl}/assets/logos/ieee-ntc-official-trimmed.png`;
+const ntcLogoLight = `${baseUrl}/assets/logos/ieee-ntc-yachay-light.png`;
+const ntcLogoDark = `${baseUrl}/assets/logos/ieee-ntc-yachay-dark.png`;
 
 function getHref(path: string) {
   if (path === '/') return baseUrl === '' ? '/' : baseUrl + '/';
@@ -58,14 +59,14 @@ const navLinks = [
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="site-container header-inner">
-    <!-- Geometric White Logo Panel with Exact Parallel Slant & Cyan Accent -->
+    <!-- Geometric Logo Panel with Exact Parallel Slant & Cyan Accent -->
     <a
       class="brand-panel"
       href={getHref('/')}
       aria-label="IEEE Nanotechnology Council Yachay Tech Home"
     >
       <svg class="brand-panel__bg" viewBox="0 0 760 74" preserveAspectRatio="none" aria-hidden="true">
-        <!-- White surface from 0 up to 700px at top, slanting 30px to 670px at bottom -->
+        <!-- Surface polygon: white in light mode, deep space navy in dark mode -->
         <polygon points="0,0 700,0 670,74 0,74" fill="#ffffff" />
         <!-- Cyan accent stripe with exact 6px gap (706-718 at top, 676-688 at bottom) -->
         <polygon points="706,0 718,0 688,74 676,74" fill="#0587bd" />
@@ -73,9 +74,19 @@ const navLinks = [
 
       <span class="brand-panel__logo-wrapper">
         <img
-          class="brand-panel__logo"
-          src={ntcLogo}
-          alt="IEEE Nanotechnology Council"
+          class="brand-panel__logo brand-panel__logo-light"
+          src={ntcLogoLight}
+          alt="IEEE Nanotechnology Council Yachay Tech"
+          width="420"
+          height="112"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <img
+          class="brand-panel__logo brand-panel__logo-dark"
+          src={ntcLogoDark}
+          alt="IEEE Nanotechnology Council Yachay Tech"
           width="420"
           height="112"
           loading="eager"
@@ -176,7 +187,8 @@ const navLinks = [
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
     <div class="mobile-drawer-header">
-      <img src={ntcLogo} alt="IEEE NTC Logo" width="240" height="60" />
+      <img src={ntcLogoLight} alt="IEEE NTC Logo" width="240" height="60" class="mobile-logo-light" />
+      <img src={ntcLogoDark} alt="IEEE NTC Logo" width="240" height="60" class="mobile-logo-dark" />
       <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close navigation menu">
         &times;
       </button>
@@ -629,6 +641,42 @@ const navLinks = [
     transform: rotate(0deg) scale(1.1);
     color: #ffffff;
     filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  }
+
+  /* Logo Light & Dark Mode Visibility */
+  .brand-panel__logo-light {
+    display: block;
+  }
+  .brand-panel__logo-dark {
+    display: none;
+  }
+  .mobile-logo-light {
+    display: block;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+  .mobile-logo-dark {
+    display: none;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  :global(html[data-theme="dark"]) .brand-panel__bg polygon:first-child {
+    fill: #0c2340 !important;
+  }
+  :global(html[data-theme="dark"]) .brand-panel__logo-light {
+    display: none !important;
+  }
+  :global(html[data-theme="dark"]) .brand-panel__logo-dark {
+    display: block !important;
+  }
+  :global(html[data-theme="dark"]) .mobile-logo-light {
+    display: none !important;
+  }
+  :global(html[data-theme="dark"]) .mobile-logo-dark {
+    display: block !important;
   }
 
   @media (max-width: 480px) {

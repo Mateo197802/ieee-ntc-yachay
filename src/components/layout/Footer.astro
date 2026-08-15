@@ -15,11 +15,18 @@ function getHref(path: string) {
       <div class="footer-brand-panel-wrapper">
         <a href={getHref('/')} class="footer-brand-panel" aria-label="IEEE Nanotechnology Council Home">
           <img 
-            src={getHref('/assets/logos/ieee-ntc-official-trimmed.png')} 
+            src={getHref('/assets/logos/ieee-ntc-yachay-light.png')} 
             alt="IEEE Nanotechnology Council Logo" 
             width="280" 
             height="50" 
-            class="footer-logo-img" 
+            class="footer-logo-img footer-logo-light" 
+          />
+          <img 
+            src={getHref('/assets/logos/ieee-ntc-yachay-dark.png')} 
+            alt="IEEE Nanotechnology Council Logo" 
+            width="280" 
+            height="50" 
+            class="footer-logo-img footer-logo-dark" 
           />
         </a>
         <div class="footer-brand-cyan-accent" aria-hidden="true"></div>
@@ -210,6 +217,26 @@ function getHref(path: string) {
     max-width: 100%;
     object-fit: contain;
     display: block;
+  }
+
+  .footer-logo-light {
+    display: block;
+  }
+
+  .footer-logo-dark {
+    display: none;
+  }
+
+  :global(html[data-theme="dark"]) .footer-brand-panel {
+    background-color: #0c2340;
+  }
+
+  :global(html[data-theme="dark"]) .footer-logo-light {
+    display: none !important;
+  }
+
+  :global(html[data-theme="dark"]) .footer-logo-dark {
+    display: block !important;
   }
 
   .footer-description {
