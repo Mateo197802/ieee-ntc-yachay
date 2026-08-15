@@ -271,3 +271,42 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-institutional-blue) 40%, var(--color-cyan) 100%);
   width: 100%;
 }
+
+/* Universal Perfectly Centered Modal & Dialog System */
+dialog {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 1.5rem !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  z-index: 99999 !important;
+}
+
+dialog[open] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+dialog::backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(7, 28, 52, 0.82) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+.modal-dialog-content,
+.gallery-modal-inner,
+.membership-modal-inner {
+  max-height: calc(100vh - 3rem) !important;
+  overflow-y: auto !important;
+  margin: auto !important;
+  box-sizing: border-box !important;
+}

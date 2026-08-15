@@ -333,17 +333,8 @@ const categories = ['All', 'Outreach', 'Conferences', 'Workshops', 'Community'];
   /* Lightbox Modal */
   .gallery-modal-dialog {
     border: none;
-    border-radius: var(--border-radius-md);
     padding: 0;
-    max-width: 900px;
-    width: 94vw;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
     background: transparent;
-  }
-
-  .gallery-modal-dialog::backdrop {
-    background: rgba(7, 28, 52, 0.85);
-    backdrop-filter: blur(5px);
   }
 
   .gallery-modal-inner {
@@ -352,6 +343,9 @@ const categories = ['All', 'Outreach', 'Conferences', 'Workshops', 'Community'];
     padding: 2rem;
     position: relative;
     border-top: 4px solid var(--color-cyan);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 900px;
   }
 
   .gallery-modal-close {
