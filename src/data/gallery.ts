@@ -18,6 +18,41 @@ export interface GalleryAlbum {
 
 export const GALLERY_ALBUMS: GalleryAlbum[] = [
   {
+    id: 'logic-lock-first-meeting',
+    title: 'Logic Lock Launch & First Chapter General Assembly',
+    category: 'Community',
+    date: 'March 12, 2026',
+    coverImage: '/assets/gallery/logic_lock_post.png',
+    coverPosition: 'center center',
+    summary: 'First general assembly introducing Logic Lock, scientific research workflows, and the founding mission of IEEE NTC at Yachay Tech.',
+    slides: [
+      {
+        image: '/assets/gallery/logic_lock_post.png',
+        title: 'Official Logic Lock Launch Announcement Flyer',
+        caption: 'Official promotional poster for the first chapter general assembly, Logic Lock scientific workflow presentation, and member welcoming.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/logic_lock_grupo.jpg',
+        title: 'First General Assembly & Community Gathering',
+        caption: 'Founding executive board, student members, and volunteers celebrating the chapter launch with the official IEEE NTC cake.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/logic_lock_shirley.jpg',
+        title: 'Chapter Origin & Nanotechnology Leadership',
+        caption: 'Chair Shirley Criollo explaining the founding purpose of IEEE NTC at Yachay Tech as the only university in Ecuador with a Nanotechnology degree.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/logic_lock_mateo.jpg',
+        title: 'IEEE LANANO 2026 Incubator Presentation',
+        caption: 'Vice Chair Mateo Gavilanes introducing the IEEE LANANO 2026 conference and scientific paper authoring mentorship program.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
     id: 'visita-victor-manuel-guzman',
     title: 'School Visit: U.E. Víctor Manuel Guzmán',
     category: 'Outreach',

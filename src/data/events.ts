@@ -318,10 +318,11 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'Executive board and 30 student members.',
     objective: 'Promote a culture of rigorous, structured research methodology supported by digital innovation.',
     impact: 'Standardized paper discovery practices for ongoing chapter research incubators.',
-    image: '/assets/gallery/foto_con_bandera.jpg',
-    imageAlt: 'Logic Lock Presentation and General Assembly',
+    image: '/assets/gallery/logic_lock_post.png',
+    imageAlt: 'Logic Lock Presentation and Official Flyer',
     imageVerified: true,
-    featured: false
+    featured: false,
+    galleryAlbumId: 'logic-lock-first-meeting'
   },
   {
     id: 'inaugural-board-possession',

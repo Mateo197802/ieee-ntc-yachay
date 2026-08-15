@@ -41,7 +41,7 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Logic Lock: Automated Scientific Literature & Research Mapping Framework',
     category: 'Research',
     status: 'Active',
-    image: '/assets/gallery/foto_con_bandera.jpg',
+    image: '/assets/gallery/logic_lock_post.png',
     summary: 'A structured software framework designed to streamline academic paper discovery, literature categorization, and citation analysis.',
     description: 'Officially launched on March 12, 2026, Logic Lock is a specialized digital methodology that strengthens scientific research pipelines. It provides automated querying, metadata extraction, and thematic categorization across IEEE Xplore, PubMed, and arXiv, helping students find, organize, and analyze scientific papers with maximum efficiency.',
     technologies: ['Literature Automation', 'Data Mining', 'Python Frameworks', 'IEEE Xplore API', 'Research Analytics'],
