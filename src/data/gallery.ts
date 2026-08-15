@@ -185,7 +185,7 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     date: 'March 12, 2026',
     coverImage: '/assets/gallery/logic_lock_post.png',
     coverPosition: 'center center',
-    summary: 'First general assembly introducing Logic Lock, scientific research workflows, and the founding mission of IEEE NTC at Yachay Tech.',
+    summary: 'First general assembly introducing Logic Lock, an automated scientific literature research tool developed by Mateo Gavilanes, research workflows, and the founding mission of IEEE NTC at Yachay Tech.',
     slides: [
       {
         image: '/assets/gallery/logic_lock_post.png',

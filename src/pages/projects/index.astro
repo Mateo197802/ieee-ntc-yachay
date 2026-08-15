@@ -33,7 +33,7 @@ function getHref(path: string) {
     <div class="site-container">
       <div class="projects-grid">
         {PROJECTS_DATA.map((project) => (
-          <div class="project-card">
+          <div class="project-card" id={project.id}>
             <div class="project-img-box">
               <img src={getHref(project.image)} alt={project.title} width="400" height="240" loading="lazy" class="project-img" />
               <span class={`status-badge ${project.status.toLowerCase()}`}>{project.status}</span>
