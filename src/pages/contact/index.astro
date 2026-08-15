@@ -11,23 +11,24 @@ function getHref(path: string) {
 
 <Layout 
   title="Contact | IEEE Nanotechnology Council Yachay Tech"
-  description="Get in touch with the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. Inquire about memberships, workshops, or research collaborations."
+  description="Get in touch with the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. Inquire about volunteering, memberships, workshops, or research collaborations."
 >
   <section class="inner-banner">
     <div class="site-container">
       <div class="breadcrumb">
         <a href={getHref('/')}>Home</a> &gt; <span>Contact</span>
       </div>
+      <span class="banner-eyebrow">DIRECT COMMUNICATION & COLLABORATION</span>
       <h1 class="banner-title font-heading">CONTACT US</h1>
-      <p class="banner-subtitle">Have questions about IEEE NTC memberships, laboratory workshops, or research collaborations? We are here to help.</p>
+      <p class="banner-subtitle">Have questions about becoming a volunteer, IEEE NTC memberships, laboratory workshops, or research collaborations? We are here to help.</p>
     </div>
   </section>
 
-  <section class="contact-section">
+  <section class="contact-section" id="contact">
     <div class="site-container">
       <div class="contact-grid">
         <!-- Contact Form Column -->
-        <div class="contact-form-card">
+        <div class="contact-form-card" id="contact-form-card">
           <h2 class="form-title font-heading">SEND US A MESSAGE</h2>
           <p class="form-desc">Fill out the form below and our executive board will get back to you within 24 to 48 hours.</p>
 
@@ -51,10 +52,11 @@ function getHref(path: string) {
             </div>
 
             <div class="form-group">
-              <label for="subject">Subject <span class="required">*</span></label>
+              <label for="subject">Subject / Inquiry Type <span class="required">*</span></label>
               <select id="subject" name="subject" required class="form-control">
                 <option value="">Select a topic...</option>
-                <option value="membership">IEEE NTC Info & Membership</option>
+                <option value="volunteer">Become a Volunteer & Join Chapter Activities</option>
+                <option value="membership">IEEE & NTC Official Membership Inquiry</option>
                 <option value="lanano">LANANO 2026 Research Incubator</option>
                 <option value="workshop">Workshops & Conferences Registration</option>
                 <option value="outreach">STEM Outreach & School Visits</option>
@@ -65,7 +67,7 @@ function getHref(path: string) {
 
             <div class="form-group">
               <label for="message">Message <span class="required">*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Write the details of your inquiry..." class="form-control"></textarea>
+              <textarea id="message" name="message" rows="5" required placeholder="Write the details of your inquiry or volunteer application..." class="form-control"></textarea>
               <span class="error-msg" id="error-message">Please write your message.</span>
             </div>
 
@@ -74,7 +76,7 @@ function getHref(path: string) {
               <label for="privacyConsent">I agree that IEEE NTC Yachay Tech may process my contact details to reply to my request.</label>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
               <span>SEND MESSAGE</span>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
@@ -88,6 +90,15 @@ function getHref(path: string) {
 
         <!-- Location & Contact Info Column -->
         <div class="contact-info-column">
+          <!-- Fast Volunteer & Membership Direct Card -->
+          <div class="info-card volunteer-quick-card">
+            <h2 class="card-title font-heading">LOOKING TO JOIN US?</h2>
+            <div class="quick-join-desc">
+              <p><strong>Volunteers:</strong> No active IEEE membership is needed to collaborate with us. Just send us a message or contact us on Instagram!</p>
+              <p><strong>Official Members:</strong> Reach out to register your active IEEE number and join our executive working committees.</p>
+            </div>
+          </div>
+
           <div class="info-card">
             <h2 class="card-title font-heading">INSTITUTIONAL HEADQUARTERS</h2>
             
@@ -160,7 +171,7 @@ function getHref(path: string) {
   .inner-banner {
     background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
-    padding: 3rem 0 3.5rem;
+    padding: 3.5rem 0 4rem;
     border-bottom: 3px solid var(--color-cyan);
   }
 
@@ -175,20 +186,30 @@ function getHref(path: string) {
     text-decoration: none;
   }
 
+  .banner-eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-cyan);
+    margin-bottom: 0.5rem;
+  }
+
   .banner-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
     color: var(--color-white);
   }
 
   .banner-subtitle {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
     margin-top: 0.5rem;
-    max-width: 760px;
+    max-width: 800px;
+    line-height: 1.6;
   }
 
   .contact-section {
-    padding: 4.5rem 0;
+    padding: 4.5rem 0 6rem;
     background-color: var(--color-bg-light);
   }
 
@@ -204,6 +225,12 @@ function getHref(path: string) {
     padding: 2.5rem;
     box-shadow: var(--shadow-subtle);
     border: 1px solid var(--color-border-light);
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .contact-form-card.highlighted-form {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 20px rgba(5, 135, 189, 0.25);
   }
 
   .form-title {
@@ -309,6 +336,28 @@ function getHref(path: string) {
     border: 1px solid var(--color-border-light);
   }
 
+  .volunteer-quick-card {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #153258 100%);
+    color: #ffffff;
+    border-color: var(--color-cyan);
+  }
+
+  .volunteer-quick-card .card-title {
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .quick-join-desc p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+  }
+
+  .quick-join-desc p:last-child {
+    margin-bottom: 0;
+  }
+
   .card-title {
     font-size: 1.2rem;
     color: var(--color-navy);
@@ -387,3 +436,32 @@ function getHref(path: string) {
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get('topic');
+    const subjectSelect = document.getElementById('subject') as HTMLSelectElement | null;
+    const formCard = document.getElementById('contact-form-card');
+    const nameInput = document.getElementById('fullName');
+
+    if (topic && subjectSelect) {
+      if (topic === 'volunteer') {
+        subjectSelect.value = 'volunteer';
+      } else if (topic === 'membership') {
+        subjectSelect.value = 'membership';
+      }
+
+      if (formCard) {
+        formCard.classList.add('highlighted-form');
+        formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      if (nameInput) {
+        setTimeout(() => {
+          nameInput.focus();
+        }, 500);
+      }
+    }
+  });
+</script>
