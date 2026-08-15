@@ -281,18 +281,44 @@ function getHref(path: string) {
 
   .form-control {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border-light);
+    padding: 0.85rem 1rem;
+    background-color: #f8fafc !important;
+    color: #1F3E65 !important;
+    -webkit-text-fill-color: #1F3E65 !important;
+    border: 1.5px solid #cbd5e1 !important;
     border-radius: var(--border-radius-sm);
     font-size: 0.95rem;
+    font-weight: 500;
     font-family: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color-scheme: light !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .form-control::placeholder {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    opacity: 0.85;
   }
 
   .form-control:focus {
     outline: none;
-    border-color: var(--color-cyan);
-    box-shadow: 0 0 0 3px rgba(5, 135, 189, 0.15);
+    background-color: #ffffff !important;
+    color: #1F3E65 !important;
+    -webkit-text-fill-color: #1F3E65 !important;
+    border-color: var(--color-cyan) !important;
+    box-shadow: 0 0 0 3.5px rgba(5, 135, 189, 0.2) !important;
+  }
+
+  /* Browser Autofill Protection */
+  .form-control:-webkit-autofill,
+  .form-control:-webkit-autofill:hover, 
+  .form-control:-webkit-autofill:focus,
+  .form-control:-webkit-autofill:active {
+    -webkit-text-fill-color: #1F3E65 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #f8fafc inset !important;
+    box-shadow: 0 0 0px 1000px #f8fafc inset !important;
+    caret-color: #1F3E65 !important;
+    border-color: var(--color-cyan) !important;
   }
 
   .checkbox-group {
