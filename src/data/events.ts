@@ -197,10 +197,11 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'IEEE NTC student branch members and international microwave engineers.',
     objective: 'Expand cross-disciplinary knowledge in high-frequency instrumentation and nano-communication.',
     impact: 'Strengthened inter-society networking between NTC and MTT-S in Ecuador.',
-    image: '/assets/events/ieee_temscon_latam.jpg',
-    imageAlt: 'IEEE MTT-S BPC Workshop 2026 in Quito',
+    image: '/assets/events/ieee_mtts_ntc_workshop.png',
+    imageAlt: 'IEEE MTT-S BPC Workshop 2026 Delegation with Keynote Speaker in Quito',
     imageVerified: true,
-    featured: false
+    featured: false,
+    galleryAlbumId: 'mtts-ntc-workshop'
   },
   {
     id: 'nanoskills-hands-on-lab',
