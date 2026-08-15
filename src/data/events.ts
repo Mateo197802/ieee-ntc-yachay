@@ -47,9 +47,9 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'IEEE NTC student branch delegations, distinguished lecturers, and young researchers.',
     objective: 'Strengthen regional collaboration, showcase student research, and promote cross-border projects in nanoscience.',
     impact: 'Consolidation of the Latin American student branch network with over 200 participants expected.',
-    image: '',
-    imageAlt: 'IEEE NTC Region 9 Student Virtual Summit 2026',
-    imageVerified: false,
+    image: '/assets/events/virtual_summit_2026.png',
+    imageAlt: 'IEEE NTC Region 9 Student Virtual Summit 2026 Official Poster',
+    imageVerified: true,
     featured: true
   },
 
