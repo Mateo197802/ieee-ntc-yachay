@@ -56,33 +56,39 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     id: 'visita-victor-manuel-guzman',
     title: 'School Visit: U.E. Víctor Manuel Guzmán',
     category: 'Outreach',
-    date: 'May 2026',
-    coverImage: '/assets/gallery/actividad_colegio_4.jpg',
+    date: 'April 09, 2026',
+    coverImage: '/assets/gallery/colegio_bandera_completa.jpg',
     coverPosition: 'center center',
     summary: 'Full STEM outreach session with hands-on nanotechnology experiments and Virtual Reality molecular simulations for high school students in Ibarra.',
     slides: [
       {
-        image: '/assets/gallery/actividad_colegio_1.jpg',
-        title: 'Nanotechnology Demonstration with Virtual Reality',
+        image: '/assets/gallery/colegio_vr_experiencia.jpg',
+        title: 'Virtual Reality Molecular Simulation Demonstration',
         caption: 'High school student experiencing immersive molecular laboratory simulations using Meta Quest 3 VR headsets guided by IEEE NTC volunteers.',
-        position: 'center 20%'
-      },
-      {
-        image: '/assets/gallery/actividad_colegio_2.jpg',
-        title: 'Hands-on Classroom Demonstration of Nano-Phenomena',
-        caption: 'Interactive demonstrations of hydrophobic effects, magnetic ferrofluid properties, and scientific discussions with students.',
         position: 'center center'
       },
       {
-        image: '/assets/gallery/actividad_colegio_3.jpg',
-        title: 'Scientific Workshop and Interactive Dynamics',
-        caption: 'Group Q&A dynamics and vocational inspiration towards nanotechnology and engineering degrees.',
-        position: 'center 30%'
+        image: '/assets/gallery/colegio_delegacion_estudiante.jpg',
+        title: 'Student Engagement and STEM Recognition',
+        caption: 'Chapter delegation honoring participating high school students with educational science notebooks and kits.',
+        position: 'center center'
       },
       {
-        image: '/assets/gallery/actividad_colegio_4.jpg',
-        title: 'IEEE NTC Delegation with Teachers and Students',
-        caption: 'Official group photograph of the IEEE NTC Yachay Tech volunteer delegation holding the chapter flag with the school community.',
+        image: '/assets/gallery/colegio_delegacion_docentes.jpg',
+        title: 'Scientific Outreach Delegation with School Community',
+        caption: 'IEEE NTC student leaders and volunteer presenters collaborating with high school educators and students.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/colegio_bandera_stand.jpg',
+        title: 'Chapter Delegation with School of Physical Sciences Stand',
+        caption: 'IEEE NTC Yachay Tech volunteer team proudly displaying the official council flag at the school exhibition booth.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/colegio_bandera_completa.jpg',
+        title: 'Full Outreach Volunteer Delegation with Official Banner',
+        caption: 'Official group photograph of the full IEEE NTC Yachay Tech volunteer delegation holding the chapter flag with the school community.',
         position: 'center center'
       }
     ]

@@ -293,7 +293,7 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'Chapter outreach delegation and over 120 high school students and teachers.',
     objective: 'Demystify nanoscience and encourage early STEM vocations through experiential learning.',
     impact: 'Inspired over 120 students with direct exposure to modern nanotechnology tools.',
-    image: '/assets/events/visita_victor_manuel_guzman.jpg',
+    image: '/assets/gallery/colegio_bandera_completa.jpg',
     imageAlt: 'STEM Outreach at Víctor Manuel Guzmán High School',
     imageVerified: true,
     featured: false,
