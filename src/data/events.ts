@@ -343,9 +343,10 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'Founding executive officers, faculty advisors, and institutional authorities.',
     objective: 'Establish the pioneer IEEE NTC student branch in Ecuador to advance nanoscience education and research.',
     impact: 'Formally launched the chapter with recognition from IEEE Region 9 and Yachay Tech University.',
-    image: '/assets/gallery/foto_con_bandera.jpg',
+    image: '/assets/gallery/posesion_directivos_oficial.jpg',
     imageAlt: 'Inaugural Possession of the Founding Executive Board',
     imageVerified: true,
-    featured: false
+    featured: false,
+    galleryAlbumId: 'posesion-directivos'
   }
 ];

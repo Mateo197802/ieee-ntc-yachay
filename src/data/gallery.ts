@@ -143,11 +143,17 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     id: 'posesion-directivos',
     title: 'Executive Board Swearing-in Ceremony',
     category: 'Community',
-    date: 'February 2026',
-    coverImage: '/assets/gallery/posesion_directivos_1.jpg',
+    date: 'February 25, 2026',
+    coverImage: '/assets/gallery/posesion_directivos_oficial.jpg',
     coverPosition: 'center center',
-    summary: 'Solemn official inauguration and swearing-in ceremony of the founding IEEE NTC Yachay Tech officers.',
+    summary: 'Solemn official inauguration and swearing-in ceremony of the founding IEEE NTC Yachay Tech executive officers.',
     slides: [
+      {
+        image: '/assets/gallery/posesion_directivos_oficial.jpg',
+        title: 'Official Executive Board Delegation with IEEE NANO Banner',
+        caption: 'Founding chapter executive officers Shirley Criollo (Chair), Mateo Gavilanes (Vice Chair), Ethan Guevara (Secretary), Emily Pérez (Treasurer), and Melanie Landázuri (Webmaster) holding the official IEEE NTC flag.',
+        position: 'center center'
+      },
       {
         image: '/assets/gallery/posesion_directivos_1.jpg',
         title: 'Opening and Official Chapter Inauguration',
