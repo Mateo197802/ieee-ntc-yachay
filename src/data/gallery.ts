@@ -99,17 +99,17 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
   },
   {
     id: 'nanoskills-workshop',
-    title: 'NanoSkills Hands-on Workshop: Synthesis & Characterization',
+    title: 'NanoSkills: Sputtering & Thin Film Technologies (Theory & Practice)',
     category: 'Workshops',
-    date: 'May 18, 2026',
+    date: 'April 18 – May 18, 2026',
     coverImage: '/assets/events/nanoskills_hands_on.jpg',
     coverPosition: 'center center',
-    summary: 'Intensive nanotechnology laboratory training on green nanoparticle synthesis and UV-Vis spectrophotometry.',
+    summary: 'Comprehensive dual-phase program covering theoretical thin-film plasma dynamics and hands-on sputtering cleanroom equipment operation.',
     slides: [
       {
         image: '/assets/events/nanoskills_hands_on.jpg',
-        title: 'Experimental Practice in Nanotechnology Laboratory',
-        caption: 'Hands-on technical training for chapter members in nanoparticle preparation and biosafety protocols.',
+        title: 'Experimental Practice & Cleanroom Equipment Operation',
+        caption: 'Hands-on technical training for chapter members in sputtering equipment operation, plasma deposition, and thin film characterization.',
         position: 'center center'
       }
     ]
