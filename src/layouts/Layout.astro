@@ -48,6 +48,18 @@ const fullImageUrl = new URL(baseUrl + image, Astro.site).href;
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={fullImageUrl} />
+
+    <!-- Dark / Light Mode Early Theme Initializer (Prevents FOUC) -->
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- Ambient Interactive Cursor Glow Tracker -->

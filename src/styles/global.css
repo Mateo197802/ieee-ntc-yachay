@@ -337,3 +337,161 @@ select:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #ffffff inset !important;
   caret-color: #1F3E65 !important;
 }
+
+/* ==========================================================================
+   COMPLETE DARK THEME SYSTEM (Institutional Dark Palette)
+   ========================================================================== */
+html[data-theme="dark"],
+:root[data-theme="dark"] {
+  --color-bg-primary: #071626;
+  --color-bg-secondary: #0b1e36;
+  --color-bg-light: #071626;
+  --color-white: #0c2340;
+  --color-text-dark: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border-light: rgba(255, 255, 255, 0.12);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.55);
+  --shadow-hover: 0 12px 32px rgba(5, 135, 189, 0.35);
+  color-scheme: dark;
+}
+
+/* Backgrounds & Global Text */
+html[data-theme="dark"] body {
+  background-color: #071626;
+  color: #f1f5f9;
+}
+
+/* Headings & Texts in Dark Mode */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .card-title,
+html[data-theme="dark"] .modal-title,
+html[data-theme="dark"] .gallery-modal-title,
+html[data-theme="dark"] .brand-title {
+  color: #ffffff !important;
+}
+
+/* Cards & Surfaces */
+html[data-theme="dark"] .stats-card-wrapper,
+html[data-theme="dark"] .stats-growth-section,
+html[data-theme="dark"] .quick-nav-section,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .directive-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .news-card,
+html[data-theme="dark"] .opportunity-card,
+html[data-theme="dark"] .mosaic-card-btn,
+html[data-theme="dark"] .contact-form-card,
+html[data-theme="dark"] .info-card,
+html[data-theme="dark"] .map-card,
+html[data-theme="dark"] .join-path-card,
+html[data-theme="dark"] .nanonews-info-box,
+html[data-theme="dark"] .nanonews-section,
+html[data-theme="dark"] .table-card,
+html[data-theme="dark"] .resource-card,
+html[data-theme="dark"] .overview-card,
+html[data-theme="dark"] .deck-card-preview {
+  background-color: #0c2340 !important;
+  border-color: rgba(5, 135, 189, 0.25) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Modal Inner Surfaces in Dark Mode */
+html[data-theme="dark"] .modal-dialog-content,
+html[data-theme="dark"] .gallery-modal-inner,
+html[data-theme="dark"] .membership-modal-inner,
+html[data-theme="dark"] .nanonews-modal-inner {
+  background-color: #0c2340 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(5, 135, 189, 0.4) !important;
+  border-top: 4px solid var(--color-cyan) !important;
+}
+
+html[data-theme="dark"] .modal-close-btn,
+html[data-theme="dark"] .gallery-modal-close,
+html[data-theme="dark"] .membership-modal-close,
+html[data-theme="dark"] .nanonews-modal-close {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .modal-close-btn:hover,
+html[data-theme="dark"] .gallery-modal-close:hover,
+html[data-theme="dark"] .membership-modal-close:hover,
+html[data-theme="dark"] .nanonews-modal-close:hover {
+  background-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+
+/* Dark Mode Form Inputs */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] .form-control {
+  background-color: #071c34 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: rgba(5, 135, 189, 0.4) !important;
+  color-scheme: dark !important;
+}
+
+html[data-theme="dark"] .form-control:focus {
+  background-color: #0a2544 !important;
+  border-color: var(--color-cyan) !important;
+  box-shadow: 0 0 0 3.5px rgba(5, 135, 189, 0.3) !important;
+}
+
+html[data-theme="dark"] .form-control::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] input:-webkit-autofill,
+html[data-theme="dark"] input:-webkit-autofill:hover, 
+html[data-theme="dark"] input:-webkit-autofill:focus,
+html[data-theme="dark"] .form-control:-webkit-autofill,
+html[data-theme="dark"] .form-control:-webkit-autofill:hover, 
+html[data-theme="dark"] .form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #071c34 inset !important;
+  box-shadow: 0 0 0px 1000px #071c34 inset !important;
+  caret-color: #ffffff !important;
+}
+
+/* Dark Mode Table, Tabs & Tags */
+html[data-theme="dark"] .table-data tr:hover {
+  background-color: rgba(5, 135, 189, 0.12) !important;
+}
+
+html[data-theme="dark"] .tech-tag,
+html[data-theme="dark"] .topic-tag,
+html[data-theme="dark"] .breakdown-row {
+  background-color: #071c34 !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(5, 135, 189, 0.25) !important;
+}
+
+html[data-theme="dark"] .project-breakdown-box,
+html[data-theme="dark"] .project-breakdown {
+  background-color: #071c34 !important;
+  border-left-color: var(--color-cyan) !important;
+}
+
+/* Header & Dropdown in Dark Mode */
+html[data-theme="dark"] .dropdown-menu {
+  background-color: #071c34 !important;
+  border: 1px solid rgba(5, 135, 189, 0.3) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .dropdown-item {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .dropdown-item:hover {
+  background-color: rgba(5, 135, 189, 0.2) !important;
+  color: var(--color-cyan) !important;
+}

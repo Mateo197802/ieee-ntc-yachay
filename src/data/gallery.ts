@@ -18,36 +18,121 @@ export interface GalleryAlbum {
 
 export const GALLERY_ALBUMS: GalleryAlbum[] = [
   {
-    id: 'logic-lock-first-meeting',
-    title: 'Logic Lock Launch & First Chapter General Assembly',
-    category: 'Community',
-    date: 'March 12, 2026',
-    coverImage: '/assets/gallery/logic_lock_post.png',
+    id: 'entrevista-utn',
+    title: 'Television Science Broadcast: UTN University Channel',
+    category: 'Conferences',
+    date: 'June 15, 2026',
+    coverImage: '/assets/gallery/entrevista_utn.png',
     coverPosition: 'center center',
-    summary: 'First general assembly introducing Logic Lock, scientific research workflows, and the founding mission of IEEE NTC at Yachay Tech.',
+    summary: 'Academic dissemination interview broadcast on university television studio in Ibarra about IEEE NTC projects, goals, and opportunities.',
     slides: [
       {
-        image: '/assets/gallery/logic_lock_post.png',
-        title: 'Official Logic Lock Launch Announcement Flyer',
-        caption: 'Official promotional poster for the first chapter general assembly, Logic Lock scientific workflow presentation, and member welcoming.',
+        image: '/assets/gallery/entrevista_utn.png',
+        title: 'Live Interview at UTN University Television Studio',
+        caption: 'IEEE NTC Yachay Tech student representatives Melanie Landázuri and Ethan Guevara presenting chapter achievements, VR innovations, and nanotechnology opportunities on regional television.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
+    id: 'dia-del-nino-hospital',
+    title: "Immersive Children's Day — San Vicente de Paúl Hospital",
+    category: 'Outreach',
+    date: 'June 01, 2026',
+    coverImage: '/assets/events/dia_del_nino_hospital.jpg',
+    coverPosition: 'center center',
+    summary: 'Deployment of Meta Quest 3 Virtual Reality technology and emotional support for 25 pediatric ICU patients.',
+    slides: [
+      {
+        image: '/assets/events/dia_del_nino_hospital.jpg',
+        title: "Immersive Children's Day: Technology & Smiles",
+        caption: 'Humanitarian volunteer outreach with Meta Quest 3 headsets, clinical disinfection biosafety, and gift kits at San Vicente de Paúl Hospital.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
+    id: 'mtts-ntc-workshop',
+    title: 'Joint IEEE MTT-S & NTC Workshop',
+    category: 'Workshops',
+    date: 'May 28–29, 2026',
+    coverImage: '/assets/events/ieee_mtts_ntc_workshop.jpg',
+    coverPosition: 'center center',
+    summary: 'Collaborative workshop on microwave theory, electromagnetism, and high-frequency nanomaterials.',
+    slides: [
+      {
+        image: '/assets/events/ieee_mtts_ntc_workshop.jpg',
+        title: 'IEEE NTC Delegation with International Speaker',
+        caption: 'Chapter executive board members and international keynote speaker holding the official IEEE NTC Yachay Tech banner.',
         position: 'center center'
       },
       {
-        image: '/assets/gallery/logic_lock_grupo.jpg',
-        title: 'First General Assembly & Community Gathering',
-        caption: 'Founding executive board, student members, and volunteers celebrating the chapter launch with the official IEEE NTC cake.',
+        image: '/assets/events/ieee_mtts_ntc_workshop_alt.jpg',
+        title: 'Technical Workshop Session in the Auditorium',
+        caption: 'Keynote presentation on microwaves and nanotechnology in the auditorium with the official IEEE MTT-S banner.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
+    id: 'temscon-latam-2026',
+    title: 'Participation in IEEE TEMSCON LATAM 2026',
+    category: 'Conferences',
+    date: 'May 20–22, 2026',
+    coverImage: '/assets/events/ieee_temscon_latam.jpg',
+    coverPosition: 'center center',
+    summary: 'Official chapter representation at the Region 9 technology management summit in Mitad del Mundo.',
+    slides: [
+      {
+        image: '/assets/events/ieee_temscon_latam.jpg',
+        title: 'Executive Board Delegation at Mitad del Mundo',
+        caption: 'Chapter board officers at the Middle of the World monument during the opening of IEEE TEMSCON LATAM 2026.',
         position: 'center center'
       },
       {
-        image: '/assets/gallery/logic_lock_shirley.jpg',
-        title: 'Chapter Origin & Nanotechnology Leadership',
-        caption: 'Chair Shirley Criollo explaining the founding purpose of IEEE NTC at Yachay Tech as the only university in Ecuador with a Nanotechnology degree.',
+        image: '/assets/events/ieee_temscon_latam_alt.jpg',
+        title: 'Project Socialization and Global Networking',
+        caption: 'Connecting with international university delegations and IEEE Region 9 leadership.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
+    id: 'nanoskills-workshop',
+    title: 'NanoSkills Hands-on Workshop: Synthesis & Characterization',
+    category: 'Workshops',
+    date: 'May 18, 2026',
+    coverImage: '/assets/events/nanoskills_hands_on.jpg',
+    coverPosition: 'center center',
+    summary: 'Intensive nanotechnology laboratory training on green nanoparticle synthesis and UV-Vis spectrophotometry.',
+    slides: [
+      {
+        image: '/assets/events/nanoskills_hands_on.jpg',
+        title: 'Experimental Practice in Nanotechnology Laboratory',
+        caption: 'Hands-on technical training for chapter members in nanoparticle preparation and biosafety protocols.',
+        position: 'center center'
+      }
+    ]
+  },
+  {
+    id: 'sesion-fotos-rama',
+    title: 'Official Student Branch Photoshoot',
+    category: 'Community',
+    date: 'April 2026',
+    coverImage: '/assets/gallery/foto_con_bandera.jpg',
+    coverPosition: 'center center',
+    summary: 'Institutional identity and community belonging photoshoot organized on the Yachay Tech campus.',
+    slides: [
+      {
+        image: '/assets/gallery/foto_con_bandera.jpg',
+        title: 'Official Delegation with IEEE NANO Banner',
+        caption: 'Executive board officers and chapter members proudly holding the official IEEE Nanotechnology Council flag.',
         position: 'center center'
       },
       {
-        image: '/assets/gallery/logic_lock_mateo.jpg',
-        title: 'IEEE LANANO 2026 Incubator Presentation',
-        caption: 'Vice Chair Mateo Gavilanes introducing the IEEE LANANO 2026 conference and scientific paper authoring mentorship program.',
+        image: '/assets/gallery/foto_sin_bandera.jpg',
+        title: 'Student Community Integration on Campus',
+        caption: 'Fellowship and collaboration gathering of the nanotechnology community at Yachay Tech.',
         position: 'center center'
       }
     ]
@@ -94,47 +179,36 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     ]
   },
   {
-    id: 'mtts-ntc-workshop',
-    title: 'Joint IEEE MTT-S & NTC Workshop',
-    category: 'Workshops',
-    date: 'May 2026',
-    coverImage: '/assets/events/ieee_mtts_ntc_workshop.jpg',
+    id: 'logic-lock-first-meeting',
+    title: 'Logic Lock Launch & First Chapter General Assembly',
+    category: 'Community',
+    date: 'March 12, 2026',
+    coverImage: '/assets/gallery/logic_lock_post.png',
     coverPosition: 'center center',
-    summary: 'Collaborative workshop on microwave theory, electromagnetism, and high-frequency nanomaterials.',
+    summary: 'First general assembly introducing Logic Lock, scientific research workflows, and the founding mission of IEEE NTC at Yachay Tech.',
     slides: [
       {
-        image: '/assets/events/ieee_mtts_ntc_workshop.jpg',
-        title: 'IEEE NTC Delegation with International Speaker',
-        caption: 'Chapter executive board members and international keynote speaker holding the official IEEE NTC Yachay Tech banner.',
+        image: '/assets/gallery/logic_lock_post.png',
+        title: 'Official Logic Lock Launch Announcement Flyer',
+        caption: 'Official promotional poster for the first chapter general assembly, Logic Lock scientific workflow presentation, and member welcoming.',
         position: 'center center'
       },
       {
-        image: '/assets/events/ieee_mtts_ntc_workshop_alt.jpg',
-        title: 'Technical Workshop Session in the Auditorium',
-        caption: 'Keynote presentation on microwaves and nanotechnology in the auditorium with the official IEEE MTT-S banner.',
-        position: 'center center'
-      }
-    ]
-  },
-  {
-    id: 'temscon-latam-2026',
-    title: 'Participation in IEEE TEMSCON LATAM 2026',
-    category: 'Conferences',
-    date: 'May 2026',
-    coverImage: '/assets/events/ieee_temscon_latam.jpg',
-    coverPosition: 'center center',
-    summary: 'Official chapter representation at the Region 9 technology management summit in Mitad del Mundo.',
-    slides: [
-      {
-        image: '/assets/events/ieee_temscon_latam.jpg',
-        title: 'Executive Board Delegation at Mitad del Mundo',
-        caption: 'Chapter board officers at the Middle of the World monument during the opening of IEEE TEMSCON LATAM 2026.',
+        image: '/assets/gallery/logic_lock_grupo.jpg',
+        title: 'First General Assembly & Community Gathering',
+        caption: 'Founding executive board, student members, and volunteers celebrating the chapter launch with the official IEEE NTC cake.',
         position: 'center center'
       },
       {
-        image: '/assets/events/ieee_temscon_latam_alt.jpg',
-        title: 'Project Socialization and Global Networking',
-        caption: 'Connecting with international university delegations and IEEE Region 9 leadership.',
+        image: '/assets/gallery/logic_lock_shirley.jpg',
+        title: 'Chapter Origin & Nanotechnology Leadership',
+        caption: 'Chair Shirley Criollo explaining the founding purpose of IEEE NTC at Yachay Tech as the only university in Ecuador with a Nanotechnology degree.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/gallery/logic_lock_mateo.jpg',
+        title: 'IEEE LANANO 2026 Incubator Presentation',
+        caption: 'Vice Chair Mateo Gavilanes introducing the IEEE LANANO 2026 conference and scientific paper authoring mentorship program.',
         position: 'center center'
       }
     ]
@@ -184,7 +258,7 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     id: 'directiva-faculty-advisor',
     title: 'Board Officers & Faculty Advisor',
     category: 'Community',
-    date: '2026',
+    date: 'February 2026',
     coverImage: '/assets/gallery/advisor.jpg',
     coverPosition: 'center center',
     summary: 'Official portrait gallery of founding executive board members and the chapter faculty advisor.',
@@ -230,80 +304,6 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
         title: 'Yehudah Kennedy Rodríguez — Webmaster & Tech',
         caption: 'Webmaster leading software development, biomedical hardware, and technical support.',
         position: 'center 20%'
-      }
-    ]
-  },
-  {
-    id: 'sesion-fotos-rama',
-    title: 'Official Student Branch Photoshoot',
-    category: 'Community',
-    date: 'April 2026',
-    coverImage: '/assets/gallery/foto_con_bandera.jpg',
-    coverPosition: 'center center',
-    summary: 'Institutional identity and community belonging photoshoot organized on the Yachay Tech campus.',
-    slides: [
-      {
-        image: '/assets/gallery/foto_con_bandera.jpg',
-        title: 'Official Delegation with IEEE NANO Banner',
-        caption: 'Executive board officers and chapter members proudly holding the official IEEE Nanotechnology Council flag.',
-        position: 'center center'
-      },
-      {
-        image: '/assets/gallery/foto_sin_bandera.jpg',
-        title: 'Student Community Integration on Campus',
-        caption: 'Fellowship and collaboration gathering of the nanotechnology community at Yachay Tech.',
-        position: 'center center'
-      }
-    ]
-  },
-  {
-    id: 'dia-del-nino-hospital',
-    title: "Immersive Children's Day — San Vicente de Paúl Hospital",
-    category: 'Outreach',
-    date: 'June 2026',
-    coverImage: '/assets/events/dia_del_nino_hospital.jpg',
-    coverPosition: 'center center',
-    summary: 'Deployment of Meta Quest 3 Virtual Reality technology and emotional support for 25 pediatric ICU patients.',
-    slides: [
-      {
-        image: '/assets/events/dia_del_nino_hospital.jpg',
-        title: "Immersive Children's Day: Technology & Smiles",
-        caption: 'Humanitarian volunteer outreach with Meta Quest 3 headsets, clinical disinfection biosafety, and gift kits at San Vicente de Paúl Hospital.',
-        position: 'center center'
-      }
-    ]
-  },
-  {
-    id: 'nanoskills-workshop',
-    title: 'NanoSkills Hands-on Workshop: Synthesis & Characterization',
-    category: 'Workshops',
-    date: 'June 2026',
-    coverImage: '/assets/events/nanoskills_hands_on.jpg',
-    coverPosition: 'center center',
-    summary: 'Intensive nanotechnology laboratory training on green nanoparticle synthesis and UV-Vis spectrophotometry.',
-    slides: [
-      {
-        image: '/assets/events/nanoskills_hands_on.jpg',
-        title: 'Experimental Practice in Nanotechnology Laboratory',
-        caption: 'Hands-on technical training for chapter members in nanoparticle preparation and biosafety protocols.',
-        position: 'center center'
-      }
-    ]
-  },
-  {
-    id: 'entrevista-utn',
-    title: 'Television Science Broadcast: UTN University Channel',
-    category: 'Conferences',
-    date: 'June 15, 2026',
-    coverImage: '/assets/gallery/entrevista_utn.png',
-    coverPosition: 'center center',
-    summary: 'Academic dissemination interview broadcast on university television studio in Ibarra about IEEE NTC projects, goals, and opportunities.',
-    slides: [
-      {
-        image: '/assets/gallery/entrevista_utn.png',
-        title: 'Live Interview at UTN University Television Studio',
-        caption: 'IEEE NTC Yachay Tech student representatives Melanie Landázuri and Ethan Guevara presenting chapter achievements, VR innovations, and nanotechnology opportunities on regional television.',
-        position: 'center center'
       }
     ]
   }
