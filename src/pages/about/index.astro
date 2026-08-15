@@ -72,13 +72,22 @@ function getHref(path: string) {
     </div>
   </section>
 
-  <!-- Mission, Vision & Strategic Values -->
+  <!-- Mission, Vision & Strategic Values with Animated Dynamic Cards -->
   <section class="mission-vision-section">
     <div class="site-container">
       <div class="cards-3-grid">
-        <div class="mv-card">
-          <div class="mv-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        <!-- Card 1: Our Mission -->
+        <div class="mv-card animated-pillar-card">
+          <div class="card-accent-ribbon"></div>
+          <div class="mv-icon-wrapper">
+            <div class="icon-ambient-ring"></div>
+            <div class="mv-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" class="svg-ring-outer"/>
+                <circle cx="12" cy="12" r="6" class="svg-ring-mid"/>
+                <circle cx="12" cy="12" r="2" class="svg-ring-center" fill="currentColor"/>
+              </svg>
+            </div>
           </div>
           <h3>OUR MISSION</h3>
           <p>
@@ -86,9 +95,18 @@ function getHref(path: string) {
           </p>
         </div>
 
-        <div class="mv-card">
-          <div class="mv-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <!-- Card 2: Our Vision -->
+        <div class="mv-card animated-pillar-card">
+          <div class="card-accent-ribbon"></div>
+          <div class="mv-icon-wrapper">
+            <div class="icon-ambient-ring"></div>
+            <div class="mv-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" class="svg-eye-outer"/>
+                <circle cx="12" cy="12" r="3.5" class="svg-eye-iris" fill="rgba(5, 135, 189, 0.25)"/>
+                <circle cx="12" cy="12" r="1.5" class="svg-eye-pupil" fill="currentColor"/>
+              </svg>
+            </div>
           </div>
           <h3>OUR VISION</h3>
           <p>
@@ -96,9 +114,18 @@ function getHref(path: string) {
           </p>
         </div>
 
-        <div class="mv-card">
-          <div class="mv-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <!-- Card 3: Strategic Goals -->
+        <div class="mv-card animated-pillar-card">
+          <div class="card-accent-ribbon"></div>
+          <div class="mv-icon-wrapper">
+            <div class="icon-ambient-ring"></div>
+            <div class="mv-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" class="svg-layer-top" fill="rgba(5, 135, 189, 0.2)"/>
+                <path d="M2 17l10 5 10-5" class="svg-layer-bottom"/>
+                <path d="M2 12l10 5 10-5" class="svg-layer-mid"/>
+              </svg>
+            </div>
           </div>
           <h3>STRATEGIC GOALS</h3>
           <p>
@@ -243,6 +270,7 @@ function getHref(path: string) {
     text-align: center;
   }
 
+  /* Mission, Vision & Animated Cards */
   .mission-vision-section {
     padding: 5rem 0;
     background-color: var(--color-bg-light);
@@ -257,35 +285,194 @@ function getHref(path: string) {
   .mv-card {
     background-color: var(--color-white);
     border-radius: var(--border-radius-md);
-    padding: 2.5rem 2rem;
+    padding: 2.75rem 2.25rem;
     box-shadow: var(--shadow-subtle);
     border: 1px solid var(--color-border-light);
-    border-top: 4px solid var(--color-cyan);
-    transition: transform var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+
+  /* Top Animated Accent Ribbon */
+  .card-accent-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-cyan) 50%, #34B0E8 100%);
+    background-size: 200% 100%;
+    transition: height 0.3s ease, background-position 0.6s ease;
   }
 
   .mv-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px -10px rgba(5, 135, 189, 0.2), 0 10px 20px -5px rgba(31, 62, 101, 0.12);
+    border-color: rgba(5, 135, 189, 0.4);
+  }
+
+  .mv-card:hover .card-accent-ribbon {
+    height: 5px;
+    background-position: 100% 0;
+  }
+
+  /* Animated Icon Container & Glow Effects */
+  .mv-icon-wrapper {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-ambient-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(5, 135, 189, 0.18) 0%, rgba(4, 96, 142, 0.05) 70%, transparent 100%);
+    border: 1px dashed rgba(5, 135, 189, 0.35);
+    animation: rotateAmbientRing 12s linear infinite;
+    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  }
+
+  .mv-card:hover .icon-ambient-ring {
+    border-color: var(--color-cyan);
+    border-style: solid;
+    background: radial-gradient(circle, rgba(5, 135, 189, 0.3) 0%, rgba(5, 135, 189, 0.1) 70%, transparent 100%);
+    transform: scale(1.18);
+    box-shadow: 0 0 16px rgba(5, 135, 189, 0.4);
   }
 
   .mv-icon {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(5, 135, 189, 0.1);
     color: var(--color-cyan);
-    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    animation: subtleIconFloat 3.5s ease-in-out infinite;
+  }
+
+  .mv-card:nth-child(2) .mv-icon {
+    animation-delay: 0.6s;
+  }
+
+  .mv-card:nth-child(3) .mv-icon {
+    animation-delay: 1.2s;
+  }
+
+  .mv-card:hover .mv-icon {
+    transform: scale(1.14) rotate(8deg);
+    background-color: var(--color-cyan);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(5, 135, 189, 0.45);
+  }
+
+  .mv-icon svg {
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .mv-card:hover .mv-icon svg {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  }
+
+  /* Specific SVG Micro-animations */
+  .svg-ring-center,
+  .svg-eye-pupil {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  .mv-card:hover .svg-ring-center {
+    animation: targetPulse 1.2s ease-in-out infinite;
+  }
+
+  .mv-card:hover .svg-eye-pupil {
+    animation: eyeGlance 1.5s ease-in-out infinite;
+  }
+
+  .mv-card:hover .svg-layer-top {
+    animation: layerFloat 1.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes targetPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes eyeGlance {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    30% {
+      transform: translateX(1.5px);
+    }
+    70% {
+      transform: translateX(-1.5px);
+    }
+  }
+
+  @keyframes layerFloat {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes rotateAmbientRing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes subtleIconFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
   }
 
   .mv-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--color-navy);
     margin-bottom: 1rem;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+  }
+
+  .mv-card:hover h3 {
+    color: var(--color-institutional-blue);
   }
 
   .mv-card p {
     font-size: 0.92rem;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.62;
+    margin: 0;
   }
 
+  /* Benefits */
   .benefits-section {
     padding: 5.5rem 0;
     background-color: var(--color-white);
@@ -304,12 +491,13 @@ function getHref(path: string) {
     padding: 2.25rem;
     border: 1px solid var(--color-border-light);
     position: relative;
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
 
   .benefit-box:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     border-color: var(--color-cyan);
+    box-shadow: var(--shadow-hover);
   }
 
   .b-number {
@@ -320,6 +508,12 @@ function getHref(path: string) {
     top: 1.25rem;
     right: 1.5rem;
     line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .benefit-box:hover .b-number {
+    color: rgba(5, 135, 189, 0.45);
+    transform: scale(1.08);
   }
 
   .benefit-box h4 {
