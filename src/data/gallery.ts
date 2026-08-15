@@ -292,17 +292,17 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
   },
   {
     id: 'entrevista-utn',
-    title: 'Interview and Media Dissemination on UTN TV',
+    title: 'Television Science Broadcast: UTN University Channel',
     category: 'Conferences',
-    date: 'June 2026',
-    coverImage: '/assets/gallery/entrevista_utn.jpg',
+    date: 'June 15, 2026',
+    coverImage: '/assets/gallery/entrevista_utn.png',
     coverPosition: 'center center',
-    summary: 'Academic dissemination interview broadcast on university television about IEEE NTC projects and goals.',
+    summary: 'Academic dissemination interview broadcast on university television studio in Ibarra about IEEE NTC projects, goals, and opportunities.',
     slides: [
       {
-        image: '/assets/gallery/entrevista_utn.jpg',
-        title: 'Live Interview on UTN Media Broadcast',
-        caption: 'IEEE NTC Yachay Tech leadership presenting chapter achievements and nanotechnology opportunities.',
+        image: '/assets/gallery/entrevista_utn.png',
+        title: 'Live Interview at UTN University Television Studio',
+        caption: 'IEEE NTC Yachay Tech student representatives Melanie Landázuri and Ethan Guevara presenting chapter achievements, VR innovations, and nanotechnology opportunities on regional television.',
         position: 'center center'
       }
     ]

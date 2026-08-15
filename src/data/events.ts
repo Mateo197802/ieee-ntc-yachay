@@ -147,10 +147,11 @@ export const EVENTS_DATA: EventItem[] = [
     who: 'Fernanda Landázuri and Kennedy Rodriguez (IEEE NTC Yachay Tech Student Representatives).',
     objective: 'Disseminate nanotechnology breakthroughs beyond university classrooms to motivate youth toward STEM.',
     impact: 'Reached thousands of regional viewers, generating widespread interest in chapter initiatives.',
-    image: '/assets/gallery/foto_con_bandera.jpg',
+    image: '/assets/events/entrevista_utn.png',
     imageAlt: 'Television broadcast on UTN Channel',
     imageVerified: true,
-    featured: false
+    featured: false,
+    galleryAlbumId: 'entrevista-utn'
   },
   {
     id: 'dia-del-nino-hospital-san-vicente',
