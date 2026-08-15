@@ -171,6 +171,77 @@ function getHref(path: string) {
       </div>
     </div>
   </section>
+
+  <!-- Web Platform Architecture & Lead Developer Mini-Section -->
+  <section class="webmaster-credit-section" id="web-developer">
+    <div class="site-container">
+      <div class="webmaster-credit-card">
+        <div class="webmaster-info-side">
+          <span class="section-eyebrow">DIGITAL ARCHITECTURE & PLATFORM LEAD</span>
+          <h2 class="webmaster-title font-heading">WEBSITE DESIGN & DEVELOPMENT</h2>
+          <p class="webmaster-lead-text">
+            This official web platform was designed and developed by <strong>Mateo Gavilanes</strong> (Vice Chair & Lead Developer, Biomedical Engineering student at Yachay Tech University).
+          </p>
+          <p class="webmaster-sub-text">
+            Engineered with a high-performance modern static architecture, accessible responsive aesthetics, native light/dark theme synchronization, and interactive multi-media viewers to connect nanoscience with global academic communities.
+          </p>
+          
+          <div class="webmaster-tags-row">
+            <span class="credit-tag">Lead Web Architect</span>
+            <span class="credit-tag">Biomedical Engineering</span>
+            <span class="credit-tag">Vice Chair</span>
+            <span class="credit-tag">Open Source Contributor</span>
+          </div>
+
+          <div class="webmaster-cta-row">
+            <a 
+              href="https://www.linkedin.com/in/isaac-mateo-g-55aa7a318/?locale=es" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-primary credit-btn"
+            >
+              <span>VIEW LINKEDIN PROFILE</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.97 0-1.75.79-1.75 1.76s.78 1.76 1.75 1.76 1.75-.79 1.75-1.76-.78-1.76-1.75-1.76z"/></svg>
+            </a>
+
+            <a 
+              href="https://github.com/Mateo197802" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-outline-dark credit-btn"
+            >
+              <span>VIEW GITHUB PROFILE</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+
+            <a 
+              href={getHref('/directive/#mateo-gavilanes')} 
+              class="btn btn-outline-dark credit-btn"
+            >
+              <span>EXECUTIVE BIO</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="webmaster-avatar-side">
+          <div class="avatar-card-inner">
+            <img 
+              src={getHref('/assets/directive/mateo_gavilanes.jpg')} 
+              alt="Mateo Gavilanes — Web Platform Developer & Vice Chair" 
+              width="240" 
+              height="240" 
+              class="webmaster-portrait" 
+            />
+            <div class="avatar-meta">
+              <strong class="avatar-name">Mateo Gavilanes</strong>
+              <span class="avatar-role">Vice Chair & Web Architect</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -529,11 +600,170 @@ function getHref(path: string) {
     line-height: 1.6;
   }
 
+  /* Webmaster Credit Mini-Section */
+  .webmaster-credit-section {
+    padding: 4.5rem 0 5rem;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .webmaster-credit-card {
+    background: linear-gradient(135deg, rgba(7, 28, 52, 0.03) 0%, rgba(5, 135, 189, 0.06) 100%);
+    border: 1px solid var(--color-border-light);
+    border-left: 5px solid var(--color-cyan);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .webmaster-title {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--color-navy);
+    margin: 0.25rem 0 1rem;
+    line-height: 1.2;
+  }
+
+  .webmaster-lead-text {
+    font-size: 1.05rem;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .webmaster-lead-text strong {
+    color: var(--color-navy);
+  }
+
+  .webmaster-sub-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .webmaster-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .credit-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .webmaster-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .credit-btn {
+    font-size: 0.8rem;
+    padding: 0.65rem 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .webmaster-avatar-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar-card-inner {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: 0.85rem;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+  }
+
+  .webmaster-portrait {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.75rem;
+    background-color: #0c2340;
+  }
+
+  .avatar-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .avatar-name {
+    font-size: 0.95rem;
+    color: var(--color-navy);
+  }
+
+  .avatar-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-cyan);
+  }
+
   @media (max-width: 960px) {
     .about-grid,
     .cards-3-grid,
     .benefits-grid {
       grid-template-columns: 1fr;
     }
+    .webmaster-credit-card {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+      gap: 2rem;
+    }
+    .webmaster-avatar-side {
+      order: -1;
+    }
+  }
+
+  /* Dark Mode Overrides */
+  :global(html[data-theme="dark"]) .webmaster-credit-section {
+    background-color: #051324;
+    border-color: rgba(5, 135, 189, 0.2);
+  }
+
+  :global(html[data-theme="dark"]) .webmaster-credit-card {
+    background: linear-gradient(135deg, rgba(7, 28, 52, 0.6) 0%, rgba(12, 35, 64, 0.8) 100%);
+    border-color: rgba(5, 135, 189, 0.3);
+  }
+
+  :global(html[data-theme="dark"]) .webmaster-title,
+  :global(html[data-theme="dark"]) .webmaster-lead-text strong,
+  :global(html[data-theme="dark"]) .avatar-name {
+    color: #f1f5f9;
+  }
+
+  :global(html[data-theme="dark"]) .webmaster-lead-text {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .credit-tag,
+  :global(html[data-theme="dark"]) .avatar-card-inner {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.3);
+    color: #e2e8f0;
   }
 </style>
