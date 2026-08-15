@@ -145,19 +145,30 @@ function getHref(path: string) {
             </ul>
           </div>
 
-          <!-- Interactive Google Maps Frame -->
+          <!-- Interactive Campus Map Frame with Exact GPS Coordinates -->
           <div class="map-card">
-            <h3 class="map-heading">YACHAY TECH CAMPUS MAP</h3>
+            <div class="map-header">
+              <h3 class="map-heading">YACHAY TECH CAMPUS MAP</h3>
+              <a 
+                href="https://www.bing.com/maps?cp=0.405614~-78.174637&lvl=16&ppois=0.4056141674518585_-78.17463684082031_Yachay+Tech+University" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="map-external-link"
+              >
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
+              </a>
+            </div>
             <div class="map-embed-wrapper">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.056122606558!2d-78.1884067!3d0.4285871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2a39281dd61d0d%3A0xa19fbc7c014798e6!2sUniversidad%20Yachay%20Tech!5e0!3m2!1sen!2sec!4v1700000000000!5m2!1sen!2sec" 
+                src="https://maps.google.com/maps?q=0.4056141674518585,-78.17463684082031+(Universidad+Yachay+Tech)&hl=en&z=16&output=embed" 
                 width="100%" 
-                height="220" 
+                height="240" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Yachay Tech University Location Map"
+                title="Universidad Yachay Tech Campus Map (0.405614, -78.174637)"
               ></iframe>
             </div>
           </div>
@@ -417,17 +428,41 @@ function getHref(path: string) {
     border: 1px solid var(--color-border-light);
   }
 
+  .map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+
   .map-heading {
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--color-navy);
-    margin-bottom: 0.75rem;
+    margin: 0;
     letter-spacing: 0.5px;
+  }
+
+  .map-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--color-cyan);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .map-external-link:hover {
+    color: var(--color-institutional-blue);
+    text-decoration: underline;
   }
 
   .map-embed-wrapper {
     border-radius: var(--border-radius-sm);
     overflow: hidden;
+    background-color: #f0f4f8;
   }
 
   @media (max-width: 900px) {
