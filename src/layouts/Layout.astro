@@ -50,6 +50,9 @@ const fullImageUrl = new URL(baseUrl + image, Astro.site).href;
     <meta property="twitter:image" content={fullImageUrl} />
   </head>
   <body>
+    <!-- Ambient Interactive Cursor Glow Tracker -->
+    <div class="cursor-ambient-glow" id="cursor-glow" aria-hidden="true"></div>
+
     <Header currentPath={currentPath} />
 
     <main id="main-content">
@@ -57,5 +60,33 @@ const fullImageUrl = new URL(baseUrl + image, Astro.site).href;
     </main>
 
     <Footer />
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const glow = document.getElementById('cursor-glow');
+        if (!glow) return;
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let currentX = mouseX;
+        let currentY = mouseY;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+          currentX += (mouseX - currentX) * 0.15;
+          currentY += (mouseY - currentY) * 0.15;
+          if (glow) {
+            glow.style.transform = `translate3d(${currentX - 175}px, ${currentY - 175}px, 0)`;
+          }
+          requestAnimationFrame(animateCursor);
+        }
+
+        requestAnimationFrame(animateCursor);
+      });
+    </script>
   </body>
 </html>

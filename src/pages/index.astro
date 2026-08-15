@@ -14,27 +14,32 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
 <Layout 
   title="IEEE Nanotechnology Council - Yachay Tech Student Branch"
-  description="Official website of the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. Empowering the next generation of nanoscience innovators."
+  description="Official website of the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University. First in Ecuador, fourth in Latin America. Empowering the next generation of nanoscience innovators."
 >
   <!-- Hero Section -->
   <section class="hero-home">
     <div class="site-container hero-container">
       <div class="hero-text-col">
-        <span class="hero-eyebrow">• IEEE NANOTECHNOLOGY COUNCIL · YACHAY TECH</span>
+        <div class="hero-pre-badge">
+          <span class="pulse-dot"></span>
+          <span>1ST IN ECUADOR · 4TH IN LATIN AMERICA</span>
+        </div>
+        
         <h1 class="hero-title font-heading">
           EMPOWERING THE NEXT GENERATION OF INNOVATORS THROUGH <span class="highlight-cyan">NANOTECHNOLOGY</span>
         </h1>
+        
         <p class="hero-description">
-          We connect students passionate about nanotechnology and related sciences to research, collaborate, innovate, and create real scientific and social impact.
+          We connect students and young researchers passionate about nanotechnology, materials science, and biomedical innovation to research, collaborate, publish, and create real scientific and social impact.
         </p>
 
         <div class="hero-cta-group">
-          <a href={getHref('/contact/')} class="btn btn-primary hero-btn">
+          <a href="#join-chapter" class="btn btn-primary hero-btn">
             <span>JOIN OUR COMMUNITY</span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href={getHref('/events/')} class="btn btn-outline-light hero-btn">
-            <span>VIEW UPCOMING EVENTS</span>
+            <span>VIEW ACTIVITIES</span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
           </a>
         </div>
@@ -52,13 +57,13 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
           />
           <div class="hero-badge-pill">
             <span class="badge-dot"></span>
-            <span>Yachay Tech Student Branch</span>
+            <span>Founded February 25, 2026 · Yachay Tech</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Curved/Swoosh Wave Transition -->
+    <!-- Bottom Curved Wave Transition -->
     <div class="hero-wave-bottom" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#FFFFFF">
         <path d="M0,0 C480,50 960,50 1440,0 L1440,60 L0,60 Z"></path>
@@ -66,48 +71,110 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     </div>
   </section>
 
+  <!-- 2026 LIVE GROWTH METRICS BAR -->
+  <section class="stats-growth-section">
+    <div class="site-container">
+      <div class="stats-card-wrapper">
+        <div class="stats-header-bar">
+          <div class="stats-title-group">
+            <span class="stats-indicator-dot"></span>
+            <h2 class="stats-main-heading">2026 CHAPTER GROWTH & IMPACT METRICS</h2>
+          </div>
+          <span class="stats-milestone-pill">PIONEERING IN ECUADOR</span>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">44</div>
+            <div class="stat-label">Community Members & Volunteers</div>
+            <div class="stat-subtext">6 Officers · 6 Members · 32 Volunteers</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Active Projects in Development</div>
+            <div class="stat-subtext">VR NanoLab · Logic Lock · LANANO</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">1</div>
+            <div class="stat-label">NanoSkills Workshop Series</div>
+            <div class="stat-subtext">Cleanroom Sputtering & Thin Films</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">1</div>
+            <div class="stat-label">NanoTalks International Edition</div>
+            <div class="stat-subtext">Keynote with CSIC Spain</div>
+          </div>
+
+          <div class="stat-box stat-highlight-box">
+            <div class="stat-number">282+</div>
+            <div class="stat-label">Instagram Community Followers</div>
+            <div class="stat-subtext">@ntc.yachaytech</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5 Pillars Section -->
   <section class="pillars-section">
     <div class="site-container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">INSTITUTIONAL IDENTITY</span>
+        <h2 class="section-title">OUR PILLARS & STRATEGIC FOUNDATIONS</h2>
+      </div>
+
       <div class="pillars-grid">
         <div class="pillar-card">
           <div class="pillar-icon-circle">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
           </div>
-          <h2 class="pillar-title font-heading">WHO WE ARE</h2>
-          <p class="pillar-desc">We are the first IEEE Nanotechnology Council Student Branch Chapter in Ecuador, guided by curiosity and scientific excellence.</p>
+          <h3 class="pillar-title font-heading">WHO WE ARE</h3>
+          <p class="pillar-desc">
+            Founded on February 25, 2026, we are the 1st IEEE Nanotechnology Council Chapter in Ecuador and 4th in Latin America, born at Yachay Tech University, home to Ecuador's only undergraduate Nanotechnology degree program.
+          </p>
         </div>
 
         <div class="pillar-card">
           <div class="pillar-icon-circle">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
           </div>
-          <h2 class="pillar-title font-heading">OUR MISSION</h2>
-          <p class="pillar-desc">To promote nanotechnology education, interdisciplinary research, and community service across Latin America.</p>
+          <h3 class="pillar-title font-heading">OUR MISSION</h3>
+          <p class="pillar-desc">
+            To drive innovation, science, and technology at the nanoscale through education, research, collaboration, and outreach, connecting students and young researchers with experts, scientific communities, and global opportunities.
+          </p>
         </div>
 
         <div class="pillar-card">
           <div class="pillar-icon-circle">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
           </div>
-          <h2 class="pillar-title font-heading">OUR VISION</h2>
-          <p class="pillar-desc">To be a benchmark chapter in nanotechnology innovation, high-impact publications, and open scientific outreach.</p>
+          <h3 class="pillar-title font-heading">OUR VISION</h3>
+          <p class="pillar-desc">
+            To be a leading benchmark in nanotechnology across Ecuador and Latin America, renowned for connecting talent, research, and innovation with international opportunities and taking science beyond the laboratory.
+          </p>
         </div>
 
         <div class="pillar-card">
           <div class="pillar-icon-circle">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 9.15l2.12.6c.12-3.04 1.31-5.83 3.03-7.79l-1.58-1.96zM19 3l-6 6 2 2 6-6V3h-2zM4.93 4.93L3.52 6.34l3.54 3.54 1.41-1.41L4.93 4.93zM14.81 17.65c2.04-2.29 3.44-5.58 3.57-9.15l-2.12-.6c-.12 3.04-1.31 5.83-3.03 7.79l1.58 1.96z"/></svg>
           </div>
-          <h2 class="pillar-title font-heading">OUR GOALS</h2>
-          <p class="pillar-desc">To inspire, connect, and empower students to solve global technological challenges through nanoscience.</p>
+          <h3 class="pillar-title font-heading">OUR GOALS</h3>
+          <p class="pillar-desc">
+            Empower students through hands-on cleanroom equipment training, structured IEEE publication incubators, and Virtual Reality simulations that bring nanoscale science into schools and hospitals.
+          </p>
         </div>
 
         <div class="pillar-card">
           <div class="pillar-icon-circle">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9 0c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm9 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-2c0-2.66-5.33-4-8-4z"/></svg>
           </div>
-          <h2 class="pillar-title font-heading">OUR COMMUNITY</h2>
-          <p class="pillar-desc">A passionate and diverse community driving scientific change across Yachay Tech and IEEE Region 9.</p>
+          <h3 class="pillar-title font-heading">OUR COMMUNITY</h3>
+          <p class="pillar-desc">
+            A passionate network of 44 members, officers, and volunteers working collaboratively on research, laboratory workshops, public television broadcasts, and community service.
+          </p>
         </div>
       </div>
     </div>
@@ -119,10 +186,10 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
       <div class="strip-header">
         <div class="strip-header-left">
           <span class="strip-eyebrow-dot"></span>
-          <h2 class="strip-title">UPCOMING EVENTS</h2>
+          <h2 class="strip-title">FEATURED ACTIVITIES</h2>
         </div>
         <a href={getHref('/events/')} class="strip-view-all">
-          VIEW ALL EVENTS &rarr;
+          VIEW FULL CHRONOLOGY &rarr;
         </a>
       </div>
 
@@ -150,6 +217,53 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     </div>
   </section>
 
+  <!-- Interactive "JOIN THE CHAPTER" Section -->
+  <section class="home-join-section" id="join-chapter">
+    <div class="site-container">
+      <div class="join-box-wrapper">
+        <div class="join-header text-center">
+          <span class="section-eyebrow">COMMUNITY ENGAGEMENT</span>
+          <h2 class="join-main-title font-heading">JOIN THE CHAPTER</h2>
+          <p class="join-main-desc">
+            Do you want to learn, research, and connect with the nanotechnology community? Discover how you can participate and make an impact.
+          </p>
+        </div>
+
+        <div class="home-join-grid">
+          <!-- Option 1: Volunteer -->
+          <div class="home-join-card">
+            <div class="join-card-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <h3 class="join-card-heading">BECOME A VOLUNTEER</h3>
+            <p class="join-card-text">
+              Simply get in touch with us to collaborate on our workshops, hospital visits, and public events. 
+              <strong>No paid IEEE membership is required</strong> to volunteer. Active volunteers gain hands-on experience and preferential access to chapter programs.
+            </p>
+            <a href={getHref('/contact/')} class="btn btn-primary join-action-btn">
+              <span>BECOME A VOLUNTEER &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Option 2: IEEE Membership -->
+          <div class="home-join-card featured-join">
+            <div class="join-tag">OFFICIAL RECOGNITION</div>
+            <div class="join-card-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h3 class="join-card-heading">IEEE & NTC MEMBERSHIP</h3>
+            <p class="join-card-text">
+              Obtain your formal IEEE and IEEE Nanotechnology Council student membership. Access IEEE Xplore digital library discounts, student travel grants, conference discounts, and executive leadership eligibility.
+            </p>
+            <a href={getHref('/news/')} class="btn btn-outline-light join-action-btn">
+              <span>MEMBERSHIP GUIDE &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Bottom Row: Projects, Latest News, Gallery Highlights -->
   <section class="home-bottom-row">
     <div class="site-container bottom-grid">
@@ -166,8 +280,8 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M19 19v2H5v-2h14zm-4-9l1.41-1.41-3.54-3.54-1.41 1.41 3.54 3.54zM8.5 11C7.12 11 6 9.88 6 8.5S7.12 6 8.5 6 11 7.12 11 8.5 9.88 11 8.5 11zm1.5-6.5C10 3.12 8.88 2 7.5 2S5 3.12 5 4.5 6.12 7 7.5 7 10 5.88 10 4.5z"/></svg>
             </div>
             <div>
-              <strong>RESEARCH</strong>
-              <p>Promoting research and publications in nanotechnology.</p>
+              <strong>VR NANOLAB SIMULATION</strong>
+              <p>Meta Quest 3 cleanroom and molecular environment taking science into schools and hospitals.</p>
             </div>
           </div>
           <div class="mini-proj-item">
@@ -175,8 +289,8 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
             </div>
             <div>
-              <strong>OUTREACH</strong>
-              <p>Bringing science and hands-on workshops to schools and communities.</p>
+              <strong>LOGIC LOCK FRAMEWORK</strong>
+              <p>Digital research methodology for automated paper discovery and citation mapping.</p>
             </div>
           </div>
           <div class="mini-proj-item">
@@ -184,17 +298,8 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
             </div>
             <div>
-              <strong>INNOVATION</strong>
-              <p>Developing Artificial Intelligence, Edge AI, and Virtual Reality.</p>
-            </div>
-          </div>
-          <div class="mini-proj-item">
-            <div class="mini-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </div>
-            <div>
-              <strong>SERVICE</strong>
-              <p>Generating social and humanitarian impact through technology.</p>
+              <strong>LANANO 2026 INCUBATOR</strong>
+              <p>Mentorship program preparing original scientific manuscripts for IEEE Xplore indexing.</p>
             </div>
           </div>
         </div>
@@ -211,16 +316,16 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
           <article class="mini-news-item">
             <img src={getHref('/assets/events/ieee_temscon_latam.jpg')} alt="IEEE NTC TEMSCON" width="60" height="44" class="mini-news-thumb" />
             <div>
-              <span class="mini-news-date">MAY 15, 2026</span>
-              <h3 class="mini-news-title">IEEE NTC participates in TEMSCON LATAM 2026</h3>
+              <span class="mini-news-date">JUNE 26, 2026</span>
+              <h3 class="mini-news-title">Explainable AI in Medical Screening at IEEE TEMSCON LATAM</h3>
             </div>
           </article>
 
           <article class="mini-news-item">
-            <img src={getHref('/assets/events/visita_victor_manuel_guzman.jpg')} alt="School Visit to U.E. Victor Manuel Guzman" width="60" height="44" class="mini-news-thumb" />
+            <img src={getHref('/assets/events/nanotalks_dominios_magneticos.png')} alt="NanoTalks CSIC Spain" width="60" height="44" class="mini-news-thumb" />
             <div>
-              <span class="mini-news-date">MAY 05, 2026</span>
-              <h3 class="mini-news-title">School Visit to Unidad Educativa Víctor Manuel Guzmán</h3>
+              <span class="mini-news-date">JULY 16, 2026</span>
+              <h3 class="mini-news-title">NanoTalks: Magnetic Domains Keynote by Dr. José García-Martín</h3>
             </div>
           </article>
         </div>
@@ -249,7 +354,7 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
   .hero-home {
     background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 40%, #0d2847 70%, #152A47 100%);
     color: var(--color-white);
-    padding: 3.5rem 0 4rem;
+    padding: 3.5rem 0 4.5rem;
     position: relative;
     overflow: hidden;
   }
@@ -263,20 +368,33 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     z-index: 2;
   }
 
-  .hero-eyebrow {
-    display: inline-block;
-    color: var(--color-cyan);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+  .hero-pre-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(5, 135, 189, 0.18);
+    border: 1px solid var(--color-cyan);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10B981;
+    box-shadow: 0 0 8px #10B981;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
     color: var(--color-white);
-    line-height: 1.15;
+    line-height: 1.12;
     margin-bottom: 1.25rem;
   }
 
@@ -286,10 +404,10 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
   .hero-description {
     font-size: 1.05rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.88);
     margin-bottom: 2rem;
-    max-width: 540px;
+    max-width: 560px;
   }
 
   .hero-cta-group {
@@ -299,8 +417,8 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
   }
 
   .hero-btn {
-    padding: 0.8rem 1.6rem;
-    font-size: 0.9rem;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.92rem;
     letter-spacing: 0.5px;
   }
 
@@ -313,8 +431,8 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     position: relative;
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(5, 135, 189, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(5, 135, 189, 0.5);
   }
 
   .hero-img {
@@ -328,15 +446,15 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    background: rgba(7, 28, 52, 0.9);
+    background: rgba(7, 28, 52, 0.92);
     border: 1px solid var(--color-cyan);
     border-radius: 30px;
-    padding: 0.4rem 1rem;
+    padding: 0.45rem 1.1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-white);
     backdrop-filter: blur(4px);
   }
@@ -361,14 +479,142 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
   .hero-wave-bottom svg {
     width: 100%;
-    height: 30px;
+    height: 35px;
     display: block;
+  }
+
+  /* 2026 LIVE GROWTH METRICS BAR */
+  .stats-growth-section {
+    padding: 2.5rem 0 3.5rem;
+    background-color: var(--color-white);
+  }
+
+  .stats-card-wrapper {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #173458 100%);
+    border-radius: var(--border-radius-md);
+    padding: 2rem 2.5rem;
+    color: #ffffff;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--color-cyan);
+  }
+
+  .stats-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .stats-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .stats-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-cyan);
+    box-shadow: 0 0 10px var(--color-cyan);
+  }
+
+  .stats-main-heading {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    margin: 0;
+  }
+
+  .stats-milestone-pill {
+    background-color: rgba(5, 135, 189, 0.25);
+    border: 1px solid var(--color-cyan);
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+    padding: 1.25rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: transform var(--transition-fast);
+  }
+
+  .stat-box:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-cyan);
+  }
+
+  .stat-highlight-box {
+    background-color: rgba(5, 135, 189, 0.15);
+    border-color: rgba(5, 135, 189, 0.4);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--color-cyan);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+
+  .stat-subtext {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.35;
   }
 
   /* 5 PILLARS SECTION */
   .pillars-section {
-    padding: 3.5rem 0 3.5rem;
+    padding: 3.5rem 0 4.5rem;
     background-color: var(--color-white);
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--color-cyan);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: var(--color-navy);
+  }
+
+  .text-center {
+    text-align: center;
   }
 
   .pillars-grid {
@@ -379,29 +625,32 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
   .pillar-card {
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 1.75rem 1.1rem;
     border-radius: var(--border-radius-sm);
-    transition: transform 0.2s ease;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
   }
 
   .pillar-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    border-color: var(--color-cyan);
   }
 
   .pillar-icon-circle {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background-color: rgba(5, 135, 189, 0.1);
+    background-color: rgba(5, 135, 189, 0.12);
     color: var(--color-cyan);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.25rem;
   }
 
   .pillar-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--color-navy);
     margin-bottom: 0.6rem;
     letter-spacing: 0.5px;
@@ -410,14 +659,14 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
   .pillar-desc {
     font-size: 0.85rem;
     color: var(--color-text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
   }
 
   /* DARK STRIP EVENTS */
   .events-strip-section {
     background-color: #071C34;
-    padding: 2.75rem 0;
+    padding: 3rem 0;
     color: var(--color-white);
     border-top: 1px solid rgba(5, 135, 189, 0.3);
     border-bottom: 1px solid rgba(5, 135, 189, 0.3);
@@ -445,7 +694,7 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
   .strip-title {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: var(--color-white);
     margin: 0;
     letter-spacing: 0.5px;
@@ -477,7 +726,7 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     gap: 1.25rem;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
   }
 
   .strip-card:hover {
@@ -543,9 +792,113 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     margin-top: 0.25rem;
   }
 
+  /* HOME JOIN THE CHAPTER SECTION */
+  .home-join-section {
+    padding: 5rem 0;
+    background-color: var(--color-white);
+  }
+
+  .join-main-title {
+    font-size: 2.2rem;
+    color: var(--color-navy);
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .join-main-desc {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .home-join-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .home-join-card {
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem;
+    border: 1px solid var(--color-border-light);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .home-join-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .home-join-card.featured-join {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #153258 100%);
+    color: #ffffff;
+    border-color: var(--color-cyan);
+  }
+
+  .join-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background-color: var(--color-cyan);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+  }
+
+  .join-card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(5, 135, 189, 0.15);
+    color: var(--color-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .featured-join .join-card-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .join-card-heading {
+    font-size: 1.35rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-join .join-card-heading {
+    color: #ffffff;
+  }
+
+  .join-card-text {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .featured-join .join-card-text {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .join-action-btn {
+    margin-top: auto;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+  }
+
   /* BOTTOM ROW 3 COLUMNS */
   .home-bottom-row {
-    padding: 4.5rem 0;
+    padding: 4.5rem 0 5.5rem;
     background-color: var(--color-bg-light);
   }
 
@@ -670,7 +1023,7 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     height: 85px;
     object-fit: cover;
     border-radius: 4px;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast);
   }
 
   .mosaic-img:hover {
@@ -678,12 +1031,16 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
   }
 
   /* Responsive Rules */
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .pillars-grid {
       grid-template-columns: repeat(3, 1fr);
     }
     .strip-events-grid,
-    .bottom-grid {
+    .bottom-grid,
+    .home-join-grid {
       grid-template-columns: 1fr;
     }
     .hero-container {
@@ -699,12 +1056,21 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .pillars-grid {
       grid-template-columns: 1fr;
     }
     .hero-title {
-      font-size: 1.85rem;
+      font-size: 1.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

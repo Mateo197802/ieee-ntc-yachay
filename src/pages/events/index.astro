@@ -15,7 +15,7 @@ function getHref(path: string) {
 
 <Layout 
   title="Activities & Events | IEEE Nanotechnology Council Yachay Tech"
-  description="Explore upcoming workshops, outreach sessions, scientific conferences, and trainings organized by IEEE NTC Yachay Tech Student Branch."
+  description="Explore our chronological archive of hands-on cleanroom workshops, international conferences, hospital VR outreach, school STEM programs, and academic seminars."
 >
   <!-- Hero Inner Banner -->
   <section class="events-hero">
@@ -23,10 +23,10 @@ function getHref(path: string) {
       <div class="breadcrumb">
         <a href={getHref('/')}>Home</a> &gt; <span>Activities</span>
       </div>
-      <span class="hero-eyebrow">ACTIVITIES & COMMUNITY</span>
+      <span class="hero-eyebrow">CHRONOLOGICAL ARCHIVE & COMMUNITY IMPACT</span>
       <h1 class="hero-title font-heading">ACTIVITIES & EVENTS</h1>
       <p class="hero-subtitle">
-        Explore our upcoming webinars, hands-on lab workshops, international conferences, and community outreach sessions.
+        Documenting our journey across hands-on cleanroom workshops, international IEEE conferences, humanitarian VR hospital visits, pre-university STEM outreach, and expert global seminars.
       </p>
     </div>
   </section>
@@ -35,8 +35,8 @@ function getHref(path: string) {
   <section class="subnav-bar">
     <div class="site-container">
       <div class="subnav-links">
-        <a href="#upcoming" class="subnav-btn active">Upcoming Events ({upcomingEvents.length})</a>
-        <a href="#past" class="subnav-btn">Past Events ({pastEvents.length})</a>
+        <a href="#upcoming" class="subnav-btn active">Upcoming Event ({upcomingEvents.length})</a>
+        <a href="#past" class="subnav-btn">Past Events Archive ({pastEvents.length})</a>
         <a href="#calendar" class="subnav-btn">Academic Calendar</a>
       </div>
     </div>
@@ -87,6 +87,24 @@ function getHref(path: string) {
               <h3 class="upcoming-title">{event.title}</h3>
               <p class="upcoming-description">{event.description}</p>
 
+              <div class="event-meta-breakdown">
+                {event.who && (
+                  <div class="meta-point">
+                    <strong>Participants:</strong> <span>{event.who}</span>
+                  </div>
+                )}
+                {event.objective && (
+                  <div class="meta-point">
+                    <strong>Objective:</strong> <span>{event.objective}</span>
+                  </div>
+                )}
+                {event.impact && (
+                  <div class="meta-point">
+                    <strong>Expected Impact:</strong> <span>{event.impact}</span>
+                  </div>
+                )}
+              </div>
+
               <div class="location-info">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 <span>{event.location}</span>
@@ -115,8 +133,8 @@ function getHref(path: string) {
   <section class="events-section bg-alt" id="past">
     <div class="site-container">
       <div class="section-header">
-        <span class="section-eyebrow">HISTORY & ARCHIVE</span>
-        <h2 class="section-title">PAST EVENTS & OUTREACH</h2>
+        <span class="section-eyebrow">OFFICIAL CHRONOLOGY & IMPACT</span>
+        <h2 class="section-title">PAST EVENTS & COMMUNITY INITIATIVES</h2>
       </div>
 
       <div class="past-events-grid">
@@ -139,6 +157,27 @@ function getHref(path: string) {
                 <h3 class="card-grid-title">{event.title}</h3>
                 <p class="card-grid-desc">{event.description}</p>
 
+                <!-- Detailed 5-Point Impact Card Section -->
+                {(event.who || event.objective || event.impact) && (
+                  <div class="event-mini-details">
+                    {event.who && (
+                      <div class="mini-detail-row">
+                        <strong>Who Participated:</strong> <span>{event.who}</span>
+                      </div>
+                    )}
+                    {event.objective && (
+                      <div class="mini-detail-row">
+                        <strong>Objective:</strong> <span>{event.objective}</span>
+                      </div>
+                    )}
+                    {event.impact && (
+                      <div class="mini-detail-row impact-row">
+                        <strong>Impact:</strong> <span>{event.impact}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <div class="grid-location">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                   <span>{event.location}</span>
@@ -147,7 +186,7 @@ function getHref(path: string) {
                 <div class="card-actions-row">
                   {event.externalUrl ? (
                     <a href={event.externalUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark card-btn">
-                      VIEW PROGRAM
+                      VIEW PROGRAM / PLATFORM
                       <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"/></svg>
                     </a>
                   ) : album ? (
@@ -212,7 +251,7 @@ function getHref(path: string) {
         <p class="event-modal-summary" id="modal-album-summary">Event Summary</p>
       </div>
 
-      <!-- Carousel Viewer Stage with Prominent Lateral Arrows -->
+      <!-- Carousel Viewer Stage with Lateral Arrows -->
       <div class="event-carousel-stage">
         <button class="carousel-nav-btn prev-btn" id="modal-prev-btn" aria-label="Previous photo">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
@@ -243,7 +282,7 @@ function getHref(path: string) {
   .events-hero {
     background: linear-gradient(135deg, #071C34 0%, var(--color-navy) 60%, #152A47 100%);
     color: var(--color-white);
-    padding: 3rem 0 3.5rem;
+    padding: 3.5rem 0 4rem;
     border-bottom: 3px solid var(--color-cyan);
   }
 
@@ -268,15 +307,16 @@ function getHref(path: string) {
   }
 
   .hero-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
     color: var(--color-white);
   }
 
   .hero-subtitle {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
     margin-top: 0.5rem;
-    max-width: 760px;
+    max-width: 820px;
+    line-height: 1.6;
   }
 
   /* Subnav Bar */
@@ -296,11 +336,11 @@ function getHref(path: string) {
   .subnav-btn {
     padding: 1rem 0;
     color: var(--color-text-muted);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
   }
 
   .subnav-btn:hover,
@@ -324,7 +364,7 @@ function getHref(path: string) {
 
   .section-eyebrow {
     font-size: 0.82rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1.5px;
     color: var(--color-cyan);
     display: block;
@@ -332,13 +372,13 @@ function getHref(path: string) {
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     color: var(--color-navy);
   }
 
   /* Upcoming Featured Card */
   .upcoming-single-wrapper {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
   }
 
@@ -408,7 +448,7 @@ function getHref(path: string) {
     padding: 0.3rem 0.75rem;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
   }
 
@@ -449,7 +489,7 @@ function getHref(path: string) {
   }
 
   .upcoming-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--color-navy);
     line-height: 1.25;
     margin-bottom: 1rem;
@@ -460,6 +500,31 @@ function getHref(path: string) {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+  }
+
+  .event-meta-breakdown {
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius-sm);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid var(--color-border-light);
+  }
+
+  .meta-point {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .meta-point strong {
+    color: var(--color-navy);
+    margin-right: 0.35rem;
+  }
+
+  .meta-point span {
+    color: var(--color-text-muted);
   }
 
   .location-info {
@@ -499,12 +564,13 @@ function getHref(path: string) {
     border: 1px solid var(--color-border-light);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
   }
 
   .event-grid-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--color-cyan);
   }
 
   .card-image-box {
@@ -519,6 +585,11 @@ function getHref(path: string) {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform var(--transition-normal);
+  }
+
+  .event-grid-card:hover .grid-img {
+    transform: scale(1.04);
   }
 
   .type-pill.past {
@@ -578,11 +649,36 @@ function getHref(path: string) {
     font-size: 0.88rem;
     color: var(--color-text-muted);
     line-height: 1.55;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .event-mini-details {
+    background-color: var(--color-bg-light);
+    border-radius: 4px;
+    padding: 0.85rem;
+    font-size: 0.78rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border: 1px solid var(--color-border-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .mini-detail-row strong {
+    color: var(--color-navy);
+  }
+
+  .mini-detail-row span {
+    color: var(--color-text-muted);
+  }
+
+  .mini-detail-row.impact-row span {
+    color: var(--color-institutional-blue);
+    font-weight: 600;
   }
 
   .grid-location {
@@ -591,7 +687,7 @@ function getHref(path: string) {
     gap: 0.4rem;
     font-size: 0.8rem;
     color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     margin-top: auto;
   }
 
@@ -796,7 +892,7 @@ function getHref(path: string) {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
     flex-shrink: 0;
   }
 

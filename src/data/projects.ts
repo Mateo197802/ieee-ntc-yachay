@@ -1,84 +1,74 @@
-export interface ProjectItem {
+export interface Project {
   id: string;
-  slug: string;
   title: string;
   category: 'Research' | 'Outreach' | 'Innovation' | 'Service';
   status: 'Active' | 'Completed' | 'Planning';
+  image: string;
   summary: string;
   description: string;
   technologies: string[];
   team: string[];
-  image: string;
-  paperUrl?: string;
-  codeUrl?: string;
   outcomes?: string;
+  what?: string;
+  when?: string;
+  who?: string;
+  objective?: string;
+  impact?: string;
+  paperUrl?: string;
 }
 
-export const PROJECTS_DATA: ProjectItem[] = [
-  {
-    id: 'logic-lock',
-    slug: 'logic-lock',
-    title: 'Logic Lock: AI-Automated PRISMA Pipeline',
-    category: 'Research',
-    status: 'Active',
-    summary: 'AI software tool to accelerate, filter, and reproduce systematic scientific literature reviews.',
-    description: 'Automated AI framework designed to optimize the PRISMA systematic review protocol. Integrates LLM orchestration, algorithmic deduplication, and scientometric analysis to eliminate hallucinations in clinical and nanotechnology literature mining.',
-    technologies: ['Python', 'Large Language Models', 'API Orchestration', 'PRISMA Protocol', 'Scientometrics'],
-    team: ['Mateo Gavilanes (Technical Lead)', 'Ethan Guevara'],
-    image: '/assets/events/logic_lock_post.png',
-    outcomes: 'Functional pipeline in pilot phase for research incubators and systematic reviews.'
-  },
-  {
-    id: 'lanano-paper-training-initiative',
-    slug: 'lanano-paper-training-initiative',
-    title: 'Scientific Paper Writing Incubator IEEE LANANO 2026',
-    category: 'Research',
-    status: 'Active',
-    summary: 'Technical mentorship program for drafting 4–6 page research papers for publication in IEEE Xplore.',
-    description: 'Collaborative scientific writing initiative connecting students with experienced researchers. Participants master experimental design, data analysis, IEEE LaTeX formatting, and scientific paper structuring.',
-    technologies: ['LaTeX', 'IEEE Xplore Templates', 'Zotero', 'Statistical Analysis'],
-    team: ['Solange Criollo (Coordinator)', 'Mateo Gavilanes', 'Ethan Guevara'],
-    image: '/assets/events/lanano_paper_training.png',
-    paperUrl: 'https://mateo197802.github.io/IEEE-LANANO-2026/',
-    outcomes: 'Paper drafts submitted for peer review across 4 research tracks.'
-  },
-  {
-    id: 'stem-outreach-schools',
-    slug: 'stem-outreach-schools',
-    title: 'STEM Outreach Program in High Schools',
-    category: 'Outreach',
-    status: 'Completed',
-    summary: 'Scientific outreach program with hands-on nanotechnology modules in public high schools across Imbabura.',
-    description: 'Experimental educational modules designed to spark scientific vocations in nanoscience, materials science, and engineering among high school students through interactive demonstrations.',
-    technologies: ['Interactive Demos', 'Superhydrophobic Materials', 'Ferrofluids', 'STEM Kits'],
-    team: ['Kennedy Rodríguez (Lead)', 'Fernanda Landázuri', 'Ethan Guevara'],
-    image: '/assets/events/visita_victor_manuel_guzman.jpg',
-    outcomes: 'Over 150 high school students reached in Ibarra and surrounding regions.'
-  },
-  {
-    id: 'hospital-paediatric-service',
-    slug: 'hospital-paediatric-service',
-    title: "Immersive Children's Day: Technology & Smiles",
-    category: 'Service',
-    status: 'Completed',
-    summary: 'Humanitarian intervention at San Vicente de Paúl Hospital using Meta Quest 3 VR headsets and biosafety protocols.',
-    description: 'Humanitarian service project bringing educational virtual simulations and emotional support to 25 hospitalized pediatric and ICU patients at San Vicente de Paúl Hospital in Ibarra.',
-    technologies: ['Meta Quest 3 VR', 'Biosafety Protocols', 'Medical Simulations', 'Humanitarian Volunteering'],
-    team: ['Solange Criollo (Lead)', 'Mateo Gavilanes', 'Ethan Guevara', 'Emily Pérez', 'Fernanda Landázuri', 'Kennedy Rodríguez'],
-    image: '/assets/events/dia_del_nino_hospital.jpg',
-    outcomes: '25 pediatric patients benefited from adapted and safe immersive experiences.'
-  },
+export const PROJECTS_DATA: Project[] = [
   {
     id: 'vr-nano-museum',
-    slug: 'vr-nano-museum',
-    title: 'Virtual Nanotechnology Museum (MuseumMaster VR)',
+    title: 'VR NanoLab: Immersive Virtual Reality Laboratory Environment',
     category: 'Innovation',
     status: 'Active',
-    summary: 'Interactive Virtual Reality framework developed in C#/Unity for immersive visualization of molecular nanostructures.',
-    description: 'Immersive 3D environment allowing users to interact with atomic-scale models of carbon nanotubes, fullerenes, and magnetic nanoparticles, revolutionizing nanotechnology education.',
-    technologies: ['Unity 3D', 'C#', 'Meta XR SDK', 'Molecular Modeling', 'OpenXR'],
-    team: ['Mateo Gavilanes (VR Architect)', 'Kennedy Rodríguez'],
-    image: '/assets/gallery/actividad_colegio_1.jpg',
-    outcomes: 'Interactive framework showcased in regional schools and expanding to science museums.'
+    image: '/assets/events/dia_del_nino_hospital.jpg',
+    summary: 'Flagship project taking science beyond the laboratory using Meta Quest 3 VR headsets for schools and pediatric hospitals.',
+    description: 'Our flagship innovation project develops an interactive virtual reality laboratory environment. By simulating atomic lattice interactions, cleanroom physical vapor deposition, and molecular nano-structures, this tool allows our team to visit schools and hospitals, bringing immersive scientific experiences to communities without direct access to research laboratories.',
+    technologies: ['Virtual Reality', 'Meta Quest 3', 'Unity / WebXR', 'Molecular Dynamics', 'Bio-interactive Design'],
+    team: ['Mateo Gavilanes (Lead)', 'Chapter Innovation Team', 'Outreach Volunteers'],
+    outcomes: 'Deployed in outreach visits to Víctor Manuel Guzmán High School (120+ students) and San Vicente de Paúl Hospital (25 pediatric patients).',
+    what: 'Development of an immersive VR cleanroom and molecular exploration simulator for field outreach.',
+    when: 'Active Development throughout 2026',
+    who: 'Interdisciplinary engineering team, developers, and outreach volunteers.',
+    objective: 'Democratize access to advanced scientific laboratories and inspire youth through experiential technology.',
+    impact: 'Enabled hands-on nanoscale visualization for over 150 participants outside university cleanrooms.',
+    paperUrl: 'https://ieee-lanano.org/edition-2026/welcome-to-ieee-lanano-2026/'
+  },
+  {
+    id: 'logic-lock-research',
+    title: 'Logic Lock: Automated Scientific Literature & Research Mapping Framework',
+    category: 'Research',
+    status: 'Active',
+    image: '/assets/gallery/foto_con_bandera.jpg',
+    summary: 'A structured software framework designed to streamline academic paper discovery, literature categorization, and citation analysis.',
+    description: 'Officially launched on March 12, 2026, Logic Lock is a specialized digital methodology that strengthens scientific research pipelines. It provides automated querying, metadata extraction, and thematic categorization across IEEE Xplore, PubMed, and arXiv, helping students find, organize, and analyze scientific papers with maximum efficiency.',
+    technologies: ['Literature Automation', 'Data Mining', 'Python Frameworks', 'IEEE Xplore API', 'Research Analytics'],
+    team: ['Executive Board', 'Chapter Research Incubator'],
+    outcomes: 'Adopted across chapter research initiatives, standardizing literature review workflows for LANANO 2026 papers.',
+    what: 'Digital literature mining platform and systematic review automation framework.',
+    when: 'Launched March 12, 2026',
+    who: 'Student research cohorts and executive team.',
+    objective: 'Promote an agile, rigorous research culture leveraging digital tools for high-impact manuscript preparation.',
+    impact: 'Accelerated literature review timelines by over 50% for student paper co-authors.'
+  },
+  {
+    id: 'lanano-paper-pipeline',
+    title: 'LANANO Paper Training: Scientific Mentorship & High-Impact Publication Pipeline',
+    category: 'Research',
+    status: 'Active',
+    image: '/assets/events/lanano_paper_training.png',
+    summary: 'Structured incubator training students in scientific paper authoring for international IEEE conferences.',
+    description: 'A comprehensive academic initiative launched on June 24, 2026, to train undergraduate and graduate students in scientific writing, hypothesis validation, experimental data visualization, and manuscript submission under IEEE international conference standards.',
+    technologies: ['Scientific Writing', 'LaTeX', 'Statistical Modeling', 'Material Characterization', 'Peer Review'],
+    team: ['Emily Pérez (Coord.)', 'Senior Research Mentors', 'Student Authors'],
+    outcomes: '3 scientific manuscripts currently drafted for submission to IEEE LANANO 2026 in Viña del Mar, Chile.',
+    what: 'Structured scientific writing and mentorship incubator for IEEE conference papers.',
+    when: 'Launched June 24, 2026',
+    who: 'Student researchers and international faculty advisors.',
+    objective: 'Bridge student research projects with international IEEE conference publication venues.',
+    impact: 'Empowered undergraduate students to become primary authors in IEEE Xplore indexed proceedings.',
+    paperUrl: 'https://mateo197802.github.io/IEEE-LANANO-2026/'
   }
 ];
