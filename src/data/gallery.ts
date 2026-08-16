@@ -104,12 +104,30 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     date: 'April 18 – May 18, 2026',
     coverImage: '/assets/events/nanoskills_hands_on.jpg',
     coverPosition: 'center center',
-    summary: 'Comprehensive dual-phase program covering theoretical thin-film plasma dynamics and hands-on sputtering cleanroom equipment operation.',
+    summary: 'Comprehensive dual-phase program covering theoretical thin-film plasma dynamics, high-vacuum magnetron sputtering, substrate preparation, and shadow mask semiconductor patterning.',
     slides: [
       {
         image: '/assets/events/nanoskills_hands_on.jpg',
         title: 'Experimental Practice & Cleanroom Equipment Operation',
-        caption: 'Hands-on technical training for chapter members in sputtering equipment operation, plasma deposition, and thin film characterization.',
+        caption: 'Hands-on technical training for chapter members in sputtering equipment operation, plasma deposition, and thin-film characterization.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/events/nanoskills_sputtering_chamber_instruction.jpg',
+        title: 'High-Vacuum Physical Vapor Deposition & Magnetron Sputtering Controls',
+        caption: 'Instructor explaining the high-vacuum physical vapor deposition (PVD) magnetron sputtering system, plasma generation, and vacuum chamber controls to undergraduate researchers.',
+        position: 'center 35%'
+      },
+      {
+        image: '/assets/events/nanoskills_lab_bench_preparation.jpg',
+        title: 'Substrate Cleaning, Target Loading & Experimental Bench Work',
+        caption: 'Student researchers preparing sample substrate holders, glass slides, and target materials under strict cleanroom biosafety and chemical handling protocols.',
+        position: 'center 40%'
+      },
+      {
+        image: '/assets/events/nanoskills_patterned_thin_film_substrate.jpg',
+        title: 'Fabricated Thin-Film Semiconductor Substrate & Shadow Mask Patterning',
+        caption: 'Close-up of a successfully deposited thin-film semiconductor pattern on a glass substrate following high-vacuum magnetron sputtering deposition.',
         position: 'center center'
       }
     ]
