@@ -505,6 +505,28 @@ html[data-theme="dark"] .detail-val {
   color: #e2e8f0 !important;
 }
 
+/* All Tags and Badges in Dark Mode */
+html[data-theme="dark"] .interest-tag,
+html[data-theme="dark"] .topic-tag,
+html[data-theme="dark"] .deck-topic-tag,
+html[data-theme="dark"] .tech-tag,
+html[data-theme="dark"] .credit-tag,
+html[data-theme="dark"] .category-tag,
+html[data-theme="dark"] .modality-tag {
+  background-color: #071c34 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(5, 135, 189, 0.35) !important;
+}
+
+html[data-theme="dark"] .interest-tag:hover,
+html[data-theme="dark"] .topic-tag:hover,
+html[data-theme="dark"] .deck-topic-tag:hover,
+html[data-theme="dark"] .tech-tag:hover {
+  background-color: rgba(5, 135, 189, 0.2) !important;
+  border-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+
 /* Buttons in Dark Mode */
 html[data-theme="dark"] .btn-primary {
   background-color: var(--color-cyan) !important;
