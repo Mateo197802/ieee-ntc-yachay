@@ -496,6 +496,90 @@ function getHref(path: string) {
       grid-template-columns: 1fr;
     }
   }
+
+  /* Dark Mode Overrides for Contact Page */
+  :global(html[data-theme="dark"]) .contact-section {
+    background-color: #071626 !important;
+  }
+
+  :global(html[data-theme="dark"]) .contact-form-card,
+  :global(html[data-theme="dark"]) .info-card,
+  :global(html[data-theme="dark"]) .map-card {
+    background-color: #0c2340 !important;
+    border-color: rgba(5, 135, 189, 0.25) !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-title,
+  :global(html[data-theme="dark"]) .card-title,
+  :global(html[data-theme="dark"]) .map-heading {
+    color: #ffffff !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-desc {
+    color: #cbd5e1 !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-group label {
+    color: #f1f5f9 !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-control {
+    background-color: #071c34 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: rgba(5, 135, 189, 0.4) !important;
+    color-scheme: dark !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-control::placeholder {
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    opacity: 0.9;
+  }
+
+  :global(html[data-theme="dark"]) .form-control:focus {
+    background-color: #0b2545 !important;
+    border-color: var(--color-cyan) !important;
+    box-shadow: 0 0 0 3.5px rgba(5, 135, 189, 0.3) !important;
+  }
+
+  :global(html[data-theme="dark"]) .form-control:-webkit-autofill,
+  :global(html[data-theme="dark"]) .form-control:-webkit-autofill:hover, 
+  :global(html[data-theme="dark"]) .form-control:-webkit-autofill:focus,
+  :global(html[data-theme="dark"]) .form-control:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #071c34 inset !important;
+    box-shadow: 0 0 0px 1000px #071c34 inset !important;
+    caret-color: #ffffff !important;
+  }
+
+  :global(html[data-theme="dark"]) .checkbox-group label {
+    color: #cbd5e1 !important;
+  }
+
+  :global(html[data-theme="dark"]) .quick-join-desc strong {
+    color: #38bdf8 !important;
+  }
+
+  :global(html[data-theme="dark"]) .quick-join-desc p {
+    color: #e2e8f0 !important;
+  }
+
+  :global(html[data-theme="dark"]) .info-list strong {
+    color: #38bdf8 !important;
+  }
+
+  :global(html[data-theme="dark"]) .info-list p {
+    color: #cbd5e1 !important;
+  }
+
+  :global(html[data-theme="dark"]) .info-list a {
+    color: #38bdf8 !important;
+  }
+
+  :global(html[data-theme="dark"]) .map-external-link {
+    color: #38bdf8 !important;
+  }
 </style>
 
 <script>

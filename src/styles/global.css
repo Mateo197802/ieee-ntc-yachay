@@ -551,6 +551,56 @@ html[data-theme="dark"] button:disabled {
   cursor: not-allowed !important;
 }
 
+/* Form Labels and Controls in Dark Mode */
+html[data-theme="dark"] .form-group label,
+html[data-theme="dark"] .form-label,
+html[data-theme="dark"] label {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="email"],
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background-color: #071c34 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1.5px solid rgba(5, 135, 189, 0.4) !important;
+  color-scheme: dark !important;
+}
+
+html[data-theme="dark"] .form-control::placeholder,
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 0.9;
+}
+
+html[data-theme="dark"] .form-control:focus,
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus {
+  background-color: #0b2545 !important;
+  border-color: var(--color-cyan) !important;
+  box-shadow: 0 0 0 3.5px rgba(5, 135, 189, 0.3) !important;
+}
+
+html[data-theme="dark"] .form-control:-webkit-autofill,
+html[data-theme="dark"] .form-control:-webkit-autofill:hover, 
+html[data-theme="dark"] .form-control:-webkit-autofill:focus,
+html[data-theme="dark"] .form-control:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #071c34 inset !important;
+  box-shadow: 0 0 0px 1000px #071c34 inset !important;
+  caret-color: #ffffff !important;
+}
+
+html[data-theme="dark"] .checkbox-group label {
+  color: #cbd5e1 !important;
+}
+
 /* Modal Inner Surfaces in Dark Mode */
 html[data-theme="dark"] .modal-dialog-content,
 html[data-theme="dark"] .gallery-modal-inner,
