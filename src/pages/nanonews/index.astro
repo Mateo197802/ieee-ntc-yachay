@@ -641,11 +641,13 @@ function getHref(path: string) {
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const baseUrl = '/ieee-ntc-yachay';
+    const basePrefix = (window as any).__ASTRO_BASE_URL__ || document.querySelector('meta[name="base-url"]')?.getAttribute('content') || '/ieee-ntc-yachay';
     function resolveUrl(path: string) {
       if (!path) return '';
-      if (path.startsWith('http') || path.startsWith(baseUrl)) return path;
-      return `${baseUrl.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+      if (path.startsWith('http')) return path;
+      const cleanBase = basePrefix.replace(/\/$/, '');
+      const cleanPath = path.startsWith('/') ? path : '/' + path;
+      return `${cleanBase}${cleanPath}`;
     }
 
     const modal = document.getElementById('nanonews-modal') as HTMLDialogElement | null;
