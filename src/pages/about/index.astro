@@ -11,22 +11,29 @@ const YACHAY_CAMPUS_ALBUMS = [
     id: 'yachay-science-hub',
     deckNumber: 1,
     title: 'Modern Science & Research Complex',
-    subtitle: 'Nanotechnology Cleanrooms & Student Residences',
+    subtitle: 'School of Physical Sciences & Nanotechnology · Advanced Cleanrooms · Full-Residential Campus',
     coverImage: '/assets/about/yachay_student_residences.jpg',
     totalPhotos: 2,
     badge: 'RESEARCH & INNOVATION',
-    summary: 'Yachay Tech University houses Ecuador’s premier undergraduate and graduate nanotechnology facilities, advanced microscopy equipment, high-vacuum sputtering systems, and modern student residential complexes in Urcuquí.',
-    topics: ['Student Residences', 'Ecuador Ama la Vida', 'Nanotechnology Labs', 'Cleanrooms & PVD'],
+    summary: 'Yachay Tech University is Ecuador’s flagship institution for scientific and technological transformation. Located in the knowledge city of Urcuquí, the university hosts the nation’s first and only specialized Nanotechnology Engineering degree program, operating cleanroom facilities with high-vacuum magnetron sputtering systems (PVD), electron microscopy, and advanced spectroscopic characterization. As Ecuador’s sole 100% full-residential research university, more than 1,500 students from all 24 provinces live, study, and research side-by-side in modern academic complexes centered around the iconic "Ecuador Ama la Vida" monument.',
+    highlights: [
+      'National Nanotechnology Hub: Home to Ecuador’s only undergraduate degree and research department in Nanotechnology Engineering.',
+      'High-Tech Laboratory Infrastructure: Equipped with magnetron sputtering (PVD), thin-film deposition, electron microscopy, and cleanroom protocols.',
+      '100% Full-Residential Model: Over 1,500 undergraduate and graduate students living on campus in modular residence blocks from all 24 provinces.',
+      'Interdisciplinary Innovation: Research synergies spanning Biomedical Engineering, Physics, Chemistry, and Nanomaterials for health and energy.'
+    ],
+    topics: ['Nanotechnology Engineering', 'Cleanrooms & PVD Sputtering', '1,500+ Residential Students', 'Ecuador Ama la Vida Monument', 'Interdisciplinary Labs', 'Microscopy & Spectroscopy'],
     slides: [
       {
         image: '/assets/about/yachay_student_residences.jpg',
-        title: 'Student Residence Campus & Iconic Monument',
-        desc: 'Modern on-campus residential community housing over 1,500 students from all 24 provinces of Ecuador, centered around the iconic Ecuador Ama la Vida mosaic monument.'
+        title: 'Student Residence Campus & Iconic Ecuador Ama la Vida Landmark',
+        desc: 'Yachay Tech’s full-residential campus model brings together 1,500+ students from across Ecuador and international visiting researchers in modern residential clusters. The vibrant central plaza featuring the "Ecuador Ama la Vida" mosaic landmark represents cultural diversity, student-led innovation, and round-the-clock collaborative academic life.'
       },
       {
         image: '/assets/about/yachay_modern_research_complex.png',
-        title: 'Central Academic & Research Complex',
-        desc: 'Home to the School of Physical Sciences & Nanotechnology and the School of Biological Sciences & Engineering, featuring state-of-the-art research laboratories, computational hubs, and collaborative classrooms.'
+        title: 'Central Academic & Nanotechnology Research Complex',
+        desc: 'The university’s main scientific complex houses the School of Physical Sciences & Nanotechnology and the School of Biological Sciences & Engineering. It provides cutting-edge research infrastructure including cleanrooms, physical vapor deposition (PVD) magnetron sputtering, and characterization labs where the IEEE NTC Chapter develops research papers and hands-on NanoSkills workshops.',
+        position: 'center 45%'
       }
     ]
   },
@@ -34,22 +41,28 @@ const YACHAY_CAMPUS_ALBUMS = [
     id: 'yachay-heritage-nature',
     deckNumber: 2,
     title: 'Heritage Campus & Andean Landscape',
-    subtitle: 'Historic San José Estate & High-Altitude Ecosystem',
+    subtitle: 'Historic 19th-Century Hacienda San José · UNESCO Imbabura Geopark · High-Altitude Eco-Campus',
     coverImage: '/assets/about/yachay_campus_walkway.jpg',
     totalPhotos: 2,
     badge: 'HERITAGE & CAMPUS LIFE',
-    summary: 'Situated at 2,000 meters above sea level amidst the Imbabura mountains, the campus harmoniously merges restored 19th-century colonial hacienda architecture with pedestrian walkways and vibrant student life.',
-    topics: ['Historic San José', 'Pedestrian Walkways', 'Andean Mountain Views', 'Academic Ceremonies'],
+    summary: 'Nestled at 2,000 meters above sea level within the UNESCO Global Geopark of Imbabura, Yachay Tech’s campus harmoniously bridges 19th-century colonial heritage with modern science. The historic Hacienda San José estate has been meticulously restored to serve as the university’s ceremonial, administrative, and cultural heart. Designed with sustainable pedestrian infrastructure, stone walkways connect residences and faculties across scenic Andean rolling hills, creating an ideal setting for deep scientific inquiry and international summits.',
+    highlights: [
+      'Living Colonial Heritage: Restored 19th-century Hacienda San José serving as the university’s central administrative and ceremonial epicenter.',
+      'UNESCO Global Geopark: Situated amidst the high-altitude Andean valley of Urcuquí (2,000 m.a.s.l.), with exceptional geological and ecological richness.',
+      'Sustainable Pedestrian Ecosystem: Fully walkable eco-campus interconnected by stone paths, native flora, and scenic mountain views.',
+      'International Academic Summits: Historic central auditorium and courtyards hosting IEEE congresses, international conferences, and state assemblies.'
+    ],
+    topics: ['Historic Hacienda San José', 'UNESCO Imbabura Geopark', 'High-Altitude Eco-Campus (2,000 m)', 'Central Historic Auditorium', 'Pedestrian Infrastructure', 'International IEEE Summits'],
     slides: [
       {
         image: '/assets/about/yachay_campus_walkway.jpg',
-        title: 'Pedestrian Walkways & Scenic Hillsides',
-        desc: 'Sustainable pedestrian infrastructure connecting residential areas with faculty buildings across the scenic rolling landscape of the Urcuquí valley.'
+        title: 'Pedestrian Eco-Campus & Scenic Andean Hillside Walkways',
+        desc: 'An inspiring learning environment where motorized traffic is excluded from core campus sectors. Paved stone walkways connect academic faculties, dining halls, and residential zones across the picturesque mountain valleys of Urcuquí, fostering an active outdoor lifestyle and student research discussions under clear Andean skies.'
       },
       {
         image: '/assets/about/yachay_historic_auditorium.png',
-        title: 'San José Historic Campus & Central Auditorium',
-        desc: 'Restored colonial heritage buildings serving as the ceremonial and cultural epicenter of Yachay Tech for international congresses, IEEE assemblies, and scientific summits.',
+        title: 'Hacienda San José Historic Campus & Central Auditorium',
+        desc: 'The majestic restored colonial architecture of Hacienda San José houses the university’s central auditorium and ceremonial courtyards. This historic monument serves as the prestigious venue for university matriculations, international IEEE conferences, Distinguished Lecturer keynote addresses, and high-level academic symposiums.',
         position: 'center 88%'
       }
     ]
@@ -174,6 +187,17 @@ const YACHAY_CAMPUS_ALBUMS = [
                 <span class="yachay-deck-subtitle">{album.subtitle}</span>
                 <p class="yachay-deck-summary">{album.summary}</p>
                 
+                {album.highlights && (
+                  <div class="deck-highlights-box">
+                    <strong class="highlights-title">KEY CAMPUS HIGHLIGHTS:</strong>
+                    <ul class="deck-highlights-list">
+                      {album.highlights.map((h: string) => (
+                        <li>{h}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div class="yachay-deck-topics">
                   {album.topics.map((t) => (
                     <span class="deck-topic-tag">{t}</span>
@@ -1094,6 +1118,51 @@ const YACHAY_CAMPUS_ALBUMS = [
     margin-bottom: 1.25rem;
   }
 
+  .deck-highlights-box {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.15rem;
+    text-align: left;
+  }
+
+  .highlights-title {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: var(--color-navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .deck-highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .deck-highlights-list li {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.45;
+    position: relative;
+    padding-left: 0.95rem;
+  }
+
+  .deck-highlights-list li::before {
+    content: "•";
+    color: var(--color-cyan);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
   .yachay-deck-topics {
     display: flex;
     flex-wrap: wrap;
@@ -1418,7 +1487,24 @@ const YACHAY_CAMPUS_ALBUMS = [
   }
 
   :global(html[data-theme="dark"]) .yachay-deck-title {
-    color: #f1f5f9;
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .yachay-deck-summary {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .deck-highlights-box {
+    background-color: #051528 !important;
+    border-color: rgba(5, 135, 189, 0.3) !important;
+  }
+
+  :global(html[data-theme="dark"]) .highlights-title {
+    color: #38bdf8 !important;
+  }
+
+  :global(html[data-theme="dark"]) .deck-highlights-list li {
+    color: #cbd5e1 !important;
   }
 
   :global(html[data-theme="dark"]) .deck-topic-tag {
