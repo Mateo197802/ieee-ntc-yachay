@@ -49,7 +49,8 @@ const YACHAY_CAMPUS_ALBUMS = [
       {
         image: '/assets/about/yachay_historic_auditorium.png',
         title: 'San José Historic Campus & Central Auditorium',
-        desc: 'Restored colonial heritage buildings serving as the ceremonial and cultural epicenter of Yachay Tech for international congresses, IEEE assemblies, and scientific summits.'
+        desc: 'Restored colonial heritage buildings serving as the ceremonial and cultural epicenter of Yachay Tech for international congresses, IEEE assemblies, and scientific summits.',
+        position: 'center 88%'
       }
     ]
   }
@@ -1519,6 +1520,7 @@ const YACHAY_CAMPUS_ALBUMS = [
       if (imgEl) {
         imgEl.src = getFullUrl(slide.image);
         imgEl.alt = slide.title;
+        imgEl.style.objectPosition = slide.position || 'center center';
       }
       if (slideTitleEl) slideTitleEl.textContent = slide.title;
       if (slideDescEl) slideDescEl.textContent = slide.desc;
@@ -1547,7 +1549,7 @@ const YACHAY_CAMPUS_ALBUMS = [
           btn.className = `yachay-thumb-btn ${idx === 0 ? 'active' : ''}`;
           btn.setAttribute('type', 'button');
           btn.setAttribute('aria-label', `Go to photo ${idx + 1}: ${s.title}`);
-          btn.innerHTML = `<img src="${getFullUrl(s.image)}" alt="${s.title}" class="yachay-thumb-img" />`;
+          btn.innerHTML = `<img src="${getFullUrl(s.image)}" alt="${s.title}" class="yachay-thumb-img" style="object-position: ${s.position || 'center center'};" />`;
           btn.addEventListener('click', () => renderSlide(idx));
           thumbsContainer.appendChild(btn);
         });
