@@ -41,12 +41,36 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
     date: 'June 01, 2026',
     coverImage: '/assets/events/dia_del_nino_hospital.jpg',
     coverPosition: 'center center',
-    summary: 'Deployment of Meta Quest 3 Virtual Reality technology and emotional support for 25 pediatric patients at San Vicente de Paúl Hospital.',
+    summary: 'Deployment of Meta Quest 3 Virtual Reality technology, therapeutic distraction, and emotional accompaniment for pediatric patients at San Vicente de Paúl Hospital.',
     slides: [
       {
         image: '/assets/events/dia_del_nino_hospital.jpg',
         title: "Nano Bridge: Science Vision (Children's Day Edition)",
         caption: 'Humanitarian volunteer outreach under the Nano Bridge: Science Vision program with Meta Quest 3 headsets, clinical disinfection biosafety, and gift kits at San Vicente de Paúl Hospital.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/events/dia_del_nino_vr_bed14_clown.jpg',
+        title: 'Interactive Virtual Reality Immersion & Emotional Accompaniment',
+        caption: 'Pediatric patient operating VR controllers under the guidance of volunteer clown mentors, experiencing interactive 3D scientific and educational worlds from bed.',
+        position: 'center 30%'
+      },
+      {
+        image: '/assets/events/dia_del_nino_vr_bed11_girl.png',
+        title: 'Clinical Pediatric Distraction & Virtual Reality Discovery',
+        caption: 'Young patient enjoying an immersive VR session with personalized clinical care and sterile sanitary headset protocols.',
+        position: 'center 25%'
+      },
+      {
+        image: '/assets/events/dia_del_nino_vr_bed10_cast.jpg',
+        title: 'Bedside Outreach & Healing Through Immersive Technology',
+        caption: 'Hospitalized patient with orthopedic cast engaging in VR simulations, providing therapeutic emotional distraction and joy in the pediatric ward.',
+        position: 'center center'
+      },
+      {
+        image: '/assets/events/dia_del_nino_hospital_collage.jpg',
+        title: 'Multi-Room Humanitarian Outreach & Smiles Collage',
+        caption: 'Comprehensive photographic mosaic documenting hospital room visits, volunteer costumes, smiling children, and the collective spirit of service of IEEE NTC Yachay Tech.',
         position: 'center center'
       }
     ]
