@@ -604,23 +604,76 @@ html[data-theme="dark"] .form-control:-webkit-autofill:focus {
   caret-color: #ffffff !important;
 }
 
-/* Dark Mode Table, Tabs & Tags */
-html[data-theme="dark"] .table-data tr:hover {
-  background-color: rgba(5, 135, 189, 0.12) !important;
+/* Filter Buttons, Filter Pills & Subnav Bars */
+html[data-theme="dark"] .filter-pill,
+html[data-theme="dark"] .filter-btn {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+html[data-theme="dark"] .filter-pill:hover,
+html[data-theme="dark"] .filter-btn:hover {
+  background-color: rgba(5, 135, 189, 0.2) !important;
+  border-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .filter-pill.active,
+html[data-theme="dark"] .filter-btn.active {
+  background-color: var(--color-cyan) !important;
+  color: #ffffff !important;
+  border-color: var(--color-cyan) !important;
+  box-shadow: 0 4px 12px rgba(5, 135, 189, 0.35) !important;
+}
+
+/* Universal Breakdown, Mini Details, Tags & Outlines */
+html[data-theme="dark"] .breakdown-row strong,
+html[data-theme="dark"] .mini-detail-row strong,
+html[data-theme="dark"] .meta-point strong,
+html[data-theme="dark"] .stack-label,
+html[data-theme="dark"] .outcomes-box strong,
+html[data-theme="dark"] .project-team-row strong,
+html[data-theme="dark"] .detail-label,
+html[data-theme="dark"] .benefits-title {
+  color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .breakdown-row span,
+html[data-theme="dark"] .mini-detail-row span,
+html[data-theme="dark"] .meta-point span,
+html[data-theme="dark"] .project-desc,
+html[data-theme="dark"] .outcomes-box span,
+html[data-theme="dark"] .project-team-row span,
+html[data-theme="dark"] .card-grid-desc,
+html[data-theme="dark"] .opp-summary,
+html[data-theme="dark"] .detail-val,
+html[data-theme="dark"] .opp-benefits-list li {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .project-breakdown-box,
+html[data-theme="dark"] .event-mini-details,
+html[data-theme="dark"] .opp-details-box {
+  background-color: #071c34 !important;
+  border-color: rgba(5, 135, 189, 0.3) !important;
 }
 
 html[data-theme="dark"] .tech-tag,
 html[data-theme="dark"] .topic-tag,
-html[data-theme="dark"] .breakdown-row {
+html[data-theme="dark"] .credit-tag {
   background-color: #071c34 !important;
   color: #e2e8f0 !important;
-  border-color: rgba(5, 135, 189, 0.25) !important;
+  border-color: rgba(5, 135, 189, 0.3) !important;
 }
 
-html[data-theme="dark"] .project-breakdown-box,
-html[data-theme="dark"] .project-breakdown {
-  background-color: #071c34 !important;
-  border-left-color: var(--color-cyan) !important;
+html[data-theme="dark"] .project-cta,
+html[data-theme="dark"] .card-btn.btn-outline-dark,
+html[data-theme="dark"] .open-event-gallery-btn,
+html[data-theme="dark"] .open-album-btn,
+html[data-theme="dark"] .mosaic-card-btn {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 /* Header & Dropdown in Dark Mode */

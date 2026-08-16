@@ -913,7 +913,79 @@ const categories = ['All', 'Conferences', 'Competitions', 'Training', 'Volunteer
     }
   }
 
-  /* Dark mode overrides */
+  /* Dark mode overrides for Opportunities Page */
+  :global(html[data-theme="dark"]) .filter-pill {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  :global(html[data-theme="dark"]) .filter-pill:hover {
+    background-color: rgba(5, 135, 189, 0.2);
+    border-color: var(--color-cyan);
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .filter-pill.active {
+    background-color: var(--color-cyan);
+    color: #ffffff;
+    border-color: var(--color-cyan);
+    box-shadow: 0 4px 12px rgba(5, 135, 189, 0.35);
+  }
+
+  :global(html[data-theme="dark"]) .opp-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .opp-title {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .opp-summary {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .opp-details-box {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .detail-label {
+    color: #38bdf8;
+  }
+
+  :global(html[data-theme="dark"]) .detail-val {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .detail-val.highlight-val {
+    color: #38bdf8;
+  }
+
+  :global(html[data-theme="dark"]) .benefits-title {
+    color: #38bdf8;
+  }
+
+  :global(html[data-theme="dark"]) .opp-benefits-list li {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .join-path-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .join-title,
+  :global(html[data-theme="dark"]) .path-title {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .join-subtitle,
+  :global(html[data-theme="dark"]) .path-desc {
+    color: #cbd5e1;
+  }
+
   :global(html[data-theme="dark"]) .nanonews-guide-callout {
     background: linear-gradient(135deg, rgba(5, 135, 189, 0.15) 0%, rgba(7, 28, 52, 0.4) 100%);
     border-color: rgba(5, 135, 189, 0.35);

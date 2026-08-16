@@ -449,6 +449,47 @@ const categories = ['All', 'Outreach', 'Conferences', 'Workshops', 'Community'];
     margin-top: 1rem;
   }
 
+  /* Dark Mode Overrides for Gallery Page */
+  :global(html[data-theme="dark"]) .gallery-section {
+    background-color: #071626;
+  }
+
+  :global(html[data-theme="dark"]) .filter-btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  :global(html[data-theme="dark"]) .filter-btn:hover {
+    background-color: rgba(5, 135, 189, 0.2);
+    border-color: var(--color-cyan);
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .filter-btn.active {
+    background-color: var(--color-cyan);
+    color: #ffffff;
+    border-color: var(--color-cyan);
+    box-shadow: 0 4px 12px rgba(5, 135, 189, 0.35);
+  }
+
+  :global(html[data-theme="dark"]) .mosaic-card-btn {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .info-title {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .info-summary {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .card-cta {
+    color: var(--color-cyan);
+  }
+
   @media (max-width: 1200px) {
     .gallery-mosaic {
       grid-template-columns: repeat(3, 1fr);
@@ -459,20 +500,11 @@ const categories = ['All', 'Outreach', 'Conferences', 'Workshops', 'Community'];
     .gallery-mosaic {
       grid-template-columns: repeat(2, 1fr);
     }
-    .carousel-main-img {
-      height: 320px;
-    }
   }
 
   @media (max-width: 540px) {
     .gallery-mosaic {
       grid-template-columns: 1fr;
-    }
-    .carousel-main-img {
-      height: 240px;
-    }
-    .gallery-modal-inner {
-      padding: 1.25rem;
     }
   }
 </style>

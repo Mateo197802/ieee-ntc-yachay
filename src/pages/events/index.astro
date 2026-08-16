@@ -1252,6 +1252,32 @@ function getHref(path: string) {
   }
 
   /* Dark mode overrides for Events Page */
+  :global(html[data-theme="dark"]) .events-section {
+    background-color: #071626;
+  }
+
+  :global(html[data-theme="dark"]) .events-section.bg-alt {
+    background-color: #051324;
+  }
+
+  :global(html[data-theme="dark"]) .subnav-bar {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .subnav-btn {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .subnav-btn:hover {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .subnav-btn.active {
+    color: var(--color-cyan);
+    border-bottom-color: var(--color-cyan);
+  }
+
   :global(html[data-theme="dark"]) .upcoming-featured-card,
   :global(html[data-theme="dark"]) .event-grid-card {
     background-color: #0c2340;
@@ -1259,34 +1285,38 @@ function getHref(path: string) {
   }
 
   :global(html[data-theme="dark"]) .upcoming-title,
-  :global(html[data-theme="dark"]) .event-grid-title {
-    color: #ffffff;
+  :global(html[data-theme="dark"]) .card-grid-title {
+    color: #ffffff !important;
   }
 
   :global(html[data-theme="dark"]) .upcoming-description,
-  :global(html[data-theme="dark"]) .event-grid-desc {
-    color: #cbd5e1;
+  :global(html[data-theme="dark"]) .card-grid-desc {
+    color: #cbd5e1 !important;
   }
 
   :global(html[data-theme="dark"]) .event-meta-breakdown,
   :global(html[data-theme="dark"]) .event-mini-details {
-    background-color: #071c34;
-    border-color: rgba(5, 135, 189, 0.25);
+    background-color: #071c34 !important;
+    border-color: rgba(5, 135, 189, 0.3) !important;
   }
 
   :global(html[data-theme="dark"]) .meta-point strong,
   :global(html[data-theme="dark"]) .mini-detail-row strong {
-    color: #38bdf8;
+    color: #38bdf8 !important;
   }
 
   :global(html[data-theme="dark"]) .meta-point span,
   :global(html[data-theme="dark"]) .mini-detail-row span {
-    color: #e2e8f0;
+    color: #cbd5e1 !important;
+  }
+
+  :global(html[data-theme="dark"]) .mini-detail-row.impact-row span {
+    color: #38bdf8 !important;
   }
 
   :global(html[data-theme="dark"]) .location-info,
   :global(html[data-theme="dark"]) .grid-location {
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
   }
 
   :global(html[data-theme="dark"]) .modality-tag,
@@ -1294,6 +1324,24 @@ function getHref(path: string) {
     background-color: #071c34;
     color: #38bdf8;
     border: 1px solid rgba(5, 135, 189, 0.3);
+  }
+
+  :global(html[data-theme="dark"]) .card-actions-row {
+    border-top-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .card-btn.btn-outline-dark,
+  :global(html[data-theme="dark"]) .open-event-gallery-btn {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  :global(html[data-theme="dark"]) .card-btn.btn-outline-dark:hover,
+  :global(html[data-theme="dark"]) .open-event-gallery-btn:hover {
+    background-color: var(--color-cyan) !important;
+    border-color: var(--color-cyan) !important;
+    color: #ffffff !important;
   }
 
   :global(html[data-theme="dark"]) .disabled-status-btn,
