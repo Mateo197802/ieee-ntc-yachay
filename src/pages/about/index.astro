@@ -315,6 +315,57 @@ const YACHAY_CAMPUS_ALBUMS = [
     </div>
   </section>
 
+  <!-- Faculty Chapter Advisor Showcase Spotlight Section -->
+  <section class="about-advisor-section" id="faculty-advisor">
+    <div class="site-container">
+      <div class="about-advisor-card">
+        <div class="about-advisor-photo-side">
+          <div class="advisor-photo-frame">
+            <img 
+              src={getHref('/assets/directive/dra_estefania_almache.png')} 
+              alt="Dra. Rosa Estefanía Almache Hernández, Ph.D. - Faculty Advisor" 
+              width="360" 
+              height="400" 
+              class="about-advisor-img" 
+            />
+            <div class="advisor-photo-badge">
+              <span class="badge-dot-green"></span>
+              <span>FACULTY CHAPTER ADVISOR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-advisor-content-side">
+          <span class="section-eyebrow">ACADEMIC LEADERSHIP & SCIENTIFIC MENTORSHIP</span>
+          <h2 class="about-advisor-name font-heading">DRA. ROSA ESTEFANÍA ALMACHE HERNÁNDEZ, PH.D.</h2>
+          <p class="about-advisor-subtitle">
+            Professor & Researcher · School of Physical Sciences & Nanotechnology · Director at GIAANT Research Group
+          </p>
+          <p class="about-advisor-lead">
+            As the official Faculty Chapter Advisor of the IEEE Nanotechnology Council Student Branch Chapter at Yachay Tech University, Dr. Almache provides strategic scientific mentorship, guides advanced thin-film and photovoltaic research, and fosters international scientific collaboration across Europe and the Americas.
+          </p>
+
+          <div class="about-advisor-tags-row">
+            <span class="credit-tag">Faculty Chapter Advisor</span>
+            <span class="credit-tag">Ph.D. in Nanotechnology</span>
+            <span class="credit-tag">Photovoltaics & ALD</span>
+            <span class="credit-tag">GIAANT Director</span>
+            <span class="credit-tag">European Research Stays (IREC / UPC)</span>
+          </div>
+
+          <div class="about-advisor-cta-row">
+            <a href={getHref('/advisor/')} class="btn btn-primary">
+              <span>EXPLORE FULL ADVISOR PROFILE & RESEARCH &rarr;</span>
+            </a>
+            <a href="mailto:ealmache@yachaytech.edu.ec" class="btn btn-secondary">
+              <span>CONTACT VIA EMAIL</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Web Platform Architecture & Lead Developer Mini-Section -->
   <section class="webmaster-credit-section" id="web-developer">
     <div class="site-container">
@@ -785,6 +836,127 @@ const YACHAY_CAMPUS_ALBUMS = [
     font-size: 0.92rem;
     color: var(--color-text-muted);
     line-height: 1.6;
+  }
+
+  /* Faculty Chapter Advisor Spotlight Card in About Page */
+  .about-advisor-section {
+    padding: 4.5rem 0 3.5rem;
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .about-advisor-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-left: 5px solid var(--color-cyan);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .about-advisor-photo-side {
+    display: flex;
+    justify-content: center;
+  }
+
+  .advisor-photo-frame {
+    position: relative;
+    width: 240px;
+    height: 290px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    background-color: #071c34;
+    border: 2px solid var(--color-cyan);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .about-advisor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+  }
+
+  .advisor-photo-badge {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    right: 0.6rem;
+    background: rgba(7, 28, 52, 0.9);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--color-cyan);
+    border-radius: 4px;
+    padding: 0.35rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-dot-green {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+  }
+
+  .about-advisor-name {
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+    color: var(--color-navy);
+    margin: 0.25rem 0 0.4rem;
+    line-height: 1.2;
+  }
+
+  .about-advisor-subtitle {
+    font-size: 0.92rem;
+    color: var(--color-cyan);
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-advisor-lead {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-advisor-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-advisor-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media (max-width: 860px) {
+    .about-advisor-card {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      gap: 2rem;
+    }
+    .about-advisor-tags-row {
+      justify-content: center;
+    }
+    .about-advisor-cta-row {
+      justify-content: center;
+    }
   }
 
   /* Webmaster Credit Mini-Section */
@@ -1532,6 +1704,24 @@ const YACHAY_CAMPUS_ALBUMS = [
     background-color: #0c2340;
     color: #f1f5f9;
     border-color: rgba(5, 135, 189, 0.3);
+  }
+
+  :global(html[data-theme="dark"]) .about-advisor-section {
+    background-color: #071626;
+    border-color: rgba(5, 135, 189, 0.2);
+  }
+
+  :global(html[data-theme="dark"]) .about-advisor-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .about-advisor-name {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .about-advisor-lead {
+    color: #cbd5e1;
   }
 
   :global(html[data-theme="dark"]) .webmaster-credit-section {
