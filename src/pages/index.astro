@@ -1422,7 +1422,13 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
 
   /* Dark mode overrides */
   :global(html[data-theme="dark"]) .pillars-section {
-    background-color: #051324;
+    background-color: #051324 !important;
+  }
+
+  :global(html[data-theme="dark"]) .stats-growth-section,
+  :global(html[data-theme="dark"]) .events-strip-section,
+  :global(html[data-theme="dark"]) .bottom-grid-section {
+    background-color: #071626 !important;
   }
 
   :global(html[data-theme="dark"]) .pillar-card {
@@ -1438,17 +1444,38 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
     color: #cbd5e1;
   }
 
+  :global(html[data-theme="dark"]) .home-join-section {
+    background-color: #051324 !important;
+  }
+
+  :global(html[data-theme="dark"]) .join-main-title {
+    color: #ffffff !important;
+  }
+
+  :global(html[data-theme="dark"]) .join-main-desc {
+    color: #cbd5e1 !important;
+  }
+
   :global(html[data-theme="dark"]) .home-join-card {
-    background-color: #0c2340;
-    border-color: rgba(5, 135, 189, 0.25);
+    background-color: #0c2340 !important;
+    border-color: rgba(5, 135, 189, 0.25) !important;
+  }
+
+  :global(html[data-theme="dark"]) .home-join-card.featured-join {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #153258 100%) !important;
+    border-color: var(--color-cyan) !important;
   }
 
   :global(html[data-theme="dark"]) .home-join-card .join-card-heading {
-    color: #ffffff;
+    color: #ffffff !important;
   }
 
   :global(html[data-theme="dark"]) .home-join-card .join-card-text {
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
+  }
+
+  :global(html[data-theme="dark"]) .home-join-card .join-card-text strong {
+    color: #ffffff !important;
   }
 
   :global(html[data-theme="dark"]) .bottom-col {

@@ -358,9 +358,21 @@ html[data-theme="dark"],
 }
 
 /* Backgrounds & Global Text */
-html[data-theme="dark"] body {
+html[data-theme="dark"] body,
+html[data-theme="dark"] main,
+html[data-theme="dark"] section {
   background-color: #071626;
   color: #f1f5f9;
+}
+
+html[data-theme="dark"] .bg-alt,
+html[data-theme="dark"] .section-alt,
+html[data-theme="dark"] .home-join-section,
+html[data-theme="dark"] .pillars-section,
+html[data-theme="dark"] .mission-vision-section,
+html[data-theme="dark"] .join-chapter-section,
+html[data-theme="dark"] .nanonews-section {
+  background-color: #051324 !important;
 }
 
 /* Headings & Titles in Dark Mode */
