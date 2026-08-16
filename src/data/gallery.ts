@@ -36,17 +36,17 @@ export const GALLERY_ALBUMS: GalleryAlbum[] = [
   },
   {
     id: 'dia-del-nino-hospital',
-    title: "Immersive Children's Day — San Vicente de Paúl Hospital",
+    title: "Nano Bridge: Science Vision — Children's Day Edition",
     category: 'Outreach',
     date: 'June 01, 2026',
     coverImage: '/assets/events/dia_del_nino_hospital.jpg',
     coverPosition: 'center center',
-    summary: 'Deployment of Meta Quest 3 Virtual Reality technology and emotional support for 25 pediatric ICU patients.',
+    summary: 'Deployment of Meta Quest 3 Virtual Reality technology and emotional support for 25 pediatric patients at San Vicente de Paúl Hospital.',
     slides: [
       {
         image: '/assets/events/dia_del_nino_hospital.jpg',
-        title: "Immersive Children's Day: Technology & Smiles",
-        caption: 'Humanitarian volunteer outreach with Meta Quest 3 headsets, clinical disinfection biosafety, and gift kits at San Vicente de Paúl Hospital.',
+        title: "Nano Bridge: Science Vision (Children's Day Edition)",
+        caption: 'Humanitarian volunteer outreach under the Nano Bridge: Science Vision program with Meta Quest 3 headsets, clinical disinfection biosafety, and gift kits at San Vicente de Paúl Hospital.',
         position: 'center center'
       }
     ]
