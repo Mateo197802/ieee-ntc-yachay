@@ -1251,6 +1251,58 @@ function getHref(path: string) {
     }
   }
 
+  /* Dark mode overrides for Events Page */
+  :global(html[data-theme="dark"]) .upcoming-featured-card,
+  :global(html[data-theme="dark"]) .event-grid-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .upcoming-title,
+  :global(html[data-theme="dark"]) .event-grid-title {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .upcoming-description,
+  :global(html[data-theme="dark"]) .event-grid-desc {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .event-meta-breakdown,
+  :global(html[data-theme="dark"]) .event-mini-details {
+    background-color: #071c34;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .meta-point strong,
+  :global(html[data-theme="dark"]) .mini-detail-row strong {
+    color: #38bdf8;
+  }
+
+  :global(html[data-theme="dark"]) .meta-point span,
+  :global(html[data-theme="dark"]) .mini-detail-row span {
+    color: #e2e8f0;
+  }
+
+  :global(html[data-theme="dark"]) .location-info,
+  :global(html[data-theme="dark"]) .grid-location {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .modality-tag,
+  :global(html[data-theme="dark"]) .grid-modality {
+    background-color: #071c34;
+    color: #38bdf8;
+    border: 1px solid rgba(5, 135, 189, 0.3);
+  }
+
+  :global(html[data-theme="dark"]) .disabled-status-btn,
+  :global(html[data-theme="dark"]) .btn-disabled {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
   /* Dark mode overrides for NanoSkills Modal */
   :global(html[data-theme="dark"]) .nanoskills-tab-btn {
     background-color: #071c34;

@@ -1348,7 +1348,64 @@ const YACHAY_CAMPUS_ALBUMS = [
     }
   }
 
-  /* Dark Mode Overrides */
+  /* Dark Mode Overrides for About Us */
+  :global(html[data-theme="dark"]) .about-content-section,
+  :global(html[data-theme="dark"]) .benefits-section {
+    background-color: #071626;
+  }
+
+  :global(html[data-theme="dark"]) .mission-vision-section {
+    background-color: #051324;
+  }
+
+  :global(html[data-theme="dark"]) .about-text-block p {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .about-text-block strong {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .highlight-quote-box {
+    background-color: #071c34;
+    border-left: 4px solid var(--color-cyan);
+  }
+
+  :global(html[data-theme="dark"]) .highlight-quote-box p,
+  :global(html[data-theme="dark"]) .highlight-quote-box em {
+    color: #e2e8f0;
+  }
+
+  :global(html[data-theme="dark"]) .mv-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .mv-card h3 {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .mv-card p {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .benefit-box {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .benefit-box h3 {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .benefit-box p {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .benefit-box .b-number {
+    color: rgba(5, 135, 189, 0.35);
+  }
+
   :global(html[data-theme="dark"]) .yachay-campus-section {
     background-color: #051324;
     border-color: rgba(5, 135, 189, 0.2);

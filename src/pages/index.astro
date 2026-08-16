@@ -1421,6 +1421,55 @@ const upcomingStripEvents = EVENTS_DATA.slice(0, 3);
   }
 
   /* Dark mode overrides */
+  :global(html[data-theme="dark"]) .pillars-section {
+    background-color: #051324;
+  }
+
+  :global(html[data-theme="dark"]) .pillar-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .pillar-card .pillar-title {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .pillar-card .pillar-desc {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .home-join-card {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .home-join-card .join-card-heading {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .home-join-card .join-card-text {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .bottom-col {
+    background-color: #0c2340;
+    border-color: rgba(5, 135, 189, 0.25);
+  }
+
+  :global(html[data-theme="dark"]) .mini-news-title,
+  :global(html[data-theme="dark"]) .mini-proj-item strong {
+    color: #ffffff;
+  }
+
+  :global(html[data-theme="dark"]) .mini-proj-item p {
+    color: #cbd5e1;
+  }
+
+  :global(html[data-theme="dark"]) .hero-btn.btn-outline-light {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
   :global(html[data-theme="dark"]) .nanonews-guide-callout {
     background: linear-gradient(135deg, rgba(5, 135, 189, 0.15) 0%, rgba(7, 28, 52, 0.4) 100%);
     border-color: rgba(5, 135, 189, 0.35);
