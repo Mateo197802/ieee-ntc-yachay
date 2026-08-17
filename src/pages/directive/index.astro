@@ -367,19 +367,20 @@ function getInitials(name: string) {
     padding: 0.25rem;
   }
 
-  /* Profile Modal Semantic Styling */
-  .modal-profile-wrap {
+  /* Profile Modal Semantic Styling (Global selectors for dynamic JS innerHTML) */
+  :global(.modal-profile-wrap) {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    color: #1F3E65;
   }
 
-  .modal-profile-header {
+  :global(.modal-profile-header) {
     border-bottom: 2px solid var(--color-cyan);
     padding-bottom: 0.75rem;
   }
 
-  .modal-header-tag {
+  :global(.modal-header-tag) {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-cyan);
@@ -387,52 +388,66 @@ function getInitials(name: string) {
     display: block;
   }
 
-  .modal-header-name {
-    font-size: 1.6rem;
-    color: var(--color-navy);
+  :global(.modal-header-name) {
+    font-size: 1.7rem;
+    color: #1F3E65;
     margin-top: 0.25rem;
+    line-height: 1.2;
   }
 
-  .modal-header-program {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
+  :global(.modal-header-program) {
+    font-size: 0.88rem;
+    color: #465D64;
     margin-top: 0.25rem;
     font-weight: 600;
   }
 
-  .modal-bio-content {
+  :global(.modal-bio-content) {
     font-size: 0.95rem;
-    color: #2D3748;
-    line-height: 1.65;
+    color: #1E293B;
+    line-height: 1.7;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
   }
 
-  .modal-research-title {
-    font-size: 0.9rem;
-    color: var(--color-navy);
-    margin-bottom: 0.5rem;
+  :global(.modal-bio-content p) {
+    color: #1E293B !important;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 0.95rem;
   }
 
-  .modal-tags-list {
+  :global(.modal-research-section) {
+    margin-top: 0.5rem;
+  }
+
+  :global(.modal-research-title) {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1F3E65;
+    margin-bottom: 0.6rem;
+  }
+
+  :global(.modal-tags-list) {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
 
-  .modal-interest-tag {
+  :global(.modal-interest-tag) {
     font-size: 0.78rem;
-    background: var(--color-bg-light);
-    color: var(--color-navy);
+    background: #F1F5F9;
+    color: #1F3E65;
     font-weight: 600;
-    padding: 0.3rem 0.7rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 4px;
-    border: 1px solid var(--color-border-light);
+    border: 1px solid #CBD5E1;
+    display: inline-block;
   }
 
-  .modal-footer-row {
-    margin-top: 1rem;
+  :global(.modal-footer-row) {
+    margin-top: 1.25rem;
     padding-top: 1rem;
     border-top: 1px solid var(--color-border-light);
     display: flex;
@@ -442,9 +457,13 @@ function getInitials(name: string) {
     gap: 0.75rem;
   }
 
-  .modal-contact-email {
+  :global(.modal-contact-email) {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: #465D64;
+  }
+
+  :global(.modal-contact-email strong) {
+    color: #1F3E65;
   }
 
   @media (max-width: 1080px) {
@@ -516,6 +535,7 @@ function getInitials(name: string) {
     color: #38bdf8 !important;
   }
 
+  :global(html[data-theme="dark"]) .modal-bio-content,
   :global(html[data-theme="dark"]) .modal-bio-content p {
     color: #cbd5e1 !important;
   }

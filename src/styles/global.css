@@ -312,6 +312,28 @@ dialog::backdrop {
   box-sizing: border-box !important;
 }
 
+/* Universal Modal Light Mode Text Contrast Protection */
+.modal-dialog-content p,
+.gallery-modal-inner p,
+.nanonews-modal-inner p,
+.membership-modal-inner p,
+.modal-body p {
+  color: #1E293B;
+}
+
+.modal-dialog-content h1,
+.modal-dialog-content h2,
+.modal-dialog-content h3,
+.modal-dialog-content h4,
+.gallery-modal-inner h1,
+.gallery-modal-inner h2,
+.gallery-modal-inner h3,
+.nanonews-modal-inner h1,
+.nanonews-modal-inner h2,
+.nanonews-modal-inner h3 {
+  color: #1F3E65;
+}
+
 /* Universal Form Input & Autofill High-Contrast Protection */
 input, select, textarea, .form-control {
   color-scheme: light !important;
