@@ -8,7 +8,7 @@ function customSitemapIntegration() {
     name: 'custom-sitemap-generator',
     hooks: {
       'astro:build:done': async ({ dir }) => {
-        const siteUrl = 'https://Mateo197802.github.io';
+        const siteUrl = 'https://ieee-ntc-ec.github.io';
         const basePath = process.env.NODE_ENV === 'production' ? '/ieee-ntc-yachay' : '';
         const pages = [
           '/',
@@ -43,7 +43,7 @@ ${pages.map(p => `  <url>
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mateo197802.github.io',
+  site: 'https://ieee-ntc-ec.github.io',
   base: '/ieee-ntc-yachay',
   trailingSlash: 'always',
   integrations: [customSitemapIntegration()],
