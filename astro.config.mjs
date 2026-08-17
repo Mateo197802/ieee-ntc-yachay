@@ -13,10 +13,12 @@ function customSitemapIntegration() {
         const pages = [
           '/',
           '/about/',
+          '/advisor/',
           '/directive/',
           '/events/',
           '/projects/',
           '/opportunities/',
+          '/nanonews/',
           '/gallery/',
           '/news/',
           '/contact/'
